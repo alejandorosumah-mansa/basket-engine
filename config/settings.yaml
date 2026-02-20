@@ -1,0 +1,52 @@
+# Basket Engine Settings
+
+# Eligibility thresholds
+eligibility:
+  min_total_volume: 10000        # $10K minimum total volume
+  min_7d_avg_daily_volume: 500   # $500 minimum recent daily volume
+  min_liquidity: 1000            # $1K minimum open interest
+  min_price_history_days: 14     # Need 2 weeks of data
+  min_days_to_expiration: 14     # Don't include markets about to resolve
+  price_range_min: 0.05          # Exclude near-certain NO
+  price_range_max: 0.95          # Exclude near-certain YES
+
+# Basket constraints
+basket:
+  min_markets: 5                 # Minimum markets per basket
+  max_markets: 30                # Maximum markets per basket
+  max_single_weight: 0.20        # No market > 20% weight
+  min_single_weight: 0.02        # No dust positions < 2%
+
+# Rebalance
+rebalance:
+  frequency: monthly             # Monthly on 1st
+  emergency_min_markets: 5       # Emergency rebalance if below this
+  max_turnover_warning: 0.50     # Warn if turnover exceeds 50%
+
+# Weighting
+weighting:
+  method: risk_parity_liquidity_cap  # risk_parity_liquidity_cap | equal | volume_weighted | min_variance | max_diversification
+  volatility_window_days: 30     # Rolling window for vol calculation
+  liquidity_cap_enabled: true    # Cap weights by liquidity share
+
+# Classification
+classification:
+  llm_model: gpt-4o-mini         # Cost-efficient for classification
+  llm_temperature: 0             # Deterministic
+  min_confidence: 0.5            # Below this → uncategorized
+  clustering_min_history_days: 30
+  clustering_distance_metric: spearman  # spearman | pearson
+  clustering_linkage: ward
+
+# Backtest
+backtest:
+  start_date: "2025-08-01"      # 6 months back
+  end_date: "2026-02-01"        # Up to last month
+  risk_free_rate: 0.05          # For Sharpe calculation
+  benchmark: equal_weight_all   # Compare against naive equal-weight
+
+# Data
+data:
+  cache_dir: data/raw
+  processed_dir: data/processed
+  output_dir: data/outputs

@@ -1,0 +1,155 @@
+# Theme Taxonomy for Prediction Market Baskets
+# Each theme defines what belongs (and what doesn't)
+
+themes:
+  us_elections:
+    name: "US Elections & Partisan Politics"
+    description: "Presidential, congressional, gubernatorial elections. Party control. Approval ratings. Electoral mechanics. Voter turnout. Primary races."
+    examples:
+      - "Will Democrats win the Senate in 2026?"
+      - "Trump approval rating above 45%?"
+      - "Who will win the 2028 presidential election?"
+    anti_examples:
+      - "Will the Fed cut rates?"  # monetary policy
+      - "Will Trump impose tariffs on China?"  # trade/geopolitics
+      - "Will Trump fire the FBI director?"  # legal/regulatory
+
+  fed_monetary_policy:
+    name: "Federal Reserve & Monetary Policy"
+    description: "Fed rate decisions, QE/QT, Fed chair nominations, inflation targets, Treasury yields, FOMC statements. Direct Fed actions only."
+    examples:
+      - "Fed funds rate above 4.5% in March?"
+      - "Will Trump nominate a new Fed Chair?"
+      - "Will the Fed cut rates before July?"
+    anti_examples:
+      - "US GDP growth above 2%?"  # economic indicators
+      - "Will inflation exceed 4%?"  # economic indicators (measured, not Fed action)
+
+  us_economic:
+    name: "US Economic Indicators"
+    description: "GDP, unemployment, CPI/inflation readings, housing data, consumer confidence, retail sales, PMI. Measurable economic data points."
+    examples:
+      - "US unemployment above 5% by Q3?"
+      - "CPI year-over-year above 3%?"
+      - "Will there be a US recession in 2026?"
+    anti_examples:
+      - "Will the Fed cut rates?"  # that's Fed policy, not an indicator
+      - "Will Congress pass a stimulus bill?"  # that's politics
+
+  ai_technology:
+    name: "AI & Automation"
+    description: "AI model capabilities, AI company milestones (OpenAI, Google, Anthropic), automation replacing jobs, AI regulation, AGI timelines, AI safety."
+    examples:
+      - "Will GPT-5 be released before July?"
+      - "Will AI replace 10% of coding jobs by 2027?"
+      - "OpenAI valuation above $200B?"
+    anti_examples:
+      - "Will NVIDIA stock hit $200?"  # that's a stock, not AI capability
+      - "Will the EU pass AI regulation?"  # borderline, could be legal_regulatory
+
+  china_us:
+    name: "China-US Relations"
+    description: "Trade war, tariffs, Taiwan tensions, tech restrictions (chip export bans), diplomatic relations, military incidents in South China Sea."
+    examples:
+      - "Will US impose new tariffs on China?"
+      - "Will China invade Taiwan before 2027?"
+      - "Will US ban TikTok?"
+    anti_examples:
+      - "Will China's GDP growth exceed 5%?"  # that's China economics, not bilateral
+      - "Will TSMC stock rise?"  # stock market
+
+  russia_ukraine:
+    name: "Russia-Ukraine Conflict"
+    description: "War progression, ceasefire/peace negotiations, territorial control, sanctions on Russia, NATO involvement, weapons shipments."
+    examples:
+      - "Will there be a ceasefire before June?"
+      - "Will Russia control Kharkiv by end of year?"
+      - "Will NATO deploy troops to Ukraine?"
+    anti_examples:
+      - "Will EU expand sanctions on Iran?"  # different conflict
+      - "Will oil prices spike?"  # commodities (even if caused by war)
+
+  middle_east:
+    name: "Middle East & Iran"
+    description: "Iran nuclear program, Israel-Palestine, Yemen/Houthi attacks, Syria, Lebanon, Gulf tensions. Regional conflict and stability."
+    examples:
+      - "Will US strike Iran before April?"
+      - "Will there be an Israel-Hamas ceasefire?"
+      - "Will Houthis attack a US naval vessel?"
+    anti_examples:
+      - "Will oil prices exceed $100?"  # commodities
+      - "Will Turkey join the EU?"  # European politics
+
+  energy_commodities:
+    name: "Energy & Commodities"
+    description: "Oil prices, OPEC decisions, natural gas, commodity supply/demand, mining, agricultural commodities. Price and supply markets."
+    examples:
+      - "Will WTI crude exceed $90?"
+      - "Will OPEC cut production?"
+      - "Will lithium prices double?"
+    anti_examples:
+      - "Will US approve new drilling leases?"  # that's regulatory
+      - "Will a hurricane hit the Gulf Coast?"  # climate
+
+  crypto_digital:
+    name: "Crypto & Digital Assets"
+    description: "Bitcoin/ETH price targets, ETF approvals, DeFi protocol milestones, stablecoin regulation, exchange events, blockchain adoption."
+    examples:
+      - "Will Bitcoin exceed $100K?"
+      - "Will SEC approve Ethereum ETF?"
+      - "Will Tether depeg?"
+    anti_examples:
+      - "Will the Fed raise rates?"  # monetary policy (even though it affects crypto)
+
+  climate_environment:
+    name: "Climate & Environment"
+    description: "Natural disasters, climate policy (Paris Agreement, emissions targets), extreme weather events, clean energy deployment, environmental regulation."
+    examples:
+      - "Will a Category 5 hurricane hit the US in 2026?"
+      - "Global temperature anomaly above 1.5C?"
+      - "Will US rejoin Paris Agreement?"
+    anti_examples:
+      - "Will oil prices rise?"  # commodities
+      - "Will solar panel tariffs increase?"  # trade policy
+
+  europe_politics:
+    name: "European Politics"
+    description: "EU governance, European elections, NATO policy, EU expansion, Brexit aftermath, European economic policy, Eurozone stability."
+    examples:
+      - "Will France hold snap elections?"
+      - "Will the EU impose new Russia sanctions?"
+      - "Will Sweden join NATO?"
+    anti_examples:
+      - "Will the ECB cut rates?"  # arguably monetary policy, but EU-specific so keep here
+      - "Will Russia attack a NATO country?"  # russia_ukraine or conflict
+
+  pandemic_health:
+    name: "Pandemic & Biotech"
+    description: "Disease outbreaks, pandemic preparedness, vaccine milestones, pharma breakthroughs, public health policy, WHO declarations."
+    examples:
+      - "Will WHO declare a new pandemic?"
+      - "Will a bird flu vaccine be approved?"
+      - "Will US COVID cases exceed 1M/week?"
+    anti_examples:
+      - "Will marijuana be federally legalized?"  # legal_regulatory
+
+  legal_regulatory:
+    name: "US Legal & Regulatory"
+    description: "Supreme Court decisions, DOJ investigations, antitrust actions, regulatory frameworks, congressional legislation, executive orders."
+    examples:
+      - "Will SCOTUS overturn Chevron?"
+      - "Will Trump be convicted?"
+      - "Will Congress pass immigration reform?"
+    anti_examples:
+      - "Will Trump win the election?"  # elections
+      - "Will the SEC approve a crypto ETF?"  # crypto
+
+  space_frontier:
+    name: "Space & Frontier Technology"
+    description: "SpaceX milestones, NASA missions, space exploration, quantum computing breakthroughs, nuclear fusion, frontier science."
+    examples:
+      - "Will SpaceX land on Mars before 2030?"
+      - "Will quantum supremacy be demonstrated on a useful problem?"
+      - "Will nuclear fusion achieve net energy gain?"
+    anti_examples:
+      - "Will Starlink IPO?"  # that's more business/stock market
