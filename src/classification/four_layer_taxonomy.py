@@ -24,9 +24,17 @@ import yaml
 
 from .taxonomy import load_taxonomy
 import os
-from openai import OpenAI
 import json
 import time
+
+# Optional OpenAI import for LLM classification
+try:
+    from openai import OpenAI
+    from dotenv import load_dotenv
+    load_dotenv(Path.home() / ".openclaw" / ".env")
+    HAS_OPENAI = True
+except ImportError:
+    HAS_OPENAI = False
 
 logger = logging.getLogger(__name__)
 
@@ -177,36 +185,72 @@ class FourLayerTaxonomy:
         return event_themes
     
     def _classify_event_with_llm(self, event_name: str, context: str) -> str:
-        """Use LLM to classify an event into a theme."""
+        """Use LLM to classify an event into a theme, with fallback to keyword-based classification."""
         theme_options = list(self.taxonomy.keys())
         
-        prompt = f"""
-        You are classifying EVENTS (not individual markets) into thematic baskets.
+        # Try LLM classification if available
+        if HAS_OPENAI and os.environ.get("OPENAI_API_KEY"):
+            try:
+                client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
+                
+                prompt = f"""
+                You are classifying EVENTS (not individual markets) into thematic baskets.
+                
+                Available themes: {', '.join(theme_options)}
+                
+                Event to classify:
+                {context}
+                
+                Instructions:
+                - Classify the EVENT (the parent question), not individual outcomes
+                - For categorical events, focus on what the event is fundamentally about
+                - Binary events: the ticker usually represents the event directly
+                - Return only the theme name from the available themes list
+                - If no theme fits well, return "uncategorized"
+                
+                Return ONLY the theme name, nothing else.
+                """
+                
+                response = client.chat.completions.create(
+                    model="gpt-4o-mini",
+                    temperature=0,
+                    messages=[
+                        {"role": "system", "content": "You are a market classifier. Return only the theme name."},
+                        {"role": "user", "content": prompt.strip()}
+                    ]
+                )
+                
+                theme = response.choices[0].message.content.strip()
+                
+                # Validate theme is in our taxonomy
+                if theme in theme_options:
+                    return theme
+                else:
+                    logger.warning(f"LLM returned invalid theme '{theme}' for event '{event_name}', falling back to keyword classification")
+                    
+            except Exception as e:
+                logger.warning(f"LLM classification failed for event '{event_name}': {e}, falling back to keyword classification")
         
-        Available themes: {', '.join(theme_options)}
+        # Fallback to keyword-based classification
+        return self._classify_event_with_keywords(event_name, context)
+    
+    def _classify_event_with_keywords(self, event_name: str, context: str) -> str:
+        """Fallback keyword-based classification."""
+        text = f"{event_name} {context}".lower()
         
-        Event to classify:
-        {context}
-        
-        Instructions:
-        - Classify the EVENT (the parent question), not individual outcomes
-        - For categorical events, focus on what the event is fundamentally about
-        - Binary events: the ticker usually represents the event directly
-        - Return only the theme name, nothing else
-        
-        Theme:"""
-        
-        try:
-            theme = classify_text(prompt.strip())
-            # Validate theme is in our taxonomy
-            if theme in theme_options:
-                return theme
-            else:
-                logger.warning(f"LLM returned invalid theme '{theme}' for event '{event_name}', using 'uncategorized'")
-                return "uncategorized"
-        except Exception as e:
-            logger.error(f"Error classifying event '{event_name}': {e}")
-            return "uncategorized"
+        # Simple keyword matching
+        if any(word in text for word in ['election', 'nomination', 'president', 'senate', 'congress', 'governor']):
+            return 'us_elections'
+        elif any(word in text for word in ['bitcoin', 'crypto', 'ethereum', 'ai', 'nvidia', 'technology']):
+            return 'ai_technology'  
+        elif any(word in text for word in ['iran', 'israel', 'middle east', 'strike']):
+            return 'middle_east'
+        elif any(word in text for word in ['fed', 'rate', 'inflation', 'cpi', 'economic']):
+            return 'fed_monetary_policy'
+        elif any(word in text for word in ['nhl', 'nfl', 'nba', 'sports', 'trophy', 'medal', 'olympics']):
+            return 'sports_entertainment'
+        else:
+            return 'uncategorized'
     
     def process_markets(self, markets_df: pd.DataFrame, 
                        use_event_slug: bool = True) -> pd.DataFrame:

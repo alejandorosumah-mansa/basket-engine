@@ -27,7 +27,6 @@ PROJECT_ROOT = Path(__file__).parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
 from src.classification.four_layer_taxonomy import FourLayerTaxonomy, process_markets_with_corrected_taxonomy
-from src.ingestion.run import load_all_data
 
 # Configure logging
 logging.basicConfig(
