@@ -1,13 +1,17 @@
-"""Polymarket data ingestion via Dome API."""
+"""Polymarket data ingestion via Dome API (markets) + CLOB API (prices)."""
 
 import logging
 import time
 from datetime import datetime, timezone, timedelta
 
+import requests
+
 from .api_client import api_get
 from .cache import Cache
 
 logger = logging.getLogger(__name__)
+
+CLOB_BASE = "https://clob.polymarket.com"
 
 
 def fetch_all_markets(cache: Cache, force: bool = False) -> list:
@@ -65,93 +69,86 @@ def fetch_all_markets(cache: Cache, force: bool = False) -> list:
     return unique
 
 
-def fetch_candlesticks(condition_id: str, cache: Cache,
-                       months_back: int = 6, force: bool = False) -> list:
-    """Fetch daily candlesticks for a market going back N months."""
-    cache_key = f"candles_{condition_id}"
+def _get_token_id(market: dict) -> str:
+    """Extract YES token ID from market data."""
+    side_a = market.get("side_a", {})
+    if side_a and side_a.get("id"):
+        return side_a["id"]
+    return None
+
+
+def _market_time_range(market: dict) -> tuple:
+    """Get the active time range for a market.
+    
+    Returns (start_ts, end_ts) where end_ts is:
+    - completed_time or close_time for resolved/closed markets
+    - now for active markets
+    """
+    start_ts = market.get("start_time")
+    status = market.get("status", "")
+    
+    if status == "closed":
+        # Use completed_time, close_time, or end_time (whichever is available)
+        end_ts = market.get("completed_time") or market.get("close_time") or market.get("end_time")
+    else:
+        end_ts = int(time.time())
+    
+    return start_ts, end_ts
+
+
+def fetch_price_history(market: dict, cache: Cache, force: bool = False) -> list:
+    """Fetch price history from Polymarket CLOB API using token ID.
+    
+    Uses the /prices-history endpoint with the YES token ID.
+    Works for both active and resolved markets.
+    """
+    cid = market.get("condition_id", "")
+    cache_key = f"candles_{cid}"
 
     if not force:
         cached = cache.get(cache_key)
-        last_fetch = cache.get_last_fetch(cache_key)
-        if cached is not None and last_fetch and not cache.needs_update(cache_key, max_age_hours=12):
+        if cached is not None and not cache.needs_update(cache_key, max_age_hours=12):
             return cached
 
-    now = int(time.time())
-    start = int((datetime.now(timezone.utc) - timedelta(days=30 * months_back)).timestamp())
+    token_id = _get_token_id(market)
+    if not token_id:
+        logger.warning(f"No token ID for {market.get('title', cid)[:40]}")
+        cache.put(cache_key, [])
+        cache.set_last_fetch(cache_key)
+        return []
 
-    # Try primary candlesticks endpoint first
     try:
-        data = api_get(f"/polymarket/candlesticks/{condition_id}", params={
-            "start_time": start,
-            "end_time": now,
-            "interval": 1440  # daily
-        })
-        candles_raw = data.get("candlesticks", [])
+        url = f"{CLOB_BASE}/prices-history"
+        resp = requests.get(url, params={
+            "market": token_id,
+            "interval": "all",
+            "fidelity": 1440,  # daily
+        }, timeout=30)
+        resp.raise_for_status()
+        data = resp.json()
+        history = data.get("history", [])
 
-        # Response is [candles_list, token_info] - extract candles
+        # Convert CLOB format {t, p} to our candle format for compatibility
         candles = []
-        if candles_raw and isinstance(candles_raw[0], list):
-            candles = candles_raw[0]
-        elif candles_raw and isinstance(candles_raw[0], dict):
-            candles = candles_raw
-
-        if candles:  # Success with candlesticks
-            cache.put(cache_key, candles)
-            cache.set_last_fetch(cache_key)
-            return candles
-        
-    except Exception as e:
-        logger.warning(f"Candlesticks failed for {condition_id[:20]}...: {e}")
-
-    # Fallback: Try point-in-time price history (more reliable but slower)
-    logger.info(f"Trying fallback price history for {condition_id[:20]}...")
-    try:
-        fallback_candles = fetch_price_history_fallback(condition_id, start, now)
-        if fallback_candles:
-            cache.put(cache_key, fallback_candles)
-            cache.set_last_fetch(cache_key)
-            return fallback_candles
-    except Exception as e:
-        logger.warning(f"Price history fallback failed for {condition_id[:20]}...: {e}")
-
-    logger.warning(f"All methods failed for {condition_id[:20]}...")
-    cache.put(cache_key, [])  # Cache empty result to avoid repeated failures
-    cache.set_last_fetch(cache_key)
-    return []
-
-
-def fetch_price_history_fallback(condition_id: str, start_ts: int, end_ts: int) -> list:
-    """Fallback method: fetch price points at regular intervals and construct pseudo-candles."""
-    import time as time_module
-    
-    pseudo_candles = []
-    current = start_ts
-    day_seconds = 86400
-    
-    while current < end_ts:
-        try:
-            # Fetch price at this timestamp
-            data = api_get(f"/polymarket/market-price/{condition_id}", params={
-                "at_time": current
-            })
-            
-            if data and "price" in data:
-                price = float(data["price"])
-                pseudo_candles.append({
-                    "end_period_ts": current,
+        for point in history:
+            ts = point.get("t")
+            price = point.get("p")
+            if ts is not None and price is not None:
+                candles.append({
+                    "end_period_ts": ts,
                     "price": {"close_dollars": str(price)},
-                    "volume": 0  # Unknown volume for fallback method
+                    "volume": 0,
                 })
-            
-            current += day_seconds
-            time_module.sleep(0.1)  # Respect rate limits
-            
-        except Exception as e:
-            logger.debug(f"Skipping timestamp {current} for {condition_id}: {e}")
-            current += day_seconds
-            continue
-    
-    return pseudo_candles
+
+        cache.put(cache_key, candles)
+        cache.set_last_fetch(cache_key)
+        return candles
+
+    except Exception as e:
+        logger.warning(f"CLOB price history failed for {cid[:20]}: {e}")
+        cache.put(cache_key, [])
+        cache.set_last_fetch(cache_key)
+        return []
 
 
 def run_polymarket_ingestion(force: bool = False):
@@ -160,12 +157,11 @@ def run_polymarket_ingestion(force: bool = False):
     cache = Cache("polymarket")
 
     markets = fetch_all_markets(cache, force=force)
-    # Fetch candles for more markets - lowered threshold to improve coverage
-    # CHANGED: Reduced from $5M to $500K to capture more markets with meaningful activity
-    # This will increase fetch time but provides much better data coverage
-    MIN_VOL = 500000  # $500K volume threshold for better coverage
+    
+    # Fetch prices for all markets with meaningful volume
+    MIN_VOL = 100000  # $100K - lowered to maximize coverage
     vol_markets = [m for m in markets if (m.get("volume_total") or 0) >= MIN_VOL]
-    logger.info(f"Fetching candlesticks for {len(vol_markets)} markets with volume >= ${MIN_VOL:,} "
+    logger.info(f"Fetching price history for {len(vol_markets)} markets with volume >= ${MIN_VOL:,} "
                 f"(skipping {len(markets) - len(vol_markets)} low-volume)...")
 
     success = 0
@@ -175,14 +171,17 @@ def run_polymarket_ingestion(force: bool = False):
         if not cid:
             continue
 
-        candles = fetch_candlesticks(cid, cache, force=force)
+        candles = fetch_price_history(market, cache, force=force)
         if candles:
             success += 1
         else:
             failed += 1
 
-        if (i + 1) % 50 == 0:
+        if (i + 1) % 100 == 0:
             logger.info(f"Progress: {i + 1}/{len(vol_markets)} (success={success}, failed={failed})")
+
+        # CLOB API rate limit - be gentle
+        time.sleep(0.2)
 
     logger.info(f"Polymarket ingestion complete: {success} with data, {failed} failed")
     return markets

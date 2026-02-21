@@ -16,6 +16,25 @@ logger = logging.getLogger(__name__)
 OUTPUT_DIR = Path(__file__).resolve().parent.parent.parent / "data" / "processed"
 
 
+def _classify_status(raw_status: str, winning_side) -> str:
+    """Normalize market status to: active / resolved / closed."""
+    s = (raw_status or "").lower()
+    if s == "open":
+        return "active"
+    if winning_side is not None and winning_side != "":
+        return "resolved"
+    return "closed"
+
+
+def _extract_resolution(winning_side) -> str:
+    """Extract resolution value from winning_side field."""
+    if winning_side is None:
+        return None
+    if isinstance(winning_side, dict):
+        return winning_side.get("label")
+    return str(winning_side) if winning_side else None
+
+
 def normalize_polymarket_markets(cache: Cache) -> pd.DataFrame:
     """Convert cached Polymarket markets to normalized DataFrame."""
     rows = []
@@ -25,20 +44,39 @@ def normalize_polymarket_markets(cache: Cache) -> pd.DataFrame:
             cid = m.get("condition_id")
             if not cid:
                 continue
+            
+            raw_status = m.get("status", "unknown")
+            winning_side = m.get("winning_side")
+            norm_status = _classify_status(raw_status, winning_side)
+            
+            start = _ts_to_date(m.get("start_time"))
+            end = _ts_to_date(m.get("end_time"))
+            completed = _ts_to_date(m.get("completed_time"))
+            closed = _ts_to_date(m.get("close_time"))
+            
+            # Resolution date is completed_time or close_time
+            resolution_date = completed or closed or (end if norm_status != "active" else None)
+            
             rows.append({
                 "market_id": f"poly_{m.get('market_slug', cid[:16])}",
                 "platform": "polymarket",
                 "title": m.get("title", ""),
                 "description": (m.get("description") or "")[:1000],
                 "tags": ",".join(m.get("tags") or []),
-                "start_date": _ts_to_date(m.get("start_time")),
-                "end_date": _ts_to_date(m.get("end_time")),
+                "start_date": start,
+                "end_date": end,
                 "volume": m.get("volume_total", 0),
-                "status": m.get("status", "unknown"),
+                "status": norm_status,
                 "condition_id": cid,
                 "ticker": None,
                 "event_slug": m.get("event_slug"),
-                "winning_side": m.get("winning_side"),
+                "winning_side": winning_side,
+                # New lifecycle columns
+                "created_date": start,
+                "resolution_date": resolution_date,
+                "resolution_value": _extract_resolution(winning_side),
+                "active_start": start,
+                "active_end": resolution_date if norm_status != "active" else None,
             })
     return pd.DataFrame(rows)
 
@@ -52,20 +90,36 @@ def normalize_kalshi_markets(cache: Cache) -> pd.DataFrame:
             ticker = m.get("market_ticker")
             if not ticker:
                 continue
+            
+            raw_status = m.get("status", "unknown")
+            result = m.get("result")
+            winning_side = str(result) if result is not None else None
+            norm_status = _classify_status(raw_status, winning_side)
+            
+            start = _ts_to_date(m.get("start_time"))
+            end = _ts_to_date(m.get("end_time"))
+            resolution_date = end if norm_status != "active" else None
+            
             rows.append({
                 "market_id": f"kalshi_{ticker}",
                 "platform": "kalshi",
                 "title": m.get("title", ""),
                 "description": "",
                 "tags": "",
-                "start_date": _ts_to_date(m.get("start_time")),
-                "end_date": _ts_to_date(m.get("end_time")),
+                "start_date": start,
+                "end_date": end,
                 "volume": m.get("volume", 0),
-                "status": m.get("status", "unknown"),
+                "status": norm_status,
                 "condition_id": None,
                 "ticker": ticker,
                 "event_slug": m.get("event_ticker"),
-                "winning_side": str(m.get("result")) if m.get("result") is not None else None,
+                "winning_side": winning_side,
+                # New lifecycle columns
+                "created_date": start,
+                "resolution_date": resolution_date,
+                "resolution_value": str(result) if result is not None else None,
+                "active_start": start,
+                "active_end": resolution_date,
             })
     return pd.DataFrame(rows)
 
@@ -150,14 +204,12 @@ def detect_cross_platform_duplicates(markets_df: pd.DataFrame) -> pd.DataFrame:
     if poly.empty or kalshi.empty:
         return pd.DataFrame(columns=["poly_id", "kalshi_id", "poly_title", "kalshi_title"])
 
-    # Simple normalized title matching
     def normalize_title(t):
         return re.sub(r'[^a-z0-9 ]', '', t.lower().strip())
 
     poly["norm"] = poly["title"].apply(normalize_title)
     kalshi["norm"] = kalshi["title"].apply(normalize_title)
 
-    # Find exact matches on normalized titles
     merged = poly.merge(kalshi, on="norm", suffixes=("_poly", "_kalshi"))
     dupes = merged[["market_id_poly", "market_id_kalshi", "title_poly", "title_kalshi"]].rename(
         columns={"market_id_poly": "poly_id", "market_id_kalshi": "kalshi_id",
@@ -212,6 +264,12 @@ def run_normalization():
     markets.to_parquet(OUTPUT_DIR / "markets.parquet", index=False)
     logger.info(f"Saved {len(markets)} markets to markets.parquet "
                 f"(poly={len(poly_markets)}, kalshi={len(kalshi_markets)})")
+    
+    # Report status breakdown
+    if not markets.empty:
+        status_counts = markets["status"].value_counts()
+        for s, c in status_counts.items():
+            logger.info(f"  {s}: {c} markets")
 
     # Prices
     logger.info("Building price series...")
