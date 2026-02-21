@@ -252,6 +252,66 @@ The LLM classifier and statistical clustering agree on 46% of markets. Disagreem
 4. Conditional rebalancing on resolution events
 5. Factor decomposition of basket returns
 6. Live basket tracking with streaming prices
+7. ~~Side/Exposure system~~ ✅ **Implemented** (see below)
+
+---
+
+## Side / Exposure System
+
+### The Problem
+
+Every prediction market position has a SIDE. Treating all markets as "long YES" is incorrect:
+
+| Market Title | YES means | Real exposure |
+|---|---|---|
+| "Will US invade Iran?" | Invasion happens | Long invasion risk |
+| "Will US NOT withdraw from NATO?" | Non-withdrawal confirmed | Short withdrawal risk |
+| "Will there be a recession?" | Recession happens | Short economic growth |
+| Categorical: "Harris wins" | Harris specifically wins | Long Harris, short field |
+
+Holding both YES and NO of the same event = net zero exposure = useless diversification.
+
+### Architecture
+
+```
+src/exposure/
+├── side_detection.py     # Regex + pattern matching for phrasing polarity
+├── normalization.py      # ExposureInfo dataclass, return adjustment
+├── basket_rules.py       # Conflict detection, opposing exposure filter
+└── report.py             # Portfolio-level exposure report
+```
+
+### Side Detection
+
+Three-step process for each market:
+
+1. **Phrasing polarity** — parse title for negation patterns (NOT, won't, fail to, below, under, recession, veto, etc.). Double negation ("won't fall below") → positive.
+2. **Token side** — which token we track (YES/NO for binary, outcome name for categorical).
+3. **Exposure direction** — combine polarity × token side:
+
+| Phrasing | Token | Direction |
+|---|---|---|
+| positive | YES | **long** |
+| positive | NO | short |
+| negative | YES | **short** |
+| negative | NO | long |
+
+`normalized_direction`: +1.0 (long) or -1.0 (short). Used to flip returns so all positions are in a consistent framework.
+
+### Basket Construction Rules
+
+1. **One side per event**: if multiple CUSIPs from the same event pass eligibility, keep the most liquid one.
+2. **No opposing exposures**: long YES + long NO of same event detected and removed.
+3. **Categorical dedup**: multiple outcomes from same categorical event flagged as fake diversification.
+4. **Exposure-aware returns**: `adjusted_return = raw_return × normalized_direction`
+
+### Exposure Report
+
+For each basket, generates:
+- Net directional exposure (overall and per theme)
+- Hidden cancellation detection
+- Contradiction flags
+- Human-readable summary (e.g., "this basket is net LONG Middle East conflict")
 
 ---
 

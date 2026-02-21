@@ -146,3 +146,33 @@ def filter_eligible_markets(
     logger.info(f"Eligibility: {len(eligible)}/{len(markets)} markets pass")
     
     return eligible, report
+
+
+def filter_exposure_conflicts(
+    eligible_markets: list[dict],
+    exposure_map: dict,
+    liquidity: Optional[dict] = None,
+) -> list[dict]:
+    """Post-eligibility filter: remove opposing exposures within same event.
+    
+    Uses the exposure system to ensure one side per event in the basket.
+    
+    Args:
+        eligible_markets: Markets that passed eligibility filters
+        exposure_map: {market_id: ExposureInfo} from exposure normalization
+        liquidity: {market_id: liquidity} for tie-breaking
+    
+    Returns:
+        Filtered list of markets with no exposure conflicts.
+    """
+    from src.exposure.basket_rules import filter_opposing_exposures
+    
+    market_ids = [m["market_id"] for m in eligible_markets]
+    clean_ids = set(filter_opposing_exposures(market_ids, exposure_map, liquidity))
+    
+    filtered = [m for m in eligible_markets if m["market_id"] in clean_ids]
+    removed = len(eligible_markets) - len(filtered)
+    if removed > 0:
+        logger.info(f"Exposure filter removed {removed} conflicting markets")
+    
+    return filtered
