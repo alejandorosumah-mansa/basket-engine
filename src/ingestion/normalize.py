@@ -9,7 +9,7 @@ import numpy as np
 import pandas as pd
 
 from .cache import Cache
-from src.classification.ticker_cusip import classify_tickers_cusips
+from src.classification.four_layer_taxonomy import process_markets_with_corrected_taxonomy
 
 logger = logging.getLogger(__name__)
 
@@ -257,9 +257,9 @@ def run_normalization():
     markets = pd.concat([poly_markets, kalshi_markets], ignore_index=True)
     markets = markets.drop_duplicates(subset=["market_id"])
     
-    # Add ticker/CUSIP classification
-    logger.info("Classifying tickers and CUSIPs...")
-    markets = classify_tickers_cusips(markets, use_fuzzy=True)
+    # Add ticker/CUSIP/event/theme classification (four-layer taxonomy)
+    logger.info("Classifying with four-layer taxonomy...")
+    markets = process_markets_with_corrected_taxonomy(markets)
     
     markets.to_parquet(OUTPUT_DIR / "markets.parquet", index=False)
     logger.info(f"Saved {len(markets)} markets to markets.parquet "
