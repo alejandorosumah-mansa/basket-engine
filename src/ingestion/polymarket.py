@@ -79,28 +79,79 @@ def fetch_candlesticks(condition_id: str, cache: Cache,
     now = int(time.time())
     start = int((datetime.now(timezone.utc) - timedelta(days=30 * months_back)).timestamp())
 
+    # Try primary candlesticks endpoint first
     try:
         data = api_get(f"/polymarket/candlesticks/{condition_id}", params={
             "start_time": start,
             "end_time": now,
             "interval": 1440  # daily
         })
+        candles_raw = data.get("candlesticks", [])
+
+        # Response is [candles_list, token_info] - extract candles
+        candles = []
+        if candles_raw and isinstance(candles_raw[0], list):
+            candles = candles_raw[0]
+        elif candles_raw and isinstance(candles_raw[0], dict):
+            candles = candles_raw
+
+        if candles:  # Success with candlesticks
+            cache.put(cache_key, candles)
+            cache.set_last_fetch(cache_key)
+            return candles
+        
     except Exception as e:
-        logger.warning(f"Failed to fetch candles for {condition_id[:20]}...: {e}")
-        return []
+        logger.warning(f"Candlesticks failed for {condition_id[:20]}...: {e}")
 
-    candles_raw = data.get("candlesticks", [])
+    # Fallback: Try point-in-time price history (more reliable but slower)
+    logger.info(f"Trying fallback price history for {condition_id[:20]}...")
+    try:
+        fallback_candles = fetch_price_history_fallback(condition_id, start, now)
+        if fallback_candles:
+            cache.put(cache_key, fallback_candles)
+            cache.set_last_fetch(cache_key)
+            return fallback_candles
+    except Exception as e:
+        logger.warning(f"Price history fallback failed for {condition_id[:20]}...: {e}")
 
-    # Response is [candles_list, token_info] - extract candles
-    candles = []
-    if candles_raw and isinstance(candles_raw[0], list):
-        candles = candles_raw[0]
-    elif candles_raw and isinstance(candles_raw[0], dict):
-        candles = candles_raw
-
-    cache.put(cache_key, candles)
+    logger.warning(f"All methods failed for {condition_id[:20]}...")
+    cache.put(cache_key, [])  # Cache empty result to avoid repeated failures
     cache.set_last_fetch(cache_key)
-    return candles
+    return []
+
+
+def fetch_price_history_fallback(condition_id: str, start_ts: int, end_ts: int) -> list:
+    """Fallback method: fetch price points at regular intervals and construct pseudo-candles."""
+    import time as time_module
+    
+    pseudo_candles = []
+    current = start_ts
+    day_seconds = 86400
+    
+    while current < end_ts:
+        try:
+            # Fetch price at this timestamp
+            data = api_get(f"/polymarket/market-price/{condition_id}", params={
+                "at_time": current
+            })
+            
+            if data and "price" in data:
+                price = float(data["price"])
+                pseudo_candles.append({
+                    "end_period_ts": current,
+                    "price": {"close_dollars": str(price)},
+                    "volume": 0  # Unknown volume for fallback method
+                })
+            
+            current += day_seconds
+            time_module.sleep(0.1)  # Respect rate limits
+            
+        except Exception as e:
+            logger.debug(f"Skipping timestamp {current} for {condition_id}: {e}")
+            current += day_seconds
+            continue
+    
+    return pseudo_candles
 
 
 def run_polymarket_ingestion(force: bool = False):
@@ -109,10 +160,10 @@ def run_polymarket_ingestion(force: bool = False):
     cache = Cache("polymarket")
 
     markets = fetch_all_markets(cache, force=force)
-    # Only fetch candles for markets with meaningful volume (>$10K)
-    # volume_total is in micro-units (or raw), filter aggressively to keep run time manageable
-    # At 1 QPS, 2000 markets = ~33 min which is acceptable
-    MIN_VOL = 5000000  # $5M volume threshold for manageable candle fetch time
+    # Fetch candles for more markets - lowered threshold to improve coverage
+    # CHANGED: Reduced from $5M to $500K to capture more markets with meaningful activity
+    # This will increase fetch time but provides much better data coverage
+    MIN_VOL = 500000  # $500K volume threshold for better coverage
     vol_markets = [m for m in markets if (m.get("volume_total") or 0) >= MIN_VOL]
     logger.info(f"Fetching candlesticks for {len(vol_markets)} markets with volume >= ${MIN_VOL:,} "
                 f"(skipping {len(markets) - len(vol_markets)} low-volume)...")

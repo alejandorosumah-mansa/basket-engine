@@ -106,7 +106,7 @@ def run_backtest(
             market_ids=market_ids,
             returns_df=returns_df,
             volumes=volumes or vol_by_market,
-            liquidity=volumes or vol_by_market,  # Use volume as liquidity proxy
+            liquidity=liquidity or vol_by_market,  # Fixed: use liquidity parameter correctly
             vol_window=ws.get("volatility_window_days", 30),
             max_weight=bs["max_single_weight"],
             min_weight=bs["min_single_weight"],
@@ -143,12 +143,14 @@ def run_backtest(
             if len(eligible_ids) >= bs["min_markets"]:
                 # Get returns up to this date for vol calculation
                 hist_returns = returns_df[returns_df["date"] <= date]
+                # For backtest, we distinguish between volume (for volume_weighted) 
+                # and liquidity (for risk parity cap) - use volume as proxy but could be different
                 engine.rebalance(
                     date=date_dt,
                     eligible_market_ids=eligible_ids,
                     returns_df=hist_returns,
                     volumes=vol_by_market,
-                    liquidity=vol_by_market,
+                    liquidity=vol_by_market,  # In a real system, this would be separate liquidity data
                 )
         
         # Get today's returns

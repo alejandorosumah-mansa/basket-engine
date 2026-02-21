@@ -61,11 +61,17 @@ def volume_weighted(volumes: dict[str, float]) -> dict[str, float]:
 def apply_liquidity_cap(
     weights: dict[str, float],
     liquidity: dict[str, float],
+    cap_multiplier: float = 2.0,
 ) -> dict[str, float]:
-    """Cap weights by liquidity share, then re-normalize.
+    """Cap weights by liquidity share with more reasonable limits.
     
-    w_i = min(w_i, liquidity_i / sum_liquidity)
-    Then re-normalize so weights sum to 1.
+    Instead of capping at liquidity_share, cap at cap_multiplier * liquidity_share
+    to allow some deviation from pure liquidity weighting.
+    
+    Args:
+        weights: Original weights to cap
+        liquidity: Liquidity values 
+        cap_multiplier: Allow weights up to this multiple of liquidity share
     """
     total_liq = sum(liquidity.values())
     if total_liq <= 0:
@@ -73,19 +79,21 @@ def apply_liquidity_cap(
     
     liq_shares = {m: liquidity.get(m, 0) / total_liq for m in weights}
     
-    # Iterative capping (may need multiple rounds)
+    # Cap at cap_multiplier * liquidity share (more reasonable)
     capped = dict(weights)
-    for _ in range(20):
-        any_capped = False
-        for m in list(capped.keys()):
-            if capped[m] > liq_shares.get(m, 0):
-                capped[m] = liq_shares[m]
-                any_capped = True
+    any_capped = False
+    
+    for m in list(capped.keys()):
+        max_allowed = liq_shares.get(m, 0) * cap_multiplier
+        if capped[m] > max_allowed:
+            capped[m] = max_allowed
+            any_capped = True
+    
+    # Re-normalize if any weights were capped
+    if any_capped:
         total = sum(capped.values())
         if total > 0:
             capped = {m: w / total for m, w in capped.items()}
-        if not any_capped:
-            break
     
     return capped
 
@@ -202,7 +210,7 @@ def compute_weights(
             
             # Apply liquidity cap
             if liquidity_cap and liquidity and method == "risk_parity_liquidity_cap":
-                weights = apply_liquidity_cap(weights, liquidity)
+                weights = apply_liquidity_cap(weights, liquidity, cap_multiplier=2.0)
     else:
         logger.warning(f"Unknown method '{method}', using equal weight")
         weights = equal_weights(market_ids)

@@ -45,9 +45,14 @@ def check_eligibility(
     reference_date = reference_date or datetime.now()
     reasons = []
     
-    # Must be active (not resolved)
+    # Must be active (not resolved)  
     if market.get("resolution") is not None:
         reasons.append("resolved")
+    
+    # Must be open/active status (exclude closed/cancelled markets)
+    status = market.get("status", "unknown").lower()
+    if status not in ["open", "active", "live"]:
+        reasons.append(f"status_not_active:{status}")
     
     # Days to expiry
     end_date = market.get("end_date")
