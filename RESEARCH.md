@@ -16,6 +16,8 @@ This research implements thematic baskets for prediction markets — investable 
 
 **Key finding**: Prediction market baskets exhibit low cross-theme correlation, confirming genuine thematic differentiation. Returns are modest but realistic once the probability-change methodology is applied correctly.
 
+4. **Exposure normalization**: LLM-based side detection (GPT-4o-mini) classifies all 20,180 markets as long or short exposure, enabling direction-adjusted returns and conflict-free basket construction.
+
 ## 2. The CUSIP → Ticker → Event → Theme Taxonomy
 
 | Layer | Analogy | Count | Description |
@@ -103,7 +105,34 @@ LLM themes compared against statistical clusters:
 
 ![Theme Distribution](data/outputs/charts/theme_distribution_events.png)
 
-## 5. Basket Construction
+## 5. Exposure / Side Detection
+
+Every prediction market has a **directional exposure**: buying YES on "Will there be a recession?" is economically **short** (you profit from bad outcomes), while buying YES on "Will BTC hit 100K?" is **long**.
+
+### LLM Classification
+All 20,180 markets classified by GPT-4o-mini with temperature=0:
+- **Long**: 18,805 (93.2%) — YES profits from positive outcomes
+- **Short**: 1,375 (6.8%) — YES profits from negative outcomes  
+- **Average confidence**: 0.73
+
+### Impact on Returns
+Raw returns treat all price increases as positive. Exposure-adjusted returns flip the sign for short-exposure markets:
+- `adjusted_return = raw_return × normalized_direction`
+- 37,532 return observations (10.1%) were sign-flipped
+- Correlation between raw and adjusted: 0.7364
+
+This is critical: without exposure adjustment, a basket holding "Will there be a recession?" alongside "Will GDP grow 3%?" would show false diversification — both move in the same direction during a crisis, but raw returns would show them as offsetting.
+
+### Basket Construction Rules
+- **No opposing exposures** in same basket (long + short on same event = cancellation)
+- **One side per event** — if multiple CUSIPs exist, keep the most liquid
+- Exposure conflicts are filtered before weight computation
+
+![Exposure Distribution](data/outputs/charts/exposure_distribution.png)
+![Exposure by Theme](data/outputs/charts/exposure_by_theme.png)
+![Raw vs Adjusted Returns](data/outputs/charts/raw_vs_adjusted_returns.png)
+
+## 6. Basket Construction
 
 ### Eligibility
 | Filter | Active Markets | Backtest (All) |
@@ -139,15 +168,15 @@ LLM themes compared against statistical clusters:
 2. **Risk Parity (Liquidity-Capped)**: Inverse-volatility, capped at 2× liquidity share.
 3. **Volume-Weighted**: Proportional to total volume. Reflects market conviction.
 
-## 6. Backtest Results
+## 7. Backtest Results
 
 ### Combined Basket (All Serious Themes)
 
 | Method | Total Return | Ann. Return | Sharpe | Max DD | Volatility | Calmar | Hit Rate | Turnover |
 |--------|-------------|-------------|--------|--------|------------|--------|----------|----------|
-| Equal | -33.13% | -42.69% | -1.63 | -35.09% | 24.51% | -1.22 | 27.7% | 32.2% |
-| Risk Parity Liquidity Cap | -0.31% | -0.43% | -12.95 | -0.45% | 0.41% | -0.95 | 32.6% | 17.7% |
-| Volume Weighted | -31.95% | -41.29% | -1.57 | -32.00% | 24.33% | -1.29 | 35.2% | 33.4% |
+| Equal | -27.84% | -36.32% | -1.36 | -30.81% | 24.14% | -1.18 | 28.8% | 32.2% |
+| Risk Parity Liquidity Cap | -0.11% | -0.15% | -13.33 | -0.47% | 0.38% | -0.31 | 34.8% | 17.7% |
+| Volume Weighted | -18.76% | -24.98% | -0.88 | -25.81% | 24.34% | -0.97 | 35.2% | 33.4% |
 
 ![NAV Time Series](data/outputs/charts/nav_time_series.png)
 ![Methodology Comparison](data/outputs/charts/methodology_comparison.png)
@@ -156,51 +185,51 @@ LLM themes compared against statistical clusters:
 
 | Theme | Method | Total Return | Sharpe | Max DD | Volatility | Hit Rate |
 |-------|--------|-------------|--------|--------|------------|----------|
-| Ai Technology | Equal | 14.67% | 0.52 | -13.72% | 24.87% | 37.0% |
+| Ai Technology | Equal | 17.64% | 0.64 | -13.72% | 24.81% | 36.5% |
 | Ai Technology | Risk Parity Liquidit | 38.40% | 0.91 | -22.47% | 43.86% | 30.4% |
 | Ai Technology | Volume Weighted | 38.48% | 0.91 | -22.47% | 43.90% | 30.4% |
-| China Us | Equal | -0.54% | -0.39 | -8.16% | 12.34% | 30.3% |
-| China Us | Risk Parity Liquidit | -1.28% | -0.21 | -16.96% | 20.03% | 33.3% |
-| China Us | Volume Weighted | -1.28% | -0.21 | -16.96% | 20.03% | 33.3% |
-| Climate Environment | Equal | -8.94% | -3.67 | -9.73% | 3.77% | 9.5% |
+| China Us | Equal | -3.52% | -0.66 | -10.63% | 11.77% | 33.0% |
+| China Us | Risk Parity Liquidit | -8.18% | -0.55 | -17.88% | 20.09% | 32.2% |
+| China Us | Volume Weighted | -8.18% | -0.55 | -17.88% | 20.09% | 32.2% |
+| Climate Environment | Equal | -7.50% | -3.54 | -7.79% | 3.49% | 10.2% |
 | Climate Environment | Risk Parity Liquidit | 0.00% | 0.00 | 0.00% | 0.00% | 0.0% |
 | Climate Environment | Volume Weighted | 0.00% | 0.00 | 0.00% | 0.00% | 0.0% |
-| Crypto Digital | Equal | -34.31% | -2.38 | -35.17% | 18.24% | 39.8% |
-| Crypto Digital | Risk Parity Liquidit | 11.84% | 0.57 | -5.35% | 11.14% | 37.1% |
-| Crypto Digital | Volume Weighted | -1.65% | -0.18 | -20.31% | 22.28% | 40.5% |
-| Energy Commodities | Equal | -13.39% | -2.15 | -13.98% | 31.17% | 14.8% |
+| Crypto Digital | Equal | -52.45% | -2.16 | -52.45% | 32.17% | 39.0% |
+| Crypto Digital | Risk Parity Liquidit | 9.15% | 0.37 | -5.60% | 10.53% | 39.0% |
+| Crypto Digital | Volume Weighted | -21.97% | -0.64 | -35.77% | 34.16% | 41.7% |
+| Energy Commodities | Equal | -12.99% | -2.02 | -13.16% | 32.05% | 14.8% |
 | Energy Commodities | Risk Parity Liquidit | 0.00% | 0.00 | 0.00% | 0.00% | 0.0% |
-| Energy Commodities | Volume Weighted | -13.39% | -2.15 | -13.98% | 31.17% | 14.8% |
-| Europe Politics | Equal | -0.42% | -1.13 | -3.35% | 4.70% | 19.3% |
+| Energy Commodities | Volume Weighted | -12.99% | -2.02 | -13.16% | 32.05% | 14.8% |
+| Europe Politics | Equal | 9.23% | 0.84 | -2.16% | 4.19% | 26.1% |
 | Europe Politics | Risk Parity Liquidit | -0.56% | -1.64 | -2.30% | 3.34% | 3.8% |
 | Europe Politics | Volume Weighted | -0.56% | -1.64 | -2.30% | 3.34% | 3.8% |
-| Fed Monetary Policy | Equal | 2.84% | -0.30 | -5.04% | 6.99% | 42.0% |
-| Fed Monetary Policy | Risk Parity Liquidit | -1.24% | -1.41 | -3.80% | 4.31% | 29.5% |
-| Fed Monetary Policy | Volume Weighted | -2.01% | -1.05 | -4.26% | 6.41% | 38.3% |
-| Legal Regulatory | Equal | 5.70% | 0.13 | -19.11% | 24.08% | 29.5% |
-| Legal Regulatory | Risk Parity Liquidit | 11.06% | 0.32 | -23.13% | 36.80% | 33.0% |
-| Legal Regulatory | Volume Weighted | 14.05% | 0.39 | -23.13% | 37.32% | 31.1% |
-| Middle East | Equal | -6.13% | -0.60 | -19.63% | 16.31% | 42.8% |
-| Middle East | Risk Parity Liquidit | -31.55% | -1.76 | -34.54% | 22.01% | 31.1% |
-| Middle East | Volume Weighted | -29.30% | -1.42 | -39.63% | 24.60% | 45.1% |
-| Pandemic Health | Equal | -0.17% | -0.42 | -4.56% | 11.54% | 12.7% |
-| Pandemic Health | Risk Parity Liquidit | -5.67% | -2.50 | -5.67% | 9.28% | 7.6% |
-| Pandemic Health | Volume Weighted | -5.67% | -2.50 | -5.67% | 9.28% | 7.6% |
-| Russia Ukraine | Equal | -13.17% | -2.06 | -16.07% | 8.77% | 35.6% |
+| Fed Monetary Policy | Equal | -2.92% | -1.16 | -7.73% | 6.58% | 35.6% |
+| Fed Monetary Policy | Risk Parity Liquidit | 3.42% | -0.32 | -2.88% | 5.12% | 31.4% |
+| Fed Monetary Policy | Volume Weighted | 2.80% | -0.30 | -3.42% | 6.99% | 38.6% |
+| Legal Regulatory | Equal | 7.86% | 0.21 | -12.05% | 23.23% | 33.7% |
+| Legal Regulatory | Risk Parity Liquidit | 13.73% | 0.38 | -26.88% | 36.53% | 30.7% |
+| Legal Regulatory | Volume Weighted | 17.43% | 0.46 | -26.88% | 37.08% | 28.4% |
+| Middle East | Equal | 2.37% | -0.11 | -10.35% | 15.29% | 47.0% |
+| Middle East | Risk Parity Liquidit | -28.43% | -1.57 | -37.20% | 21.94% | 31.8% |
+| Middle East | Volume Weighted | -31.76% | -1.61 | -40.36% | 23.93% | 44.3% |
+| Pandemic Health | Equal | -4.30% | -1.19 | -8.20% | 15.08% | 11.4% |
+| Pandemic Health | Risk Parity Liquidit | 5.72% | 1.42 | -2.98% | 9.28% | 16.5% |
+| Pandemic Health | Volume Weighted | 5.72% | 1.42 | -2.98% | 9.28% | 16.5% |
+| Russia Ukraine | Equal | -6.71% | -1.32 | -9.03% | 8.56% | 38.6% |
 | Russia Ukraine | Risk Parity Liquidit | -11.13% | -0.86 | -19.00% | 17.21% | 24.6% |
-| Russia Ukraine | Volume Weighted | -15.96% | -1.05 | -19.33% | 18.95% | 36.7% |
+| Russia Ukraine | Volume Weighted | -13.67% | -0.91 | -19.33% | 18.93% | 37.5% |
 | Space Frontier | Equal | -9.55% | -1.42 | -14.19% | 16.90% | 18.5% |
 | Space Frontier | Risk Parity Liquidit | 0.00% | 0.00 | 0.00% | 0.00% | 0.0% |
 | Space Frontier | Volume Weighted | -9.55% | -1.42 | -14.19% | 16.90% | 18.5% |
-| Sports Entertainment | Equal | 63.32% | 1.68 | -6.18% | 26.88% | 44.3% |
+| Sports Entertainment | Equal | 61.08% | 1.63 | -6.57% | 26.92% | 43.2% |
 | Sports Entertainment | Risk Parity Liquidit | -0.42% | -7.80 | -0.74% | 0.69% | 31.1% |
-| Sports Entertainment | Volume Weighted | 3.54% | -0.12 | -8.03% | 9.75% | 49.6% |
-| Us Economic | Equal | -0.21% | -0.84 | -3.33% | 5.95% | 23.9% |
-| Us Economic | Risk Parity Liquidit | -1.66% | -3.93 | -1.68% | 1.68% | 13.6% |
-| Us Economic | Volume Weighted | -1.66% | -3.92 | -1.69% | 1.68% | 13.6% |
-| Us Elections | Equal | 23.11% | 1.14 | -9.56% | 13.82% | 53.0% |
+| Sports Entertainment | Volume Weighted | 15.12% | 0.92 | -3.72% | 9.71% | 50.8% |
+| Us Economic | Equal | 4.11% | -0.17 | -3.80% | 5.82% | 27.7% |
+| Us Economic | Risk Parity Liquidit | 1.74% | -1.96 | -0.73% | 1.71% | 18.9% |
+| Us Economic | Volume Weighted | 1.74% | -1.96 | -0.73% | 1.71% | 18.9% |
+| Us Elections | Equal | 9.86% | 0.36 | -7.41% | 13.66% | 46.2% |
 | Us Elections | Risk Parity Liquidit | -1.54% | -3.31 | -2.91% | 1.95% | 31.8% |
-| Us Elections | Volume Weighted | 13.50% | 0.79 | -4.65% | 9.54% | 53.4% |
+| Us Elections | Volume Weighted | 5.40% | 0.05 | -6.32% | 9.05% | 51.1% |
 
 ![Sharpe Comparison](data/outputs/charts/sharpe_comparison.png)
 ![Max Drawdown Comparison](data/outputs/charts/max_drawdown_comparison.png)
@@ -213,7 +242,7 @@ LLM themes compared against statistical clusters:
 
 ![Monthly Returns](data/outputs/charts/monthly_returns.png)
 
-## 7. Interpretation
+## 8. Interpretation
 
 ### Why Returns Are Small
 
@@ -224,17 +253,17 @@ With absolute probability changes, basket returns are bounded:
 - This is **correct** — prediction market baskets are low-volatility instruments
 
 ### Best Method: Volume Weighted
-Sharpe: -1.57, Total Return: -31.95%
+Sharpe: -0.88, Total Return: -18.76%
 
 Equal weight is recommended as the default: short histories and resolution discontinuities make sophisticated estimation unreliable.
 
-## 8. Classification Agreement
+## 9. Classification Agreement
 
 The LLM classifier and statistical clustering agree on 46% of markets. Disagreements primarily occur in:
 
 ![Classification Agreement](data/outputs/charts/classification_agreement.png)
 
-## 9. Limitations
+## 10. Limitations
 
 1. **Absolute returns methodology**: While more correct than pct_change, the NAV formula still uses multiplicative chain-linking which slightly distorts for large probability swings.
 2. **Short histories**: Most markets live weeks to months. Annualized metrics are extrapolations.
@@ -244,7 +273,7 @@ The LLM classifier and statistical clustering agree on 46% of markets. Disagreem
 6. **Resolution discontinuity**: Markets jump to 0/1 at resolution, creating artificial return spikes even with absolute changes.
 7. **Survivorship bias**: Only listed markets observed.
 
-## 10. Next Steps
+## 11. Next Steps
 
 1. Multi-platform data (Kalshi, Metaculus)
 2. Resolution-aware chain-linking (lock terminal return, remove from basket)
@@ -252,66 +281,6 @@ The LLM classifier and statistical clustering agree on 46% of markets. Disagreem
 4. Conditional rebalancing on resolution events
 5. Factor decomposition of basket returns
 6. Live basket tracking with streaming prices
-7. ~~Side/Exposure system~~ ✅ **Implemented** (see below)
-
----
-
-## Side / Exposure System
-
-### The Problem
-
-Every prediction market position has a SIDE. Treating all markets as "long YES" is incorrect:
-
-| Market Title | YES means | Real exposure |
-|---|---|---|
-| "Will US invade Iran?" | Invasion happens | Long invasion risk |
-| "Will US NOT withdraw from NATO?" | Non-withdrawal confirmed | Short withdrawal risk |
-| "Will there be a recession?" | Recession happens | Short economic growth |
-| Categorical: "Harris wins" | Harris specifically wins | Long Harris, short field |
-
-Holding both YES and NO of the same event = net zero exposure = useless diversification.
-
-### Architecture
-
-```
-src/exposure/
-├── side_detection.py     # Regex + pattern matching for phrasing polarity
-├── normalization.py      # ExposureInfo dataclass, return adjustment
-├── basket_rules.py       # Conflict detection, opposing exposure filter
-└── report.py             # Portfolio-level exposure report
-```
-
-### Side Detection
-
-Three-step process for each market:
-
-1. **Phrasing polarity** — parse title for negation patterns (NOT, won't, fail to, below, under, recession, veto, etc.). Double negation ("won't fall below") → positive.
-2. **Token side** — which token we track (YES/NO for binary, outcome name for categorical).
-3. **Exposure direction** — combine polarity × token side:
-
-| Phrasing | Token | Direction |
-|---|---|---|
-| positive | YES | **long** |
-| positive | NO | short |
-| negative | YES | **short** |
-| negative | NO | long |
-
-`normalized_direction`: +1.0 (long) or -1.0 (short). Used to flip returns so all positions are in a consistent framework.
-
-### Basket Construction Rules
-
-1. **One side per event**: if multiple CUSIPs from the same event pass eligibility, keep the most liquid one.
-2. **No opposing exposures**: long YES + long NO of same event detected and removed.
-3. **Categorical dedup**: multiple outcomes from same categorical event flagged as fake diversification.
-4. **Exposure-aware returns**: `adjusted_return = raw_return × normalized_direction`
-
-### Exposure Report
-
-For each basket, generates:
-- Net directional exposure (overall and per theme)
-- Hidden cancellation detection
-- Contradiction flags
-- Human-readable summary (e.g., "this basket is net LONG Middle East conflict")
 
 ---
 

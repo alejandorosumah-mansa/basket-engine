@@ -1,174 +1,246 @@
-"""Detect phrasing polarity and token side from market titles.
+"""LLM-based exposure/side detection for prediction market titles.
 
-Determines whether a YES token price increase represents a "positive" or
-"negative" real-world outcome, accounting for negation patterns in market
-phrasing.
+Uses gpt-4o-mini to determine what buying the YES token means in real-world terms.
+Processes markets in batches with caching for efficiency.
 """
 
-import re
+import json
 import logging
+import os
+from pathlib import Path
 from typing import Optional
+
+import openai
 
 logger = logging.getLogger(__name__)
 
-# Negation patterns that flip polarity.
-# If a title matches any of these, YES = negative phrasing (the event described
-# is a non-occurrence or downside scenario).
-NEGATION_PATTERNS = [
-    # Explicit negation
-    r"\bnot\b",
-    r"\bno\b(?!\s+\d)",  # "no" but not "no. 1"
-    r"\bnot\b",
-    r"\bwon'?t\b",
-    r"\bwill\s+not\b",
-    r"\bwon'?t\b",
-    r"\bdoes\s*n'?t\b",
-    r"\bdo\s*n'?t\b",
-    r"\bcan'?t\b",
-    r"\bcannot\b",
-    r"\bfail(s|ed)?\s+to\b",
-    r"\brefuse[sd]?\s+to\b",
-    r"\bneither\b",
-    r"\bnever\b",
-    # Comparative negatives
-    r"\bless\s+than\b",
-    r"\bunder\b(?!\s*(secretary|dog|armour|world))",
-    r"\bbelow\b",
-    r"\bfewer\s+than\b",
-    r"\bfall(s|ing)?\b.*\b(below|under)\b",
-    r"\bdecline\b",
-    r"\bdecrease\b",
-    r"\bdrop(s|ping)?\s+(below|under|to)\b",
-    r"\blose[s]?\b",
-    # Negative outcomes
-    r"\bbe\s+eliminated\b",
-    r"\bbe\s+fired\b",
-    r"\bbe\s+removed\b",
-    r"\bbe\s+defeated\b",
-    r"\bdefault\b",
-    r"\brecession\b",
-    r"\bshutdown\b",
-    r"\bveto(ed|es|ing)?\b",
-    r"\bwithdraw(s|al)?\b",
-]
+PROJECT_ROOT = Path(__file__).parent.parent.parent
+CACHE_PATH = PROJECT_ROOT / "data" / "processed" / "exposure_classifications.json"
 
-# Compiled patterns (case-insensitive)
-_NEGATION_RE = [re.compile(p, re.IGNORECASE) for p in NEGATION_PATTERNS]
+SYSTEM_PROMPT = """You are an expert at analyzing prediction market titles to determine the real-world exposure of buying the YES token.
 
-# Positive outcome patterns – these override negation if both match
-# (e.g., "Will Bitcoin NOT fall below 50K?" has negation of a negative → positive)
-DOUBLE_NEGATION_PATTERNS = [
-    r"\bnot\b.*\b(fall|drop|decline|decrease|lose|fail)\b",
-    r"\bwon'?t\b.*\b(fall|drop|decline|decrease|lose|fail)\b",
-    r"\bavoid\b.*\b(recession|default|shutdown)\b",
-]
-_DOUBLE_NEGATION_RE = [re.compile(p, re.IGNORECASE) for p in DOUBLE_NEGATION_PATTERNS]
+For each market, determine:
+1. exposure_direction: "long" or "short"
+   - "long" = buying YES means you profit when the described event/outcome HAPPENS or increases
+   - "short" = buying YES means you profit when something NEGATIVE happens (recession, decline, failure, loss, etc.)
+   
+2. exposure_description: A one-line description of what buying YES means (e.g., "Long US military action against Iran", "Short Bitcoin price")
 
-# Over/under patterns for sports/numeric markets
-OVER_UNDER_PATTERNS = [
-    (r"\b(over|above|more\s+than|higher\s+than|exceed|surpass)\b", "positive"),
-    (r"\b(under|below|less\s+than|lower\s+than|fewer\s+than)\b", "negative"),
-]
-_OVER_UNDER_RE = [(re.compile(p, re.IGNORECASE), d) for p, d in OVER_UNDER_PATTERNS]
+3. confidence: 0.0-1.0 how confident you are
+
+Key rules:
+- "Will X happen?" → usually "long" (betting X happens)
+- "Will X NOT happen?" or "Will X fail?" → depends on what X is
+- Double negatives: "Will Bitcoin NOT fall below 50K?" → "long" (betting on Bitcoin strength)
+- Negative outcomes: "Will unemployment rise?" → "short" (betting on economic weakness)
+- "Will there be a recession?" → "short" (betting on economic downturn)
+- Sports/entertainment outcomes are "long" by default (neutral exposure)
+- Elections: "Will X win?" → "long" (betting on X winning, politically neutral)
+- Price targets: "Will BTC hit 100K?" → "long" (betting on price increase)
+- "Will X be above/over Y?" → "long" if Y is a positive threshold
+- "Will X be below/under Y?" → "short" if measuring decline
+
+The key question is: if this YES token goes to 1.0, is the world generally in a BETTER state (long) or WORSE state (short) from an economic/markets perspective? For non-economic markets (sports, entertainment), default to "long"."""
+
+USER_PROMPT_TEMPLATE = """Classify these prediction markets. For each, return the exposure of buying YES.
+
+Markets:
+{markets_text}
+
+Return a JSON array with one object per market:
+[{{"market_id": "...", "exposure_direction": "long" or "short", "exposure_description": "...", "confidence": 0.0-1.0}}]
+
+Return ONLY the JSON array, no other text."""
 
 
-def detect_phrasing_polarity(title: str) -> str:
-    """Detect whether a market title is phrased positively or negatively.
+def _load_cache() -> dict:
+    """Load cached classifications."""
+    if CACHE_PATH.exists():
+        with open(CACHE_PATH) as f:
+            return json.load(f)
+    return {}
 
+
+def _save_cache(cache: dict):
+    """Save classifications cache."""
+    CACHE_PATH.parent.mkdir(parents=True, exist_ok=True)
+    with open(CACHE_PATH, "w") as f:
+        json.dump(cache, f, indent=2)
+
+
+def classify_batch_llm(markets: list[dict], client: openai.OpenAI) -> list[dict]:
+    """Classify a batch of markets using gpt-4o-mini.
+    
+    Args:
+        markets: List of {"market_id": ..., "title": ...}
+        client: OpenAI client
+        
     Returns:
-        'positive' - YES means something happens/increases (default)
-        'negative' - YES means something does NOT happen or decreases
-        'neutral'  - ambiguous / categorical outcome
+        List of {"market_id", "exposure_direction", "exposure_description", "confidence"}
     """
-    if not title:
-        return "neutral"
+    markets_text = "\n".join(
+        f'{i+1}. [ID: {m["market_id"]}] "{m["title"]}"'
+        for i, m in enumerate(markets)
+    )
+    
+    try:
+        response = client.chat.completions.create(
+            model="gpt-4o-mini",
+            temperature=0,
+            messages=[
+                {"role": "system", "content": SYSTEM_PROMPT},
+                {"role": "user", "content": USER_PROMPT_TEMPLATE.format(markets_text=markets_text)},
+            ],
+            response_format={"type": "json_object"},
+        )
+        
+        content = response.choices[0].message.content
+        parsed = json.loads(content)
+        
+        # Handle both {"results": [...]} and direct array
+        if isinstance(parsed, dict):
+            results = parsed.get("results", parsed.get("markets", parsed.get("classifications", [])))
+            if not results:
+                # Try first list value
+                for v in parsed.values():
+                    if isinstance(v, list):
+                        results = v
+                        break
+        elif isinstance(parsed, list):
+            results = parsed
+        else:
+            results = []
+            
+        return results
+        
+    except Exception as e:
+        logger.error(f"LLM classification failed: {e}")
+        # Return defaults
+        return [
+            {
+                "market_id": m["market_id"],
+                "exposure_direction": "long",
+                "exposure_description": f"Default: {m['title'][:50]}",
+                "confidence": 0.0,
+            }
+            for m in markets
+        ]
 
-    title_clean = title.strip()
 
-    # Check double negation first (negation of a negative = positive)
-    for pat in _DOUBLE_NEGATION_RE:
-        if pat.search(title_clean):
-            return "positive"
+def _process_batch(args):
+    """Process a single batch (for use with ThreadPoolExecutor)."""
+    batch_markets, client = args
+    results = classify_batch_llm(batch_markets, client)
+    parsed = {}
+    results_by_id = {r["market_id"]: r for r in results if "market_id" in r}
+    for m in batch_markets:
+        mid = m["market_id"]
+        if mid in results_by_id:
+            r = results_by_id[mid]
+            parsed[mid] = {
+                "exposure_direction": r.get("exposure_direction", "long"),
+                "exposure_description": r.get("exposure_description", ""),
+                "confidence": r.get("confidence", 0.5),
+            }
+        else:
+            parsed[mid] = {
+                "exposure_direction": "long",
+                "exposure_description": f"Default: {m['title'][:50]}",
+                "confidence": 0.0,
+            }
+    return parsed
 
-    # Check negation patterns
-    negation_count = sum(1 for pat in _NEGATION_RE if pat.search(title_clean))
-    if negation_count > 0:
-        return "negative"
 
-    # Check over/under patterns
-    for pat, direction in _OVER_UNDER_RE:
-        if pat.search(title_clean):
-            return direction
-
-    return "positive"
-
-
-def detect_token_side(
-    title: str,
-    outcomes: Optional[list[str]] = None,
-    tracked_token_index: int = 0,
-) -> str:
-    """Determine which token side we're tracking.
-
-    For binary markets, we track the YES token (index 0).
-    For categorical markets, the specific outcome name.
-
+def classify_all_markets(
+    markets_df,
+    title_col: str = "title",
+    id_col: str = "market_id",
+    batch_size: int = 30,
+    max_workers: int = 10,
+    force_reclassify: bool = False,
+) -> dict:
+    """Classify all markets using gpt-4o-mini with caching and concurrency.
+    
+    Args:
+        markets_df: DataFrame with market_id and title columns
+        title_col: Column name for market title
+        id_col: Column name for market ID
+        batch_size: Markets per API call
+        max_workers: Concurrent API calls
+        force_reclassify: If True, ignore cache
+        
     Returns:
-        'YES', 'NO', or the outcome name for categorical markets.
+        Dict of {market_id: {"exposure_direction", "exposure_description", "confidence"}}
     """
-    if outcomes and len(outcomes) > 2:
-        # Categorical market - return the specific outcome
-        if tracked_token_index < len(outcomes):
-            return outcomes[tracked_token_index]
-        return outcomes[0]
-
-    # Binary market
-    if outcomes and tracked_token_index < len(outcomes):
-        return outcomes[tracked_token_index].upper()
-    return "YES"
-
-
-def compute_exposure_direction(
-    phrasing_polarity: str,
-    token_side: str,
-) -> str:
-    """Compute the real-world exposure direction.
-
-    Combines phrasing polarity with token side to determine what "price goes up" means
-    in terms of real-world outcomes.
-
-    Returns:
-        'long'  - price up = positive real-world outcome (event happens, value increases)
-        'short' - price up = negative real-world outcome (event doesn't happen, value decreases)
-    """
-    # Truth table:
-    # positive phrasing + YES token = long  (event happens = good)
-    # positive phrasing + NO token  = short (event doesn't happen)
-    # negative phrasing + YES token = short (bad thing confirmed)
-    # negative phrasing + NO token  = long  (bad thing avoided)
-    # neutral + YES = long (default assumption)
-    # neutral + NO  = short
-
-    is_yes = token_side.upper() in ("YES", "")
-    is_negative = phrasing_polarity == "negative"
-
-    if is_yes:
-        return "short" if is_negative else "long"
-    else:
-        return "long" if is_negative else "short"
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+    import sys
+    
+    cache = {} if force_reclassify else _load_cache()
+    
+    # Find unclassified markets
+    all_markets = markets_df[[id_col, title_col]].drop_duplicates(subset=[id_col])
+    unclassified = all_markets[~all_markets[id_col].isin(cache)]
+    
+    if len(unclassified) == 0:
+        logger.info(f"All {len(all_markets)} markets already classified (cached)")
+        return cache
+    
+    logger.info(f"Classifying {len(unclassified)} markets ({len(cache)} cached) with {max_workers} workers")
+    
+    client = openai.OpenAI()
+    
+    # Build batch list
+    batch_markets_list = []
+    for i in range(0, len(unclassified), batch_size):
+        batch = unclassified.iloc[i:i+batch_size]
+        batch_markets_list.append([
+            {"market_id": row[id_col], "title": row[title_col]}
+            for _, row in batch.iterrows()
+        ])
+    
+    total_batches = len(batch_markets_list)
+    completed = 0
+    
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        futures = {
+            executor.submit(_process_batch, (batch, client)): idx
+            for idx, batch in enumerate(batch_markets_list)
+        }
+        
+        for future in as_completed(futures):
+            try:
+                result = future.result()
+                cache.update(result)
+                completed += 1
+                
+                if completed % 20 == 0 or completed == total_batches:
+                    _save_cache(cache)
+                    logger.info(f"  {completed}/{total_batches} batches done ({len(cache)} total)")
+                    sys.stdout.flush(); sys.stderr.flush()
+            except Exception as e:
+                logger.error(f"Batch failed: {e}")
+                completed += 1
+    
+    _save_cache(cache)
+    logger.info(f"Classification complete: {len(cache)} markets")
+    return cache
 
 
 def detect_side_batch(
     markets_df,
     title_col: str = "title",
     outcomes_col: Optional[str] = None,
+    id_col: str = "market_id",
+    force_reclassify: bool = False,
 ) -> "pd.DataFrame":
-    """Add side/exposure columns to a markets DataFrame.
+    """Add LLM-based side/exposure columns to a markets DataFrame.
 
     Adds columns:
-        - token_side: YES/NO/outcome name
-        - phrasing_polarity: positive/negative/neutral
-        - exposure_direction: long/short
+        - token_side: YES (always for binary)
+        - phrasing_polarity: positive/negative (from LLM)
+        - exposure_direction: long/short (from LLM)
+        - exposure_description: human-readable description
+        - exposure_confidence: LLM confidence score
         - normalized_direction: 1.0 (long) or -1.0 (short)
 
     Returns:
@@ -177,29 +249,121 @@ def detect_side_batch(
     import pandas as pd
 
     df = markets_df.copy()
-
-    df["phrasing_polarity"] = df[title_col].apply(detect_phrasing_polarity)
-
-    # Token side
-    if outcomes_col and outcomes_col in df.columns:
-        df["token_side"] = df.apply(
-            lambda r: detect_token_side(
-                r[title_col],
-                r[outcomes_col] if isinstance(r[outcomes_col], list) else None,
-            ),
-            axis=1,
-        )
-    else:
-        df["token_side"] = "YES"
-
-    df["exposure_direction"] = df.apply(
-        lambda r: compute_exposure_direction(r["phrasing_polarity"], r["token_side"]),
-        axis=1,
+    
+    # Run LLM classification
+    cache = classify_all_markets(
+        df, title_col=title_col, id_col=id_col, force_reclassify=force_reclassify
     )
-
+    
+    # Map results
+    df["exposure_direction"] = df[id_col].map(
+        lambda mid: cache.get(mid, {}).get("exposure_direction", "long")
+    )
+    df["exposure_description"] = df[id_col].map(
+        lambda mid: cache.get(mid, {}).get("exposure_description", "")
+    )
+    df["exposure_confidence"] = df[id_col].map(
+        lambda mid: cache.get(mid, {}).get("confidence", 0.0)
+    )
+    
+    # Derived columns
+    df["phrasing_polarity"] = df["exposure_direction"].map(
+        {"long": "positive", "short": "negative"}
+    ).fillna("positive")
+    
+    df["token_side"] = "YES"
+    if outcomes_col and outcomes_col in df.columns:
+        # For categorical markets, use the outcome name
+        df.loc[df[outcomes_col].apply(lambda x: isinstance(x, list) and len(x) > 2), "token_side"] = (
+            df.loc[df[outcomes_col].apply(lambda x: isinstance(x, list) and len(x) > 2), outcomes_col]
+            .apply(lambda x: x[0] if isinstance(x, list) else "YES")
+        )
+    
     df["normalized_direction"] = df["exposure_direction"].map({"long": 1.0, "short": -1.0})
-
-    polarity_counts = df["phrasing_polarity"].value_counts()
-    logger.info(f"Side detection: {dict(polarity_counts)}")
-
+    
+    polarity_counts = df["exposure_direction"].value_counts()
+    logger.info(f"LLM side detection: {dict(polarity_counts)}")
+    
     return df
+
+
+def detect_token_side(
+    title: str,
+    outcomes: Optional[list] = None,
+    tracked_token_index: int = 0,
+) -> str:
+    """Detect which token side is being tracked.
+    
+    For binary markets, returns "YES" or "NO".
+    For categorical markets, returns the outcome name.
+    """
+    if outcomes and len(outcomes) > 2:
+        return outcomes[tracked_token_index]
+    if outcomes and tracked_token_index == 1:
+        return "NO"
+    return "YES"
+
+
+def compute_exposure_direction(polarity: str, token_side: str) -> str:
+    """Compute exposure direction from phrasing polarity and token side.
+    
+    Rules:
+    - positive + YES = long (good thing happens)
+    - positive + NO = short (good thing doesn't happen)  
+    - negative + YES = short (bad thing happens)
+    - negative + NO = long (bad thing doesn't happen)
+    - neutral + YES = long (default)
+    """
+    if polarity == "positive":
+        return "long" if token_side == "YES" else "short"
+    elif polarity == "negative":
+        return "short" if token_side == "YES" else "long"
+    else:  # neutral
+        return "long" if token_side in ("YES", ) else "short"
+
+
+# Keep legacy function for backward compatibility
+def detect_phrasing_polarity(title: str) -> str:
+    """Legacy regex-based polarity detection. Use detect_side_batch for LLM-based."""
+    import re
+    
+    if not title:
+        return "neutral"
+    
+    title_lower = title.lower()
+    
+    # Double negation patterns (negative of negative = positive)
+    DOUBLE_NEG_PATTERNS = [
+        r"\bnot\s+(?:fall|drop|decline|decrease|lose|fail|collapse)",
+        r"\bwon'?t\s+(?:fall|drop|decline|decrease|lose|fail|collapse)",
+        r"\bwon'?t\s+\w+\s+(?:fall|drop|decline|decrease|below)",
+    ]
+    for p in DOUBLE_NEG_PATTERNS:
+        if re.search(p, title_lower):
+            return "positive"
+    
+    # Positive patterns
+    POSITIVE_PATTERNS = [
+        r"\babove\b", r"\bover\b", r"\bexceed", r"\bsurpass",
+        r"\bgrow", r"\brise\b", r"\bincrease\b", r"\bwin\b",
+    ]
+    
+    # Negative patterns
+    NEGATIVE_PATTERNS = [
+        r"\bnot\b", r"\bwon'?t\b", r"\bfail", r"\bnever\b",
+        r"\bbelow\b", r"\bunder\b", r"\brecession",
+        r"\bshutdown\b", r"\bvetoed?\b", r"\bfall\b", r"\bdecline",
+        r"\bdrop\b", r"\bcollapse", r"\bdefault\b",
+    ]
+    
+    # Check negatives first (more specific)
+    for p in NEGATIVE_PATTERNS:
+        if re.search(p, title_lower):
+            return "negative"
+    
+    # Check positives
+    for p in POSITIVE_PATTERNS:
+        if re.search(p, title_lower):
+            return "positive"
+    
+    return "positive"

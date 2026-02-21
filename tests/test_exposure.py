@@ -140,11 +140,11 @@ class TestBatchDetection:
     @pytest.mark.unit
     def test_detect_side_batch_adds_columns(self):
         df = pd.DataFrame({
-            "market_id": ["m1", "m2", "m3"],
+            "market_id": ["test_btc_100k_exp", "test_recession_exp", "test_unemp_exp"],
             "title": [
                 "Will Bitcoin exceed $100K?",
-                "Will the US NOT withdraw from NATO?",
-                "Will there be a recession?",
+                "Will there be a recession in 2026?",
+                "Will unemployment rise above 5%?",
             ],
         })
         result = detect_side_batch(df)
@@ -153,12 +153,15 @@ class TestBatchDetection:
         assert "exposure_direction" in result.columns
         assert "normalized_direction" in result.columns
 
-        assert result.loc[0, "phrasing_polarity"] == "positive"
+        # LLM-based: Bitcoin exceeding 100K = long
         assert result.loc[0, "exposure_direction"] == "long"
-        assert result.loc[1, "phrasing_polarity"] == "negative"
+        assert result.loc[0, "normalized_direction"] == 1.0
+        # Recession = short (bad outcome)
         assert result.loc[1, "exposure_direction"] == "short"
-        assert result.loc[2, "phrasing_polarity"] == "negative"
+        assert result.loc[1, "normalized_direction"] == -1.0
+        # Unemployment rising = short
         assert result.loc[2, "exposure_direction"] == "short"
+        assert result.loc[2, "normalized_direction"] == -1.0
 
 
 # ===========================================================================

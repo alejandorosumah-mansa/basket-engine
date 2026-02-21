@@ -47,6 +47,22 @@ theme_names = list(taxonomy_config['themes'].keys())
 
 logger.info(f"Markets: {len(markets):,}, Prices: {len(prices):,}, Markets with prices: {prices['market_id'].nunique():,}")
 
+# ─── STEP 0.5: Exposure / Side Detection ─────────────────────────────────────
+
+logger.info("\n=== STEP 0.5: LLM Exposure Detection ===")
+from src.exposure.side_detection import detect_side_batch
+from src.exposure.normalization import normalize_exposures, adjust_return_for_exposure, ExposureInfo
+from src.exposure.basket_rules import filter_opposing_exposures, check_exposure_conflicts
+from src.exposure.report import generate_exposure_report
+
+markets = detect_side_batch(markets)
+exposure_map = normalize_exposures(markets)
+
+n_long = (markets['exposure_direction'] == 'long').sum()
+n_short = (markets['exposure_direction'] == 'short').sum()
+avg_conf = markets['exposure_confidence'].mean()
+logger.info(f"Exposure: {n_long:,} long, {n_short:,} short ({n_short/(n_long+n_short)*100:.1f}% short), avg confidence={avg_conf:.2f}")
+
 # ─── STEP 1: Four-Layer Taxonomy (CUSIP → Ticker → Event) ────────────────────
 
 logger.info("\n=== STEP 1: Four-Layer Taxonomy ===")
@@ -134,6 +150,16 @@ returns_df.to_parquet(DATA_DIR / "returns.parquet", index=False)
 logger.info(f"Returns: {len(returns_df):,} obs, {returns_df['market_id'].nunique():,} markets")
 logger.info(f"Return stats: mean={returns_df['return'].mean():.6f}, std={returns_df['return'].std():.6f}, "
             f"min={returns_df['return'].min():.4f}, max={returns_df['return'].max():.4f}")
+
+# --- Step 2b.1: Exposure-adjusted returns ---
+logger.info("\nComputing exposure-adjusted returns...")
+direction_map = markets.set_index('market_id')['normalized_direction'].to_dict()
+returns_df['normalized_direction'] = returns_df['market_id'].map(direction_map).fillna(1.0)
+returns_df['adjusted_return'] = returns_df['return'] * returns_df['normalized_direction']
+logger.info(f"Adjusted return stats: mean={returns_df['adjusted_return'].mean():.6f}, std={returns_df['adjusted_return'].std():.6f}")
+logger.info(f"Raw vs adjusted correlation: {returns_df['return'].corr(returns_df['adjusted_return']):.4f}")
+n_flipped = (returns_df['normalized_direction'] == -1.0).sum()
+logger.info(f"Returns flipped by exposure: {n_flipped:,} ({n_flipped/len(returns_df)*100:.1f}%)")
 
 # --- Step 2c: Statistical Clustering ---
 logger.info("\nRunning statistical clustering...")
@@ -304,14 +330,20 @@ logger.info("\n=== STEP 4: Basket Construction ===")
 markets_with_returns = set(returns_df['market_id'].unique())
 reps_with_returns = event_reps[event_reps['market_id'].isin(markets_with_returns)]
 
+vol_by_market = prices.groupby('market_id')['volume'].sum().to_dict()
+
 basket_compositions = {}
 theme_eligible = reps_with_returns['theme'].value_counts()
 
 for theme, count in theme_eligible.items():
     if count >= 5:
         theme_markets = reps_with_returns[reps_with_returns['theme'] == theme]
-        basket_compositions[theme] = theme_markets['market_id'].tolist()
-        logger.info(f"  {theme}: {count} events")
+        candidate_ids = theme_markets['market_id'].tolist()
+        # Filter opposing exposures within each basket
+        clean_ids = filter_opposing_exposures(candidate_ids, exposure_map, vol_by_market)
+        basket_compositions[theme] = clean_ids
+        removed = len(candidate_ids) - len(clean_ids)
+        logger.info(f"  {theme}: {len(clean_ids)} events" + (f" ({removed} exposure conflicts removed)" if removed > 0 else ""))
 
 logger.info(f"Baskets with 5+ events: {len(basket_compositions)}")
 
@@ -348,9 +380,10 @@ resolution_dates = resolved_markets['resolution_date'].to_dict()
 # Run backtest per theme per method
 backtest_results = {}
 
-def run_theme_backtest(theme, market_ids, method):
+def run_theme_backtest(theme, market_ids, method, use_adjusted=True):
     """Run backtest for a single theme/method combo."""
-    theme_returns = bt_returns[bt_returns['market_id'].isin(market_ids)]
+    theme_returns = bt_returns[bt_returns['market_id'].isin(market_ids)].copy()
+    ret_col = 'adjusted_return' if use_adjusted and 'adjusted_return' in theme_returns.columns else 'return'
     theme_dates = sorted(theme_returns['date'].unique())
     
     if len(theme_dates) < 10:
@@ -396,7 +429,7 @@ def run_theme_backtest(theme, market_ids, method):
                     engine.current_weights = {'_placeholder': 0}  # Will be replaced on next successful rebal
         
         day_returns = theme_returns[theme_returns['date'] == date]
-        ret_dict = dict(zip(day_returns['market_id'], day_returns['return']))
+        ret_dict = dict(zip(day_returns['market_id'], day_returns[ret_col]))
         
         # NAV update: for absolute returns, NAV(t) = NAV(t-1) + NAV(t-1) * sum(w_i * delta_p_i)
         # But since chain_link does NAV * (1 + portfolio_return), and our returns are absolute
@@ -482,6 +515,73 @@ logger.info("\n=== STEP 6: Generating Charts ===")
 
 plt.style.use('seaborn-v0_8-whitegrid')
 COLORS = plt.cm.tab10.colors
+
+# Chart 0a: Exposure Direction Distribution
+fig, axes = plt.subplots(1, 2, figsize=(12, 5))
+# Pie chart
+direction_counts = markets['exposure_direction'].value_counts()
+axes[0].pie(direction_counts.values, labels=[f"{d.title()}\n({c:,})" for d, c in direction_counts.items()],
+            colors=['#2ecc71', '#e74c3c'], autopct='%1.1f%%', startangle=90, textprops={'fontsize': 11})
+axes[0].set_title('Market Exposure Direction')
+# Confidence histogram
+axes[1].hist(markets['exposure_confidence'], bins=20, color=COLORS[0], edgecolor='white', alpha=0.8)
+axes[1].set_xlabel('LLM Confidence Score')
+axes[1].set_ylabel('Count')
+axes[1].set_title(f'Exposure Classification Confidence (mean={markets["exposure_confidence"].mean():.2f})')
+axes[1].axvline(x=0.5, color='red', linestyle='--', alpha=0.5, label='Threshold')
+axes[1].legend()
+plt.tight_layout()
+fig.savefig(CHART_DIR / 'exposure_distribution.png', dpi=150)
+plt.close(fig)
+logger.info("  ✓ exposure_distribution.png")
+
+# Chart 0b: Exposure by Theme
+theme_exposure = markets.groupby('theme')['exposure_direction'].value_counts().unstack(fill_value=0)
+if 'long' in theme_exposure.columns and 'short' in theme_exposure.columns:
+    theme_exposure['short_pct'] = theme_exposure['short'] / (theme_exposure['long'] + theme_exposure['short']) * 100
+    theme_exposure = theme_exposure.sort_values('short_pct', ascending=True)
+    fig, ax = plt.subplots(figsize=(12, max(6, len(theme_exposure) * 0.35)))
+    y_pos = range(len(theme_exposure))
+    ax.barh(y_pos, theme_exposure['long'], color='#2ecc71', label='Long', height=0.7)
+    ax.barh(y_pos, theme_exposure['short'], left=theme_exposure['long'], color='#e74c3c', label='Short', height=0.7)
+    ax.set_yticks(y_pos)
+    ax.set_yticklabels([t.replace('_', ' ').title()[:25] for t in theme_exposure.index], fontsize=8)
+    ax.set_xlabel('Number of Markets')
+    ax.set_title('Exposure Direction by Theme')
+    ax.legend()
+    for i, (_, row) in enumerate(theme_exposure.iterrows()):
+        total = row['long'] + row['short']
+        if row['short'] > 0:
+            ax.text(total + 5, i, f'{row["short_pct"]:.0f}% short', va='center', fontsize=7)
+    plt.tight_layout()
+    fig.savefig(CHART_DIR / 'exposure_by_theme.png', dpi=150)
+    plt.close(fig)
+    logger.info("  ✓ exposure_by_theme.png")
+
+# Chart 0c: Raw vs Adjusted Returns comparison
+if 'adjusted_return' in returns_df.columns:
+    fig, axes = plt.subplots(1, 2, figsize=(12, 5))
+    sample = returns_df.sample(min(50000, len(returns_df)), random_state=42)
+    axes[0].scatter(sample['return'], sample['adjusted_return'], alpha=0.05, s=1, color=COLORS[0])
+    axes[0].plot([-0.5, 0.5], [-0.5, 0.5], 'r--', alpha=0.5, label='y=x')
+    axes[0].plot([-0.5, 0.5], [0.5, -0.5], 'b--', alpha=0.3, label='Flipped')
+    axes[0].set_xlabel('Raw Return')
+    axes[0].set_ylabel('Adjusted Return')
+    axes[0].set_title('Raw vs Exposure-Adjusted Returns')
+    axes[0].legend(fontsize=8)
+    axes[0].set_xlim(-0.3, 0.3); axes[0].set_ylim(-0.3, 0.3)
+    # Histogram overlay
+    axes[1].hist(returns_df['return'], bins=100, alpha=0.5, label='Raw', color=COLORS[0], density=True)
+    axes[1].hist(returns_df['adjusted_return'], bins=100, alpha=0.5, label='Adjusted', color=COLORS[1], density=True)
+    axes[1].set_xlabel('Return')
+    axes[1].set_ylabel('Density')
+    axes[1].set_title('Return Distribution: Raw vs Adjusted')
+    axes[1].legend()
+    axes[1].set_xlim(-0.15, 0.15)
+    plt.tight_layout()
+    fig.savefig(CHART_DIR / 'raw_vs_adjusted_returns.png', dpi=150)
+    plt.close(fig)
+    logger.info("  ✓ raw_vs_adjusted_returns.png")
 
 # Chart 1: Data Coverage Funnel
 fig, ax = plt.subplots(figsize=(10, 6))
@@ -775,6 +875,8 @@ This research implements thematic baskets for prediction markets — investable 
 
 **Key finding**: Prediction market baskets exhibit low cross-theme correlation, confirming genuine thematic differentiation. Returns are modest but realistic once the probability-change methodology is applied correctly.
 
+4. **Exposure normalization**: LLM-based side detection (GPT-4o-mini) classifies all {len(markets):,} markets as long or short exposure, enabling direction-adjusted returns and conflict-free basket construction.
+
 ## 2. The CUSIP → Ticker → Event → Theme Taxonomy
 
 | Layer | Analogy | Count | Description |
@@ -847,7 +949,34 @@ LLM themes compared against statistical clusters:
 
 ![Theme Distribution](data/outputs/charts/theme_distribution_events.png)
 
-## 5. Basket Construction
+## 5. Exposure / Side Detection
+
+Every prediction market has a **directional exposure**: buying YES on "Will there be a recession?" is economically **short** (you profit from bad outcomes), while buying YES on "Will BTC hit 100K?" is **long**.
+
+### LLM Classification
+All {len(markets):,} markets classified by GPT-4o-mini with temperature=0:
+- **Long**: {n_long:,} ({n_long/(n_long+n_short)*100:.1f}%) — YES profits from positive outcomes
+- **Short**: {n_short:,} ({n_short/(n_long+n_short)*100:.1f}%) — YES profits from negative outcomes  
+- **Average confidence**: {avg_conf:.2f}
+
+### Impact on Returns
+Raw returns treat all price increases as positive. Exposure-adjusted returns flip the sign for short-exposure markets:
+- `adjusted_return = raw_return × normalized_direction`
+- {n_flipped:,} return observations ({n_flipped/len(returns_df)*100:.1f}%) were sign-flipped
+- Correlation between raw and adjusted: {returns_df['return'].corr(returns_df['adjusted_return']):.4f}
+
+This is critical: without exposure adjustment, a basket holding "Will there be a recession?" alongside "Will GDP grow 3%?" would show false diversification — both move in the same direction during a crisis, but raw returns would show them as offsetting.
+
+### Basket Construction Rules
+- **No opposing exposures** in same basket (long + short on same event = cancellation)
+- **One side per event** — if multiple CUSIPs exist, keep the most liquid
+- Exposure conflicts are filtered before weight computation
+
+![Exposure Distribution](data/outputs/charts/exposure_distribution.png)
+![Exposure by Theme](data/outputs/charts/exposure_by_theme.png)
+![Raw vs Adjusted Returns](data/outputs/charts/raw_vs_adjusted_returns.png)
+
+## 6. Basket Construction
 
 ### Eligibility
 | Filter | Active Markets | Backtest (All) |
@@ -869,7 +998,7 @@ LLM themes compared against statistical clusters:
 2. **Risk Parity (Liquidity-Capped)**: Inverse-volatility, capped at 2× liquidity share.
 3. **Volume-Weighted**: Proportional to total volume. Reflects market conviction.
 
-## 6. Backtest Results
+## 7. Backtest Results
 
 ### Combined Basket (All Serious Themes)
 
@@ -897,7 +1026,7 @@ LLM themes compared against statistical clusters:
 
 ![Monthly Returns](data/outputs/charts/monthly_returns.png)
 
-## 7. Interpretation
+## 8. Interpretation
 
 ### Why Returns Are Small
 
@@ -912,13 +1041,13 @@ Sharpe: {best_m.get('sharpe', 0):.2f}, Total Return: {best_m.get('total_return',
 
 Equal weight is recommended as the default: short histories and resolution discontinuities make sophisticated estimation unreliable.
 
-## 8. Classification Agreement
+## 9. Classification Agreement
 
 {f"The LLM classifier and statistical clustering agree on {agreement_rate:.0f}% of markets. Disagreements primarily occur in:" if agreement_rate > 0 else "Clustering coverage was limited. With more price history, agreement analysis would be more informative."}
 
 ![Classification Agreement](data/outputs/charts/classification_agreement.png)
 
-## 9. Limitations
+## 10. Limitations
 
 1. **Absolute returns methodology**: While more correct than pct_change, the NAV formula still uses multiplicative chain-linking which slightly distorts for large probability swings.
 2. **Short histories**: Most markets live weeks to months. Annualized metrics are extrapolations.
@@ -928,7 +1057,7 @@ Equal weight is recommended as the default: short histories and resolution disco
 6. **Resolution discontinuity**: Markets jump to 0/1 at resolution, creating artificial return spikes even with absolute changes.
 7. **Survivorship bias**: Only listed markets observed.
 
-## 10. Next Steps
+## 11. Next Steps
 
 1. Multi-platform data (Kalshi, Metaculus)
 2. Resolution-aware chain-linking (lock terminal return, remove from basket)
