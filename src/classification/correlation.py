@@ -93,11 +93,13 @@ def run_hierarchical_clustering(
     Returns: (linkage_matrix, optimal_k, silhouette_scores)
     """
     # Distance = 1 - abs(correlation)
-    dist = 1 - corr_matrix.abs().values
+    corr_filled = corr_matrix.fillna(0)
+    dist = 1 - corr_filled.abs().values
     np.fill_diagonal(dist, 0)
-    # Ensure symmetry and non-negative
+    # Ensure symmetry, non-negative, finite
     dist = (dist + dist.T) / 2
     dist = np.clip(dist, 0, None)
+    dist = np.nan_to_num(dist, nan=1.0, posinf=1.0, neginf=0.0)
     
     # Convert to condensed form
     condensed = squareform(dist, checks=False)

@@ -1,0 +1,168 @@
+[
+  {
+    "date": "2025-12-13T00:00:00",
+    "basket_id": "backtest_equal",
+    "old_weights": {},
+    "new_weights": {
+      "kalshi_KXPRESNOMD-28-BOBA": 0.16666666666666666,
+      "kalshi_KXPRESNOMD-28-GR": 0.16666666666666666,
+      "kalshi_KXPRESNOMD-28-HCLI": 0.16666666666666666,
+      "kalshi_KXPRESNOMD-28-TW": 0.16666666666666666,
+      "kalshi_KXPRESNOMR-28-TC": 0.16666666666666666,
+      "kalshi_RECSSNBER-25": 0.16666666666666666
+    },
+    "additions": [
+      {
+        "market_id": "kalshi_KXPRESNOMD-28-HCLI",
+        "weight": 0.16666666666666666
+      },
+      {
+        "market_id": "kalshi_RECSSNBER-25",
+        "weight": 0.16666666666666666
+      },
+      {
+        "market_id": "kalshi_KXPRESNOMD-28-GR",
+        "weight": 0.16666666666666666
+      },
+      {
+        "market_id": "kalshi_KXPRESNOMR-28-TC",
+        "weight": 0.16666666666666666
+      },
+      {
+        "market_id": "kalshi_KXPRESNOMD-28-TW",
+        "weight": 0.16666666666666666
+      },
+      {
+        "market_id": "kalshi_KXPRESNOMD-28-BOBA",
+        "weight": 0.16666666666666666
+      }
+    ],
+    "removals": [],
+    "weight_changes": [],
+    "turnover": 0.49999999999999994,
+    "market_count": 6,
+    "resolutions": [],
+    "nav_before": 100.0,
+    "nav_after": 100.0
+  },
+  {
+    "date": "2026-02-01T00:00:00",
+    "basket_id": "backtest_equal",
+    "old_weights": {
+      "kalshi_KXPRESNOMD-28-BOBA": 0.16666666666666666,
+      "kalshi_KXPRESNOMD-28-GR": 0.16666666666666666,
+      "kalshi_KXPRESNOMD-28-HCLI": 0.16666666666666666,
+      "kalshi_KXPRESNOMD-28-TW": 0.16666666666666666,
+      "kalshi_KXPRESNOMR-28-TC": 0.16666666666666666,
+      "kalshi_RECSSNBER-25": 0.16666666666666666
+    },
+    "new_weights": {
+      "kalshi_KXBTCMAX150-25-26JAN31-149999.99": 0.05555555555555554,
+      "kalshi_KXGOVTCUTS-25-500": 0.05555555555555554,
+      "kalshi_KXPRESNOMD-28-BOBA": 0.05555555555555554,
+      "kalshi_KXPRESNOMD-28-CBOO": 0.05555555555555554,
+      "kalshi_KXPRESNOMD-28-CMUR": 0.05555555555555554,
+      "kalshi_KXPRESNOMD-28-GR": 0.05555555555555554,
+      "kalshi_KXPRESNOMD-28-GW": 0.05555555555555554,
+      "kalshi_KXPRESNOMD-28-HCLI": 0.05555555555555554,
+      "kalshi_KXPRESNOMD-28-MC": 0.05555555555555554,
+      "kalshi_KXPRESNOMD-28-MO": 0.05555555555555554,
+      "kalshi_KXPRESNOMD-28-REMA": 0.05555555555555554,
+      "kalshi_KXPRESNOMD-28-RGAL": 0.05555555555555554,
+      "kalshi_KXPRESNOMD-28-RW": 0.05555555555555554,
+      "kalshi_KXPRESNOMD-28-TW": 0.05555555555555554,
+      "kalshi_KXPRESNOMD-28-ZMAM": 0.05555555555555554,
+      "kalshi_KXPRESNOMR-28-MTG": 0.05555555555555554,
+      "kalshi_KXPRESNOMR-28-TC": 0.05555555555555554,
+      "kalshi_RECSSNBER-25": 0.05555555555555554
+    },
+    "additions": [
+      {
+        "market_id": "kalshi_KXPRESNOMD-28-GW",
+        "weight": 0.05555555555555554
+      },
+      {
+        "market_id": "kalshi_KXPRESNOMD-28-MO",
+        "weight": 0.05555555555555554
+      },
+      {
+        "market_id": "kalshi_KXPRESNOMR-28-MTG",
+        "weight": 0.05555555555555554
+      },
+      {
+        "market_id": "kalshi_KXPRESNOMD-28-CBOO",
+        "weight": 0.05555555555555554
+      },
+      {
+        "market_id": "kalshi_KXPRESNOMD-28-ZMAM",
+        "weight": 0.05555555555555554
+      },
+      {
+        "market_id": "kalshi_KXBTCMAX150-25-26JAN31-149999.99",
+        "weight": 0.05555555555555554
+      },
+      {
+        "market_id": "kalshi_KXGOVTCUTS-25-500",
+        "weight": 0.05555555555555554
+      },
+      {
+        "market_id": "kalshi_KXPRESNOMD-28-MC",
+        "weight": 0.05555555555555554
+      },
+      {
+        "market_id": "kalshi_KXPRESNOMD-28-RW",
+        "weight": 0.05555555555555554
+      },
+      {
+        "market_id": "kalshi_KXPRESNOMD-28-CMUR",
+        "weight": 0.05555555555555554
+      },
+      {
+        "market_id": "kalshi_KXPRESNOMD-28-RGAL",
+        "weight": 0.05555555555555554
+      },
+      {
+        "market_id": "kalshi_KXPRESNOMD-28-REMA",
+        "weight": 0.05555555555555554
+      }
+    ],
+    "removals": [],
+    "weight_changes": [
+      {
+        "market_id": "kalshi_KXPRESNOMD-28-GR",
+        "old_weight": 0.16666666666666666,
+        "new_weight": 0.05555555555555554
+      },
+      {
+        "market_id": "kalshi_KXPRESNOMR-28-TC",
+        "old_weight": 0.16666666666666666,
+        "new_weight": 0.05555555555555554
+      },
+      {
+        "market_id": "kalshi_KXPRESNOMD-28-TW",
+        "old_weight": 0.16666666666666666,
+        "new_weight": 0.05555555555555554
+      },
+      {
+        "market_id": "kalshi_KXPRESNOMD-28-HCLI",
+        "old_weight": 0.16666666666666666,
+        "new_weight": 0.05555555555555554
+      },
+      {
+        "market_id": "kalshi_RECSSNBER-25",
+        "old_weight": 0.16666666666666666,
+        "new_weight": 0.05555555555555554
+      },
+      {
+        "market_id": "kalshi_KXPRESNOMD-28-BOBA",
+        "old_weight": 0.16666666666666666,
+        "new_weight": 0.05555555555555554
+      }
+    ],
+    "turnover": 0.6666666666666667,
+    "market_count": 18,
+    "resolutions": [],
+    "nav_before": 99.99333166214232,
+    "nav_after": 99.99333166214232
+  }
+]
