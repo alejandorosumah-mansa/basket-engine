@@ -153,3 +153,23 @@ themes:
       - "Will nuclear fusion achieve net energy gain?"
     anti_examples:
       - "Will Starlink IPO?"  # that's more business/stock market
+
+  sports_entertainment:
+    name: "Sports & Entertainment"
+    description: "Professional sports outcomes, awards, championships, entertainment industry events, celebrity events, pop culture."
+    examples:
+      - "Will the Chiefs win the Super Bowl?"
+      - "Who will win the NBA MVP?"
+      - "Will a Marvel movie gross $1B?"
+    anti_examples:
+      - "Will sports betting be legalized nationally?"  # legal_regulatory
+      - "Will ESPN be sold?"  # business
+
+  pop_culture_misc:
+    name: "Pop Culture & Miscellaneous"
+    description: "Social media milestones, viral events, celebrity actions, reality TV, novelty markets, coin flips, dice rolls."
+    examples:
+      - "Will MrBeast hit 300M subscribers?"
+      - "Coin flip: heads or tails?"
+    anti_examples:
+      - "Will TikTok be banned?"  # legal_regulatory or china_us
