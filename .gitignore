@@ -13,13 +13,15 @@ build/
 venv/
 env/
 
-# Data (large files, pulled from APIs)
+# Data - raw API cache (large, reproducible)
 data/raw/
-data/processed/
-data/outputs/
+
+# Keep processed outputs and reports, exclude large binary files
 *.parquet
 *.pkl
 *.h5
+# Cache files (reproducible)
+*_cache*.json
 
 # Notebooks checkpoints
 .ipynb_checkpoints/
