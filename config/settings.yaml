@@ -2,7 +2,7 @@
 
 # Eligibility thresholds
 eligibility:
-  min_total_volume: 10000        # $10K minimum total volume
+  min_total_volume: 500000       # $500K minimum total volume (lowered threshold)
   min_7d_avg_daily_volume: 500   # $500 minimum recent daily volume
   min_liquidity: 1000            # $1K minimum open interest
   min_price_history_days: 14     # Need 2 weeks of data
