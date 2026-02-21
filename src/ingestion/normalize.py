@@ -78,7 +78,12 @@ def build_polymarket_prices(cache: Cache, markets_df: pd.DataFrame) -> pd.DataFr
         cid = market["condition_id"]
         if not cid:
             continue
-        candles = cache.get(f"candles_{cid}") or []
+        candles_raw = cache.get(f"candles_{cid}") or []
+
+        # Handle nested format: [[candle_dicts], token_info]
+        candles = candles_raw
+        if candles and isinstance(candles[0], list):
+            candles = candles[0]
 
         for c in candles:
             if not isinstance(c, dict):

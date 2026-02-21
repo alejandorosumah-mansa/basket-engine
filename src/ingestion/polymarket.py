@@ -29,9 +29,15 @@ def fetch_all_markets(cache: Cache, force: bool = False) -> list:
         limit = 100
 
         while True:
-            data = api_get("/polymarket/markets", params={
-                "status": status, "limit": limit, "offset": offset
-            })
+            try:
+                data = api_get("/polymarket/markets", params={
+                    "status": status, "limit": limit, "offset": offset
+                })
+            except Exception as e:
+                if "400" in str(e):
+                    logger.info(f"  {status}: hit API offset limit at {offset}, stopping")
+                    break
+                raise
             batch = data.get("markets", [])
             if not batch:
                 break
@@ -39,7 +45,6 @@ def fetch_all_markets(cache: Cache, force: bool = False) -> list:
             logger.info(f"  {status}: fetched {len(markets)} markets so far...")
             offset += limit
 
-            # Check if no more - Polymarket doesn't return pagination field
             if len(batch) < limit:
                 break
 
@@ -105,8 +110,11 @@ def run_polymarket_ingestion(force: bool = False):
 
     markets = fetch_all_markets(cache, force=force)
     # Only fetch candles for markets with meaningful volume (>$10K)
-    vol_markets = [m for m in markets if (m.get("volume_total") or 0) >= 10000]
-    logger.info(f"Fetching candlesticks for {len(vol_markets)} markets with volume >= $10K "
+    # volume_total is in micro-units (or raw), filter aggressively to keep run time manageable
+    # At 1 QPS, 2000 markets = ~33 min which is acceptable
+    MIN_VOL = 5000000  # $5M volume threshold for manageable candle fetch time
+    vol_markets = [m for m in markets if (m.get("volume_total") or 0) >= MIN_VOL]
+    logger.info(f"Fetching candlesticks for {len(vol_markets)} markets with volume >= ${MIN_VOL:,} "
                 f"(skipping {len(markets) - len(vol_markets)} low-volume)...")
 
     success = 0

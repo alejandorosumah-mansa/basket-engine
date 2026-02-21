@@ -10,7 +10,7 @@ from .cache import Cache
 logger = logging.getLogger(__name__)
 
 # Kalshi has 477K+ markets. We filter to those with meaningful volume.
-MIN_VOLUME = 1000  # minimum total volume in cents to bother fetching
+MIN_VOLUME = 500000  # minimum total volume (contracts) to bother fetching trades
 
 
 def fetch_all_markets(cache: Cache, force: bool = False) -> list:
@@ -36,9 +36,15 @@ def fetch_all_markets(cache: Cache, force: bool = False) -> list:
         empty_pages = 0
 
         while True:
-            data = api_get("/kalshi/markets", params={
-                "status": status, "limit": limit, "offset": offset
-            })
+            try:
+                data = api_get("/kalshi/markets", params={
+                    "status": status, "limit": limit, "offset": offset
+                })
+            except Exception as e:
+                if "400" in str(e):
+                    logger.info(f"  {status}: hit API offset limit at {offset}, stopping")
+                    break
+                raise
             batch = data.get("markets", [])
             if not batch:
                 break
@@ -118,9 +124,8 @@ def fetch_trades(ticker: str, cache: Cache,
                 break
             offset += limit
 
-            # Cap at 10K trades per market to avoid spending forever
-            if len(all_trades) >= 10000:
-                logger.info(f"  {ticker}: capped at 10K trades")
+            # Cap at 200 trades per market to keep it fast
+            if len(all_trades) >= 200:
                 break
     except Exception as e:
         logger.warning(f"Failed to fetch trades for {ticker}: {e}")

@@ -188,7 +188,7 @@ def classify_market(client: OpenAI, system_prompt: str, row: pd.Series,
 
 
 def classify_all(df: pd.DataFrame, batch_size: int = 50, 
-                 rate_limit_delay: float = 0.1) -> pd.DataFrame:
+                 rate_limit_delay: float = 0.02) -> pd.DataFrame:
     """Classify all markets in the dataframe. Uses cache to skip already-classified."""
     client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
     themes = load_taxonomy()
