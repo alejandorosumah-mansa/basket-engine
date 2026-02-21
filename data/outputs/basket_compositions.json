@@ -1,3722 +1,848 @@
 {
-  "us_elections": {
-    "equal": [
-      {
-        "market_id": "poly_will-trump-nominate-judy-shelton-as-the-next-fed-chair",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-trump-nominate-kevin-warsh-as-the-next-fed-chair",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-chelsea-clinton-win-the-2028-democratic-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-oprah-winfrey-win-the-2028-democratic-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-andrew-yang-win-the-2028-democratic-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-lebron-james-win-the-2028-us-presidential-election",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-tim-walz-win-the-2028-us-presidential-election",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-george-clooney-win-the-2028-democratic-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-mrbeast-win-the-2028-democratic-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-zohran-mamdani-win-the-2028-democratic-presidential-nomination-445",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-hillary-clinton-win-the-2028-democratic-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-trump-nominate-kevin-hassett-as-the-next-fed-chair",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-bernie-sanders-win-the-2028-democratic-presidential-nomination-879",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-lebron-james-win-the-2028-democratic-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-trump-acquire-greenland-before-2027",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-greg-abbott-win-the-2028-us-presidential-election",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-trump-nominate-jerome-powell-as-the-next-fed-chair",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-phil-murphy-win-the-2028-democratic-presidential-nomination-611",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-liz-cheney-win-the-2028-democratic-presidential-nomination-551",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-trump-nominate-rick-rieder-as-the-next-fed-chair",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-person-a-win-the-2028-democratic-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-trump-nominate-bill-pulte-as-the-next-fed-chair",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-mike-pence-win-the-2028-republican-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-tim-walz-win-the-2028-democratic-presidential-nomination-475",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-tulsi-gabbard-win-the-2028-us-presidential-election",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-trump-nominate-himself-as-the-next-fed-chair",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-trump-nominate-christopher-waller-as-the-next-fed-chair",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-kim-kardashian-win-the-2028-democratic-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-beto-orourke-win-the-2028-democratic-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-gina-raimondo-win-the-2028-democratic-presidential-nomination-676",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-trump-nominate-individual-j-as-the-next-fed-chair",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-trump-nominate-arthur-laffer-as-the-next-fed-chair",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-trump-nominate-barron-trump-as-the-next-fed-chair",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-trump-nominate-michelle-bowman-as-the-next-fed-chair",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-john-thune-win-the-2028-republican-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-vivek-ramaswamy-win-the-2028-us-presidential-election",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-katie-britt-win-the-2028-republican-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-trump-nominate-stephen-miran-as-the-next-fed-chair",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-trump-nominate-no-one-before-2027",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-roy-cooper-win-the-2028-democratic-presidential-nomination-286",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-kim-kardashian-win-the-2028-us-presidential-election",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-kristi-noem-win-the-2028-republican-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-tom-brady-win-the-2028-republican-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-barack-obama-win-the-2028-democratic-presidential-nomination-265",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-trump-nominate-david-zervos-as-the-next-fed-chair",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-stephen-smith-win-the-2028-us-presidential-election",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-kim-kardashian-win-the-2028-republican-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-elon-musk-win-the-2028-republican-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-michelle-obama-win-the-2028-democratic-presidential-nomination-777",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-sarah-huckabee-sanders-win-the-2028-republican-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-raphael-warnock-win-the-2028-democratic-presidential-nomination-914",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-trump-nominate-scott-bessent-as-the-next-fed-chair",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-elon-musk-win-the-2028-us-presidential-election",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-elise-stefanik-win-the-2028-republican-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-nikki-haley-win-the-2028-us-presidential-election",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-the-next-dutch-government-be-vvd-cda-ja21",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-corey-booker-win-the-2028-democratic-presidential-nomination-125",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-byron-donalds-win-the-2028-republican-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-mark-cuban-win-the-2028-democratic-presidential-nomination-329",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-jared-polis-win-the-2028-democratic-presidential-nomination-837",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-trump-nominate-ron-paul-as-the-next-fed-chair",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-matt-gaetz-win-the-2028-republican-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-greg-abbott-win-the-2028-republican-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-jasmine-crockett-win-the-2028-democratic-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-john-fetterman-win-the-2028-democratic-presidential-nomination-941",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-glenn-youngkin-win-the-2028-us-presidential-election",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-michelle-obama-win-the-2028-us-presidential-election",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-josh-hawley-win-the-2028-republican-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-rand-paul-win-the-2028-republican-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-trump-nominate-philip-jefferson-as-the-next-fed-chair",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-zohran-mamdani-win-the-2028-us-presidential-election",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-trump-nominate-larry-kudlow-as-the-next-fed-chair",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-vivek-ramaswamy-win-the-2028-republican-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-stephen-a-smith-win-the-2028-democratic-presidential-nomination-914",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-steve-bannon-win-the-2028-republican-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-robert-f-kennedy-jr-win-the-2028-republican-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-chris-murphy-win-the-2028-democratic-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-trump-deport-250000-500000-people",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-gavin-newsom-win-the-2028-democratic-presidential-nomination-568",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-jon-stewart-win-the-2028-democratic-presidential-nomination-518",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-the-next-dutch-government-be-pvv-vvd-d66",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-tulsi-gabbard-win-the-2028-republican-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-dwayne-the-rock-johnson-win-the-2028-democratic-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-rahm-emanuel-win-the-2028-democratic-presidential-nomination-299",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-jd-vance-win-the-2028-us-presidential-election",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-kamala-harris-win-the-2028-democratic-presidential-nomination-641",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-mark-kelly-win-the-2028-democratic-presidential-nomination-479",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-ted-cruz-win-the-2028-republican-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-brian-kemp-win-the-2028-republican-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-trump-nominate-david-malpass-as-the-next-fed-chair",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-the-next-prime-minister-of-hungary-be-istvn-kapitny",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-the-next-prime-minister-of-hungary-be-lszl-toroczkai",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-trump-nominate-larry-lindsey-as-the-next-fed-chair",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-the-next-dutch-government-be-pvv-glpvda-vvd-cda-d66",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-donald-trump-jr-win-the-2028-us-presidential-election",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-ahmed-aboutaleb-become-the-next-prime-minister-of-the-netherlands",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-gretchen-whitmer-win-the-2028-democratic-presidential-nomination-676",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-jamie-dimon-win-the-2028-us-presidential-election",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-erika-kirk-win-the-2028-republican-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-the-iranian-regime-fall-by-march-31",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-gretchen-whitmer-win-the-2028-us-presidential-election",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-the-us-confirm-that-aliens-exist-before-2027",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-jb-pritzker-win-the-2028-democratic-presidential-nomination-288",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXFEDCHAIRNOM-29-KH",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXFEDCHAIRNOM-29-KW",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXFEDCHAIRNOM-29-CWAL",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-GN",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXGREENLAND-29",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-ZMAM",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-SAS",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-MK",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-RKHA",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-REMA",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXDJTVOSTARIFFS",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-AOC",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXFEDCHAIRNOM-29-SBES",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-KH",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-JBP",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-CBOO",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_CONTROLH-2026-R",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-PB",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXFEDCHAIRNOM-29-RREI",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_CONTROLH-2026-D",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-MC",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-JOSS",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-WM",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXSENATEMED-26-GRA",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-JSTE",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-MO",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-AB",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-JS",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXFEDCHAIRNOM-29-JS",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXFEDCHAIRNOM-29-MBOW",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXCABOUT-29-PH",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMR-28-DJT",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-RGAL",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMR-28-JDV",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMR-28-MR",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-GW",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-TW",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMR-28-MTG",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-CMUR",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXFEDCHAIRNOM-29-SMIR",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESPERSON-28-DTRU",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESPERSON-28-GNEWS",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-BOBA",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-RW",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMR-28-TC",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESPERSON-28-JVAN",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXDEPORTCOUNT-25-500",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-HCLI",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-GR",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMR-28-TMAS",
-        "weight": 0.006535947712418301
-      }
-    ],
-    "volume_weighted": [
-      {
-        "market_id": "poly_will-trump-nominate-judy-shelton-as-the-next-fed-chair",
-        "weight": 0.04996012182895531
-      },
-      {
-        "market_id": "poly_will-trump-nominate-kevin-warsh-as-the-next-fed-chair",
-        "weight": 0.022683301416357098
-      },
-      {
-        "market_id": "poly_will-chelsea-clinton-win-the-2028-democratic-presidential-nomination",
-        "weight": 0.020679377537638294
-      },
-      {
-        "market_id": "poly_will-oprah-winfrey-win-the-2028-democratic-presidential-nomination",
-        "weight": 0.019288039035868135
-      },
-      {
-        "market_id": "poly_will-andrew-yang-win-the-2028-democratic-presidential-nomination",
-        "weight": 0.01747344737541873
-      },
-      {
-        "market_id": "poly_will-lebron-james-win-the-2028-us-presidential-election",
-        "weight": 0.01695733904269293
-      },
-      {
-        "market_id": "poly_will-tim-walz-win-the-2028-us-presidential-election",
-        "weight": 0.01688920594418182
-      },
-      {
-        "market_id": "poly_will-george-clooney-win-the-2028-democratic-presidential-nomination",
-        "weight": 0.016806657349101476
-      },
-      {
-        "market_id": "poly_will-mrbeast-win-the-2028-democratic-presidential-nomination",
-        "weight": 0.016396694098448152
-      },
-      {
-        "market_id": "poly_will-zohran-mamdani-win-the-2028-democratic-presidential-nomination-445",
-        "weight": 0.016211301921052943
-      },
-      {
-        "market_id": "poly_will-hillary-clinton-win-the-2028-democratic-presidential-nomination",
-        "weight": 0.015964493883207954
-      },
-      {
-        "market_id": "poly_will-trump-nominate-kevin-hassett-as-the-next-fed-chair",
-        "weight": 0.01595995422192564
-      },
-      {
-        "market_id": "poly_will-bernie-sanders-win-the-2028-democratic-presidential-nomination-879",
-        "weight": 0.01586222954184837
-      },
-      {
-        "market_id": "poly_will-lebron-james-win-the-2028-democratic-presidential-nomination",
-        "weight": 0.015466022884401897
-      },
-      {
-        "market_id": "poly_will-trump-acquire-greenland-before-2027",
-        "weight": 0.015374350452492327
-      },
-      {
-        "market_id": "poly_will-greg-abbott-win-the-2028-us-presidential-election",
-        "weight": 0.015104522188020776
-      },
-      {
-        "market_id": "poly_will-trump-nominate-jerome-powell-as-the-next-fed-chair",
-        "weight": 0.015083774968070982
-      },
-      {
-        "market_id": "poly_will-phil-murphy-win-the-2028-democratic-presidential-nomination-611",
-        "weight": 0.015057250270937602
-      },
-      {
-        "market_id": "poly_will-liz-cheney-win-the-2028-democratic-presidential-nomination-551",
-        "weight": 0.014717041226548789
-      },
-      {
-        "market_id": "poly_will-trump-nominate-rick-rieder-as-the-next-fed-chair",
-        "weight": 0.014026232094398326
-      },
-      {
-        "market_id": "poly_will-person-a-win-the-2028-democratic-presidential-nomination",
-        "weight": 0.013545517221912093
-      },
-      {
-        "market_id": "poly_will-trump-nominate-bill-pulte-as-the-next-fed-chair",
-        "weight": 0.013345967781996338
-      },
-      {
-        "market_id": "poly_will-mike-pence-win-the-2028-republican-presidential-nomination",
-        "weight": 0.013044509315470154
-      },
-      {
-        "market_id": "poly_will-tim-walz-win-the-2028-democratic-presidential-nomination-475",
-        "weight": 0.013018235533837444
-      },
-      {
-        "market_id": "poly_will-tulsi-gabbard-win-the-2028-us-presidential-election",
-        "weight": 0.012871294952683987
-      },
-      {
-        "market_id": "poly_will-trump-nominate-himself-as-the-next-fed-chair",
-        "weight": 0.012819676706656263
-      },
-      {
-        "market_id": "poly_will-trump-nominate-christopher-waller-as-the-next-fed-chair",
-        "weight": 0.012713241067306036
-      },
-      {
-        "market_id": "poly_will-kim-kardashian-win-the-2028-democratic-presidential-nomination",
-        "weight": 0.012615153847646601
-      },
-      {
-        "market_id": "poly_will-beto-orourke-win-the-2028-democratic-presidential-nomination",
-        "weight": 0.012379397004971121
-      },
-      {
-        "market_id": "poly_will-gina-raimondo-win-the-2028-democratic-presidential-nomination-676",
-        "weight": 0.012288077502723068
-      },
-      {
-        "market_id": "poly_will-trump-nominate-individual-j-as-the-next-fed-chair",
-        "weight": 0.011633233660931568
-      },
-      {
-        "market_id": "poly_will-trump-nominate-arthur-laffer-as-the-next-fed-chair",
-        "weight": 0.01152069685988841
-      },
-      {
-        "market_id": "poly_will-trump-nominate-barron-trump-as-the-next-fed-chair",
-        "weight": 0.011400018787544243
-      },
-      {
-        "market_id": "poly_will-trump-nominate-michelle-bowman-as-the-next-fed-chair",
-        "weight": 0.011326417036477387
-      },
-      {
-        "market_id": "poly_will-john-thune-win-the-2028-republican-presidential-nomination",
-        "weight": 0.011151682700446515
-      },
-      {
-        "market_id": "poly_will-vivek-ramaswamy-win-the-2028-us-presidential-election",
-        "weight": 0.010714789565127336
-      },
-      {
-        "market_id": "poly_will-katie-britt-win-the-2028-republican-presidential-nomination",
-        "weight": 0.010445172456657142
-      },
-      {
-        "market_id": "poly_will-trump-nominate-stephen-miran-as-the-next-fed-chair",
-        "weight": 0.010416747657133137
-      },
-      {
-        "market_id": "poly_will-trump-nominate-no-one-before-2027",
-        "weight": 0.010348875842184146
-      },
-      {
-        "market_id": "poly_will-roy-cooper-win-the-2028-democratic-presidential-nomination-286",
-        "weight": 0.010280987632712162
-      },
-      {
-        "market_id": "poly_will-kim-kardashian-win-the-2028-us-presidential-election",
-        "weight": 0.010154030095661572
-      },
-      {
-        "market_id": "poly_will-kristi-noem-win-the-2028-republican-presidential-nomination",
-        "weight": 0.010136228490902226
-      },
-      {
-        "market_id": "poly_will-tom-brady-win-the-2028-republican-presidential-nomination",
-        "weight": 0.009944338051071285
-      },
-      {
-        "market_id": "poly_will-barack-obama-win-the-2028-democratic-presidential-nomination-265",
-        "weight": 0.009917116854637217
-      },
-      {
-        "market_id": "poly_will-trump-nominate-david-zervos-as-the-next-fed-chair",
-        "weight": 0.009770199660433151
-      },
-      {
-        "market_id": "poly_will-stephen-smith-win-the-2028-us-presidential-election",
-        "weight": 0.009486577630368443
-      },
-      {
-        "market_id": "poly_will-kim-kardashian-win-the-2028-republican-presidential-nomination",
-        "weight": 0.009319253868593974
-      },
-      {
-        "market_id": "poly_will-elon-musk-win-the-2028-republican-presidential-nomination",
-        "weight": 0.009292577952058205
-      },
-      {
-        "market_id": "poly_will-michelle-obama-win-the-2028-democratic-presidential-nomination-777",
-        "weight": 0.009239006628440764
-      },
-      {
-        "market_id": "poly_will-sarah-huckabee-sanders-win-the-2028-republican-presidential-nomination",
-        "weight": 0.009227920230439756
-      },
-      {
-        "market_id": "poly_will-raphael-warnock-win-the-2028-democratic-presidential-nomination-914",
-        "weight": 0.009091999516307996
-      },
-      {
-        "market_id": "poly_will-trump-nominate-scott-bessent-as-the-next-fed-chair",
-        "weight": 0.009061762772948916
-      },
-      {
-        "market_id": "poly_will-elon-musk-win-the-2028-us-presidential-election",
-        "weight": 0.00894318950352873
-      },
-      {
-        "market_id": "poly_will-elise-stefanik-win-the-2028-republican-presidential-nomination",
-        "weight": 0.008190920488985523
-      },
-      {
-        "market_id": "poly_will-nikki-haley-win-the-2028-us-presidential-election",
-        "weight": 0.008065493966429119
-      },
-      {
-        "market_id": "poly_will-the-next-dutch-government-be-vvd-cda-ja21",
-        "weight": 0.007850182871747548
-      },
-      {
-        "market_id": "poly_will-corey-booker-win-the-2028-democratic-presidential-nomination-125",
-        "weight": 0.00760454574213085
-      },
-      {
-        "market_id": "poly_will-byron-donalds-win-the-2028-republican-presidential-nomination",
-        "weight": 0.007520330337031263
-      },
-      {
-        "market_id": "poly_will-mark-cuban-win-the-2028-democratic-presidential-nomination-329",
-        "weight": 0.007162990450677064
-      },
-      {
-        "market_id": "poly_will-jared-polis-win-the-2028-democratic-presidential-nomination-837",
-        "weight": 0.007025897714685223
-      },
-      {
-        "market_id": "poly_will-trump-nominate-ron-paul-as-the-next-fed-chair",
-        "weight": 0.006882907065174948
-      },
-      {
-        "market_id": "poly_will-matt-gaetz-win-the-2028-republican-presidential-nomination",
-        "weight": 0.006822216282503343
-      },
-      {
-        "market_id": "poly_will-greg-abbott-win-the-2028-republican-presidential-nomination",
-        "weight": 0.0064539135858152795
-      },
-      {
-        "market_id": "poly_will-jasmine-crockett-win-the-2028-democratic-presidential-nomination",
-        "weight": 0.006258457175351794
-      },
-      {
-        "market_id": "poly_will-john-fetterman-win-the-2028-democratic-presidential-nomination-941",
-        "weight": 0.0062511933400674815
-      },
-      {
-        "market_id": "poly_will-glenn-youngkin-win-the-2028-us-presidential-election",
-        "weight": 0.006150346595733329
-      },
-      {
-        "market_id": "poly_will-michelle-obama-win-the-2028-us-presidential-election",
-        "weight": 0.006084568939596805
-      },
-      {
-        "market_id": "poly_will-josh-hawley-win-the-2028-republican-presidential-nomination",
-        "weight": 0.006081702996015529
-      },
-      {
-        "market_id": "poly_will-rand-paul-win-the-2028-republican-presidential-nomination",
-        "weight": 0.0059551596296184735
-      },
-      {
-        "market_id": "poly_will-trump-nominate-philip-jefferson-as-the-next-fed-chair",
-        "weight": 0.005892698439179267
-      },
-      {
-        "market_id": "poly_will-zohran-mamdani-win-the-2028-us-presidential-election",
-        "weight": 0.0056674905066955595
-      },
-      {
-        "market_id": "poly_will-trump-nominate-larry-kudlow-as-the-next-fed-chair",
-        "weight": 0.0056281155620502635
-      },
-      {
-        "market_id": "poly_will-vivek-ramaswamy-win-the-2028-republican-presidential-nomination",
-        "weight": 0.0055002487281663555
-      },
-      {
-        "market_id": "poly_will-stephen-a-smith-win-the-2028-democratic-presidential-nomination-914",
-        "weight": 0.0051168286876735036
-      },
-      {
-        "market_id": "poly_will-steve-bannon-win-the-2028-republican-presidential-nomination",
-        "weight": 0.0045901377304173405
-      },
-      {
-        "market_id": "poly_will-robert-f-kennedy-jr-win-the-2028-republican-presidential-nomination",
-        "weight": 0.004544671722737159
-      },
-      {
-        "market_id": "poly_will-chris-murphy-win-the-2028-democratic-presidential-nomination",
-        "weight": 0.004218620044797313
-      },
-      {
-        "market_id": "poly_will-trump-deport-250000-500000-people",
-        "weight": 0.0041026108312817375
-      },
-      {
-        "market_id": "poly_will-gavin-newsom-win-the-2028-democratic-presidential-nomination-568",
-        "weight": 0.004077614394766213
-      },
-      {
-        "market_id": "poly_will-jon-stewart-win-the-2028-democratic-presidential-nomination-518",
-        "weight": 0.004005733439790304
-      },
-      {
-        "market_id": "poly_will-the-next-dutch-government-be-pvv-vvd-d66",
-        "weight": 0.0037318772256731236
-      },
-      {
-        "market_id": "poly_will-tulsi-gabbard-win-the-2028-republican-presidential-nomination",
-        "weight": 0.0037109657953085726
-      },
-      {
-        "market_id": "poly_will-dwayne-the-rock-johnson-win-the-2028-democratic-presidential-nomination",
-        "weight": 0.0037074578125425722
-      },
-      {
-        "market_id": "poly_will-rahm-emanuel-win-the-2028-democratic-presidential-nomination-299",
-        "weight": 0.0036033979584420605
-      },
-      {
-        "market_id": "poly_will-jd-vance-win-the-2028-us-presidential-election",
-        "weight": 0.003555504377938958
-      },
-      {
-        "market_id": "poly_will-kamala-harris-win-the-2028-democratic-presidential-nomination-641",
-        "weight": 0.003552582902065687
-      },
-      {
-        "market_id": "poly_will-mark-kelly-win-the-2028-democratic-presidential-nomination-479",
-        "weight": 0.0035509145988476013
-      },
-      {
-        "market_id": "poly_will-ted-cruz-win-the-2028-republican-presidential-nomination",
-        "weight": 0.003511521089812008
-      },
-      {
-        "market_id": "poly_will-brian-kemp-win-the-2028-republican-presidential-nomination",
-        "weight": 0.003430067264741064
-      },
-      {
-        "market_id": "poly_will-trump-nominate-david-malpass-as-the-next-fed-chair",
-        "weight": 0.0034231219025564565
-      },
-      {
-        "market_id": "poly_will-the-next-prime-minister-of-hungary-be-istvn-kapitny",
-        "weight": 0.003402950378332237
-      },
-      {
-        "market_id": "poly_will-the-next-prime-minister-of-hungary-be-lszl-toroczkai",
-        "weight": 0.0033895280656553012
-      },
-      {
-        "market_id": "poly_will-trump-nominate-larry-lindsey-as-the-next-fed-chair",
-        "weight": 0.0032931332089055345
-      },
-      {
-        "market_id": "poly_will-the-next-dutch-government-be-pvv-glpvda-vvd-cda-d66",
-        "weight": 0.0032204226542966673
-      },
-      {
-        "market_id": "poly_will-donald-trump-jr-win-the-2028-us-presidential-election",
-        "weight": 0.003161354449515305
-      },
-      {
-        "market_id": "poly_will-ahmed-aboutaleb-become-the-next-prime-minister-of-the-netherlands",
-        "weight": 0.0030845668090533633
-      },
-      {
-        "market_id": "poly_will-gretchen-whitmer-win-the-2028-democratic-presidential-nomination-676",
-        "weight": 0.0029454348433148657
-      },
-      {
-        "market_id": "poly_will-jamie-dimon-win-the-2028-us-presidential-election",
-        "weight": 0.002899701072375506
-      },
-      {
-        "market_id": "poly_will-erika-kirk-win-the-2028-republican-presidential-nomination",
-        "weight": 0.0028984174677907865
-      },
-      {
-        "market_id": "poly_will-the-iranian-regime-fall-by-march-31",
-        "weight": 0.002865723347311519
-      },
-      {
-        "market_id": "poly_will-gretchen-whitmer-win-the-2028-us-presidential-election",
-        "weight": 0.0028493288563176283
-      },
-      {
-        "market_id": "poly_will-the-us-confirm-that-aliens-exist-before-2027",
-        "weight": 0.00280841012069932
-      },
-      {
-        "market_id": "poly_will-jb-pritzker-win-the-2028-democratic-presidential-nomination-288",
-        "weight": 0.0027982599505895476
-      },
-      {
-        "market_id": "kalshi_KXFEDCHAIRNOM-29-KH",
-        "weight": 0.0021099527602893692
-      },
-      {
-        "market_id": "kalshi_KXFEDCHAIRNOM-29-KW",
-        "weight": 0.0013101321913025787
-      },
-      {
-        "market_id": "kalshi_KXFEDCHAIRNOM-29-CWAL",
-        "weight": 0.0012553535980688647
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-GN",
-        "weight": 0.0012101737433490836
-      },
-      {
-        "market_id": "kalshi_KXGREENLAND-29",
-        "weight": 0.0011022174393865406
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-ZMAM",
-        "weight": 0.0010923192866703288
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-SAS",
-        "weight": 0.001063196884488456
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-MK",
-        "weight": 0.0009658604963100271
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-RKHA",
-        "weight": 0.0009617867147549336
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-REMA",
-        "weight": 0.0009116326503680961
-      },
-      {
-        "market_id": "kalshi_KXDJTVOSTARIFFS",
-        "weight": 0.0008939836037220885
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-AOC",
-        "weight": 0.0008780578278680289
-      },
-      {
-        "market_id": "kalshi_KXFEDCHAIRNOM-29-SBES",
-        "weight": 0.0008754789318192036
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-KH",
-        "weight": 0.000835285853420954
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-JBP",
-        "weight": 0.0007836603977079542
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-CBOO",
-        "weight": 0.000713611133781736
-      },
-      {
-        "market_id": "kalshi_CONTROLH-2026-R",
-        "weight": 0.0006714833369705858
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-PB",
-        "weight": 0.0006673357946174855
-      },
-      {
-        "market_id": "kalshi_KXFEDCHAIRNOM-29-RREI",
-        "weight": 0.000656419742888782
-      },
-      {
-        "market_id": "kalshi_CONTROLH-2026-D",
-        "weight": 0.0006478476454078453
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-MC",
-        "weight": 0.0006189142894193823
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-JOSS",
-        "weight": 0.0006161152037291
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-WM",
-        "weight": 0.0006056253254999904
-      },
-      {
-        "market_id": "kalshi_KXSENATEMED-26-GRA",
-        "weight": 0.0006046948466925435
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-JSTE",
-        "weight": 0.0005813623939660525
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-MO",
-        "weight": 0.0005791583120463573
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-AB",
-        "weight": 0.0005787550863505876
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-JS",
-        "weight": 0.0005741158053441096
-      },
-      {
-        "market_id": "kalshi_KXFEDCHAIRNOM-29-JS",
-        "weight": 0.0005738775852853621
-      },
-      {
-        "market_id": "kalshi_KXFEDCHAIRNOM-29-MBOW",
-        "weight": 0.0005625774310307423
-      },
-      {
-        "market_id": "kalshi_KXCABOUT-29-PH",
-        "weight": 0.0005532578907966717
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMR-28-DJT",
-        "weight": 0.0005505943064242091
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-RGAL",
-        "weight": 0.000527305017423959
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMR-28-JDV",
-        "weight": 0.0004860372168799384
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMR-28-MR",
-        "weight": 0.00047957904923224447
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-GW",
-        "weight": 0.00046948911844121535
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-TW",
-        "weight": 0.00046341232143802985
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMR-28-MTG",
-        "weight": 0.00044398864462961025
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-CMUR",
-        "weight": 0.0004129031124681974
-      },
-      {
-        "market_id": "kalshi_KXFEDCHAIRNOM-29-SMIR",
-        "weight": 0.00040369394024299593
-      },
-      {
-        "market_id": "kalshi_KXPRESPERSON-28-DTRU",
-        "weight": 0.00036146888845373326
-      },
-      {
-        "market_id": "kalshi_KXPRESPERSON-28-GNEWS",
-        "weight": 0.000357444827140259
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-BOBA",
-        "weight": 0.00035315085594370853
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-RW",
-        "weight": 0.0003387909945125163
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMR-28-TC",
-        "weight": 0.00031648190456133254
-      },
-      {
-        "market_id": "kalshi_KXPRESPERSON-28-JVAN",
-        "weight": 0.00031137383270530113
-      },
-      {
-        "market_id": "kalshi_KXDEPORTCOUNT-25-500",
-        "weight": 0.00030170461165105074
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-HCLI",
-        "weight": 0.0002924058337156782
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-GR",
-        "weight": 0.00027700293996304364
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMR-28-TMAS",
-        "weight": 0.0002734372883497737
-      }
-    ],
-    "risk_parity": [
-      {
-        "market_id": "poly_will-trump-nominate-judy-shelton-as-the-next-fed-chair",
-        "weight": 1.0469595862455315e-05
-      },
-      {
-        "market_id": "poly_will-trump-nominate-kevin-warsh-as-the-next-fed-chair",
-        "weight": 9.246393973289015e-07
-      },
-      {
-        "market_id": "poly_will-chelsea-clinton-win-the-2028-democratic-presidential-nomination",
-        "weight": 6.980073060807796e-05
-      },
-      {
-        "market_id": "poly_will-oprah-winfrey-win-the-2028-democratic-presidential-nomination",
-        "weight": 6.768185174107093e-05
-      },
-      {
-        "market_id": "poly_will-andrew-yang-win-the-2028-democratic-presidential-nomination",
-        "weight": 7.409377641862182e-05
-      },
-      {
-        "market_id": "poly_will-lebron-james-win-the-2028-us-presidential-election",
-        "weight": 7.832373594427459e-05
-      },
-      {
-        "market_id": "poly_will-tim-walz-win-the-2028-us-presidential-election",
-        "weight": 7.170977417115832e-05
-      },
-      {
-        "market_id": "poly_will-george-clooney-win-the-2028-democratic-presidential-nomination",
-        "weight": 7.471350640829063e-05
-      },
-      {
-        "market_id": "poly_will-mrbeast-win-the-2028-democratic-presidential-nomination",
-        "weight": 6.0800622515443925e-05
-      },
-      {
-        "market_id": "poly_will-zohran-mamdani-win-the-2028-democratic-presidential-nomination-445",
-        "weight": 3.2874550947911e-05
-      },
-      {
-        "market_id": "poly_will-hillary-clinton-win-the-2028-democratic-presidential-nomination",
-        "weight": 7.033073617301507e-05
-      },
-      {
-        "market_id": "poly_will-trump-nominate-kevin-hassett-as-the-next-fed-chair",
-        "weight": 1.2530873059100733e-06
-      },
-      {
-        "market_id": "poly_will-bernie-sanders-win-the-2028-democratic-presidential-nomination-879",
-        "weight": 6.336581803188538e-05
-      },
-      {
-        "market_id": "poly_will-lebron-james-win-the-2028-democratic-presidential-nomination",
-        "weight": 7.795400182407279e-05
-      },
-      {
-        "market_id": "poly_will-trump-acquire-greenland-before-2027",
-        "weight": 3.189590595623116e-06
-      },
-      {
-        "market_id": "poly_will-greg-abbott-win-the-2028-us-presidential-election",
-        "weight": 6.896668527249317e-05
-      },
-      {
-        "market_id": "poly_will-trump-nominate-jerome-powell-as-the-next-fed-chair",
-        "weight": 1.4945680324638184e-05
-      },
-      {
-        "market_id": "poly_will-phil-murphy-win-the-2028-democratic-presidential-nomination-611",
-        "weight": 7.098296715929183e-05
-      },
-      {
-        "market_id": "poly_will-liz-cheney-win-the-2028-democratic-presidential-nomination-551",
-        "weight": 7.879172489790638e-05
-      },
-      {
-        "market_id": "poly_will-trump-nominate-rick-rieder-as-the-next-fed-chair",
-        "weight": 1.5841978469643608e-06
-      },
-      {
-        "market_id": "poly_will-person-a-win-the-2028-democratic-presidential-nomination",
-        "weight": 7.304891713773507e-05
-      },
-      {
-        "market_id": "poly_will-trump-nominate-bill-pulte-as-the-next-fed-chair",
-        "weight": 7.470943728754265e-05
-      },
-      {
-        "market_id": "poly_will-mike-pence-win-the-2028-republican-presidential-nomination",
-        "weight": 6.768185174107093e-05
-      },
-      {
-        "market_id": "poly_will-tim-walz-win-the-2028-democratic-presidential-nomination-475",
-        "weight": 6.800773119543336e-05
-      },
-      {
-        "market_id": "poly_will-tulsi-gabbard-win-the-2028-us-presidential-election",
-        "weight": 7.250039490818828e-05
-      },
-      {
-        "market_id": "poly_will-trump-nominate-himself-as-the-next-fed-chair",
-        "weight": 0.00025338121220450565
-      },
-      {
-        "market_id": "poly_will-trump-nominate-christopher-waller-as-the-next-fed-chair",
-        "weight": 1.3561706837932238e-06
-      },
-      {
-        "market_id": "poly_will-kim-kardashian-win-the-2028-democratic-presidential-nomination",
-        "weight": 6.489137309222615e-05
-      },
-      {
-        "market_id": "poly_will-beto-orourke-win-the-2028-democratic-presidential-nomination",
-        "weight": 6.334922010346515e-05
-      },
-      {
-        "market_id": "poly_will-gina-raimondo-win-the-2028-democratic-presidential-nomination-676",
-        "weight": 7.36933209490515e-05
-      },
-      {
-        "market_id": "poly_will-trump-nominate-individual-j-as-the-next-fed-chair",
-        "weight": 0.00012338573581753353
-      },
-      {
-        "market_id": "poly_will-trump-nominate-arthur-laffer-as-the-next-fed-chair",
-        "weight": 0.00014126422806733368
-      },
-      {
-        "market_id": "poly_will-trump-nominate-barron-trump-as-the-next-fed-chair",
-        "weight": 3.868588306879937e-05
-      },
-      {
-        "market_id": "poly_will-trump-nominate-michelle-bowman-as-the-next-fed-chair",
-        "weight": 8.07816266138356e-06
-      },
-      {
-        "market_id": "poly_will-john-thune-win-the-2028-republican-presidential-nomination",
-        "weight": 6.62833485573001e-05
-      },
-      {
-        "market_id": "poly_will-vivek-ramaswamy-win-the-2028-us-presidential-election",
-        "weight": 7.41025604764847e-05
-      },
-      {
-        "market_id": "poly_will-katie-britt-win-the-2028-republican-presidential-nomination",
-        "weight": 7.090639842699351e-05
-      },
-      {
-        "market_id": "poly_will-trump-nominate-stephen-miran-as-the-next-fed-chair",
-        "weight": 4.990959206908496e-06
-      },
-      {
-        "market_id": "poly_will-trump-nominate-no-one-before-2027",
-        "weight": 1.4961907271365706e-05
-      },
-      {
-        "market_id": "poly_will-roy-cooper-win-the-2028-democratic-presidential-nomination-286",
-        "weight": 6.330318309284026e-05
-      },
-      {
-        "market_id": "poly_will-kim-kardashian-win-the-2028-us-presidential-election",
-        "weight": 7.544389463249984e-05
-      },
-      {
-        "market_id": "poly_will-kristi-noem-win-the-2028-republican-presidential-nomination",
-        "weight": 6.446367381102469e-05
-      },
-      {
-        "market_id": "poly_will-tom-brady-win-the-2028-republican-presidential-nomination",
-        "weight": 5.830005622317283e-05
-      },
-      {
-        "market_id": "poly_will-barack-obama-win-the-2028-democratic-presidential-nomination-265",
-        "weight": 7.040653723993043e-05
-      },
-      {
-        "market_id": "poly_will-trump-nominate-david-zervos-as-the-next-fed-chair",
-        "weight": 2.8786394212792524e-06
-      },
-      {
-        "market_id": "poly_will-stephen-smith-win-the-2028-us-presidential-election",
-        "weight": 7.117337725816877e-05
-      },
-      {
-        "market_id": "poly_will-kim-kardashian-win-the-2028-republican-presidential-nomination",
-        "weight": 7.391411681925811e-05
-      },
-      {
-        "market_id": "poly_will-elon-musk-win-the-2028-republican-presidential-nomination",
-        "weight": 5.627971782588351e-05
-      },
-      {
-        "market_id": "poly_will-michelle-obama-win-the-2028-democratic-presidential-nomination-777",
-        "weight": 5.5504515653831466e-05
-      },
-      {
-        "market_id": "poly_will-sarah-huckabee-sanders-win-the-2028-republican-presidential-nomination",
-        "weight": 6.901767473952535e-05
-      },
-      {
-        "market_id": "poly_will-raphael-warnock-win-the-2028-democratic-presidential-nomination-914",
-        "weight": 6.905860133496471e-05
-      },
-      {
-        "market_id": "poly_will-trump-nominate-scott-bessent-as-the-next-fed-chair",
-        "weight": 8.022711546802961e-06
-      },
-      {
-        "market_id": "poly_will-elon-musk-win-the-2028-us-presidential-election",
-        "weight": 6.98120736672761e-05
-      },
-      {
-        "market_id": "poly_will-elise-stefanik-win-the-2028-republican-presidential-nomination",
-        "weight": 7.39738236406906e-05
-      },
-      {
-        "market_id": "poly_will-nikki-haley-win-the-2028-us-presidential-election",
-        "weight": 6.439221432470627e-05
-      },
-      {
-        "market_id": "poly_will-the-next-dutch-government-be-vvd-cda-ja21",
-        "weight": 1.1034652503407632e-05
-      },
-      {
-        "market_id": "poly_will-corey-booker-win-the-2028-democratic-presidential-nomination-125",
-        "weight": 4.645592575690486e-05
-      },
-      {
-        "market_id": "poly_will-byron-donalds-win-the-2028-republican-presidential-nomination",
-        "weight": 7.160809412196267e-05
-      },
-      {
-        "market_id": "poly_will-mark-cuban-win-the-2028-democratic-presidential-nomination-329",
-        "weight": 7.207757774216206e-05
-      },
-      {
-        "market_id": "poly_will-jared-polis-win-the-2028-democratic-presidential-nomination-837",
-        "weight": 5.5971923083739644e-05
-      },
-      {
-        "market_id": "poly_will-trump-nominate-ron-paul-as-the-next-fed-chair",
-        "weight": 8.195438347951233e-05
-      },
-      {
-        "market_id": "poly_will-matt-gaetz-win-the-2028-republican-presidential-nomination",
-        "weight": 6.327042166292171e-05
-      },
-      {
-        "market_id": "poly_will-greg-abbott-win-the-2028-republican-presidential-nomination",
-        "weight": 7.221023673978397e-05
-      },
-      {
-        "market_id": "poly_will-jasmine-crockett-win-the-2028-democratic-presidential-nomination",
-        "weight": 6.522758029529416e-05
-      },
-      {
-        "market_id": "poly_will-john-fetterman-win-the-2028-democratic-presidential-nomination-941",
-        "weight": 3.2313997888319306e-05
-      },
-      {
-        "market_id": "poly_will-glenn-youngkin-win-the-2028-us-presidential-election",
-        "weight": 4.987950849193687e-05
-      },
-      {
-        "market_id": "poly_will-michelle-obama-win-the-2028-us-presidential-election",
-        "weight": 5.1699697484354745e-05
-      },
-      {
-        "market_id": "poly_will-josh-hawley-win-the-2028-republican-presidential-nomination",
-        "weight": 4.871318624771665e-05
-      },
-      {
-        "market_id": "poly_will-rand-paul-win-the-2028-republican-presidential-nomination",
-        "weight": 6.382294788861364e-05
-      },
-      {
-        "market_id": "poly_will-trump-nominate-philip-jefferson-as-the-next-fed-chair",
-        "weight": 2.480296512687573e-05
-      },
-      {
-        "market_id": "poly_will-zohran-mamdani-win-the-2028-us-presidential-election",
-        "weight": 6.457883440189867e-05
-      },
-      {
-        "market_id": "poly_will-trump-nominate-larry-kudlow-as-the-next-fed-chair",
-        "weight": 8.517854985696129e-05
-      },
-      {
-        "market_id": "poly_will-vivek-ramaswamy-win-the-2028-republican-presidential-nomination",
-        "weight": 5.0391549071236936e-05
-      },
-      {
-        "market_id": "poly_will-stephen-a-smith-win-the-2028-democratic-presidential-nomination-914",
-        "weight": 4.180374666606779e-05
-      },
-      {
-        "market_id": "poly_will-steve-bannon-win-the-2028-republican-presidential-nomination",
-        "weight": 2.754194782589164e-05
-      },
-      {
-        "market_id": "poly_will-robert-f-kennedy-jr-win-the-2028-republican-presidential-nomination",
-        "weight": 2.775555620870209e-05
-      },
-      {
-        "market_id": "poly_will-chris-murphy-win-the-2028-democratic-presidential-nomination",
-        "weight": 6.976185149673808e-05
-      },
-      {
-        "market_id": "poly_will-trump-deport-250000-500000-people",
-        "weight": 9.719361262230555e-07
-      },
-      {
-        "market_id": "poly_will-gavin-newsom-win-the-2028-democratic-presidential-nomination-568",
-        "weight": 5.350993344021503e-06
-      },
-      {
-        "market_id": "poly_will-jon-stewart-win-the-2028-democratic-presidential-nomination-518",
-        "weight": 2.9087070756561605e-05
-      },
-      {
-        "market_id": "poly_will-the-next-dutch-government-be-pvv-vvd-d66",
-        "weight": 1.5653224725951075e-05
-      },
-      {
-        "market_id": "poly_will-tulsi-gabbard-win-the-2028-republican-presidential-nomination",
-        "weight": 2.9510950276827402e-05
-      },
-      {
-        "market_id": "poly_will-dwayne-the-rock-johnson-win-the-2028-democratic-presidential-nomination",
-        "weight": 1.4126212535662584e-05
-      },
-      {
-        "market_id": "poly_will-rahm-emanuel-win-the-2028-democratic-presidential-nomination-299",
-        "weight": 1.028467068189682e-05
-      },
-      {
-        "market_id": "poly_will-jd-vance-win-the-2028-us-presidential-election",
-        "weight": 7.051338946180307e-06
-      },
-      {
-        "market_id": "poly_will-kamala-harris-win-the-2028-democratic-presidential-nomination-641",
-        "weight": 1.4732356335179686e-05
-      },
-      {
-        "market_id": "poly_will-mark-kelly-win-the-2028-democratic-presidential-nomination-479",
-        "weight": 1.597281068733694e-06
-      },
-      {
-        "market_id": "poly_will-ted-cruz-win-the-2028-republican-presidential-nomination",
-        "weight": 2.6685643973917902e-05
-      },
-      {
-        "market_id": "poly_will-brian-kemp-win-the-2028-republican-presidential-nomination",
-        "weight": 3.310596676251708e-05
-      },
-      {
-        "market_id": "poly_will-trump-nominate-david-malpass-as-the-next-fed-chair",
-        "weight": 1.4626742700047112e-05
-      },
-      {
-        "market_id": "poly_will-the-next-prime-minister-of-hungary-be-istvn-kapitny",
-        "weight": 4.310109340695603e-06
-      },
-      {
-        "market_id": "poly_will-the-next-prime-minister-of-hungary-be-lszl-toroczkai",
-        "weight": 2.826954128712657e-05
-      },
-      {
-        "market_id": "poly_will-trump-nominate-larry-lindsey-as-the-next-fed-chair",
-        "weight": 1.7959011073807763e-05
-      },
-      {
-        "market_id": "poly_will-the-next-dutch-government-be-pvv-glpvda-vvd-cda-d66",
-        "weight": 4.015261923194321e-05
-      },
-      {
-        "market_id": "poly_will-donald-trump-jr-win-the-2028-us-presidential-election",
-        "weight": 6.316362757610384e-05
-      },
-      {
-        "market_id": "poly_will-ahmed-aboutaleb-become-the-next-prime-minister-of-the-netherlands",
-        "weight": 6.4229653195299015e-06
-      },
-      {
-        "market_id": "poly_will-gretchen-whitmer-win-the-2028-democratic-presidential-nomination-676",
-        "weight": 2.901802484931526e-05
-      },
-      {
-        "market_id": "poly_will-jamie-dimon-win-the-2028-us-presidential-election",
-        "weight": 5.2716237603930185e-05
-      },
-      {
-        "market_id": "poly_will-erika-kirk-win-the-2028-republican-presidential-nomination",
-        "weight": 2.957364681549415e-05
-      },
-      {
-        "market_id": "poly_will-the-iranian-regime-fall-by-march-31",
-        "weight": 1.7335831331498002e-06
-      },
-      {
-        "market_id": "poly_will-gretchen-whitmer-win-the-2028-us-presidential-election",
-        "weight": 3.072380403672564e-05
-      },
-      {
-        "market_id": "poly_will-the-us-confirm-that-aliens-exist-before-2027",
-        "weight": 3.874084677313512e-06
-      },
-      {
-        "market_id": "poly_will-jb-pritzker-win-the-2028-democratic-presidential-nomination-288",
-        "weight": 1.9957547457532394e-05
-      },
-      {
-        "market_id": "kalshi_KXFEDCHAIRNOM-29-KH",
-        "weight": 0.05851588442954771
-      },
-      {
-        "market_id": "kalshi_KXFEDCHAIRNOM-29-KW",
-        "weight": 5.851588442954771e-08
-      },
-      {
-        "market_id": "kalshi_KXFEDCHAIRNOM-29-CWAL",
-        "weight": 0.05851588442954771
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-GN",
-        "weight": 5.851588442954771e-08
-      },
-      {
-        "market_id": "kalshi_KXGREENLAND-29",
-        "weight": 4.473949493237143e-06
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-ZMAM",
-        "weight": 1.0789795959120554e-05
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-SAS",
-        "weight": 1.0135248488180521e-05
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-MK",
-        "weight": 0.05851588442954771
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-RKHA",
-        "weight": 1.2063358613973055e-05
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-REMA",
-        "weight": 1.49186818280702e-05
-      },
-      {
-        "market_id": "kalshi_KXDJTVOSTARIFFS",
-        "weight": 5.851588442954771e-08
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-AOC",
-        "weight": 2.0688489343630746e-06
-      },
-      {
-        "market_id": "kalshi_KXFEDCHAIRNOM-29-SBES",
-        "weight": 0.05851588442954771
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-KH",
-        "weight": 0.05851588442954771
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-JBP",
-        "weight": 1.0947319560971379e-05
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-CBOO",
-        "weight": 8.403704098077899e-06
-      },
-      {
-        "market_id": "kalshi_CONTROLH-2026-R",
-        "weight": 2.0688489343630746e-06
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-PB",
-        "weight": 7.740923897378995e-06
-      },
-      {
-        "market_id": "kalshi_KXFEDCHAIRNOM-29-RREI",
-        "weight": 0.05851588442954771
-      },
-      {
-        "market_id": "kalshi_CONTROLH-2026-D",
-        "weight": 5.851588442954771e-08
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-MC",
-        "weight": 0.05851588442954771
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-JOSS",
-        "weight": 0.05851588442954771
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-WM",
-        "weight": 9.703761646430472e-06
-      },
-      {
-        "market_id": "kalshi_KXSENATEMED-26-GRA",
-        "weight": 3.615780648566547e-06
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-JSTE",
-        "weight": 1.0412977950685029e-05
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-MO",
-        "weight": 0.05851588442954771
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-AB",
-        "weight": 0.05851588442954771
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-JS",
-        "weight": 8.275395737452292e-06
-      },
-      {
-        "market_id": "kalshi_KXFEDCHAIRNOM-29-JS",
-        "weight": 5.851588442954771e-08
-      },
-      {
-        "market_id": "kalshi_KXFEDCHAIRNOM-29-MBOW",
-        "weight": 0.05851588442954771
-      },
-      {
-        "market_id": "kalshi_KXCABOUT-29-PH",
-        "weight": 1.65507914749046e-06
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMR-28-DJT",
-        "weight": 6.503676939285773e-06
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-RGAL",
-        "weight": 1.2141948100589685e-05
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMR-28-JDV",
-        "weight": 0.05851588442954771
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMR-28-MR",
-        "weight": 4.137697868726146e-06
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-GW",
-        "weight": 1.2640875790863353e-05
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-TW",
-        "weight": 0.05851588442954771
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMR-28-MTG",
-        "weight": 8.751018443260643e-06
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-CMUR",
-        "weight": 1.1732109382190141e-05
-      },
-      {
-        "market_id": "kalshi_KXFEDCHAIRNOM-29-SMIR",
-        "weight": 2.4826187212356897e-05
-      },
-      {
-        "market_id": "kalshi_KXPRESPERSON-28-DTRU",
-        "weight": 5.150221931242587e-06
-      },
-      {
-        "market_id": "kalshi_KXPRESPERSON-28-GNEWS",
-        "weight": 0.05851588442954771
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-BOBA",
-        "weight": 0.05851588442954771
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-RW",
-        "weight": 8.421874290314026e-06
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMR-28-TC",
-        "weight": 9.328956545904604e-06
-      },
-      {
-        "market_id": "kalshi_KXPRESPERSON-28-JVAN",
-        "weight": 5.851588442954771e-08
-      },
-      {
-        "market_id": "kalshi_KXDEPORTCOUNT-25-500",
-        "weight": 5.851588442954771e-08
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-HCLI",
-        "weight": 0.05851588442954771
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-GR",
-        "weight": 0.05851588442954771
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMR-28-TMAS",
-        "weight": 5.951622842065434e-06
-      }
-    ],
-    "min_variance": [
-      {
-        "market_id": "poly_will-trump-nominate-judy-shelton-as-the-next-fed-chair",
-        "weight": 1.0469595862455315e-05
-      },
-      {
-        "market_id": "poly_will-trump-nominate-kevin-warsh-as-the-next-fed-chair",
-        "weight": 9.246393973289015e-07
-      },
-      {
-        "market_id": "poly_will-chelsea-clinton-win-the-2028-democratic-presidential-nomination",
-        "weight": 6.980073060807796e-05
-      },
-      {
-        "market_id": "poly_will-oprah-winfrey-win-the-2028-democratic-presidential-nomination",
-        "weight": 6.768185174107093e-05
-      },
-      {
-        "market_id": "poly_will-andrew-yang-win-the-2028-democratic-presidential-nomination",
-        "weight": 7.409377641862182e-05
-      },
-      {
-        "market_id": "poly_will-lebron-james-win-the-2028-us-presidential-election",
-        "weight": 7.832373594427459e-05
-      },
-      {
-        "market_id": "poly_will-tim-walz-win-the-2028-us-presidential-election",
-        "weight": 7.170977417115832e-05
-      },
-      {
-        "market_id": "poly_will-george-clooney-win-the-2028-democratic-presidential-nomination",
-        "weight": 7.471350640829063e-05
-      },
-      {
-        "market_id": "poly_will-mrbeast-win-the-2028-democratic-presidential-nomination",
-        "weight": 6.0800622515443925e-05
-      },
-      {
-        "market_id": "poly_will-zohran-mamdani-win-the-2028-democratic-presidential-nomination-445",
-        "weight": 3.2874550947911e-05
-      },
-      {
-        "market_id": "poly_will-hillary-clinton-win-the-2028-democratic-presidential-nomination",
-        "weight": 7.033073617301507e-05
-      },
-      {
-        "market_id": "poly_will-trump-nominate-kevin-hassett-as-the-next-fed-chair",
-        "weight": 1.2530873059100733e-06
-      },
-      {
-        "market_id": "poly_will-bernie-sanders-win-the-2028-democratic-presidential-nomination-879",
-        "weight": 6.336581803188538e-05
-      },
-      {
-        "market_id": "poly_will-lebron-james-win-the-2028-democratic-presidential-nomination",
-        "weight": 7.795400182407279e-05
-      },
-      {
-        "market_id": "poly_will-trump-acquire-greenland-before-2027",
-        "weight": 3.189590595623116e-06
-      },
-      {
-        "market_id": "poly_will-greg-abbott-win-the-2028-us-presidential-election",
-        "weight": 6.896668527249317e-05
-      },
-      {
-        "market_id": "poly_will-trump-nominate-jerome-powell-as-the-next-fed-chair",
-        "weight": 1.4945680324638184e-05
-      },
-      {
-        "market_id": "poly_will-phil-murphy-win-the-2028-democratic-presidential-nomination-611",
-        "weight": 7.098296715929183e-05
-      },
-      {
-        "market_id": "poly_will-liz-cheney-win-the-2028-democratic-presidential-nomination-551",
-        "weight": 7.879172489790638e-05
-      },
-      {
-        "market_id": "poly_will-trump-nominate-rick-rieder-as-the-next-fed-chair",
-        "weight": 1.5841978469643608e-06
-      },
-      {
-        "market_id": "poly_will-person-a-win-the-2028-democratic-presidential-nomination",
-        "weight": 7.304891713773507e-05
-      },
-      {
-        "market_id": "poly_will-trump-nominate-bill-pulte-as-the-next-fed-chair",
-        "weight": 7.470943728754265e-05
-      },
-      {
-        "market_id": "poly_will-mike-pence-win-the-2028-republican-presidential-nomination",
-        "weight": 6.768185174107093e-05
-      },
-      {
-        "market_id": "poly_will-tim-walz-win-the-2028-democratic-presidential-nomination-475",
-        "weight": 6.800773119543336e-05
-      },
-      {
-        "market_id": "poly_will-tulsi-gabbard-win-the-2028-us-presidential-election",
-        "weight": 7.250039490818828e-05
-      },
-      {
-        "market_id": "poly_will-trump-nominate-himself-as-the-next-fed-chair",
-        "weight": 0.00025338121220450565
-      },
-      {
-        "market_id": "poly_will-trump-nominate-christopher-waller-as-the-next-fed-chair",
-        "weight": 1.3561706837932238e-06
-      },
-      {
-        "market_id": "poly_will-kim-kardashian-win-the-2028-democratic-presidential-nomination",
-        "weight": 6.489137309222615e-05
-      },
-      {
-        "market_id": "poly_will-beto-orourke-win-the-2028-democratic-presidential-nomination",
-        "weight": 6.334922010346515e-05
-      },
-      {
-        "market_id": "poly_will-gina-raimondo-win-the-2028-democratic-presidential-nomination-676",
-        "weight": 7.36933209490515e-05
-      },
-      {
-        "market_id": "poly_will-trump-nominate-individual-j-as-the-next-fed-chair",
-        "weight": 0.00012338573581753353
-      },
-      {
-        "market_id": "poly_will-trump-nominate-arthur-laffer-as-the-next-fed-chair",
-        "weight": 0.00014126422806733368
-      },
-      {
-        "market_id": "poly_will-trump-nominate-barron-trump-as-the-next-fed-chair",
-        "weight": 3.868588306879937e-05
-      },
-      {
-        "market_id": "poly_will-trump-nominate-michelle-bowman-as-the-next-fed-chair",
-        "weight": 8.07816266138356e-06
-      },
-      {
-        "market_id": "poly_will-john-thune-win-the-2028-republican-presidential-nomination",
-        "weight": 6.62833485573001e-05
-      },
-      {
-        "market_id": "poly_will-vivek-ramaswamy-win-the-2028-us-presidential-election",
-        "weight": 7.41025604764847e-05
-      },
-      {
-        "market_id": "poly_will-katie-britt-win-the-2028-republican-presidential-nomination",
-        "weight": 7.090639842699351e-05
-      },
-      {
-        "market_id": "poly_will-trump-nominate-stephen-miran-as-the-next-fed-chair",
-        "weight": 4.990959206908496e-06
-      },
-      {
-        "market_id": "poly_will-trump-nominate-no-one-before-2027",
-        "weight": 1.4961907271365706e-05
-      },
-      {
-        "market_id": "poly_will-roy-cooper-win-the-2028-democratic-presidential-nomination-286",
-        "weight": 6.330318309284026e-05
-      },
-      {
-        "market_id": "poly_will-kim-kardashian-win-the-2028-us-presidential-election",
-        "weight": 7.544389463249984e-05
-      },
-      {
-        "market_id": "poly_will-kristi-noem-win-the-2028-republican-presidential-nomination",
-        "weight": 6.446367381102469e-05
-      },
-      {
-        "market_id": "poly_will-tom-brady-win-the-2028-republican-presidential-nomination",
-        "weight": 5.830005622317283e-05
-      },
-      {
-        "market_id": "poly_will-barack-obama-win-the-2028-democratic-presidential-nomination-265",
-        "weight": 7.040653723993043e-05
-      },
-      {
-        "market_id": "poly_will-trump-nominate-david-zervos-as-the-next-fed-chair",
-        "weight": 2.8786394212792524e-06
-      },
-      {
-        "market_id": "poly_will-stephen-smith-win-the-2028-us-presidential-election",
-        "weight": 7.117337725816877e-05
-      },
-      {
-        "market_id": "poly_will-kim-kardashian-win-the-2028-republican-presidential-nomination",
-        "weight": 7.391411681925811e-05
-      },
-      {
-        "market_id": "poly_will-elon-musk-win-the-2028-republican-presidential-nomination",
-        "weight": 5.627971782588351e-05
-      },
-      {
-        "market_id": "poly_will-michelle-obama-win-the-2028-democratic-presidential-nomination-777",
-        "weight": 5.5504515653831466e-05
-      },
-      {
-        "market_id": "poly_will-sarah-huckabee-sanders-win-the-2028-republican-presidential-nomination",
-        "weight": 6.901767473952535e-05
-      },
-      {
-        "market_id": "poly_will-raphael-warnock-win-the-2028-democratic-presidential-nomination-914",
-        "weight": 6.905860133496471e-05
-      },
-      {
-        "market_id": "poly_will-trump-nominate-scott-bessent-as-the-next-fed-chair",
-        "weight": 8.022711546802961e-06
-      },
-      {
-        "market_id": "poly_will-elon-musk-win-the-2028-us-presidential-election",
-        "weight": 6.98120736672761e-05
-      },
-      {
-        "market_id": "poly_will-elise-stefanik-win-the-2028-republican-presidential-nomination",
-        "weight": 7.39738236406906e-05
-      },
-      {
-        "market_id": "poly_will-nikki-haley-win-the-2028-us-presidential-election",
-        "weight": 6.439221432470627e-05
-      },
-      {
-        "market_id": "poly_will-the-next-dutch-government-be-vvd-cda-ja21",
-        "weight": 1.1034652503407632e-05
-      },
-      {
-        "market_id": "poly_will-corey-booker-win-the-2028-democratic-presidential-nomination-125",
-        "weight": 4.645592575690486e-05
-      },
-      {
-        "market_id": "poly_will-byron-donalds-win-the-2028-republican-presidential-nomination",
-        "weight": 7.160809412196267e-05
-      },
-      {
-        "market_id": "poly_will-mark-cuban-win-the-2028-democratic-presidential-nomination-329",
-        "weight": 7.207757774216206e-05
-      },
-      {
-        "market_id": "poly_will-jared-polis-win-the-2028-democratic-presidential-nomination-837",
-        "weight": 5.5971923083739644e-05
-      },
-      {
-        "market_id": "poly_will-trump-nominate-ron-paul-as-the-next-fed-chair",
-        "weight": 8.195438347951233e-05
-      },
-      {
-        "market_id": "poly_will-matt-gaetz-win-the-2028-republican-presidential-nomination",
-        "weight": 6.327042166292171e-05
-      },
-      {
-        "market_id": "poly_will-greg-abbott-win-the-2028-republican-presidential-nomination",
-        "weight": 7.221023673978397e-05
-      },
-      {
-        "market_id": "poly_will-jasmine-crockett-win-the-2028-democratic-presidential-nomination",
-        "weight": 6.522758029529416e-05
-      },
-      {
-        "market_id": "poly_will-john-fetterman-win-the-2028-democratic-presidential-nomination-941",
-        "weight": 3.2313997888319306e-05
-      },
-      {
-        "market_id": "poly_will-glenn-youngkin-win-the-2028-us-presidential-election",
-        "weight": 4.987950849193687e-05
-      },
-      {
-        "market_id": "poly_will-michelle-obama-win-the-2028-us-presidential-election",
-        "weight": 5.1699697484354745e-05
-      },
-      {
-        "market_id": "poly_will-josh-hawley-win-the-2028-republican-presidential-nomination",
-        "weight": 4.871318624771665e-05
-      },
-      {
-        "market_id": "poly_will-rand-paul-win-the-2028-republican-presidential-nomination",
-        "weight": 6.382294788861364e-05
-      },
-      {
-        "market_id": "poly_will-trump-nominate-philip-jefferson-as-the-next-fed-chair",
-        "weight": 2.480296512687573e-05
-      },
-      {
-        "market_id": "poly_will-zohran-mamdani-win-the-2028-us-presidential-election",
-        "weight": 6.457883440189867e-05
-      },
-      {
-        "market_id": "poly_will-trump-nominate-larry-kudlow-as-the-next-fed-chair",
-        "weight": 8.517854985696129e-05
-      },
-      {
-        "market_id": "poly_will-vivek-ramaswamy-win-the-2028-republican-presidential-nomination",
-        "weight": 5.0391549071236936e-05
-      },
-      {
-        "market_id": "poly_will-stephen-a-smith-win-the-2028-democratic-presidential-nomination-914",
-        "weight": 4.180374666606779e-05
-      },
-      {
-        "market_id": "poly_will-steve-bannon-win-the-2028-republican-presidential-nomination",
-        "weight": 2.754194782589164e-05
-      },
-      {
-        "market_id": "poly_will-robert-f-kennedy-jr-win-the-2028-republican-presidential-nomination",
-        "weight": 2.775555620870209e-05
-      },
-      {
-        "market_id": "poly_will-chris-murphy-win-the-2028-democratic-presidential-nomination",
-        "weight": 6.976185149673808e-05
-      },
-      {
-        "market_id": "poly_will-trump-deport-250000-500000-people",
-        "weight": 9.719361262230555e-07
-      },
-      {
-        "market_id": "poly_will-gavin-newsom-win-the-2028-democratic-presidential-nomination-568",
-        "weight": 5.350993344021503e-06
-      },
-      {
-        "market_id": "poly_will-jon-stewart-win-the-2028-democratic-presidential-nomination-518",
-        "weight": 2.9087070756561605e-05
-      },
-      {
-        "market_id": "poly_will-the-next-dutch-government-be-pvv-vvd-d66",
-        "weight": 1.5653224725951075e-05
-      },
-      {
-        "market_id": "poly_will-tulsi-gabbard-win-the-2028-republican-presidential-nomination",
-        "weight": 2.9510950276827402e-05
-      },
-      {
-        "market_id": "poly_will-dwayne-the-rock-johnson-win-the-2028-democratic-presidential-nomination",
-        "weight": 1.4126212535662584e-05
-      },
-      {
-        "market_id": "poly_will-rahm-emanuel-win-the-2028-democratic-presidential-nomination-299",
-        "weight": 1.028467068189682e-05
-      },
-      {
-        "market_id": "poly_will-jd-vance-win-the-2028-us-presidential-election",
-        "weight": 7.051338946180307e-06
-      },
-      {
-        "market_id": "poly_will-kamala-harris-win-the-2028-democratic-presidential-nomination-641",
-        "weight": 1.4732356335179686e-05
-      },
-      {
-        "market_id": "poly_will-mark-kelly-win-the-2028-democratic-presidential-nomination-479",
-        "weight": 1.597281068733694e-06
-      },
-      {
-        "market_id": "poly_will-ted-cruz-win-the-2028-republican-presidential-nomination",
-        "weight": 2.6685643973917902e-05
-      },
-      {
-        "market_id": "poly_will-brian-kemp-win-the-2028-republican-presidential-nomination",
-        "weight": 3.310596676251708e-05
-      },
-      {
-        "market_id": "poly_will-trump-nominate-david-malpass-as-the-next-fed-chair",
-        "weight": 1.4626742700047112e-05
-      },
-      {
-        "market_id": "poly_will-the-next-prime-minister-of-hungary-be-istvn-kapitny",
-        "weight": 4.310109340695603e-06
-      },
-      {
-        "market_id": "poly_will-the-next-prime-minister-of-hungary-be-lszl-toroczkai",
-        "weight": 2.826954128712657e-05
-      },
-      {
-        "market_id": "poly_will-trump-nominate-larry-lindsey-as-the-next-fed-chair",
-        "weight": 1.7959011073807763e-05
-      },
-      {
-        "market_id": "poly_will-the-next-dutch-government-be-pvv-glpvda-vvd-cda-d66",
-        "weight": 4.015261923194321e-05
-      },
-      {
-        "market_id": "poly_will-donald-trump-jr-win-the-2028-us-presidential-election",
-        "weight": 6.316362757610384e-05
-      },
-      {
-        "market_id": "poly_will-ahmed-aboutaleb-become-the-next-prime-minister-of-the-netherlands",
-        "weight": 6.4229653195299015e-06
-      },
-      {
-        "market_id": "poly_will-gretchen-whitmer-win-the-2028-democratic-presidential-nomination-676",
-        "weight": 2.901802484931526e-05
-      },
-      {
-        "market_id": "poly_will-jamie-dimon-win-the-2028-us-presidential-election",
-        "weight": 5.2716237603930185e-05
-      },
-      {
-        "market_id": "poly_will-erika-kirk-win-the-2028-republican-presidential-nomination",
-        "weight": 2.957364681549415e-05
-      },
-      {
-        "market_id": "poly_will-the-iranian-regime-fall-by-march-31",
-        "weight": 1.7335831331498002e-06
-      },
-      {
-        "market_id": "poly_will-gretchen-whitmer-win-the-2028-us-presidential-election",
-        "weight": 3.072380403672564e-05
-      },
-      {
-        "market_id": "poly_will-the-us-confirm-that-aliens-exist-before-2027",
-        "weight": 3.874084677313512e-06
-      },
-      {
-        "market_id": "poly_will-jb-pritzker-win-the-2028-democratic-presidential-nomination-288",
-        "weight": 1.9957547457532394e-05
-      },
-      {
-        "market_id": "kalshi_KXFEDCHAIRNOM-29-KH",
-        "weight": 0.05851588442954771
-      },
-      {
-        "market_id": "kalshi_KXFEDCHAIRNOM-29-KW",
-        "weight": 5.851588442954771e-08
-      },
-      {
-        "market_id": "kalshi_KXFEDCHAIRNOM-29-CWAL",
-        "weight": 0.05851588442954771
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-GN",
-        "weight": 5.851588442954771e-08
-      },
-      {
-        "market_id": "kalshi_KXGREENLAND-29",
-        "weight": 4.473949493237143e-06
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-ZMAM",
-        "weight": 1.0789795959120554e-05
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-SAS",
-        "weight": 1.0135248488180521e-05
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-MK",
-        "weight": 0.05851588442954771
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-RKHA",
-        "weight": 1.2063358613973055e-05
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-REMA",
-        "weight": 1.49186818280702e-05
-      },
-      {
-        "market_id": "kalshi_KXDJTVOSTARIFFS",
-        "weight": 5.851588442954771e-08
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-AOC",
-        "weight": 2.0688489343630746e-06
-      },
-      {
-        "market_id": "kalshi_KXFEDCHAIRNOM-29-SBES",
-        "weight": 0.05851588442954771
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-KH",
-        "weight": 0.05851588442954771
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-JBP",
-        "weight": 1.0947319560971379e-05
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-CBOO",
-        "weight": 8.403704098077899e-06
-      },
-      {
-        "market_id": "kalshi_CONTROLH-2026-R",
-        "weight": 2.0688489343630746e-06
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-PB",
-        "weight": 7.740923897378995e-06
-      },
-      {
-        "market_id": "kalshi_KXFEDCHAIRNOM-29-RREI",
-        "weight": 0.05851588442954771
-      },
-      {
-        "market_id": "kalshi_CONTROLH-2026-D",
-        "weight": 5.851588442954771e-08
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-MC",
-        "weight": 0.05851588442954771
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-JOSS",
-        "weight": 0.05851588442954771
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-WM",
-        "weight": 9.703761646430472e-06
-      },
-      {
-        "market_id": "kalshi_KXSENATEMED-26-GRA",
-        "weight": 3.615780648566547e-06
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-JSTE",
-        "weight": 1.0412977950685029e-05
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-MO",
-        "weight": 0.05851588442954771
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-AB",
-        "weight": 0.05851588442954771
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-JS",
-        "weight": 8.275395737452292e-06
-      },
-      {
-        "market_id": "kalshi_KXFEDCHAIRNOM-29-JS",
-        "weight": 5.851588442954771e-08
-      },
-      {
-        "market_id": "kalshi_KXFEDCHAIRNOM-29-MBOW",
-        "weight": 0.05851588442954771
-      },
-      {
-        "market_id": "kalshi_KXCABOUT-29-PH",
-        "weight": 1.65507914749046e-06
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMR-28-DJT",
-        "weight": 6.503676939285773e-06
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-RGAL",
-        "weight": 1.2141948100589685e-05
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMR-28-JDV",
-        "weight": 0.05851588442954771
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMR-28-MR",
-        "weight": 4.137697868726146e-06
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-GW",
-        "weight": 1.2640875790863353e-05
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-TW",
-        "weight": 0.05851588442954771
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMR-28-MTG",
-        "weight": 8.751018443260643e-06
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-CMUR",
-        "weight": 1.1732109382190141e-05
-      },
-      {
-        "market_id": "kalshi_KXFEDCHAIRNOM-29-SMIR",
-        "weight": 2.4826187212356897e-05
-      },
-      {
-        "market_id": "kalshi_KXPRESPERSON-28-DTRU",
-        "weight": 5.150221931242587e-06
-      },
-      {
-        "market_id": "kalshi_KXPRESPERSON-28-GNEWS",
-        "weight": 0.05851588442954771
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-BOBA",
-        "weight": 0.05851588442954771
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-RW",
-        "weight": 8.421874290314026e-06
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMR-28-TC",
-        "weight": 9.328956545904604e-06
-      },
-      {
-        "market_id": "kalshi_KXPRESPERSON-28-JVAN",
-        "weight": 5.851588442954771e-08
-      },
-      {
-        "market_id": "kalshi_KXDEPORTCOUNT-25-500",
-        "weight": 5.851588442954771e-08
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-HCLI",
-        "weight": 0.05851588442954771
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-GR",
-        "weight": 0.05851588442954771
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMR-28-TMAS",
-        "weight": 5.951622842065434e-06
-      }
-    ],
-    "max_diversification": [
-      {
-        "market_id": "poly_will-trump-nominate-judy-shelton-as-the-next-fed-chair",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-trump-nominate-kevin-warsh-as-the-next-fed-chair",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-chelsea-clinton-win-the-2028-democratic-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-oprah-winfrey-win-the-2028-democratic-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-andrew-yang-win-the-2028-democratic-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-lebron-james-win-the-2028-us-presidential-election",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-tim-walz-win-the-2028-us-presidential-election",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-george-clooney-win-the-2028-democratic-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-mrbeast-win-the-2028-democratic-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-zohran-mamdani-win-the-2028-democratic-presidential-nomination-445",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-hillary-clinton-win-the-2028-democratic-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-trump-nominate-kevin-hassett-as-the-next-fed-chair",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-bernie-sanders-win-the-2028-democratic-presidential-nomination-879",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-lebron-james-win-the-2028-democratic-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-trump-acquire-greenland-before-2027",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-greg-abbott-win-the-2028-us-presidential-election",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-trump-nominate-jerome-powell-as-the-next-fed-chair",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-phil-murphy-win-the-2028-democratic-presidential-nomination-611",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-liz-cheney-win-the-2028-democratic-presidential-nomination-551",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-trump-nominate-rick-rieder-as-the-next-fed-chair",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-person-a-win-the-2028-democratic-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-trump-nominate-bill-pulte-as-the-next-fed-chair",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-mike-pence-win-the-2028-republican-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-tim-walz-win-the-2028-democratic-presidential-nomination-475",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-tulsi-gabbard-win-the-2028-us-presidential-election",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-trump-nominate-himself-as-the-next-fed-chair",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-trump-nominate-christopher-waller-as-the-next-fed-chair",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-kim-kardashian-win-the-2028-democratic-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-beto-orourke-win-the-2028-democratic-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-gina-raimondo-win-the-2028-democratic-presidential-nomination-676",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-trump-nominate-individual-j-as-the-next-fed-chair",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-trump-nominate-arthur-laffer-as-the-next-fed-chair",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-trump-nominate-barron-trump-as-the-next-fed-chair",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-trump-nominate-michelle-bowman-as-the-next-fed-chair",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-john-thune-win-the-2028-republican-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-vivek-ramaswamy-win-the-2028-us-presidential-election",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-katie-britt-win-the-2028-republican-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-trump-nominate-stephen-miran-as-the-next-fed-chair",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-trump-nominate-no-one-before-2027",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-roy-cooper-win-the-2028-democratic-presidential-nomination-286",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-kim-kardashian-win-the-2028-us-presidential-election",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-kristi-noem-win-the-2028-republican-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-tom-brady-win-the-2028-republican-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-barack-obama-win-the-2028-democratic-presidential-nomination-265",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-trump-nominate-david-zervos-as-the-next-fed-chair",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-stephen-smith-win-the-2028-us-presidential-election",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-kim-kardashian-win-the-2028-republican-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-elon-musk-win-the-2028-republican-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-michelle-obama-win-the-2028-democratic-presidential-nomination-777",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-sarah-huckabee-sanders-win-the-2028-republican-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-raphael-warnock-win-the-2028-democratic-presidential-nomination-914",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-trump-nominate-scott-bessent-as-the-next-fed-chair",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-elon-musk-win-the-2028-us-presidential-election",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-elise-stefanik-win-the-2028-republican-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-nikki-haley-win-the-2028-us-presidential-election",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-the-next-dutch-government-be-vvd-cda-ja21",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-corey-booker-win-the-2028-democratic-presidential-nomination-125",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-byron-donalds-win-the-2028-republican-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-mark-cuban-win-the-2028-democratic-presidential-nomination-329",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-jared-polis-win-the-2028-democratic-presidential-nomination-837",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-trump-nominate-ron-paul-as-the-next-fed-chair",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-matt-gaetz-win-the-2028-republican-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-greg-abbott-win-the-2028-republican-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-jasmine-crockett-win-the-2028-democratic-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-john-fetterman-win-the-2028-democratic-presidential-nomination-941",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-glenn-youngkin-win-the-2028-us-presidential-election",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-michelle-obama-win-the-2028-us-presidential-election",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-josh-hawley-win-the-2028-republican-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-rand-paul-win-the-2028-republican-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-trump-nominate-philip-jefferson-as-the-next-fed-chair",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-zohran-mamdani-win-the-2028-us-presidential-election",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-trump-nominate-larry-kudlow-as-the-next-fed-chair",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-vivek-ramaswamy-win-the-2028-republican-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-stephen-a-smith-win-the-2028-democratic-presidential-nomination-914",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-steve-bannon-win-the-2028-republican-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-robert-f-kennedy-jr-win-the-2028-republican-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-chris-murphy-win-the-2028-democratic-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-trump-deport-250000-500000-people",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-gavin-newsom-win-the-2028-democratic-presidential-nomination-568",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-jon-stewart-win-the-2028-democratic-presidential-nomination-518",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-the-next-dutch-government-be-pvv-vvd-d66",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-tulsi-gabbard-win-the-2028-republican-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-dwayne-the-rock-johnson-win-the-2028-democratic-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-rahm-emanuel-win-the-2028-democratic-presidential-nomination-299",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-jd-vance-win-the-2028-us-presidential-election",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-kamala-harris-win-the-2028-democratic-presidential-nomination-641",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-mark-kelly-win-the-2028-democratic-presidential-nomination-479",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-ted-cruz-win-the-2028-republican-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-brian-kemp-win-the-2028-republican-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-trump-nominate-david-malpass-as-the-next-fed-chair",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-the-next-prime-minister-of-hungary-be-istvn-kapitny",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-the-next-prime-minister-of-hungary-be-lszl-toroczkai",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-trump-nominate-larry-lindsey-as-the-next-fed-chair",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-the-next-dutch-government-be-pvv-glpvda-vvd-cda-d66",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-donald-trump-jr-win-the-2028-us-presidential-election",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-ahmed-aboutaleb-become-the-next-prime-minister-of-the-netherlands",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-gretchen-whitmer-win-the-2028-democratic-presidential-nomination-676",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-jamie-dimon-win-the-2028-us-presidential-election",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-erika-kirk-win-the-2028-republican-presidential-nomination",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-the-iranian-regime-fall-by-march-31",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-gretchen-whitmer-win-the-2028-us-presidential-election",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-the-us-confirm-that-aliens-exist-before-2027",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "poly_will-jb-pritzker-win-the-2028-democratic-presidential-nomination-288",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXFEDCHAIRNOM-29-KH",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXFEDCHAIRNOM-29-KW",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXFEDCHAIRNOM-29-CWAL",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-GN",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXGREENLAND-29",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-ZMAM",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-SAS",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-MK",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-RKHA",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-REMA",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXDJTVOSTARIFFS",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-AOC",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXFEDCHAIRNOM-29-SBES",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-KH",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-JBP",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-CBOO",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_CONTROLH-2026-R",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-PB",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXFEDCHAIRNOM-29-RREI",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_CONTROLH-2026-D",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-MC",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-JOSS",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-WM",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXSENATEMED-26-GRA",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-JSTE",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-MO",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-AB",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-JS",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXFEDCHAIRNOM-29-JS",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXFEDCHAIRNOM-29-MBOW",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXCABOUT-29-PH",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMR-28-DJT",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-RGAL",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMR-28-JDV",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMR-28-MR",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-GW",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-TW",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMR-28-MTG",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-CMUR",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXFEDCHAIRNOM-29-SMIR",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESPERSON-28-DTRU",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESPERSON-28-GNEWS",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-BOBA",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-RW",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMR-28-TC",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESPERSON-28-JVAN",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXDEPORTCOUNT-25-500",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-HCLI",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMD-28-GR",
-        "weight": 0.006535947712418301
-      },
-      {
-        "market_id": "kalshi_KXPRESNOMR-28-TMAS",
-        "weight": 0.006535947712418301
-      }
-    ]
-  },
-  "ai_technology": {
-    "equal": [
-      {
-        "market_id": "poly_will-bitcoin-reach-150k-in-february-2026",
-        "weight": 0.09090909090909091
-      },
-      {
-        "market_id": "poly_will-jesus-christ-return-before-gta-vi-665",
-        "weight": 0.09090909090909091
-      },
-      {
-        "market_id": "poly_will-ethereum-reach-4400-in-february-2026",
-        "weight": 0.09090909090909091
-      },
-      {
-        "market_id": "poly_will-the-portland-trail-blazers-win-the-2026-nba-finals",
-        "weight": 0.09090909090909091
-      },
-      {
-        "market_id": "poly_will-there-be-at-least-4000-measles-cases-in-the-us-in-2026",
-        "weight": 0.09090909090909091
-      },
-      {
-        "market_id": "poly_will-there-be-at-least-10000-measles-cases-in-the-us-in-2026-418-668-617",
-        "weight": 0.09090909090909091
-      },
-      {
-        "market_id": "poly_will-bitcoin-reach-85k-in-february-2026",
-        "weight": 0.09090909090909091
-      },
-      {
-        "market_id": "poly_will-haiti-win-the-2026-fifa-world-cup",
-        "weight": 0.09090909090909091
-      },
-      {
-        "market_id": "poly_will-ethereum-reach-5000-in-february-2026",
-        "weight": 0.09090909090909091
-      },
-      {
-        "market_id": "poly_megaeth-market-cap-fdv-2b-one-day-after-launch-738-867-649-272",
-        "weight": 0.09090909090909091
-      },
-      {
-        "market_id": "poly_gta-vi-released-before-june-2026",
-        "weight": 0.09090909090909091
-      }
-    ],
-    "volume_weighted": [
-      {
-        "market_id": "poly_will-bitcoin-reach-150k-in-february-2026",
-        "weight": 0.24975727868352515
-      },
-      {
-        "market_id": "poly_will-jesus-christ-return-before-gta-vi-665",
-        "weight": 0.11093907660642822
-      },
-      {
-        "market_id": "poly_will-ethereum-reach-4400-in-february-2026",
-        "weight": 0.0932047113439527
-      },
-      {
-        "market_id": "poly_will-the-portland-trail-blazers-win-the-2026-nba-finals",
-        "weight": 0.08185483818026382
-      },
-      {
-        "market_id": "poly_will-there-be-at-least-4000-measles-cases-in-the-us-in-2026",
-        "weight": 0.0791444971965238
-      },
-      {
-        "market_id": "poly_will-there-be-at-least-10000-measles-cases-in-the-us-in-2026-418-668-617",
-        "weight": 0.07163384513290907
-      },
-      {
-        "market_id": "poly_will-bitcoin-reach-85k-in-february-2026",
-        "weight": 0.0688695252338653
-      },
-      {
-        "market_id": "poly_will-haiti-win-the-2026-fifa-world-cup",
-        "weight": 0.06312547421593741
-      },
-      {
-        "market_id": "poly_will-ethereum-reach-5000-in-february-2026",
-        "weight": 0.06114785893678867
-      },
-      {
-        "market_id": "poly_megaeth-market-cap-fdv-2b-one-day-after-launch-738-867-649-272",
-        "weight": 0.06104395814417381
-      },
-      {
-        "market_id": "poly_gta-vi-released-before-june-2026",
-        "weight": 0.05927893632563204
-      }
-    ],
-    "risk_parity": [
-      {
-        "market_id": "poly_will-bitcoin-reach-150k-in-february-2026",
-        "weight": 0.06689099962302628
-      },
-      {
-        "market_id": "poly_will-jesus-christ-return-before-gta-vi-665",
-        "weight": 0.009301919244049666
-      },
-      {
-        "market_id": "poly_will-ethereum-reach-4400-in-february-2026",
-        "weight": 0.18550897961057014
-      },
-      {
-        "market_id": "poly_will-the-portland-trail-blazers-win-the-2026-nba-finals",
-        "weight": 0.22152421948291662
-      },
-      {
-        "market_id": "poly_will-there-be-at-least-4000-measles-cases-in-the-us-in-2026",
-        "weight": 0.00023676552335313503
-      },
-      {
-        "market_id": "poly_will-there-be-at-least-10000-measles-cases-in-the-us-in-2026-418-668-617",
-        "weight": 0.0047345028283378105
-      },
-      {
-        "market_id": "poly_will-bitcoin-reach-85k-in-february-2026",
-        "weight": 0.002197105256137401
-      },
-      {
-        "market_id": "poly_will-haiti-win-the-2026-fifa-world-cup",
-        "weight": 0.3266185809283606
-      },
-      {
-        "market_id": "poly_will-ethereum-reach-5000-in-february-2026",
-        "weight": 0.17392580126693336
-      },
-      {
-        "market_id": "poly_megaeth-market-cap-fdv-2b-one-day-after-launch-738-867-649-272",
-        "weight": 0.004336824319181222
-      },
-      {
-        "market_id": "poly_gta-vi-released-before-june-2026",
-        "weight": 0.004724301917133625
-      }
-    ],
-    "min_variance": [
-      {
-        "market_id": "poly_will-bitcoin-reach-150k-in-february-2026",
-        "weight": 0.06689099962302628
-      },
-      {
-        "market_id": "poly_will-jesus-christ-return-before-gta-vi-665",
-        "weight": 0.009301919244049666
-      },
-      {
-        "market_id": "poly_will-ethereum-reach-4400-in-february-2026",
-        "weight": 0.18550897961057014
-      },
-      {
-        "market_id": "poly_will-the-portland-trail-blazers-win-the-2026-nba-finals",
-        "weight": 0.22152421948291662
-      },
-      {
-        "market_id": "poly_will-there-be-at-least-4000-measles-cases-in-the-us-in-2026",
-        "weight": 0.00023676552335313503
-      },
-      {
-        "market_id": "poly_will-there-be-at-least-10000-measles-cases-in-the-us-in-2026-418-668-617",
-        "weight": 0.0047345028283378105
-      },
-      {
-        "market_id": "poly_will-bitcoin-reach-85k-in-february-2026",
-        "weight": 0.002197105256137401
-      },
-      {
-        "market_id": "poly_will-haiti-win-the-2026-fifa-world-cup",
-        "weight": 0.3266185809283606
-      },
-      {
-        "market_id": "poly_will-ethereum-reach-5000-in-february-2026",
-        "weight": 0.17392580126693336
-      },
-      {
-        "market_id": "poly_megaeth-market-cap-fdv-2b-one-day-after-launch-738-867-649-272",
-        "weight": 0.004336824319181222
-      },
-      {
-        "market_id": "poly_gta-vi-released-before-june-2026",
-        "weight": 0.004724301917133625
-      }
-    ],
-    "max_diversification": [
-      {
-        "market_id": "poly_will-bitcoin-reach-150k-in-february-2026",
-        "weight": 0.09090909090909091
-      },
-      {
-        "market_id": "poly_will-jesus-christ-return-before-gta-vi-665",
-        "weight": 0.09090909090909091
-      },
-      {
-        "market_id": "poly_will-ethereum-reach-4400-in-february-2026",
-        "weight": 0.09090909090909091
-      },
-      {
-        "market_id": "poly_will-the-portland-trail-blazers-win-the-2026-nba-finals",
-        "weight": 0.09090909090909091
-      },
-      {
-        "market_id": "poly_will-there-be-at-least-4000-measles-cases-in-the-us-in-2026",
-        "weight": 0.09090909090909091
-      },
-      {
-        "market_id": "poly_will-there-be-at-least-10000-measles-cases-in-the-us-in-2026-418-668-617",
-        "weight": 0.09090909090909091
-      },
-      {
-        "market_id": "poly_will-bitcoin-reach-85k-in-february-2026",
-        "weight": 0.09090909090909091
-      },
-      {
-        "market_id": "poly_will-haiti-win-the-2026-fifa-world-cup",
-        "weight": 0.09090909090909091
-      },
-      {
-        "market_id": "poly_will-ethereum-reach-5000-in-february-2026",
-        "weight": 0.09090909090909091
-      },
-      {
-        "market_id": "poly_megaeth-market-cap-fdv-2b-one-day-after-launch-738-867-649-272",
-        "weight": 0.09090909090909091
-      },
-      {
-        "market_id": "poly_gta-vi-released-before-june-2026",
-        "weight": 0.09090909090909091
-      }
-    ]
-  },
-  "fed_monetary_policy": {
-    "equal": [
-      {
-        "market_id": "poly_will-the-fed-decrease-interest-rates-by-50-bps-after-the-march-2026-meeting",
-        "weight": 0.14285714285714285
-      },
-      {
-        "market_id": "poly_will-the-fed-increase-interest-rates-by-25-bps-after-the-march-2026-meeting",
-        "weight": 0.14285714285714285
-      },
-      {
-        "market_id": "poly_will-the-fed-decrease-interest-rates-by-25-bps-after-the-march-2026-meeting",
-        "weight": 0.14285714285714285
-      },
-      {
-        "market_id": "poly_will-there-be-no-change-in-fed-interest-rates-after-the-march-2026-meeting",
-        "weight": 0.14285714285714285
-      },
-      {
-        "market_id": "kalshi_KXFEDDECISION-26JAN-H0",
-        "weight": 0.14285714285714285
-      },
-      {
-        "market_id": "kalshi_KXFEDDECISION-26JAN-C25",
-        "weight": 0.14285714285714285
-      },
-      {
-        "market_id": "kalshi_KXFEDDECISION-26JAN-C26",
-        "weight": 0.14285714285714285
-      }
-    ],
-    "volume_weighted": [
-      {
-        "market_id": "poly_will-the-fed-decrease-interest-rates-by-50-bps-after-the-march-2026-meeting",
-        "weight": 0.4033671917337286
-      },
-      {
-        "market_id": "poly_will-the-fed-increase-interest-rates-by-25-bps-after-the-march-2026-meeting",
-        "weight": 0.3409095761657841
-      },
-      {
-        "market_id": "poly_will-the-fed-decrease-interest-rates-by-25-bps-after-the-march-2026-meeting",
-        "weight": 0.12028943580732604
-      },
-      {
-        "market_id": "poly_will-there-be-no-change-in-fed-interest-rates-after-the-march-2026-meeting",
-        "weight": 0.1166915042555144
-      },
-      {
-        "market_id": "kalshi_KXFEDDECISION-26JAN-H0",
-        "weight": 0.00773190420607563
-      },
-      {
-        "market_id": "kalshi_KXFEDDECISION-26JAN-C25",
-        "weight": 0.007045183341002687
-      },
-      {
-        "market_id": "kalshi_KXFEDDECISION-26JAN-C26",
-        "weight": 0.00396520449056845
-      }
-    ],
-    "risk_parity": [
-      {
-        "market_id": "poly_will-the-fed-decrease-interest-rates-by-50-bps-after-the-march-2026-meeting",
-        "weight": 0.318213468485123
-      },
-      {
-        "market_id": "poly_will-the-fed-increase-interest-rates-by-25-bps-after-the-march-2026-meeting",
-        "weight": 0.402040149472214
-      },
-      {
-        "market_id": "poly_will-the-fed-decrease-interest-rates-by-25-bps-after-the-march-2026-meeting",
-        "weight": 0.1375515723010545
-      },
-      {
-        "market_id": "poly_will-there-be-no-change-in-fed-interest-rates-after-the-march-2026-meeting",
-        "weight": 0.12845607334085618
-      },
-      {
-        "market_id": "kalshi_KXFEDDECISION-26JAN-H0",
-        "weight": 0.00457957880025077
-      },
-      {
-        "market_id": "kalshi_KXFEDDECISION-26JAN-C25",
-        "weight": 0.00457957880025077
-      },
-      {
-        "market_id": "kalshi_KXFEDDECISION-26JAN-C26",
-        "weight": 0.00457957880025077
-      }
-    ],
-    "min_variance": [
-      {
-        "market_id": "poly_will-the-fed-decrease-interest-rates-by-50-bps-after-the-march-2026-meeting",
-        "weight": 0.318213468485123
-      },
-      {
-        "market_id": "poly_will-the-fed-increase-interest-rates-by-25-bps-after-the-march-2026-meeting",
-        "weight": 0.402040149472214
-      },
-      {
-        "market_id": "poly_will-the-fed-decrease-interest-rates-by-25-bps-after-the-march-2026-meeting",
-        "weight": 0.1375515723010545
-      },
-      {
-        "market_id": "poly_will-there-be-no-change-in-fed-interest-rates-after-the-march-2026-meeting",
-        "weight": 0.12845607334085618
-      },
-      {
-        "market_id": "kalshi_KXFEDDECISION-26JAN-H0",
-        "weight": 0.00457957880025077
-      },
-      {
-        "market_id": "kalshi_KXFEDDECISION-26JAN-C25",
-        "weight": 0.00457957880025077
-      },
-      {
-        "market_id": "kalshi_KXFEDDECISION-26JAN-C26",
-        "weight": 0.00457957880025077
-      }
-    ],
-    "max_diversification": [
-      {
-        "market_id": "poly_will-the-fed-decrease-interest-rates-by-50-bps-after-the-march-2026-meeting",
-        "weight": 0.14285714285714285
-      },
-      {
-        "market_id": "poly_will-the-fed-increase-interest-rates-by-25-bps-after-the-march-2026-meeting",
-        "weight": 0.14285714285714285
-      },
-      {
-        "market_id": "poly_will-the-fed-decrease-interest-rates-by-25-bps-after-the-march-2026-meeting",
-        "weight": 0.14285714285714285
-      },
-      {
-        "market_id": "poly_will-there-be-no-change-in-fed-interest-rates-after-the-march-2026-meeting",
-        "weight": 0.14285714285714285
-      },
-      {
-        "market_id": "kalshi_KXFEDDECISION-26JAN-H0",
-        "weight": 0.14285714285714285
-      },
-      {
-        "market_id": "kalshi_KXFEDDECISION-26JAN-C25",
-        "weight": 0.14285714285714285
-      },
-      {
-        "market_id": "kalshi_KXFEDDECISION-26JAN-C26",
-        "weight": 0.14285714285714285
-      }
-    ]
-  },
-  "middle_east": {
-    "equal": [
-      {
-        "market_id": "poly_us-strikes-iran-by-february-28-2026-227-967-547-688-589-491-592-418-452-924-384-915-464-672-196-157-993-596-269-535-381-391-471-256-988-997-296-225-762-973-292-827-345-182-558-215-794-879-189-761",
-        "weight": 0.14285714285714285
-      },
-      {
-        "market_id": "poly_us-strikes-iran-by-february-20-2026-151-468-624-297-614-778-872-127-349-448-499-337-826-553",
-        "weight": 0.14285714285714285
-      },
-      {
-        "market_id": "poly_khamenei-out-as-supreme-leader-of-iran-by-march-31",
-        "weight": 0.14285714285714285
-      },
-      {
-        "market_id": "poly_us-strikes-iran-by-march-31-2026-393-221-132-633-215-592-866-184-321-377-931-222-297-655-719-935-944-321-534-925-937-744-476-586-454-914-676-972-362-876-771-213-554-443-439-287-519-563-393-256-817-961-941-762-654-519-837-721-654-479-949-423-962-271-545",
-        "weight": 0.14285714285714285
-      },
-      {
-        "market_id": "poly_khamenei-out-as-supreme-leader-of-iran-by-february-28",
-        "weight": 0.14285714285714285
-      },
-      {
-        "market_id": "poly_us-strikes-iran-by-june-30-2026-699-664-723-485-753-218-567-164-387-443-377-384-159-973-494-631-694-956-361-443-224-518-537-678-486-386-275-153-976-862-149-897-221-522-378-575-993-365-444-965-488-963-698-313-696-829-887-721-211-322-726-411-231-474",
-        "weight": 0.14285714285714285
-      },
-      {
-        "market_id": "poly_khamenei-out-as-supreme-leader-of-iran-by-june-30-747",
-        "weight": 0.14285714285714285
-      }
-    ],
-    "volume_weighted": [
-      {
-        "market_id": "poly_us-strikes-iran-by-february-28-2026-227-967-547-688-589-491-592-418-452-924-384-915-464-672-196-157-993-596-269-535-381-391-471-256-988-997-296-225-762-973-292-827-345-182-558-215-794-879-189-761",
-        "weight": 0.3195870367810543
-      },
-      {
-        "market_id": "poly_us-strikes-iran-by-february-20-2026-151-468-624-297-614-778-872-127-349-448-499-337-826-553",
-        "weight": 0.16510516695368804
-      },
-      {
-        "market_id": "poly_khamenei-out-as-supreme-leader-of-iran-by-march-31",
-        "weight": 0.1528913493214631
-      },
-      {
-        "market_id": "poly_us-strikes-iran-by-march-31-2026-393-221-132-633-215-592-866-184-321-377-931-222-297-655-719-935-944-321-534-925-937-744-476-586-454-914-676-972-362-876-771-213-554-443-439-287-519-563-393-256-817-961-941-762-654-519-837-721-654-479-949-423-962-271-545",
-        "weight": 0.1287041744221665
-      },
-      {
-        "market_id": "poly_khamenei-out-as-supreme-leader-of-iran-by-february-28",
-        "weight": 0.10613214326365138
-      },
-      {
-        "market_id": "poly_us-strikes-iran-by-june-30-2026-699-664-723-485-753-218-567-164-387-443-377-384-159-973-494-631-694-956-361-443-224-518-537-678-486-386-275-153-976-862-149-897-221-522-378-575-993-365-444-965-488-963-698-313-696-829-887-721-211-322-726-411-231-474",
-        "weight": 0.06957106822110695
-      },
-      {
-        "market_id": "poly_khamenei-out-as-supreme-leader-of-iran-by-june-30-747",
-        "weight": 0.058009061036869765
-      }
-    ],
-    "risk_parity": [
-      {
-        "market_id": "poly_us-strikes-iran-by-february-28-2026-227-967-547-688-589-491-592-418-452-924-384-915-464-672-196-157-993-596-269-535-381-391-471-256-988-997-296-225-762-973-292-827-345-182-558-215-794-879-189-761",
-        "weight": 0.09358726788305168
-      },
-      {
-        "market_id": "poly_us-strikes-iran-by-february-20-2026-151-468-624-297-614-778-872-127-349-448-499-337-826-553",
-        "weight": 0.23033301203812756
-      },
-      {
-        "market_id": "poly_khamenei-out-as-supreme-leader-of-iran-by-march-31",
-        "weight": 0.1223491931873923
-      },
-      {
-        "market_id": "poly_us-strikes-iran-by-march-31-2026-393-221-132-633-215-592-866-184-321-377-931-222-297-655-719-935-944-321-534-925-937-744-476-586-454-914-676-972-362-876-771-213-554-443-439-287-519-563-393-256-817-961-941-762-654-519-837-721-654-479-949-423-962-271-545",
-        "weight": 0.09970414553407482
-      },
-      {
-        "market_id": "poly_khamenei-out-as-supreme-leader-of-iran-by-february-28",
-        "weight": 0.17595876353807757
-      },
-      {
-        "market_id": "poly_us-strikes-iran-by-june-30-2026-699-664-723-485-753-218-567-164-387-443-377-384-159-973-494-631-694-956-361-443-224-518-537-678-486-386-275-153-976-862-149-897-221-522-378-575-993-365-444-965-488-963-698-313-696-829-887-721-211-322-726-411-231-474",
-        "weight": 0.10040886102357847
-      },
-      {
-        "market_id": "poly_khamenei-out-as-supreme-leader-of-iran-by-june-30-747",
-        "weight": 0.1776587567956975
-      }
-    ],
-    "min_variance": [
-      {
-        "market_id": "poly_us-strikes-iran-by-february-28-2026-227-967-547-688-589-491-592-418-452-924-384-915-464-672-196-157-993-596-269-535-381-391-471-256-988-997-296-225-762-973-292-827-345-182-558-215-794-879-189-761",
-        "weight": 0.09358726788305168
-      },
-      {
-        "market_id": "poly_us-strikes-iran-by-february-20-2026-151-468-624-297-614-778-872-127-349-448-499-337-826-553",
-        "weight": 0.23033301203812756
-      },
-      {
-        "market_id": "poly_khamenei-out-as-supreme-leader-of-iran-by-march-31",
-        "weight": 0.1223491931873923
-      },
-      {
-        "market_id": "poly_us-strikes-iran-by-march-31-2026-393-221-132-633-215-592-866-184-321-377-931-222-297-655-719-935-944-321-534-925-937-744-476-586-454-914-676-972-362-876-771-213-554-443-439-287-519-563-393-256-817-961-941-762-654-519-837-721-654-479-949-423-962-271-545",
-        "weight": 0.09970414553407482
-      },
-      {
-        "market_id": "poly_khamenei-out-as-supreme-leader-of-iran-by-february-28",
-        "weight": 0.17595876353807757
-      },
-      {
-        "market_id": "poly_us-strikes-iran-by-june-30-2026-699-664-723-485-753-218-567-164-387-443-377-384-159-973-494-631-694-956-361-443-224-518-537-678-486-386-275-153-976-862-149-897-221-522-378-575-993-365-444-965-488-963-698-313-696-829-887-721-211-322-726-411-231-474",
-        "weight": 0.10040886102357847
-      },
-      {
-        "market_id": "poly_khamenei-out-as-supreme-leader-of-iran-by-june-30-747",
-        "weight": 0.1776587567956975
-      }
-    ],
-    "max_diversification": [
-      {
-        "market_id": "poly_us-strikes-iran-by-february-28-2026-227-967-547-688-589-491-592-418-452-924-384-915-464-672-196-157-993-596-269-535-381-391-471-256-988-997-296-225-762-973-292-827-345-182-558-215-794-879-189-761",
-        "weight": 0.14285714285714285
-      },
-      {
-        "market_id": "poly_us-strikes-iran-by-february-20-2026-151-468-624-297-614-778-872-127-349-448-499-337-826-553",
-        "weight": 0.14285714285714285
-      },
-      {
-        "market_id": "poly_khamenei-out-as-supreme-leader-of-iran-by-march-31",
-        "weight": 0.14285714285714285
-      },
-      {
-        "market_id": "poly_us-strikes-iran-by-march-31-2026-393-221-132-633-215-592-866-184-321-377-931-222-297-655-719-935-944-321-534-925-937-744-476-586-454-914-676-972-362-876-771-213-554-443-439-287-519-563-393-256-817-961-941-762-654-519-837-721-654-479-949-423-962-271-545",
-        "weight": 0.14285714285714285
-      },
-      {
-        "market_id": "poly_khamenei-out-as-supreme-leader-of-iran-by-february-28",
-        "weight": 0.14285714285714285
-      },
-      {
-        "market_id": "poly_us-strikes-iran-by-june-30-2026-699-664-723-485-753-218-567-164-387-443-377-384-159-973-494-631-694-956-361-443-224-518-537-678-486-386-275-153-976-862-149-897-221-522-378-575-993-365-444-965-488-963-698-313-696-829-887-721-211-322-726-411-231-474",
-        "weight": 0.14285714285714285
-      },
-      {
-        "market_id": "poly_khamenei-out-as-supreme-leader-of-iran-by-june-30-747",
-        "weight": 0.14285714285714285
-      }
-    ]
-  },
-  "crypto_digital": {
-    "equal": [
-      {
-        "market_id": "poly_will-bitcoin-dip-to-100000-in-november",
-        "weight": 0.2
-      },
-      {
-        "market_id": "kalshi_KXBTCMAX150-25-26FEB28-149999.99",
-        "weight": 0.2
-      },
-      {
-        "market_id": "kalshi_KXBTC2026200-27JAN01-200000",
-        "weight": 0.2
-      },
-      {
-        "market_id": "kalshi_KXBTCMAX150-25-26JAN31-149999.99",
-        "weight": 0.2
-      },
-      {
-        "market_id": "kalshi_KXBTCMAX150-25-26MAY31-149999.99",
-        "weight": 0.2
-      }
-    ],
-    "volume_weighted": [
-      {
-        "market_id": "poly_will-bitcoin-dip-to-100000-in-november",
-        "weight": 0.717966872672624
-      },
-      {
-        "market_id": "kalshi_KXBTCMAX150-25-26FEB28-149999.99",
-        "weight": 0.10560077140851737
-      },
-      {
-        "market_id": "kalshi_KXBTC2026200-27JAN01-200000",
-        "weight": 0.06571295480565904
-      },
-      {
-        "market_id": "kalshi_KXBTCMAX150-25-26JAN31-149999.99",
-        "weight": 0.059103267219620406
-      },
-      {
-        "market_id": "kalshi_KXBTCMAX150-25-26MAY31-149999.99",
-        "weight": 0.05161613389357913
-      }
-    ],
-    "risk_parity": [
-      {
-        "market_id": "poly_will-bitcoin-dip-to-100000-in-november",
-        "weight": 4.999059762495874e-07
-      },
-      {
-        "market_id": "kalshi_KXBTCMAX150-25-26FEB28-149999.99",
-        "weight": 0.49990597624958744
-      },
-      {
-        "market_id": "kalshi_KXBTC2026200-27JAN01-200000",
-        "weight": 0.49990597624958744
-      },
-      {
-        "market_id": "kalshi_KXBTCMAX150-25-26JAN31-149999.99",
-        "weight": 0.00018704768887267074
-      },
-      {
-        "market_id": "kalshi_KXBTCMAX150-25-26MAY31-149999.99",
-        "weight": 4.999059762495874e-07
-      }
-    ],
-    "min_variance": [
-      {
-        "market_id": "poly_will-bitcoin-dip-to-100000-in-november",
-        "weight": 4.999059762495874e-07
-      },
-      {
-        "market_id": "kalshi_KXBTCMAX150-25-26FEB28-149999.99",
-        "weight": 0.49990597624958744
-      },
-      {
-        "market_id": "kalshi_KXBTC2026200-27JAN01-200000",
-        "weight": 0.49990597624958744
-      },
-      {
-        "market_id": "kalshi_KXBTCMAX150-25-26JAN31-149999.99",
-        "weight": 0.00018704768887267074
-      },
-      {
-        "market_id": "kalshi_KXBTCMAX150-25-26MAY31-149999.99",
-        "weight": 4.999059762495874e-07
-      }
-    ],
-    "max_diversification": [
-      {
-        "market_id": "poly_will-bitcoin-dip-to-100000-in-november",
-        "weight": 0.2
-      },
-      {
-        "market_id": "kalshi_KXBTCMAX150-25-26FEB28-149999.99",
-        "weight": 0.2
-      },
-      {
-        "market_id": "kalshi_KXBTC2026200-27JAN01-200000",
-        "weight": 0.2
-      },
-      {
-        "market_id": "kalshi_KXBTCMAX150-25-26JAN31-149999.99",
-        "weight": 0.2
-      },
-      {
-        "market_id": "kalshi_KXBTCMAX150-25-26MAY31-149999.99",
-        "weight": 0.2
-      }
-    ]
-  }
+  "us_elections": [
+    "poly_will-india-win-the-2026-icc-mens-t20-world-cup",
+    "poly_will-oh-se-hoon-win-the-2026-seoul-mayoral-election",
+    "poly_will-wesley-hunt-come-in-2nd-in-the-2026-texas-republican-primary",
+    "poly_will-wesley-hunt-come-in-3rd-in-the-2026-texas-republican-primary",
+    "poly_5kt-meteor-strike-in-2026",
+    "poly_will-the-afd-win-less-than-10-of-the-vote-in-the-german-election",
+    "poly_will-bernadette-wilson-win-the-2026-alaska-governor-election",
+    "poly_will-mary-peltola-win-the-alaska-senate-race-in-2026",
+    "poly_will-a-republican-win-arizona-presidential-election",
+    "poly_will-kari-lake-win-arizona-senate-election-by-2-or-more",
+    "poly_will-a-republican-win-arizona-us-senate-election",
+    "poly_over-20000-eth-committed-to-the-aztec-public-sale",
+    "poly_2024-balance-of-power-other",
+    "poly_2026-balance-of-power-d-senate-d-house-949",
+    "poly_will-lionel-messi-win-the-ballon-dor",
+    "poly_will-ousmane-dembele-win-the-2025-ballon-dor",
+    "poly_will-alexander-lukashenko-win-the-2025-belarus-presidential-election",
+    "poly_biden-drops-out-after-debate",
+    "poly_biden-resigns-from-presidency-before-election",
+    "poly_billionaire-one-time-wealth-tax-passes-in-california-election-2026",
+    "poly_will-andrnico-rodrguez-win-the-2025-bolivia-presidential-election",
+    "poly_boxing-andrew-tate-vs-chase-demoor",
+    "poly_will-luiz-incio-lula-da-silva-win-the-2026-brazilian-presidential-election",
+    "poly_will-matt-mahan-win-the-california-governor-election-in-2026",
+    "poly_will-another-party-win-the-most-seats",
+    "poly_will-ximena-rincn-win-the-chilean-presidential-election",
+    "poly_will-new-hampshire-be-the-closest-state",
+    "poly_will-roy-barreras-win-the-2026-colombian-presidential-election",
+    "poly_will-a-candidate-from-another-party-win-colorado-presidential-election",
+    "poly_congressional-district-2nd-maine-will-a-candidate-from-another-party-win",
+    "poly_consensys-ipo-closing-market-cap-above-1b",
+    "poly_will-another-person-be-the-next-president-of-croatia",
+    "poly_will-greens-win-the-most-seats-in-the-next-czech-parliamentary-election",
+    "poly_will-joe-biden-win-the-2024-democratic-presidential-nomination",
+    "poly_will-gavin-newsom-win-the-2028-democratic-presidential-nomination-568",
+    "poly_will-josh-shapiro-be-the-2024-democratic-vp-nominee",
+    "poly_will-gavin-newsom-be-d-nom-for-vp-on-election-day",
+    "poly_democrats-and-republicans-both-lose-the-2024-presidential-election",
+    "poly_erdoan-out-before-2027",
+    "poly_ethereum-etf-approved-by-may-31",
+    "poly_favorite-to-win-on-polymarket-day-before-election",
+    "poly_favorite-to-win-on-polymarket-one-week-after-debate",
+    "poly_favorite-to-win-on-polymarket-this-friday",
+    "poly_will-chelsea-win-the-fifa-club-world-cup",
+    "poly_will-anthony-albanese-be-the-first-leader-out-in-2025",
+    "poly_will-a-democrat-win-florida-in-the-2024-us-presidential-election",
+    "poly_will-doom-the-dark-ages-win-game-of-the-year-at-the-2025-game-awards",
+    "poly_will-a-candidate-from-another-party-win-georgia-presidential-election",
+    "poly_will-another-party-win-the-most-seats-in-the-next-german-election",
+    "poly_global-heat-increase-between-1pt22c-and-1pt24c-for-2024",
+    "poly_harris-and-trump-debate-on-sept-10",
+    "poly_harris-walz-final-democratic-ticket",
+    "poly_will-salvador-alejandro-csar-nasralla-salum-win-the-2025-honduras-presidential-election",
+    "poly_house-control-after-2024-election",
+    "poly_will-7-8-justices-on-south-koreas-constitutional-court-vote-for-yoons-impeachment-before-may",
+    "poly_will-trump-issue-40-or-more-executive-orders-on-day-1",
+    "poly_will-trump-pardon-750-999-jan-6-protestors-in-his-first-100-days",
+    "poly_will-there-be-exactly-1-confirmed-vei-4-or-higher-volcanic-eruption-worldwide-in-2026-937",
+    "poly_will-trump-get-70-72m-votes-in-the-2024-us-presidential-election",
+    "poly_will-fidesz-hungarian-civic-alliance-fidesz-win-the-most-seats-in-the-next-hungarian-parliamentary-election",
+    "poly_will-a-candidate-from-another-party-win-illinois-presidential-election",
+    "poly_will-the-republican-candidate-win-iowa-by-9pt0-10pt0",
+    "poly_will-a-republican-win-iowa-in-the-2024-us-presidential-election",
+    "poly_will-frances-fitzgerald-win-the-irish-presidential-election",
+    "poly_is-jeffrey-epstein-alive-498",
+    "poly_israel-and-indonesia-normalize-relations-by-december-31-2026-618-741",
+    "poly_israeli-parliament-dissolved-by-march-31-932",
+    "poly_jd-vance-steps-down-as-republican-vp-nominee",
+    "poly_joe-biden-impeached-before-2024-election",
+    "poly_kamala-harris-blowout-victory",
+    "poly_kamala-swap-at-dnc",
+    "poly_will-kevin-warsh-be-formally-nominated-to-be-chair-of-the-federal-reserve-by-february-28-2026-369",
+    "poly_khamenei-out-as-supreme-leader-of-iran-by-december-31-2026",
+    "poly_khamenei-out-as-supreme-leader-of-iran-by-january-31",
+    "poly_khamenei-out-as-supreme-leader-of-iran-by-june-30-747",
+    "poly_khamenei-out-as-supreme-leader-of-iran-by-march-31",
+    "poly_khamenei-out-as-supreme-leader-of-iran-in-2025",
+    "poly_will-morgan-stanley-or-any-of-its-underwriting-affiliates-serve-as-the-lead-underwriter-in-spacexs-initial-public-offering-299",
+    "poly_will-lee-jae-myung-win-50-55-of-the-vote-in-the-south-korea-election",
+    "poly_liberals-win-majority-in-canadian-election",
+    "poly_will-lighter-perform-an-airdrop-by-december-31",
+    "poly_maduro-out-in-2025-411",
+    "poly_will-graham-platner-be-the-democratic-nominee-for-senate-in-maine",
+    "poly_major-meteor-strike-10kt-in-2026",
+    "poly_mamdani-opens-city-owned-grocery-store-by-june-30",
+    "poly_will-the-republicans-win-the-michigan-governor-race-in-2026",
+    "poly_will-a-democrat-win-michigan-presidential-election",
+    "poly_microphones-muted-during-abc-debate",
+    "poly_microstrategy-sell-any-bitcoin-in-2025",
+    "poly_will-a-candidate-from-another-party-win-minnesota-presidential-election",
+    "poly_will-a-candidate-from-another-party-win-missouri-presidential-election",
+    "poly_will-monad-perform-an-airdrop-by-october-31",
+    "poly_will-a-candidate-from-another-party-win-montana-us-senate-election",
+    "poly_will-tari-eason-win-2024-25-nba-6th-man-of-the-year",
+    "poly_nba-nyk-sas-2025-12-31",
+    "poly_nba-sas-ind-2026-01-02",
+    "poly_will-the-party-for-freedom-win-the-most-seats-in-the-2025-netherlands-parliamentary-election",
+    "poly_will-the-democratic-candidate-win-nevada-by-3pt0-4pt0",
+    "poly_will-a-republican-win-nevada-presidential-election",
+    "poly_will-mikie-sherrill-win-by-6-9",
+    "poly_will-mikie-sherrill-win-the-new-jersey-governor-election-in-2025",
+    "poly_will-a-democrat-win-new-jersey-in-the-2024-us-presidential-election",
+    "poly_new-pope-in-2025",
+    "poly_will-zohran-mamdani-win-the-2025-nyc-mayoral-election",
+    "poly_will-zohran-mamdani-win-staten-island",
+    "poly_will-a-candidate-from-another-party-win-new-york-presidential-election-2024",
+    "poly_will-heidi-reichinnek-be-the-next-chancellor-of-germany",
+    "poly_will-bruno-retailleau-win-the-2027-french-presidential-election",
+    "poly_will-the-next-government-of-canada-be-a-liberal-majority",
+    "poly_no-one-announced-as-next-james-bond-962",
+    "poly_will-sanae-takaichi-be-the-next-prime-minister-of-japan-242",
+    "poly_will-jaime-battiste-be-the-next-leader-of-the-canadian-liberal-party",
+    "poly_will-t-lm-be-the-next-president-of-vietnam",
+    "poly_will-anthony-albanese-be-the-next-prime-minister-of-australia-after-the-2025-election",
+    "poly_will-the-next-prime-minister-of-hungary-be-pter-magyar",
+    "poly_will-sylvi-listhaug-become-the-next-prime-minister-of-norway",
+    "poly_will-l-minh-hng-be-the-next-prime-minister-of-vietnam",
+    "poly_will-pierre-poilievre-be-the-next-canadian-prime-minister",
+    "poly_will-conor-mcgregor-be-the-next-prime-minister-of-ireland",
+    "poly_will-john-barrasso-be-the-next-senate-majority-leader",
+    "poly_suella-braverman-next-conservative-party-leader",
+    "poly_will-donald-trump-win-nobel-peace-prize-in-2025-635",
+    "poly_will-donald-trump-win-the-nobel-peace-prize-in-2025",
+    "poly_will-donald-trump-win-the-nobel-peace-prize-in-2026-382",
+    "poly_will-a-republican-win-north-carolina-presidential-election",
+    "poly_will-ap-win-the-most-seats-in-the-next-norwegian-parliamentary-election",
+    "poly_4-trump-vs-harris-debates-before-election",
+    "poly_nyc-election-sliwa-drops-out-x-cuomo-wins",
+    "poly_will-republicans-control-227-seats-in-the-house-after-the-election",
+    "poly_will-republicans-have-55-seats-in-senate-after-election",
+    "poly_will-the-peoples-party-pple-win-fewer-than-120-seats-in-the-2026-thai-legislative-election",
+    "poly_180-mps-vote-to-impeach-yoon",
+    "poly_will-a-candidate-from-another-party-win-ohio-us-senate-election",
+    "poly_will-genter-drummond-win-the-2026-oklahoma-governor-republican-primary-election",
+    "poly_will-rachida-dati-win-the-paris-mayor-election",
+    "poly_will-the-democratic-candidate-win-pennsylvania-by-1pt5-2pt0",
+    "poly_will-a-democrat-win-pennsylvania-presidential-election",
+    "poly_will-a-republican-win-pennsylvania-us-senate-election",
+    "poly_will-han-duck-soo-be-the-peoples-power-party-candidate-for-president",
+    "poly_will-rafa-trzaskowski-be-the-next-president-of-poland",
+    "poly_will-karol-nawrocki-win-by-4-8",
+    "poly_gop-wins-popular-vote-by-less-than-1pt5",
+    "poly_democrats-win-popular-vote-by-over-7",
+    "poly_will-andr-ventura-win-the-2026-portugal-presidential-election",
+    "poly_will-kamala-harris-win-the-popular-vote-in-the-2024-presidential-election",
+    "poly_presidential-election-republicans-win-a-solid-blue-state",
+    "poly_will-donald-trump-win-the-2024-us-presidential-election",
+    "poly_will-jd-vance-win-the-2028-us-presidential-election",
+    "poly_will-fumitake-fujita-be-the-prime-minister-of-japan-as-a-result-of-the-2026-snap-election-139",
+    "poly_will-pumpfun-perform-an-airdrop-by-march-31",
+    "poly_record-turnout-in-2024-presidential-election",
+    "poly_will-donald-j-trump-win-the-2024-republican-presidential-nomination",
+    "poly_will-james-fishback-be-the-republican-nominee-for-florida-governor",
+    "poly_will-jd-vance-win-the-2028-republican-presidential-nomination",
+    "poly_will-vivek-ramaswamy-win-the-2024-republican-vp-nomination",
+    "poly_will-doug-burgum-win-the-2024-republican-vp-nomination",
+    "poly_rfk-jr-endorses-trump",
+    "poly_will-rfk-jr-win-5-6-of-the-popular-vote",
+    "poly_will-octavian-berceanu-be-the-next-mayor-of-bucharest",
+    "poly_will-nicolae-ciuca-win-the-2024-romanian-presidential-election",
+    "poly_romania-presidential-election-winner-will-hunor-kelemen-win-the-romanian-presidential-election",
+    "poly_will-nicuor-dan-win-by-more-than-12",
+    "poly_will-juventus-win-the-serie-a",
+    "poly_will-another-candidate-win-the-2024-so-paulo-mayoral-election",
+    "poly_will-lee-jun-seok-win-2nd-place-in-the-south-korean-presidential-election",
+    "poly_will-lee-jun-seok-win-3rd-place-in-the-south-korean-presidential-election",
+    "poly_south-korean-president-impeached-in-2024",
+    "poly_spacex-ipo-closing-market-cap-above-1t-528",
+    "poly_will-the-spd-win-over-30-of-the-vote-in-the-german-election",
+    "poly_will-austin-scott-be-the-first-elected-speaker-of-the-house-for-the-119th-congress",
+    "poly_will-james-talarico-be-the-democratic-nominee-for-senate-in-texas",
+    "poly_will-a-candidate-from-another-party-win-texas-presidential-election",
+    "poly_will-ken-paxton-win-the-2026-republican-primary",
+    "poly_will-peoples-party-pple-win-the-most-seats-in-the-2026-thai-legislative-election",
+    "poly_tiktok-banned-again-before-may",
+    "poly_tiktok-sale-announced-in-2025-386-821-248",
+    "poly_tim-walz-out-as-democratic-vp-nominee",
+    "poly_trump-and-biden-both-win-nomination",
+    "poly_trump-declassifies-jfk-files-in-first-100-days",
+    "poly_trump-declassifies-jfk-files-in-first-week",
+    "poly_trump-declassifies-ufo-files-in-2025",
+    "poly_trump-ends-taxes-on-tips-in-first-100-days",
+    "poly_trump-jail-before-election-day",
+    "poly_will-trump-pardon-ross-ulbricht-in-his-first-100-days",
+    "poly_trump-to-announce-strategic-bitcoin-reserve-in-july",
+    "poly_will-kamala-lead-in-rcp-by-1-1pt4-on-oct-4",
+    "poly_trump-wins-and-appoints-elon-musk-to-cabinet",
+    "poly_trump-wins-ends-ukraine-war-in-90-days",
+    "poly_trump-wins-every-swing-state",
+    "poly_trump-x-kamala-debate-before-election",
+    "poly_will-another-candidate-win-the-tunisia-presidential-election",
+    "poly_will-there-be-150000000-155000000-votes-cast-in-the-us-presidential-election",
+    "poly_will-turnout-in-the-2025-honduran-general-election-be-less-than-55",
+    "poly_will-turnout-in-the-2025-honduran-general-election-be-between-58-and-59",
+    "poly_ukraine-election-called-by-june-30-2026-392",
+    "poly_ukraine-election-held-by-june-30-2026-465-757",
+    "poly_will-maine-be-the-tipping-point-state",
+    "poly_us-national-bitcoin-reserve-in-2025",
+    "poly_us-presidential-election-certified-on-january-6",
+    "poly_us-recognizes-reza-pahlavi-as-leader-of-iran-in2026",
+    "poly_will-nicolas-maduro-win-the-2024-venezuela-presidential-election",
+    "poly_will-to-lam-be-elected-general-secretary-of-the-vietnamese-communist-party",
+    "poly_will-a-candidate-from-another-party-win-virginia-presidential-election",
+    "poly_was-jfk-assassination-an-inside-job-march-31",
+    "poly_weed-rescheduled-in-2025",
+    "poly_will-cducsu-and-greens-form-the-next-german-government",
+    "poly_will-the-afd-be-part-of-the-next-german-government",
+    "poly_will-ucr-hold-the-most-seats-in-the-chamber-of-deputies-following-the-2025-argentina-election",
+    "poly_which-party-will-control-the-us-senate-after-the-2024-election",
+    "poly_will-united-russia-er-gain-the-most-seats-in-the-next-russian-parliamentary-election",
+    "poly_which-party-will-win-the-2024-united-states-presidential-election",
+    "poly_will-the-democratic-party-control-the-house-after-the-2026-midterm-elections",
+    "poly_will-the-republican-party-control-the-senate-after-the-2026-midterm-elections",
+    "poly_will-the-republicans-win-the-2028-us-presidential-election",
+    "poly_will-bsw-win-the-second-most-seats-in-the-next-german-election",
+    "poly_will-the-farmercitizen-movement-win-the-second-most-seats-in-the-2025-netherlands-parliamentary-election",
+    "poly_will-ser-win-the-most-seats-in-the-chamber-of-deputies-following-the-2025-argentina-election",
+    "poly_will-the-liberal-party-win-the-most-seats-in-the-next-canadian-election",
+    "poly_will-another-party-win-the-most-seats-in-manitoba-in-the-next-canadian-election",
+    "poly_will-another-party-win-the-most-seats-in-new-brunswick-in-the-next-canadian-election",
+    "poly_will-the-green-party-win-the-most-seats-in-ontario-in-the-next-canadian-election",
+    "poly_will-another-party-win-the-most-seats-in-prince-edward-island-in-the-next-canadian-election",
+    "poly_will-a-democrat-win-the-popular-vote-and-a-republican-win-the-presidency",
+    "poly_bernie-sanders-votes-to-confirm-tulsi-gabbard",
+    "poly_tulsi-gabbard-confirmed-as-dni",
+    "poly_will-donald-trump-be-inaugurated",
+    "poly_will-robert-obrien-be-trumps-defense-secretary",
+    "poly_will-biden-pardon-sbf-this-term",
+    "poly_will-kash-patel-leave-the-trump-administration-before-2027",
+    "poly_will-cardi-b-perform-during-the-super-bowl-lx-halftime-show",
+    "poly_will-connie-chan-receive-the-most-votes-in-the-ca-11-primary",
+    "poly_will-keith-rabois-be-appointed-as-the-next-florida-senator",
+    "poly_will-trump-pardon-changpeng-zhao-in-2025-162-949-658",
+    "poly_will-zohran-mamdani-win-the-democratic-primary-for-mayor-of-new-york-city",
+    "poly_will-joe-biden-win-the-us-2024-democratic-presidential-nomination",
+    "poly_will-donald-j-trump-win-the-us-2024-republican-presidential-nomination-1",
+    "poly_will-2-of-votes-go-to-3rd-party-candidates-in-us-election",
+    "poly_will-2025-be-the-hottest-year-on-record",
+    "poly_will-abstract-launch-a-token-by-december-31-2026",
+    "poly_will-backpack-launch-a-token-by-march-31",
+    "poly_will-base-launch-a-token-in-2025-341",
+    "poly_will-biden-complete-his-term-as-president",
+    "poly_will-biden-drop-out-of-presidential-race",
+    "poly_will-curtis-sliwa-drop-out-458",
+    "poly_will-dan-or-simion-win-the-diaspora-vote",
+    "poly_will-edgex-launch-a-token-in-2025",
+    "poly_will-either-kamala-or-trump-win-every-swing-state",
+    "poly_will-elon-musk-buy-msnbc-before-april-2025",
+    "poly_will-eric-adams-drop-out",
+    "poly_will-exponent-launch-a-token-by-december-31-2026",
+    "poly_will-fomo-launch-a-token-by-june-30-2026",
+    "poly_will-iran-close-the-strait-of-hormuz-before-july",
+    "poly_will-iran-close-the-strait-of-hormuz-by-march-31",
+    "poly_will-iran-close-the-strait-of-hormuz-in-2025",
+    "poly_will-joe-pardon-hunter-biden",
+    "poly_will-kamala-drop-out-before-election",
+    "poly_will-kamala-drop-out-in-august",
+    "poly_will-kamala-go-on-joe-rogan-before-election",
+    "poly_will-kamala-harris-win-every-swing-state",
+    "poly_will-mamdani-freeze-nyc-rents-before-2027",
+    "poly_will-mamdani-get-over-50-of-the-vote-in-the-general-mayoral-election",
+    "poly_will-mara-corina-machado-enter-venezuela-by-january-31-859-245",
+    "poly_will-mark-carney-lose-his-seat",
+    "poly_will-metamask-launch-a-token-in-2025",
+    "poly_will-microsoft-shareholders-vote-for-bitcoin-investment",
+    "poly_will-mrbeast-raise-40m-for-clean-water-by-august-31",
+    "poly_will-opensea-launch-a-token-by-march-31-2026",
+    "poly_will-opinion-launch-a-token-by-march-31-2026-552-618",
+    "poly_will-paradex-launch-a-token-by-december-31-2025-64ac",
+    "poly_will-reza-pahlavi-enter-iran-by-june-30-555-947-362",
+    "poly_will-seguro-win-all-of-portugals-districts",
+    "poly_will-south-korea-presidential-election-winner-get-over-50-of-votes",
+    "poly_will-stable-launch-a-token-in-2025",
+    "poly_will-tempo-launch-a-token-by-june-30-2026",
+    "poly_will-the-conservative-party-win-a-majority-in-next-canadian-election",
+    "poly_will-the-united-states-officially-declare-war-on-iran-before-july",
+    "poly_will-the-us-acquire-any-part-of-greenland-in-2026",
+    "poly_will-the-us-confirm-that-aliens-exist-before-2027",
+    "poly_will-the-us-confirm-that-aliens-exist-in-2024",
+    "poly_will-the-us-confirm-that-aliens-exist-in-2025",
+    "poly_will-there-be-another-debate",
+    "poly_will-tim-walz-resign-by-january-31",
+    "poly_will-trump-be-impeached-by-december-31-2026",
+    "poly_will-trump-be-impeached-in-2025",
+    "poly_will-trump-be-speaker-by-january-1",
+    "poly_will-trump-create-a-national-bitcoin-reserve-in-his-first-100-days",
+    "poly_will-trump-drop-out-of-presidential-race",
+    "poly_will-trump-go-on-rogan-before-election",
+    "poly_will-trump-launch-a-coin-before-the-election",
+    "poly_will-trump-pardon-ghislaine-maxwell",
+    "poly_will-trump-recognize-somaliland-before-2027",
+    "poly_will-trump-visit-china-by-march-31",
+    "poly_will-trump-visit-greenland-by-march-31",
+    "poly_will-trump-win-florida-by-8-points",
+    "poly_will-variational-launch-a-token-by-december-31-2026",
+    "poly_will-the-democratic-candidate-win-wisconsin-by-3-4pt0",
+    "poly_will-a-democrat-win-wisconsin-presidential-election",
+    "poly_wisconsin-supreme-court-election-susan-crawford-vs-brad-schimel",
+    "poly_yoon-arrested-by-january-31",
+    "poly_yoon-reinstated-as-president-before-july",
+    "poly_will-zohran-mamdani-win-by-0-10"
+  ],
+  "crypto_digital": [
+    "poly_altcoin-market-cap-dip-to-150b-before-2027",
+    "poly_backpack-fdv-above-1b-one-day-after-launch-512-337-259",
+    "poly_base-fdv-above-2b-one-day-after-launch",
+    "poly_based-fdv-above-200m-one-day-after-launch-243",
+    "poly_bitcoin-above-100000-on-december-13",
+    "poly_bitcoin-above-100000-on-december-20",
+    "poly_bitcoin-above-100000-on-november-29",
+    "poly_bitcoin-above-103000-on-january-24",
+    "poly_bitcoin-above-103000-on-june-13",
+    "poly_bitcoin-above-103000-on-june-20",
+    "poly_bitcoin-above-103000-on-june-27",
+    "poly_bitcoin-above-105000-on-february-7",
+    "poly_bitcoin-above-105000-on-january-31",
+    "poly_bitcoin-above-105000-on-june-6",
+    "poly_bitcoin-above-118000-on-july-18",
+    "poly_bitcoin-above-83000-on-march-21",
+    "poly_bitcoin-above-84000-on-april-11",
+    "poly_bitcoin-above-84000-on-march-28",
+    "poly_bitcoin-above-84000-on-march-7",
+    "poly_bitcoin-above-86000-on-april-4",
+    "poly_bitcoin-above-89000-on-march-14",
+    "poly_bitcoin-above-90000-on-november-22",
+    "poly_bitcoin-above-94000-on-january-3",
+    "poly_bitcoin-above-95000-on-january-17",
+    "poly_bitcoin-above-97000-on-december-27",
+    "poly_bitcoin-above-97000-on-february-14",
+    "poly_bitcoin-above-97000-on-february-21",
+    "poly_bitcoin-above-97000-on-january-10",
+    "poly_bitcoin-above-98000-on-december-6",
+    "poly_bitcoin-above-99000-on-february-28",
+    "poly_bitcoin-all-time-high-by-december-31-2026",
+    "poly_bitcoin-all-time-high-by-january",
+    "poly_bitcoin-all-time-high-by-january-31",
+    "poly_bitcoin-etf-approved-by-jan-15",
+    "poly_will-the-price-of-bitcoin-be-between-80000-and-82000-on-apr-11",
+    "poly_will-the-price-of-bitcoin-be-between-106k-and-108k-on-july-1",
+    "poly_will-the-price-of-bitcoin-be-greater-than-109k-on-june-10-741",
+    "poly_will-the-price-of-bitcoin-be-greater-than-106k-on-june-27",
+    "poly_will-the-price-of-bitcoin-be-less-than-102k-on-june-6",
+    "poly_will-the-price-of-bitcoin-be-less-than-83000-on-mar-14",
+    "poly_will-the-price-of-bitcoin-be-greater-than-98000-on-may-2",
+    "poly_will-the-price-of-bitcoin-be-greater-than-103000-on-may-9",
+    "poly_will-bitcoin-have-the-best-performance-in-2026-749",
+    "poly_btc-above-100k-till-2025-end",
+    "poly_will-stuttgart-win-the-bundesliga",
+    "poly_will-a-dildo-be-thrown-onto-the-court-at-a-wnba-game-on-saturday",
+    "poly_edgex-fdv-above-1b-one-day-after-launch",
+    "poly_elon-musk-out-as-head-of-doge-in-2025",
+    "poly_epstein-blackmail-files-released-in-2025",
+    "poly_eth-flipped-in-2026",
+    "poly_ethereum-above-2300-on-march-7",
+    "poly_ethereum-above-2500-on-june-6",
+    "poly_ethereum-above-2600-on-november-1",
+    "poly_ethereum-above-2700-on-february-14",
+    "poly_ethereum-above-2700-on-february-21",
+    "poly_ethereum-above-3000-on-november-15",
+    "poly_ethereum-above-3300-on-january-17",
+    "poly_ethereum-above-3300-on-january-24",
+    "poly_ethereum-above-3400-on-december-27",
+    "poly_ethereum-above-3400-on-february-7",
+    "poly_ethereum-above-3400-on-january-31",
+    "poly_ethereum-above-3500-on-december-6",
+    "poly_ethereum-above-3900-on-december-20",
+    "poly_ethereum-above-4000-on-december-13",
+    "poly_ethereum-above-3300-on-february-3",
+    "poly_ethereum-all-time-high-by-december-31-2026",
+    "poly_ethereum-all-time-high-by-june",
+    "poly_ethereum-all-time-high-by-march",
+    "poly_ethereum-all-time-high-by-october-31",
+    "poly_ethereum-all-time-high-in-2024",
+    "poly_ethereum-all-time-high-in-q4-2024",
+    "poly_extended-fdv-above-500m-one-day-after-launch-711-975-248",
+    "poly_flying-tulip-fdv-above-800m-one-day-after-launch-715-248-888-779",
+    "poly_gensyn-fdv-above-600m-one-day-after-launch-397",
+    "poly_over-1b-raised-on-coinbase-in-2026",
+    "poly_hyperlend-fdv-above-20m-one-day-after-launch",
+    "poly_hyperliquid-hype-hits-100-this-year-758-336",
+    "poly_hyperliquid-listed-on-binance-in-2026",
+    "poly_will-india-strike-pakistan-by-december-31-2026",
+    "poly_ink-fdv-above-500m-one-day-after-launch-253-778",
+    "poly_is-djt-real",
+    "poly_lighter-market-cap-fdv-1b-one-day-after-launch",
+    "poly_over-2m-committed-to-the-makina-public-sale-573",
+    "poly_will-megaeth-perform-an-airdrop-by-june-30-143-229-513-574-212-254",
+    "poly_megaeth-market-cap-fdv-2b-one-day-after-launch-738-867-649-272",
+    "poly_metamask-fdv-above-700m-one-day-after-launch",
+    "poly_microstrategy-announces-1000-btc-purchase-december-2-8",
+    "poly_monad-market-cap-fdv-4b-one-day-after-launch-532",
+    "poly_will-michael-carrick-be-appointed-as-manager-of-manchester-united",
+    "poly_nothing-ever-happens-microstrategy",
+    "poly_opensea-fdv-above-1b-one-day-after-launch",
+    "poly_opinion-fdv-above-500m-one-day-after-launch-457-863",
+    "poly_paradex-fdv-above-300m-one-day-after-launch-242-353",
+    "poly_puffpaw-fdv-above-100m-one-day-after-launch",
+    "poly_solana-above-145-on-march-7",
+    "poly_solana-above-280-on-october-10",
+    "poly_solana-all-time-high-before-2026",
+    "poly_solstice-fdv-above-50m-one-day-after-launch",
+    "poly_standx-fdv-above-1b-one-day-after-launch-758-887-458-572-867",
+    "poly_trump-strikes-another-drug-boat-by-sep-30",
+    "poly_us-government-funding-lapse-on-march-15",
+    "poly_us-x-venezuela-military-engagement-by-december-31-391-819-722-945-174-285-817-971-353-859-836-598-255-382-192-983",
+    "poly_variational-fdv-above-500m-one-day-after-launch-547",
+    "poly_will-delcy-rodrguez-be-the-leader-of-venezuela-end-of-2026",
+    "poly_lighter-airdrop-on-december-29",
+    "poly_will-bitcoin-dip-to-15000-by-december-31-2026-416-954-417-853-885-363-335-458-585-275-615-269-479-379-516-218-918-374-598",
+    "poly_will-bitcoin-reach-110000-by-march-31",
+    "poly_will-bitcoin-reach-1000000-by-december-31-2025",
+    "poly_will-bitcoin-reach-100k-in-april",
+    "poly_will-bitcoin-reach-200k-in-august",
+    "poly_will-bitcoin-reach-110000-in-december",
+    "poly_will-bitcoin-dip-to-75000-by-february-28-2025",
+    "poly_will-bitcoin-dip-to-55k-in-february-2026-644-513-935",
+    "poly_will-bitcoin-reach-110000-by-january-31-2025",
+    "poly_will-bitcoin-reach-150k-in-january-2026",
+    "poly_will-bitcoin-reach-150k-in-july-118-684",
+    "poly_will-bitcoin-reach-115k-in-june",
+    "poly_will-bitcoin-dip-to-90k-in-may",
+    "poly_will-bitcoin-reach-105000-in-november",
+    "poly_will-bitcoin-reach-200k-in-november-2025",
+    "poly_will-bitcoin-reach-200k-in-october",
+    "poly_will-bitcoin-reach-200k-in-september",
+    "poly_will-bitcoin-reach-138k-october-6-12",
+    "poly_will-dogecoin-reach-0pt50-in-april",
+    "poly_will-ethereum-dip-to-1500-by-december-31-2026",
+    "poly_will-ethereum-hit-4500pt00-by-march-31",
+    "poly_will-ethereum-hit-5000-by-december-31-796-376",
+    "poly_will-ethereum-reach-5000-in-august-614-348-169-974-494",
+    "poly_will-ethereum-dip-to-1600-in-february-2026",
+    "poly_will-ethereum-reach-6000-in-january-2026",
+    "poly_will-ethereum-reach-4000-in-july-224",
+    "poly_will-ethereum-reach-4000-in-june",
+    "poly_will-ethereum-reach-8000-in-may",
+    "poly_will-ethereum-reach-3750-in-november",
+    "poly_will-ethereum-reach-4000-in-november-2025",
+    "poly_will-ethereum-reach-5000-in-october",
+    "poly_will-solana-dip-to-90-in-february-2026",
+    "poly_will-solana-hit-300-by-january-31-2025",
+    "poly_will-xrp-reach-6pt00-before-2026",
+    "poly_will-xrp-dip-to-1-in-february-2026",
+    "poly_will-trump-say-crypto-or-bitcoin-during-his-inauguration-speech",
+    "poly_will-bitcoin-hit-150k-by-december-31-2026",
+    "poly_will-a-contestant-numbered-151-175-win-beast-games-season-2",
+    "poly_will-anyone-be-charged-over-daycare-fraud-in-minnesota-by-june-30",
+    "poly_will-bitcoin-hit-100k-again-in-2024-dec-23",
+    "poly_will-bitcoin-hit-100k-in-2024",
+    "poly_will-bitcoin-hit-100k-in-november",
+    "poly_will-bitcoin-hit-250k-in-2024",
+    "poly_will-bitcoin-hit-90k-or-100k-first",
+    "poly_will-bitcoin-hit-90k-or-100k-first-dec-23",
+    "poly_will-bitcoin-outperform-gold-in-2026",
+    "poly_will-eth-hit-2k-or-4k-first",
+    "poly_will-ethereum-hit-10k-in-2024",
+    "poly_will-microstrategy-announce-holding-650k-btc-by-november-30",
+    "poly_will-microstrategy-announce-holding-800k-btc-by-december-31-2026",
+    "poly_will-microstrategy-hold-500k-btc-before-march",
+    "poly_will-microstrategy-purchase-bitcoin-august-26-september-1",
+    "poly_will-microstrategy-purchase-bitcoin-july-1-7",
+    "poly_will-satoshi-move-any-bitcoin-in-2025",
+    "poly_will-satoshi-move-any-bitcoin-in-2026",
+    "poly_will-stablecoins-hit-500b-before-2027",
+    "poly_will-trump-meet-with-delcy-rodrguez-by-march-31-446",
+    "poly_will-usdc-flip-usdt-in-market-cap-in-2024",
+    "poly_will-zcash-hit-1000-by-december-31"
+  ],
+  "middle_east": [
+    "poly_will-portugal-win-the-2026-fifa-world-cup-912",
+    "poly_2k-container-ship-transits-of-suez-canal-in-h1-2026",
+    "poly_will-saudi-aramco-be-the-second-largest-company-in-the-world-by-market-cap-on-december-31",
+    "poly_will-alphabet-be-the-second-largest-company-in-the-world-by-market-cap-on-february-28",
+    "poly_will-alphabet-be-the-second-largest-company-in-the-world-by-market-cap-on-march-31",
+    "poly_will-saudi-aramco-be-the-second-largest-company-in-the-world-by-market-cap-on-november-30",
+    "poly_will-apple-be-the-third-largest-company-in-the-world-by-market-cap-on-february-28",
+    "poly_another-iran-strike-on-israel-in-2024",
+    "poly_fordow-nuclear-facility-destroyed-before-july",
+    "poly_foreign-intervention-in-gaza-by-march-31",
+    "poly_hezbollah-strike-on-israel-by-march-31-737-523",
+    "poly_will-israel-strike-2-countries-in-2026",
+    "poly_iran-agrees-to-end-enrichment-of-uranium-by-march-31",
+    "poly_iran-strike-on-israel-by-february-28",
+    "poly_iran-strike-on-qatar-by-february-28-2026-334",
+    "poly_iran-strike-on-us-military-by-february-28",
+    "poly_israel-and-saudi-arabia-normalize-relations-in-2025",
+    "poly_israel-and-syria-normalize-relations-by-december-31-2026-166",
+    "poly_israel-military-action-against-iran-before-july",
+    "poly_israel-military-action-against-iraq-before-november",
+    "poly_israel-military-response-against-iran-in-october",
+    "poly_israel-strike-on-iranian-nuclear-facility-in-2024",
+    "poly_israel-strike-on-yemen-by-june-30-2026",
+    "poly_israel-strikes-iran-by-february-28-2026",
+    "poly_israel-strikes-iran-by-january-16-2026-418",
+    "poly_israel-strikes-iran-by-january-31-2026-894-994-453",
+    "poly_israel-strikes-iran-by-june-30-2026",
+    "poly_israel-strikes-iran-by-march-31-2026",
+    "poly_israel-withdraws-from-gaza-in-2025",
+    "poly_israel-x-hamas-ceasefire-before-2026",
+    "poly_israel-x-hamas-ceasefire-before-august",
+    "poly_israel-x-hamas-ceasefire-before-july-2025",
+    "poly_israel-x-hamas-ceasefire-before-june-2025",
+    "poly_israel-x-hamas-ceasefire-by-august-15",
+    "poly_israel-x-hamas-ceasefire-by-august-31",
+    "poly_israel-x-hamas-ceasefire-by-january-31",
+    "poly_israel-x-hamas-ceasefire-by-july-15",
+    "poly_israel-x-hamas-ceasefire-by-october-10",
+    "poly_israel-x-hamas-ceasefire-by-october-31",
+    "poly_israel-x-hamas-ceasefire-by-september-15",
+    "poly_israel-x-hamas-ceasefire-by-september-30",
+    "poly_israel-x-hamas-ceasefire-cancelled-by-october-31",
+    "poly_israel-x-hamas-ceasefire-in-2024",
+    "poly_israel-x-hamas-ceasefire-phase-ii-by-march-31-117-352",
+    "poly_israel-x-hezbollah-ceasefire-in-2024",
+    "poly_israel-x-iran-ceasefire-before-july",
+    "poly_israel-x-iran-ceasefire-broken-by-march-31-2026-312-682",
+    "poly_israel-x-syria-security-agreement-by-march-31",
+    "poly_israeli-forces-enters-lebanon-in-september",
+    "poly_khamenei-out-as-supreme-leader-of-iran-by-july-31",
+    "poly_khamenei-out-as-supreme-leader-of-iran-by-june-30",
+    "poly_will-saudi-aramco-be-the-largest-company-in-the-world-by-market-cap-on-december-31",
+    "poly_will-nvidia-be-the-largest-company-in-the-world-by-market-cap-on-december-31-244",
+    "poly_will-saudi-aramco-be-the-largest-company-in-the-world-by-market-cap-on-january-31",
+    "poly_will-alphabet-be-the-largest-company-in-the-world-by-market-cap-on-june-30",
+    "poly_will-nvidia-be-the-largest-company-in-the-world-by-market-cap-on-march-31-323",
+    "poly_major-cyberattack-on-iran-in-june",
+    "poly_netanyahu-out-before-2027",
+    "poly_nothing-ever-happens-israel-edition",
+    "poly_nothing-ever-happens-khamenei",
+    "poly_nothing-ever-happens-us-strike-edition",
+    "poly_us-embassy-in-damaskus-reopend-by-june-30-2026-815",
+    "poly_us-forces-enter-iran-by-march-31-222",
+    "poly_us-forcibly-removes-khamenei-from-power-by-march-31",
+    "poly_us-iran-nuclear-deal-before-2027",
+    "poly_us-iran-nuclear-deal-before-july",
+    "poly_us-iran-nuclear-deal-by-june-30",
+    "poly_us-military-action-against-iran-before-july",
+    "poly_will-the-us-not-strike-iran-by-january-31-2026-314",
+    "poly_will-the-us-next-strike-iran-on-february-9-2026-et",
+    "poly_us-strikes-iran-by-january-31-2026-165",
+    "poly_us-strikes-yemen-by-december-31",
+    "poly_us-x-iran-meeting-by-february-6-2026",
+    "poly_us-x-iran-military-engagement-by-march-31",
+    "poly_us-x-iran-nuclear-deal-in-2025",
+    "poly_will-us-or-israel-strike-iran-by-january-31-2026",
+    "poly_will-usyk-beat-fury",
+    "poly_will-israel-or-the-us-target-tehran-812",
+    "poly_will-the-next-official-us-iran-meeting-be-in-oman",
+    "poly_will-naftali-bennett-be-the-next-prime-minister-of-israel",
+    "poly_will-a-new-country-join-the-abraham-accords-by-march-31",
+    "poly_will-another-country-recognize-somaliland-by-march-31",
+    "poly_will-assad-remain-president-of-syria-through-2024",
+    "poly_will-hamas-agree-to-disarm-by-march-31-966",
+    "poly_will-israel-enter-lebanon-before-November",
+    "poly_will-israel-invade-lebanon-in-september",
+    "poly_will-israel-invade-syria-in-2024",
+    "poly_will-israel-launch-a-major-ground-offensive-in-gaza-by-march-31",
+    "poly_will-israel-launch-a-major-ground-offensive-in-lebanon-by-march-31",
+    "poly_will-israel-nuke-iran-by-january-31",
+    "poly_will-israel-strike-an-iranian-nuclear-facility-before-july",
+    "poly_will-israel-strike-gaza-on-october-23",
+    "poly_will-israel-strike-greater-beirut-by-march-31",
+    "poly_will-khamenei-leave-iran-by-jan-31-322",
+    "poly_will-the-iranian-regime-fall-by-january-31",
+    "poly_will-the-iranian-regime-fall-by-june-30",
+    "poly_will-the-iranian-regime-fall-by-march-31",
+    "poly_will-the-iranian-regime-fall-by-the-end-of-2026",
+    "poly_will-the-iranian-regime-fall-in-2025",
+    "poly_will-the-iranian-regime-survive-us-military-strikes-741",
+    "poly_will-the-us-invade-iran-before-2027",
+    "poly_will-us-or-israel-strike-iran-first"
+  ],
+  "russia_ukraine": [
+    "poly_will-d4vd-be-the-1-searched-person-on-google-this-year",
+    "poly_will-club-brugge-advance-to-the-round-of-16",
+    "poly_energy-infrastructure-ceasefire-in-ukraine-in-march",
+    "poly_will-dynamo-kyiv-win-the-uefa-europa-league",
+    "poly_nhl-ott-det-2026-01-18",
+    "poly_putin-out-as-president-of-russia-by-june-30",
+    "poly_putin-out-as-president-of-russia-in-2025",
+    "poly_putin-out-before-2027",
+    "poly_russia-x-ukraine-ceasefire-before-2027",
+    "poly_russia-x-ukraine-ceasefire-before-july",
+    "poly_russia-x-ukraine-ceasefire-before-june",
+    "poly_russia-x-ukraine-ceasefire-before-october",
+    "poly_russia-x-ukraine-ceasefire-by-august-31",
+    "poly_russia-x-ukraine-ceasefire-by-january-31-2026",
+    "poly_russia-x-ukraine-ceasefire-by-june-30-2026",
+    "poly_russia-x-ukraine-ceasefire-by-next-friday-mar-21",
+    "poly_russia-x-ukraine-ceasefire-by-november-30-513",
+    "poly_russia-x-ukraine-ceasefire-by-october-31",
+    "poly_russia-x-ukraine-ceasefire-in-2024",
+    "poly_russia-x-ukraine-ceasefire-in-2025",
+    "poly_russia-x-ukraine-peace-parlay",
+    "poly_trump-ends-ukraine-war-before-inauguration",
+    "poly_trump-putin-and-zelensky-meet-together-by-august-31",
+    "poly_trump-x-ukraine-mineral-deal-signed-before-may",
+    "poly_ucl-bvb1-ata1-2026-02-17-bvb1",
+    "poly_ukraine-agrees-to-give-trump-rare-earth-metals-before-april",
+    "poly_ukraine-agrees-to-us-approved-peace-plan-by-thursday",
+    "poly_ukraine-joins-nato-before-2027",
+    "poly_ukraine-officially-agrees-to-a-us-backed-ceasefire-framework-by-march-31-214",
+    "poly_ukraine-recognizes-russian-sovereignty-over-its-territory-by-june-30-2026",
+    "poly_ukraine-signs-peace-deal-with-russia-before-2027",
+    "poly_ukraine-signs-peace-deal-with-russia-by-march-31",
+    "poly_ukraine-signs-peace-deal-with-russia-in-2025",
+    "poly_us-agrees-to-give-ukraine-security-guarantee-by-june-30",
+    "poly_will-jesus-christ-return-before-gta-vi-665",
+    "poly_will-trump-and-putin-meet-next-in-saudi-arabia",
+    "poly_will-russia-enter-sloviansk-by-june-30",
+    "poly_will-trump-talk-to-vladimir-putin-in-january",
+    "poly_will-putin-meet-with-trump-by-first-100-days",
+    "poly_will-putin-meet-with-zelenskyy-before-july",
+    "poly_will-putin-meet-with-zelenskyy-by-august-31",
+    "poly_will-putin-meet-with-zelenskyy-by-june-30-2026",
+    "poly_will-putin-meet-with-zelenskyy-by-september-30",
+    "poly_will-putin-meet-with-zelenskyy-in-2025",
+    "poly_will-putin-remain-president-of-russia-through-2024",
+    "poly_will-russia-abandon-syrian-naval-base-before-april-2025",
+    "poly_will-russia-capture-all-of-huliaipole-by-february-28",
+    "poly_will-russia-capture-all-of-pokrovsk-by-february-28",
+    "poly_will-russia-capture-all-of-stepnohirsk-by-march-31-2026-627",
+    "poly_will-russia-capture-all-of-vovchansk-by-march-31",
+    "poly_will-russia-capture-kostyantynivka-by-march-31-872-578",
+    "poly_will-russia-capture-kurakhove-before-december",
+    "poly_will-russia-capture-lyman-by-march-31-2026-494",
+    "poly_will-russia-capture-slovainsk-by-2027",
+    "poly_will-russia-capture-sumy-by-march-31-2027",
+    "poly_will-russia-use-a-nuclear-weapon-in-2024",
+    "poly_will-trump-administration-announces-end-of-ukraine-aid-by-next-friday",
+    "poly_will-trump-impose-more-sanctions-on-russia-by-september-30",
+    "poly_will-trump-meet-with-putin-by-october-31",
+    "poly_will-trump-meet-with-putin-by-august-15",
+    "poly_will-ukraine-agree-to-cede-territory-to-russia-before-2027",
+    "poly_will-ukraine-hold-kursk-through-2024",
+    "poly_will-ukraine-join-nato-in-2024",
+    "poly_zelenskyy-out-as-ukraine-president-before-2027",
+    "poly_zelenskyy-out-as-ukraine-president-before-july"
+  ],
+  "ai_technology": [
+    "poly_ai-industry-downturn-by-december-31-2026-857",
+    "poly_will-claude-5-be-released-by-march-31-2026-243-489-141-184",
+    "poly_will-gemini-3pt0-be-released-by-november-30-643-555",
+    "poly_grok-5-released-by-march-31-2026",
+    "poly_nba-2025-26-bpg-leader-victor-wembanyama",
+    "poly_nba-2025-26-southeast-division-winner-orlando-magic",
+    "poly_nba-nop-orl-2026-01-11",
+    "poly_nba-nyk-orl-2025-11-22",
+    "poly_nba-orl-hou-2025-11-16",
+    "poly_nba-orl-nyk-2025-11-12",
+    "poly_nba-orl-okc-2026-02-03",
+    "poly_nba-orl-sas-2026-02-01",
+    "poly_nba-phx-okc-2025-12-10",
+    "poly_nba-sas-okc-2026-01-13",
+    "poly_nba-uta-okc-2026-01-07",
+    "poly_will-the-new-york-knicks-win-more-than-53pt5-regular-season-games-in-202526",
+    "poly_openai-1t-ipo-before-2027",
+    "poly_openai-browser-by-october-31",
+    "poly_will-openai-ipo-by-december-31-2026",
+    "poly_will-openai-not-ipo-by-december-31-2026",
+    "poly_openai-ipo-closing-market-cap-above-1t",
+    "poly_tesla-launches-unsupervised-full-self-driving-fsd-by-october-31-717-337",
+    "poly_thailand-strikes-cambodia-by-friday",
+    "poly_will-lebron-james-be-times-person-of-the-year-for-2025",
+    "poly_usdai-fdv-above-300m-one-day-after-launch-673-643",
+    "poly_will-openai-release-a-new-frontier-model-on-december-11",
+    "poly_tim-cook-out-as-apple-ceo-before-2027",
+    "poly_will-nebius-group-be-acquired-before-2027-514",
+    "poly_will-openai-have-a-1-ai-model-by-june-30",
+    "poly_will-microsoft-have-the-top-ai-model-on-december-31",
+    "poly_will-google-have-the-best-ai-model-at-the-end-of-june-2026",
+    "poly_will-mistral-have-the-best-ai-model-at-the-end-of-november-2025",
+    "poly_will-google-have-the-1-ai-model-at-the-end-of-february-2026",
+    "poly_will-google-have-the-best-ai-model-at-the-end-of-february-2026",
+    "poly_will-meituan-have-the-best-ai-model-at-the-end-of-january-2026",
+    "poly_will-google-have-the-best-ai-model-at-the-end-of-march-2026-941",
+    "poly_will-google-have-the-second-best-ai-model-at-the-end-of-february-2026",
+    "poly_will-apple-release-a-new-product-line-before-2027",
+    "poly_will-tesla-launch-a-driverless-robotaxi-service-by-october-31",
+    "poly_will-tesla-launch-a-driverless-robtotaxi-service-before-july",
+    "poly_will-the-us-acquire-greenland-before-july",
+    "poly_will-the-us-invade-greenland-in-2026",
+    "poly_will-trump-acquire-greenland-before-2027",
+    "poly_will-trump-acquire-greenland-in-2025",
+    "poly_will-zelenskyy-wear-a-suit-before-july",
+    "poly_will-zelenskyy-wear-a-suit-before-june"
+  ],
+  "fed_monetary_policy": [
+    "poly_will-the-bank-of-israel-decrease-the-bank-of-israel-interest-rate-after-the-february-decision",
+    "poly_no-change-in-bank-of-japans-interest-rates-after-march-2026-meeting",
+    "poly_will-the-fed-decrease-interest-rates-by-25-bps-after-the-april-2026-meeting",
+    "poly_fed-decreases-interest-rates-by-50-bps-after-december-2025-meeting",
+    "poly_fed-decreases-interest-rates-by-50-bps-after-january-2026-meeting",
+    "poly_fed-increases-interest-rates-by-25-bps-after-july-2025-meeting",
+    "poly_fed-decreases-interest-rates-by-50-bps-after-june-2025-meeting",
+    "poly_will-there-be-no-change-in-fed-interest-rates-after-the-june-2026-meeting",
+    "poly_fed-decreases-interest-rates-by-50-bps-after-march-2025-meeting",
+    "poly_will-there-be-no-change-in-fed-interest-rates-after-the-march-2026-meeting",
+    "poly_fed-increases-interest-rates-by-25-bps-after-may-2025-meeting",
+    "poly_fed-increases-interest-rates-by-25-bps-after-october-2025-meeting",
+    "poly_no-change-in-fed-interest-rates-after-september-2025-meeting",
+    "poly_fed-decreases-interest-rates-by-75-bps-after-december-2024-meeting",
+    "poly_fed-increases-interest-rates-by-25-bps-after-january-2025-meeting",
+    "poly_fed-increases-interest-rates-by-25-bps-after-november-2024-meeting",
+    "poly_no-change-in-fed-interest-rates-after-2024-september-meeting",
+    "poly_fed-rate-cut-by-september-18",
+    "poly_fed-rate-cut-by-march-2026-meeting",
+    "poly_will-7-fed-rate-cuts-happen-in-2025",
+    "poly_will-no-fed-rate-cuts-happen-in-2026",
+    "poly_will-fed-cut-interest-rates-6-times-by-dec-meeting",
+    "poly_jerome-powell-out-as-fed-chair-by-may-14-2026",
+    "poly_jerome-powell-out-as-fed-chair-by-august-31",
+    "poly_jerome-powell-out-as-fed-chair-by-july-31",
+    "poly_kevin-warsh-confirmed-as-fed-chair-by-may-1",
+    "poly_lisa-cook-out-as-fed-governor-by-september-30",
+    "poly_nba-den-mia-2025-12-29",
+    "poly_nba-mia-min-2026-01-06",
+    "poly_will-the-fed-cutpausepause-in-the-next-three-decisions-decjanmar",
+    "poly_will-powell-say-judge-during-june-press-conference",
+    "poly_will-trump-refrain-from-announcing-a-next-fed-chair-in-2025",
+    "poly_will-trump-nominate-kevin-warsh-as-the-next-fed-chair",
+    "poly_will-fed-end-qt-before-may",
+    "poly_will-trump-remove-jerome-powell"
+  ],
+  "china_us": [
+    "poly_china-unban-bitcoin-in-2024",
+    "poly_china-x-japan-military-clash-before-2027",
+    "poly_china-x-philippines-military-clash-before-2027",
+    "poly_china-x-taiwan-military-clash-before-2027",
+    "poly_nothing-ever-happens-2026",
+    "poly_tiktok-banned-in-the-us-before-may-2025",
+    "poly_us-china-trade-deal-before-june",
+    "poly_will-trump-meet-with-xi-jinping-in-2025",
+    "poly_will-china-blockade-taiwan-by-june-30",
+    "poly_will-china-invade-taiwan-before-2027",
+    "poly_will-china-invade-taiwan-in-2024",
+    "poly_will-china-invade-taiwan-in-2025",
+    "poly_will-the-court-force-trump-to-refund-tariffs-2026-06-30",
+    "poly_will-trump-create-a-tariff-dividend-by-march-31",
+    "poly_will-trump-impose-25-tariff-on-mexicocanada",
+    "poly_will-trump-lower-tariffs-on-china-in-april",
+    "poly_will-trump-meet-with-xi-jinping-by-october-31",
+    "poly_will-xi-jinping-meet-with-cheng-li-wun-before-2027",
+    "poly_xi-jinping-out-before-2027",
+    "poly_xi-jinping-out-before-october",
+    "poly_xi-jinping-out-in-2025"
+  ],
+  "climate_environment": [
+    "poly_10pt0-or-above-earthquake-before-2027",
+    "poly_2024-august-hottest-on-record",
+    "poly_2024-july-hottest-on-record",
+    "poly_2025-january-hottest-on-record",
+    "poly_9pt0-or-above-earthquake-before-2027",
+    "poly_another-7pt0-or-above-earthquake-by-march-31-2026",
+    "poly_will-arsenal-lead-the-epl-in-points-at-midway-point",
+    "poly_will-there-be-8-or-more-earthquakes-of-magnitude-7pt0-or-higher-worldwide-by-june-30",
+    "poly_will-there-be-between-17-and-19-earthquakes-of-magnitude-7pt0-or-higher-worldwide-in-2026",
+    "poly_will-there-be-less-than-16-named-storms-during-atlantic-hurricane-season",
+    "poly_is-the-room-temp-superconductor-real",
+    "poly_named-storm-forms-before-hurricane-season-197",
+    "poly_natural-disaster-in-2026",
+    "poly_nhl-car-wsh-2025-12-12",
+    "poly_ufc-isl-jac9-2025-11-15-681",
+    "poly_will-2026-be-the-hottest-year-on-record",
+    "poly_will-any-category-4-hurricane-make-landfall-in-the-us-in-before-2027",
+    "poly_will-epstein-data-set-13-be-released-by-february-28",
+    "poly_will-trump-release-the-epstein-files-by-december-19-771"
+  ],
+  "space_frontier": [
+    "poly_will-7-8-spacex-starship-launches-successfully-reach-space-in-2026",
+    "poly_human-moon-landing-in-2026",
+    "poly_ledger-ipo-before-2027",
+    "poly_nba-dal-gsw-2025-12-25",
+    "poly_nba-dal-sac-2025-12-27",
+    "poly_nba-den-dal-2026-01-14",
+    "poly_nba-hou-atl-2026-01-29",
+    "poly_nba-lac-hou-2025-12-11",
+    "poly_nba-sas-hou-2026-01-28",
+    "poly_will-spacexs-market-cap-be-greater-than-1t-at-market-close-on-ipo-day",
+    "poly_will-the-chopsticks-catch-spacex-starship-flight-test-12-superheavy-booster-488-561",
+    "poly_will-spacexs-public-ticker-be-star-796",
+    "poly_will-the-doge-1-lunar-mission-launch-before-2027"
+  ],
+  "europe_politics": [
+    "poly_will-poland-qualify-for-the-2026-fifa-world-cup",
+    "poly_will-italy-win-the-third-most-gold-medals-in-the-2026-winter-olympics",
+    "poly_will-latvia-win-eurovision-2025",
+    "poly_will-italy-win-eurovision-2026",
+    "poly_will-lee-jae-myung-be-elected-the-next-president-of-south-korea",
+    "poly_starmer-out-by-june-30-2026-862-594",
+    "poly_will-russia-join-the-board-of-peace",
+    "poly_will-austria-recognize-palestine-before-2027",
+    "poly_yoon-out-as-president-of-south-korea-before-april",
+    "poly_yoon-out-as-president-of-south-korea-before-may",
+    "poly_yoon-out-as-president-of-south-korea-in-2024",
+    "poly_yoon-out-as-president-of-south-korea-in-2025"
+  ],
+  "us_economic": [
+    "poly_another-us-government-shutdown-by-february-14",
+    "poly_will-the-government-shutdown-last-3-days-or-more",
+    "poly_will-japans-january-2026-unemployment-rate-be-2pt4",
+    "poly_us-government-shutdown-before-2025",
+    "poly_us-government-shutdown-by-october-1",
+    "poly_us-government-shutdown-in-2025",
+    "poly_us-recession-by-end-of-2026",
+    "poly_us-recession-in-2025",
+    "poly_will-the-government-shutdown-end-october-15",
+    "poly_will-the-government-shutdown-end-november-8-11",
+    "poly_will-the-government-shutdown-end-by-november-15-668",
+    "poly_will-there-be-another-us-government-shutdown-by-january-31"
+  ],
+  "energy_commodities": [
+    "poly_another-us-strike-on-venezuela-by-december-31",
+    "poly_will-wolves-win-the-202526-english-premier-league",
+    "poly_will-there-be-between-18-and-21-us-strikes-on-somalia-in-february-2026",
+    "poly_will-the-us-strike-somalia-next-656",
+    "poly_nottingham-forest-wins-the-premier-league",
+    "poly_robinhood-launches-prediction-market-through-miaxdx-by-march-31",
+    "poly_us-anti-cartel-ground-operation-in-mexico-by-january-31",
+    "poly_us-anti-cartel-ground-operation-in-mexico-by-march-31",
+    "poly_us-anti-cartel-operation-on-foreign-soil-by-december-31",
+    "poly_us-strike-on-colombia-by-december-31",
+    "poly_us-strike-on-cuba-by-december-31",
+    "poly_us-strike-on-mexico-by-december-31"
+  ],
+  "pandemic_health": [
+    "poly_will-trump-sell-0-gold-cards-in-2025",
+    "poly_ice-shooter-charged-by-march-31",
+    "poly_ice-shooter-fired-by-march-31",
+    "poly_will-nicolas-claxton-lead-the-nba-in-rebounds",
+    "poly_will-paul-george-lead-the-nba-in-scoring",
+    "poly_new-covid-variant-of-concern-before-2027",
+    "poly_new-pandemic-in-2026",
+    "poly_will-john-ternus-be-the-next-ceo-of-apple"
+  ],
+  "legal_regulatory": [
+    "poly_katy-perry-and-justin-trudeau-confirmed-relationship-by-october-31",
+    "poly_will-nicols-maduro-be-sentenced-to-no-prison-time-974",
+    "poly_minneapolis-border-patrol-shooter-charged",
+    "poly_nfl-min-sea-2025-11-30",
+    "poly_nfl-ten-jax-2026-01-04-anytime-td-travis-etienne-jr",
+    "poly_scotus-accepts-sports-event-contract-case-by-july-31-2026",
+    "poly_will-kanye-launch-a-coin-in-february",
+    "poly_will-the-supreme-court-rule-in-favor-of-trumps-tariffs"
+  ]
 }

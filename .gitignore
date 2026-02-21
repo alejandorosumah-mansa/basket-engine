@@ -39,3 +39,8 @@ Thumbs.db
 # Secrets
 *.pem
 *.key
+scripts/fetch_all.sh
+scripts/fetch_all_clob.sh
+scripts/fetch_clob.sh
+scripts/fetch_clob_prices.py
+scripts/fetch_simple.sh
