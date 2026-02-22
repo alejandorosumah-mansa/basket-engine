@@ -1,0 +1,102 @@
+"""Tests for economic/financial analysis modules."""
+
+import pytest
+import pandas as pd
+import numpy as np
+from pathlib import Path
+
+
+class TestBasketReturns:
+    def test_compute_basket_returns(self):
+        from src.analysis.basket_returns import compute_basket_returns
+        br = compute_basket_returns()
+        assert isinstance(br, pd.DataFrame)
+        assert len(br) > 100
+        assert len(br.columns) > 5
+        # Returns should be bounded (prediction market absolute changes)
+        assert br.abs().max().max() < 1.0
+
+    def test_cumulative_returns(self):
+        from src.analysis.basket_returns import compute_basket_returns, compute_basket_cumulative
+        br = compute_basket_returns()
+        cum = compute_basket_cumulative(br)
+        assert cum.iloc[0].min() > 0  # NAV should be positive
+
+
+class TestBenchmarks:
+    def test_load_benchmarks(self):
+        from src.benchmarks.fetch import load_benchmarks, CLEAN_NAMES
+        df = load_benchmarks()
+        assert isinstance(df, pd.DataFrame)
+        assert len(df) > 200
+        assert len(df.columns) >= 8
+
+    def test_clean_names_coverage(self):
+        from src.benchmarks.fetch import load_benchmarks, CLEAN_NAMES
+        df = load_benchmarks()
+        for col in df.columns:
+            assert col in CLEAN_NAMES, f"Missing clean name for {col}"
+
+
+class TestCrossAsset:
+    def test_benchmark_returns(self):
+        from src.benchmarks.fetch import load_benchmarks
+        from src.analysis.cross_asset import compute_benchmark_returns
+        bench = load_benchmarks()
+        ret = compute_benchmark_returns(bench)
+        assert len(ret) == len(bench) - 1
+        # Log returns should be reasonable
+        price_cols = [c for c in ret.columns if c not in ("TNX", "IRX", "VIX")]
+        assert ret[price_cols].abs().max().max() < 0.5  # no 50% daily moves
+
+    def test_static_correlation_bounds(self):
+        from src.analysis.cross_asset import static_correlation
+        # Correlations must be in [-1, 1]
+        br = pd.DataFrame(np.random.randn(100, 3), columns=["a", "b", "c"])
+        bench = pd.DataFrame(np.random.randn(100, 2), columns=["x", "y"])
+        corr = static_correlation(br, bench)
+        assert (corr.abs() <= 1.0).all().all()
+
+
+class TestFactorModel:
+    def test_construct_factors(self):
+        from src.analysis.basket_returns import compute_basket_returns
+        from src.analysis.factor_model import construct_factors
+        br = compute_basket_returns()
+        factors = construct_factors(br)
+        assert "market" in factors.columns
+        assert "risk_appetite" in factors.columns
+        assert "political" in factors.columns
+        assert len(factors) == len(br)
+
+    def test_regression_results_structure(self):
+        from src.analysis.basket_returns import compute_basket_returns
+        from src.analysis.factor_model import construct_factors, run_factor_regressions
+        br = compute_basket_returns()
+        factors = construct_factors(br)
+        results = run_factor_regressions(br, factors)
+        assert "basket" in results.columns
+        assert "factor" in results.columns
+        assert "beta" in results.columns
+        assert "tstat" in results.columns
+        # Should have summary rows
+        assert (results["factor"] == "_summary").sum() > 0
+
+
+class TestRegime:
+    def test_classify_regimes(self):
+        from src.benchmarks.fetch import load_benchmarks
+        from src.analysis.regime import classify_regimes
+        bench = load_benchmarks()
+        regimes = classify_regimes(bench)
+        assert isinstance(regimes, pd.DataFrame)
+        assert "risk_on" in regimes.columns
+        # Boolean columns
+        assert regimes.dtypes.apply(lambda x: x == bool or x == np.bool_).all()
+
+    def test_regime_performance_shape(self):
+        from src.analysis.regime import run_regime_analysis
+        results = run_regime_analysis()
+        perf = results["performance"]
+        assert isinstance(perf, pd.DataFrame)
+        assert len(perf) > 0
