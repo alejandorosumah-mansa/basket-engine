@@ -1,40 +1,37 @@
 # basket-engine
 
-Prediction market basket construction engine for Aditis.
-
-Replaces the manual, static basket system with a quantitative, rebalancing methodology.
-
-## What This Does
-
-1. **Ingests** all market data from Polymarket + Kalshi (metadata + full price history)
-2. **Classifies** markets into investable themes using statistical clustering + LLM hybrid
-3. **Constructs** baskets with risk parity weighting + liquidity caps
-4. **Rebalances** monthly with full audit trail
-5. **Backtests** historical performance with multiple methodology comparisons
-6. **Validates** everything through automated tests + manual review
-
-## Architecture
-
-```
-src/
-├── ingestion/      # API data collection + caching
-├── classification/  # Statistical clustering + LLM categorization + hybrid
-├── construction/    # Eligibility, weighting, basket building
-├── backtest/        # Historical replay + performance metrics
-└── validation/      # Automated + manual verification
-```
-
-See [PLAN.md](./PLAN.md) for the full technical specification.
+Thematic basket construction and backtesting for prediction markets (Polymarket). Implements a four-layer taxonomy (CUSIP → Ticker → Event → Theme), LLM-based classification, exposure normalization, and multiple weighting methodologies.
 
 ## Setup
 
 ```bash
-python -m venv .venv
+python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-cp .env.example .env  # Add API keys
+cp .env.example .env  # Add your API keys
 ```
 
-## Status
+## Run
 
-🚧 In development. See GitHub Issues for workstreams.
+```bash
+python3 scripts/full_pipeline.py
+```
+
+This runs the full pipeline: data loading → taxonomy → classification → eligibility → basket construction → backtest → charts → RESEARCH.md generation.
+
+**Outputs:**
+- `data/outputs/charts/` — All visualization PNGs
+- `data/outputs/backtest_metrics.csv` — Per-theme/method performance metrics
+- `data/outputs/backtest_nav_series.csv` — Daily NAV series
+- `data/outputs/basket_compositions.json` — Market IDs per basket
+- `RESEARCH.md` — Complete research document (auto-generated)
+
+## Tests
+
+```bash
+pytest
+```
+
+## Documentation
+
+See **[RESEARCH.md](RESEARCH.md)** for the full methodology, results, and analysis.

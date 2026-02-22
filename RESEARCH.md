@@ -103,7 +103,7 @@ LLM themes compared against statistical clusters:
 - **Disagreement**: Flagged for review; LLM assignment kept as primary authority
 - **Agreement rate**: 45.6%
 
-![Theme Distribution](data/outputs/charts/theme_distribution_events.png)
+![Theme Distribution](data/outputs/charts/theme_distribution.png)
 
 ## 5. Exposure / Side Detection
 
@@ -179,7 +179,7 @@ This is critical: without exposure adjustment, a basket holding "Will there be a
 | Volume Weighted | -18.76% | -24.98% | -0.88 | -25.81% | 24.34% | -0.97 | 35.2% | 33.4% |
 
 ![NAV Time Series](data/outputs/charts/nav_time_series.png)
-![Methodology Comparison](data/outputs/charts/methodology_comparison.png)
+![Methodology Comparison](data/outputs/charts/methodology_summary.png)
 
 ### Per-Theme Results
 
@@ -240,7 +240,7 @@ This is critical: without exposure adjustment, a basket holding "Will there be a
 
 ### Monthly Returns
 
-![Monthly Returns](data/outputs/charts/monthly_returns.png)
+![Monthly Returns](data/outputs/charts/monthly_turnover.png)
 
 ## 8. Interpretation
 

@@ -515,6 +515,11 @@ logger.info("\n=== STEP 6: Generating Charts ===")
 
 plt.style.use('seaborn-v0_8-whitegrid')
 COLORS = plt.cm.tab10.colors
+GENERATED_DATE = "Generated: 2026-02-22"
+
+def add_date_watermark(fig):
+    """Add generation date to bottom-right of figure."""
+    fig.text(0.99, 0.01, GENERATED_DATE, ha='right', va='bottom', fontsize=8, color='gray', alpha=0.7)
 
 # Chart 0a: Exposure Direction Distribution
 fig, axes = plt.subplots(1, 2, figsize=(12, 5))
@@ -531,6 +536,7 @@ axes[1].set_title(f'Exposure Classification Confidence (mean={markets["exposure_
 axes[1].axvline(x=0.5, color='red', linestyle='--', alpha=0.5, label='Threshold')
 axes[1].legend()
 plt.tight_layout()
+add_date_watermark(fig)
 fig.savefig(CHART_DIR / 'exposure_distribution.png', dpi=150)
 plt.close(fig)
 logger.info("  ✓ exposure_distribution.png")
@@ -554,6 +560,7 @@ if 'long' in theme_exposure.columns and 'short' in theme_exposure.columns:
         if row['short'] > 0:
             ax.text(total + 5, i, f'{row["short_pct"]:.0f}% short', va='center', fontsize=7)
     plt.tight_layout()
+    add_date_watermark(fig)
     fig.savefig(CHART_DIR / 'exposure_by_theme.png', dpi=150)
     plt.close(fig)
     logger.info("  ✓ exposure_by_theme.png")
@@ -579,6 +586,7 @@ if 'adjusted_return' in returns_df.columns:
     axes[1].legend()
     axes[1].set_xlim(-0.15, 0.15)
     plt.tight_layout()
+    add_date_watermark(fig)
     fig.savefig(CHART_DIR / 'raw_vs_adjusted_returns.png', dpi=150)
     plt.close(fig)
     logger.info("  ✓ raw_vs_adjusted_returns.png")
@@ -593,6 +601,7 @@ for bar, val in zip(bars, funnel_values[::-1]):
 ax.set_xlabel('Number of Markets')
 ax.set_title('Data Coverage Funnel: Markets → Eligible Event Representatives')
 plt.tight_layout()
+add_date_watermark(fig)
 fig.savefig(CHART_DIR / 'data_coverage_funnel.png', dpi=150)
 plt.close(fig)
 logger.info("  ✓ data_coverage_funnel.png")
@@ -606,6 +615,7 @@ for bar, val in zip(bars, compression.values()):
 ax.set_ylabel('Count')
 ax.set_title('Taxonomy Compression: CUSIP → Ticker → Event')
 plt.tight_layout()
+add_date_watermark(fig)
 fig.savefig(CHART_DIR / 'taxonomy_compression.png', dpi=150)
 plt.close(fig)
 logger.info("  ✓ taxonomy_compression.png")
@@ -622,9 +632,10 @@ for bar, val in zip(bars, theme_counts.values):
 ax.set_xlabel('Number of Events')
 ax.set_title(f'Theme Distribution at Event Level (N={n_events:,} events, LLM classified)')
 plt.tight_layout()
-fig.savefig(CHART_DIR / 'theme_distribution_events.png', dpi=150)
+add_date_watermark(fig)
+fig.savefig(CHART_DIR / 'theme_distribution.png', dpi=150)
 plt.close(fig)
-logger.info("  ✓ theme_distribution_events.png")
+logger.info("  ✓ theme_distribution.png")
 
 # Chart 4: Cross-basket correlation heatmap
 basket_daily_returns = {}
@@ -653,6 +664,7 @@ if len(basket_daily_returns) >= 2:
     plt.colorbar(im, ax=ax, shrink=0.8)
     ax.set_title('Cross-Basket Return Correlation (Equal Weight)')
     plt.tight_layout()
+    add_date_watermark(fig)
     fig.savefig(CHART_DIR / 'cross_basket_correlation.png', dpi=150)
     plt.close(fig)
     logger.info("  ✓ cross_basket_correlation.png")
@@ -678,6 +690,7 @@ ax.set_ylabel('NAV')
 ax.set_title('Basket NAV Time Series (Equal Weight, Absolute Probability Returns)')
 ax.legend(loc='best', fontsize=7, ncol=2)
 plt.tight_layout()
+add_date_watermark(fig)
 fig.savefig(CHART_DIR / 'nav_time_series.png', dpi=150)
 plt.close(fig)
 logger.info("  ✓ nav_time_series.png")
@@ -698,6 +711,7 @@ if themes_with_results:
     ax.legend()
     ax.axhline(y=0, color='gray', linestyle='-', alpha=0.3)
     plt.tight_layout()
+    add_date_watermark(fig)
     fig.savefig(CHART_DIR / 'sharpe_comparison.png', dpi=150)
     plt.close(fig)
     logger.info("  ✓ sharpe_comparison.png")
@@ -716,6 +730,7 @@ if themes_with_results:
     ax.set_title('Maximum Drawdown by Theme and Weighting Method')
     ax.legend()
     plt.tight_layout()
+    add_date_watermark(fig)
     fig.savefig(CHART_DIR / 'max_drawdown_comparison.png', dpi=150)
     plt.close(fig)
     logger.info("  ✓ max_drawdown_comparison.png")
@@ -743,9 +758,10 @@ if '_combined' in backtest_results and len(backtest_results['_combined']) > 0:
     
     fig.suptitle('Combined Basket: Methodology Comparison', fontsize=14, fontweight='bold')
     plt.tight_layout()
-    fig.savefig(CHART_DIR / 'methodology_comparison.png', dpi=150)
+    add_date_watermark(fig)
+    fig.savefig(CHART_DIR / 'methodology_summary.png', dpi=150)
     plt.close(fig)
-    logger.info("  ✓ methodology_comparison.png")
+    logger.info("  ✓ methodology_summary.png")
 
 # Chart 9: Monthly Returns
 fig, ax = plt.subplots(figsize=(12, 5))
@@ -762,9 +778,10 @@ ax.set_title('Monthly Returns by Weighting Method (Combined Basket)')
 ax.legend()
 ax.axhline(y=0, color='gray', linestyle='-', alpha=0.3)
 plt.tight_layout()
-fig.savefig(CHART_DIR / 'monthly_returns.png', dpi=150)
+add_date_watermark(fig)
+fig.savefig(CHART_DIR / 'monthly_turnover.png', dpi=150)
 plt.close(fig)
-logger.info("  ✓ monthly_returns.png")
+logger.info("  ✓ monthly_turnover.png")
 
 # Chart 10: Classification Agreement Matrix (LLM vs Clusters)
 if not cluster_assignments.empty and not agreement.empty and len(agreement) > 0:
@@ -780,6 +797,7 @@ if not cluster_assignments.empty and not agreement.empty and len(agreement) > 0:
     plt.colorbar(im, ax=ax, shrink=0.8)
     ax.set_title('Classification Agreement: Statistical Clusters vs LLM Themes')
     plt.tight_layout()
+    add_date_watermark(fig)
     fig.savefig(CHART_DIR / 'classification_agreement.png', dpi=150)
     plt.close(fig)
     logger.info("  ✓ classification_agreement.png")
@@ -947,7 +965,7 @@ LLM themes compared against statistical clusters:
 - **Disagreement**: Flagged for review; LLM assignment kept as primary authority
 {f"- **Agreement rate**: {agreement_rate:.1f}%" if agreement_rate > 0 else "- Clustering data insufficient for meaningful comparison"}
 
-![Theme Distribution](data/outputs/charts/theme_distribution_events.png)
+![Theme Distribution](data/outputs/charts/theme_distribution.png)
 
 ## 5. Exposure / Side Detection
 
@@ -1007,7 +1025,7 @@ This is critical: without exposure adjustment, a basket holding "Will there be a
 {chr(10).join(combined_table_rows)}
 
 ![NAV Time Series](data/outputs/charts/nav_time_series.png)
-![Methodology Comparison](data/outputs/charts/methodology_comparison.png)
+![Methodology Comparison](data/outputs/charts/methodology_summary.png)
 
 ### Per-Theme Results
 
@@ -1024,7 +1042,7 @@ This is critical: without exposure adjustment, a basket holding "Will there be a
 
 ### Monthly Returns
 
-![Monthly Returns](data/outputs/charts/monthly_returns.png)
+![Monthly Returns](data/outputs/charts/monthly_turnover.png)
 
 ## 8. Interpretation
 
