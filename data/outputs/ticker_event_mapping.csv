@@ -1,0 +1,65 @@
+event_id,platform,ticker,condition_id,event_title,theme
+kalshi_RECSSNBER-25,kalshi,RECSSNBER-25,,Will there be a recession in 2025?,us_economic
+kalshi_KXFEDCHAIRNOM-29-KH,kalshi,KXFEDCHAIRNOM-29-KH,,Will Trump next nominate Kevin Hassett as Fed Chair?,fed_monetary_policy
+kalshi_KXFEDCHAIRNOM-29-KW,kalshi,KXFEDCHAIRNOM-29-KW,,Will Trump next nominate Kevin Warsh as Fed Chair?,fed_monetary_policy
+kalshi_KXFEDCHAIRNOM-29-CWAL,kalshi,KXFEDCHAIRNOM-29-CWAL,,Will Trump next nominate Christopher Waller as Fed Chair?,fed_monetary_policy
+kalshi_KXPRESNOMD-28-GN,kalshi,KXPRESNOMD-28-GN,,Will Gavin Newsom be the Democratic Presidential nominee in 2028?,us_elections
+kalshi_KXGOVTCUTS-25-1,kalshi,KXGOVTCUTS-25-1,,Will government spending decrease by 1 before 2025?,us_economic
+kalshi_KXGREENLAND-29,kalshi,KXGREENLAND-29,,Will Trump buy Greenland?,us_elections
+kalshi_KXPRESNOMD-28-ZMAM,kalshi,KXPRESNOMD-28-ZMAM,,Will Zohran Mamdani be the Democratic Presidential nominee in 2028?,us_elections
+kalshi_KXPRESNOMD-28-SAS,kalshi,KXPRESNOMD-28-SAS,,Will Stephen A. Smith be the Democratic Presidential nominee in 2028?,us_elections
+kalshi_KXBTCMAX150-25-26FEB28-149999.99,kalshi,KXBTCMAX150-25-26FEB28-149999.99,,When will Bitcoin hit $150k?,crypto_digital
+kalshi_KXPRESNOMD-28-MK,kalshi,KXPRESNOMD-28-MK,,Will Mark Kelly be the Democratic Presidential nominee in 2028?,us_elections
+kalshi_KXPRESNOMD-28-RKHA,kalshi,KXPRESNOMD-28-RKHA,,Will Ro Khanna be the Democratic Presidential nominee in 2028?,us_elections
+kalshi_KXPRESNOMD-28-REMA,kalshi,KXPRESNOMD-28-REMA,,Will Rahm Emanuel be the Democratic Presidential nominee in 2028?,us_elections
+kalshi_KXDJTVOSTARIFFS,kalshi,KXDJTVOSTARIFFS,,"Will the Supreme Court rule in favor of Trump in V.O.S. Selections, Inc. v. Trump",legal_regulatory
+kalshi_KXPRESNOMD-28-AOC,kalshi,KXPRESNOMD-28-AOC,,Will Alexandria Ocasio-Cortez be the Democratic Presidential nominee in 2028?,us_elections
+kalshi_KXFEDCHAIRNOM-29-SBES,kalshi,KXFEDCHAIRNOM-29-SBES,,Will Trump next nominate Scott Bessent as Fed Chair?,fed_monetary_policy
+kalshi_KXPRESNOMD-28-KH,kalshi,KXPRESNOMD-28-KH,,Will Kamala Harris be the Democratic Presidential nominee in 2028?,us_elections
+kalshi_KXPRESNOMD-28-JBP,kalshi,KXPRESNOMD-28-JBP,,Will J.B. Pritzker be the Democratic Presidential nominee in 2028?,us_elections
+kalshi_KXPRESNOMD-28-CBOO,kalshi,KXPRESNOMD-28-CBOO,,Will Cory Booker be the Democratic Presidential nominee in 2028?,us_elections
+kalshi_CONTROLH-2026-R,kalshi,CONTROLH-2026-R,,Will Republicans win the House in 2026?,us_elections
+kalshi_KXPRESNOMD-28-PB,kalshi,KXPRESNOMD-28-PB,,Will Pete Buttigieg be the Democratic Presidential nominee in 2028?,us_elections
+kalshi_KXFEDCHAIRNOM-29-RREI,kalshi,KXFEDCHAIRNOM-29-RREI,,Will Trump next nominate Rick Rieder as Fed Chair?,fed_monetary_policy
+kalshi_CONTROLH-2026-D,kalshi,CONTROLH-2026-D,,Will Democrats win the House in 2026?,us_elections
+kalshi_KXBTC2026200-27JAN01-200000,kalshi,KXBTC2026200-27JAN01-200000,,"Will Bitcoin be above $200000 by Jan 1, 2027 at 11:59PM ET?",crypto_digital
+kalshi_KXFEDDECISION-26JAN-H0,kalshi,KXFEDDECISION-26JAN-H0,,Will the Federal Reserve Hike rates by 0bps at their January 2026 meeting?,fed_monetary_policy
+kalshi_KXPRESNOMD-28-MC,kalshi,KXPRESNOMD-28-MC,,Will Mark Cuban be the Democratic Presidential nominee in 2028?,us_elections
+kalshi_KXPRESNOMD-28-JOSS,kalshi,KXPRESNOMD-28-JOSS,,Will Jon Ossoff be the Democratic Presidential nominee in 2028?,us_elections
+kalshi_KXPRESNOMD-28-WM,kalshi,KXPRESNOMD-28-WM,,Will Wes Moore be the Democratic Presidential nominee in 2028?,us_elections
+kalshi_KXSENATEMED-26-GRA,kalshi,KXSENATEMED-26-GRA,,Wil Graham Platner be the Democratic nominee for the Senate in Maine?,us_elections
+kalshi_KXPRESNOMD-28-JSTE,kalshi,KXPRESNOMD-28-JSTE,,Will Jon Stewart be the Democratic Presidential nominee in 2028?,us_elections
+kalshi_KXPRESNOMD-28-MO,kalshi,KXPRESNOMD-28-MO,,Will Michelle Obama be the Democratic Presidential nominee in 2028?,us_elections
+kalshi_KXPRESNOMD-28-AB,kalshi,KXPRESNOMD-28-AB,,Will Andy Beshear be the Democratic Presidential nominee in 2028?,us_elections
+kalshi_KXBTCMAX150-25-26JAN31-149999.99,kalshi,KXBTCMAX150-25-26JAN31-149999.99,,When will Bitcoin hit $150k?,crypto_digital
+kalshi_KXPRESNOMD-28-JS,kalshi,KXPRESNOMD-28-JS,,Will Josh Shapiro be the Democratic Presidential nominee in 2028?,us_elections
+kalshi_KXFEDCHAIRNOM-29-JS,kalshi,KXFEDCHAIRNOM-29-JS,,Will Trump next nominate Judy Shelton as Fed Chair?,fed_monetary_policy
+kalshi_KXFEDDECISION-26JAN-C25,kalshi,KXFEDDECISION-26JAN-C25,,Will the Federal Reserve Cut rates by 25bps at their January 2026 meeting?,fed_monetary_policy
+kalshi_KXFEDCHAIRNOM-29-MBOW,kalshi,KXFEDCHAIRNOM-29-MBOW,,Will Trump next nominate Michelle Bowman as Fed Chair?,fed_monetary_policy
+kalshi_KXCABOUT-29-PH,kalshi,KXCABOUT-29-PH,,Will Pete Hegseth be the first person to leave the Trump Cabinet?,us_elections
+kalshi_KXPRESNOMR-28-DJT,kalshi,KXPRESNOMR-28-DJT,,Will Donald J. Trump be the nominee for the Presidency for the Republican party?,us_elections
+kalshi_KXGOVTCUTS-25-250,kalshi,KXGOVTCUTS-25-250,,Will government spending decrease by 250 before 2025?,us_economic
+kalshi_KXPRESNOMD-28-RGAL,kalshi,KXPRESNOMD-28-RGAL,,Will Ruben Gallego be the Democratic Presidential nominee in 2028?,us_elections
+kalshi_KXBTCMAX150-25-26MAY31-149999.99,kalshi,KXBTCMAX150-25-26MAY31-149999.99,,When will Bitcoin hit $150k?,crypto_digital
+kalshi_KXPRESNOMR-28-JDV,kalshi,KXPRESNOMR-28-JDV,,Will J.D. Vance be the nominee for the Presidency for the Republican party?,us_elections
+kalshi_KXPRESNOMR-28-MR,kalshi,KXPRESNOMR-28-MR,,Will Marco Rubio be the nominee for the Presidency for the Republican party?,us_elections
+kalshi_KXPRESNOMD-28-GW,kalshi,KXPRESNOMD-28-GW,,Will Gretchen Whitmer be the Democratic Presidential nominee in 2028?,us_elections
+kalshi_KXPRESNOMD-28-TW,kalshi,KXPRESNOMD-28-TW,,Will Tim Walz be the Democratic Presidential nominee in 2028?,us_elections
+kalshi_KXPRESNOMR-28-MTG,kalshi,KXPRESNOMR-28-MTG,,Will Marjorie Taylor Greene be the nominee for the Presidency for the Republican party?,us_elections
+kalshi_KXARREST-27JAN-JCOM,kalshi,KXARREST-27JAN-JCOM,,Will James Comey be arrested before Jan 2027?,legal_regulatory
+kalshi_KXPRESNOMD-28-CMUR,kalshi,KXPRESNOMD-28-CMUR,,Will Chris Murphy be the Democratic Presidential nominee in 2028?,us_elections
+kalshi_KXFEDCHAIRNOM-29-SMIR,kalshi,KXFEDCHAIRNOM-29-SMIR,,Will Trump next nominate Stephen Miran as Fed Chair?,fed_monetary_policy
+kalshi_KXGOVTCUTS-25-500,kalshi,KXGOVTCUTS-25-500,,Will government spending decrease by 500 before 2025?,us_economic
+kalshi_KXPRESPERSON-28-DTRU,kalshi,KXPRESPERSON-28-DTRU,,Who will win the next presidential election?,us_elections
+kalshi_KXPRESPERSON-28-GNEWS,kalshi,KXPRESPERSON-28-GNEWS,,Who will win the next presidential election?,us_elections
+kalshi_KXPRESNOMD-28-BOBA,kalshi,KXPRESNOMD-28-BOBA,,Will Barack Obama be the Democratic Presidential nominee in 2028?,us_elections
+kalshi_KXPRESNOMD-28-RW,kalshi,KXPRESNOMD-28-RW,,Will Raphael Warnock be the Democratic Presidential nominee in 2028?,us_elections
+kalshi_KXFEDDECISION-26JAN-C26,kalshi,KXFEDDECISION-26JAN-C26,,Will the Federal Reserve Cut rates by >25bps at their January 2026 meeting?,fed_monetary_policy
+kalshi_KXPRESNOMR-28-TC,kalshi,KXPRESNOMR-28-TC,,Will Ted Cruz be the nominee for the Presidency for the Republican party?,us_elections
+kalshi_KXPRESPERSON-28-JVAN,kalshi,KXPRESPERSON-28-JVAN,,Who will win the next presidential election?,us_elections
+kalshi_KXGOVTCUTS-25-25,kalshi,KXGOVTCUTS-25-25,,Will government spending decrease by 25 before 2025?,us_economic
+kalshi_KXDEPORTCOUNT-25-500,kalshi,KXDEPORTCOUNT-25-500,,How many deportations in Trump's first year?,us_elections
+kalshi_KXPRESNOMD-28-HCLI,kalshi,KXPRESNOMD-28-HCLI,,Will Hilary Clinton be the Democratic Presidential nominee in 2028?,us_elections
+kalshi_KXGOVSHUT-26JAN31,kalshi,KXGOVSHUT-26JAN31,,Will the government be shut down on January 31?,legal_regulatory
+kalshi_KXPRESNOMD-28-GR,kalshi,KXPRESNOMD-28-GR,,Will Gina Raimondo be the Democratic Presidential nominee in 2028?,us_elections
+kalshi_KXPRESNOMR-28-TMAS,kalshi,KXPRESNOMR-28-TMAS,,Will Thomas Massie be the nominee for the Presidency for the Republican party?,us_elections
