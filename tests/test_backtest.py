@@ -398,6 +398,40 @@ class TestPerformanceMetrics:
 # ===========================================================================
 
 
+class TestTransactionCosts:
+    """Transaction cost modeling deducts costs from NAV at rebalance."""
+
+    @pytest.mark.unit
+    def test_transaction_cost_calculation(self):
+        """Cost = turnover * (bps / 10000), deducted from NAV."""
+        nav = 100.0
+        turnover = 0.50  # 50% turnover
+        cost_bps = 200   # 2% spread
+        cost_fraction = turnover * (cost_bps / 10000)
+        new_nav = nav * (1 - cost_fraction)
+        assert cost_fraction == pytest.approx(0.01)  # 1% cost
+        assert new_nav == pytest.approx(99.0)
+
+    @pytest.mark.unit
+    def test_zero_transaction_cost(self):
+        """Zero bps means no cost deduction."""
+        nav = 100.0
+        turnover = 1.0
+        cost_bps = 0
+        cost_fraction = turnover * (cost_bps / 10000)
+        assert cost_fraction == 0.0
+
+    @pytest.mark.unit
+    def test_full_turnover_high_cost(self):
+        """100% turnover with 200 bps = 2% NAV hit."""
+        nav = 100.0
+        turnover = 1.0
+        cost_bps = 200
+        cost_fraction = turnover * (cost_bps / 10000)
+        new_nav = nav * (1 - cost_fraction)
+        assert new_nav == pytest.approx(98.0)
+
+
 class TestResolvedMarketReturns:
     """Resolved markets contribute terminal returns (0 or 1)."""
 

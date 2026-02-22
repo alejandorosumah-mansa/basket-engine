@@ -10,7 +10,7 @@ from .cache import Cache
 logger = logging.getLogger(__name__)
 
 # Kalshi has 477K+ markets. We filter to those with meaningful volume.
-MIN_VOLUME = 500000  # minimum total volume (contracts) to bother fetching trades
+MIN_VOLUME = 50000  # minimum total volume (contracts) - lowered from 500K to capture more markets
 
 
 def fetch_all_markets(cache: Cache, force: bool = False) -> list:

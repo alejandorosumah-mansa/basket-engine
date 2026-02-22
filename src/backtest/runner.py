@@ -60,6 +60,7 @@ def run_backtest(
     end_date: str = "2026-02-01",
     basket_settings: Optional[dict] = None,
     weighting_settings: Optional[dict] = None,
+    transaction_cost_bps: float = 0.0,
 ) -> dict:
     """Run a single backtest for a given weighting method.
     
@@ -72,7 +73,8 @@ def run_backtest(
     start = pd.to_datetime(start_date)
     end = pd.to_datetime(end_date)
     
-    # Get all serious market IDs
+    # Get all serious market IDs - match on event_id which corresponds to market_id
+    # in returns data (both use the event-level slug as identifier)
     serious = classifications_df[
         ~classifications_df["primary_theme"].isin(["sports_entertainment", "uncategorized"])
     ]
@@ -82,6 +84,20 @@ def run_backtest(
     returns_df = returns_df.copy()
     returns_df["date"] = pd.to_datetime(returns_df["date"])
     returns_df = returns_df[(returns_df["date"] >= start) & (returns_df["date"] <= end)]
+    
+    # Match returns market_id to classification event_id
+    all_return_ids = set(returns_df["market_id"].unique())
+    matched_ids = all_return_ids & serious_ids
+    unmatched_ids = all_return_ids - set(classifications_df["event_id"])
+    if unmatched_ids:
+        logger.warning(
+            f"Backtest: {len(unmatched_ids)} market_ids in returns have no classification "
+            f"(out of {len(all_return_ids)} total). These will be excluded."
+        )
+    logger.info(
+        f"Backtest: {len(matched_ids)} serious markets matched out of {len(all_return_ids)} "
+        f"return markets ({len(serious_ids)} serious classifications total)"
+    )
     returns_df = returns_df[returns_df["market_id"].isin(serious_ids)]
     
     prices_df = prices_df.copy()
@@ -145,13 +161,21 @@ def run_backtest(
                 hist_returns = returns_df[returns_df["date"] <= date]
                 # For backtest, we distinguish between volume (for volume_weighted) 
                 # and liquidity (for risk parity cap) - use volume as proxy but could be different
-                engine.rebalance(
+                event = engine.rebalance(
                     date=date_dt,
                     eligible_market_ids=eligible_ids,
                     returns_df=hist_returns,
                     volumes=vol_by_market,
                     liquidity=vol_by_market,  # In a real system, this would be separate liquidity data
                 )
+                # Apply transaction costs: cost = turnover * spread (in bps)
+                if transaction_cost_bps > 0 and event.turnover > 0:
+                    cost_fraction = event.turnover * (transaction_cost_bps / 10000)
+                    engine.current_nav *= (1 - cost_fraction)
+                    logger.info(
+                        f"Transaction cost: turnover={event.turnover:.2%}, "
+                        f"cost={cost_fraction:.4%}, NAV after={engine.current_nav:.2f}"
+                    )
         
         # Get today's returns
         day_returns = returns_df[returns_df["date"] == date]
@@ -172,6 +196,7 @@ def run_backtest(
             "avg_turnover": np.mean([e.turnover for e in engine.rebalance_events]) if engine.rebalance_events else 0,
             "final_nav": nav_df["nav"].iloc[-1],
             "n_days": len(nav_df),
+            "transaction_cost_bps": transaction_cost_bps,
         }
     
     return {
@@ -194,6 +219,8 @@ def run_all_backtests() -> dict:
     end = settings["backtest"]["end_date"]
     
     methods = ["risk_parity_liquidity_cap", "equal", "volume_weighted"]
+    # Default transaction cost: 200 bps (2% spread) typical for prediction markets
+    tx_cost_bps = settings.get("backtest", {}).get("transaction_cost_bps", 200)
     results = {}
     
     for method in methods:
@@ -205,6 +232,7 @@ def run_all_backtests() -> dict:
             classifications_df=classifications_df,
             start_date=start,
             end_date=end,
+            transaction_cost_bps=tx_cost_bps,
         )
     
     # Save outputs

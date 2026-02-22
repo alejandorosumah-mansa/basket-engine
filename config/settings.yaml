@@ -44,6 +44,7 @@ backtest:
   end_date: "2026-02-01"        # Up to last month
   risk_free_rate: 0.05          # For Sharpe calculation
   benchmark: equal_weight_all   # Compare against naive equal-weight
+  transaction_cost_bps: 200     # 200 bps (2%) spread per trade, typical for Polymarket/Kalshi
 
 # Data
 data:
