@@ -1,6 +1,6 @@
 # RESEARCH.md — Prediction Market Thematic Baskets
 
-**Date**: 2026-02-21  
+**Date**: 2026-02-22  
 **Dataset**: 20,180 markets, 383,029 price observations, 11,223 markets with prices  
 **Backtest Period**: 2025-06-01 to 2026-02-20
 
