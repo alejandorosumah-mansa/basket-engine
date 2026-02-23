@@ -1,334 +1,1311 @@
 {
   "0": {
-    "name": "2026 Sports and Political Predictions",
-    "critique": "- Unrelated markets (sports vs. politics)\n- Temporal mismatch (varied timelines for events)\n- Missing key markets (not all major events included)"
-  },
-  "37": {
-    "name": "Election and Sports Predictions",
-    "critique": "- Unrelated markets (politics vs. sports)\n- Temporal mismatch (different election years and sports seasons)\n- Missing key markets (not all major elections or sports events included)"
-  },
-  "4": {
-    "name": "2024 Election and Sports Markets",
-    "critique": "- Unrelated markets (politics vs. sports)\n- Temporal mismatch (election vs. Super Bowl timelines)\n- Missing key markets (other significant political events)"
-  },
-  "3": {
-    "name": "2024 Election and Sports Markets",
-    "critique": "- Unrelated markets (politics vs. sports)\n- Temporal mismatch (different election timelines)\n- Missing key markets (overemphasis on specific candidates/states)"
-  },
-  "5": {
-    "name": "Diverse Political and Economic Predictions",
-    "critique": "- Unrelated markets across different domains (politics, entertainment, economics)\n- Temporal mismatch with varying timelines for events\n- Overemphasis on German elections without broader political context"
-  },
-  "6": {
-    "name": "Political and Market Predictions",
-    "critique": "- Unrelated markets (politics vs. sports/crypto)\n- Temporal mismatch (different election cycles)\n- Missing key markets (not covering all major elections)"
-  },
-  "7": {
-    "name": "Political and Sports Predictions",
-    "critique": "- Unrelated markets (politics vs. sports)\n- Temporal mismatch (varying election and event dates)\n- Missing key markets (not all relevant elections included)"
-  },
-  "8": {
-    "name": "Diverse Prediction Markets Basket",
-    "critique": "- Unrelated markets across various domains\n- Temporal mismatch in event timelines\n- Missing key markets in each category"
-  },
-  "9": {
-    "name": "Diverse Future Predictions Basket",
-    "critique": "- Unrelated markets across various domains\n- Temporal mismatch with different deadlines\n- Overrepresentation of Bitcoin and Ethereum markets"
-  },
-  "2": {
-    "name": "Diverse Sports and Political Markets",
-    "critique": "- Unrelated markets across different domains\n- Missing key markets in each category\n- Temporal mismatch in event timelines"
-  },
-  "11": {
-    "name": "Diverse Global Predictions Basket",
-    "critique": "- Unrelated markets across various topics\n- Temporal mismatch in event timelines\n- Missing key markets in specific categories"
-  },
-  "12": {
-    "name": "Sports and Political Predictions",
-    "critique": "- Unrelated markets (sports vs. politics)\n- Temporal mismatch (different event timelines)\n- Missing key markets (not all leagues/candidates included)"
-  },
-  "13": {
-    "name": "Diverse Political and Market Predictions",
-    "critique": "- Unrelated markets leading to confusion\n- Temporal mismatch among deadlines and events\n- Missing key markets in specific sectors"
-  },
-  "14": {
-    "name": "Diverse Prediction Markets Basket",
-    "critique": "- Unrelated markets across different sectors\n- Temporal mismatch in event timelines\n- Missing key markets for comprehensive analysis"
-  },
-  "15": {
-    "name": "Diverse Prediction Markets Basket",
-    "critique": "- Unrelated markets across various domains\n- Temporal mismatch with different deadlines\n- Missing key markets in specific categories"
-  },
-  "16": {
-    "name": "Diverse Prediction Markets Basket",
-    "critique": "- Unrelated markets across various domains\n- Temporal mismatch with different event timelines\n- Missing key markets in specific categories"
-  },
-  "17": {
-    "name": "Diverse Political and Sports Markets",
-    "critique": "- Unrelated markets across different domains (politics, sports, economics)\n- Temporal mismatch with varying deadlines and events\n- Missing key markets that could provide context or relevance"
-  },
-  "18": {
-    "name": "Political and Global Events Basket",
-    "critique": "- Unrelated markets across different domains\n- Temporal mismatch with varying deadlines\n- Missing key markets in major categories"
-  },
-  "54": {
-    "name": "Diverse Prediction Markets Basket",
-    "critique": "- Unrelated markets across various domains\n- Temporal mismatch in event timelines\n- Overrepresentation of South Korean elections"
-  },
-  "21": {
-    "name": "Diverse Prediction Markets Basket",
-    "critique": "- Unrelated markets across various domains\n- Temporal mismatch in event timelines\n- Missing key markets in each category"
-  },
-  "22": {
-    "name": "Diverse Future Events Basket",
-    "critique": "- Unrelated markets across various domains\n- Temporal mismatch in event timelines\n- Missing key markets in specific categories"
-  },
-  "23": {
-    "name": "Diverse Future Events Markets",
-    "critique": "- Unrelated topics and themes\n- Temporal mismatch in event timelines\n- Varying levels of market significance"
-  },
-  "24": {
-    "name": "Diverse Future Events Predictions",
-    "critique": "- Unrelated markets across different domains\n- Temporal mismatch with varying event timelines\n- Missing key markets in specific categories"
-  },
-  "25": {
-    "name": "Diverse Political and Economic Events",
-    "critique": "- Unrelated markets across different domains\n- Temporal mismatch in event timelines\n- Missing key markets for comprehensive analysis"
-  },
-  "26": {
-    "name": "Diverse Prediction Markets Basket",
-    "critique": "- Unrelated markets across different sectors\n- Temporal mismatch in event timelines\n- Missing key markets for comprehensive analysis"
-  },
-  "27": {
-    "name": "Diverse Political and Economic Predictions",
-    "critique": "- Unrelated markets across different domains\n- Temporal mismatch in event timelines\n- Lack of coherence in subject matter"
-  },
-  "28": {
-    "name": "Diverse Future Predictions Basket",
-    "critique": "- Unrelated markets across different domains\n- Temporal mismatch in deadlines and events\n- Missing key markets in similar categories"
-  },
-  "30": {
-    "name": "Diverse Future Predictions Basket",
-    "critique": "- Unrelated markets across different sectors\n- Temporal mismatch in event timelines\n- Missing key markets in specific categories"
-  },
-  "31": {
-    "name": "Diverse Prediction Markets Basket",
-    "critique": "- Unrelated markets across different domains\n- Temporal mismatch in event timelines\n- Lack of thematic coherence among topics"
-  },
-  "32": {
-    "name": "Diverse Political and Market Predictions",
-    "critique": "- Unrelated markets across different domains\n- Temporal mismatch in deadlines and events\n- Missing key markets for comprehensive analysis"
-  },
-  "33": {
-    "name": "Diverse Future Events Predictions",
-    "critique": "- Unrelated markets across various domains\n- Temporal mismatch in event timelines\n- Missing key markets in specific categories"
-  },
-  "34": {
-    "name": "Diverse Prediction Markets Basket",
-    "critique": "- Unrelated markets across various domains\n- Temporal mismatch in event timelines\n- Missing key markets for comprehensive analysis"
-  },
-  "35": {
-    "name": "Diverse Political and Sports Markets",
-    "critique": "- Unrelated markets across different domains\n- Temporal mismatch in event timelines\n- Missing key markets in specific categories"
-  },
-  "36": {
-    "name": "Venezuela Political Predictions",
-    "critique": "- Unrelated events (release vs. invasion)\n- Temporal mismatch in deadlines\n- Lack of context on political climate"
-  },
-  "38": {
-    "name": "Diverse Prediction Markets Basket",
-    "critique": "- Unrelated markets leading to confusion\n- Temporal mismatch among event timelines\n- Missing key markets for comprehensive analysis"
-  },
-  "39": {
-    "name": "2028 Elections and Sports Predictions",
-    "critique": "- Unrelated markets (politics vs. sports)\n- Temporal mismatch (varying event timelines)\n- Missing key markets (not all candidates included)"
-  },
-  "71": {
-    "name": "Diverse Political and Sports Markets",
-    "critique": "- Unrelated markets across different domains\n- Temporal mismatch in event timelines\n- Missing key markets for comprehensive analysis"
-  },
-  "41": {
-    "name": "Diverse Political and Sports Markets",
-    "critique": "- Unrelated markets across different domains\n- Temporal mismatch in event timelines\n- Missing key markets in major categories"
-  },
-  "42": {
-    "name": "2026 Event Prediction Markets",
-    "critique": "- Unrelated markets (sports, politics, health)\n- Temporal mismatch (some events are not in 2026)\n- Missing key markets (not all major events represented)"
-  },
-  "43": {
-    "name": "Diverse Prediction Markets Basket",
-    "critique": "- Unrelated markets across different domains\n- Temporal mismatch in event timelines\n- Missing key markets in specific categories"
-  },
-  "44": {
-    "name": "Diverse Prediction Markets Basket",
-    "critique": "- Unrelated topics and themes\n- Temporal mismatch in deadlines\n- Missing key markets in specific categories"
-  },
-  "51": {
-    "name": "Diverse Future Event Predictions",
-    "critique": "- Unrelated markets across different domains\n- Temporal mismatch between sports and political events\n- Missing key markets for comprehensive coverage"
-  },
-  "46": {
-    "name": "2026 Sports and Political Predictions",
-    "critique": "- Unrelated markets (sports vs. politics)\n- Temporal mismatch (different event timelines)\n- Missing key markets (not all major leagues represented)"
-  },
-  "47": {
-    "name": "Diverse Prediction Markets Basket",
-    "critique": "- Unrelated markets across different domains\n- Temporal mismatch in event timelines\n- Missing key markets for comprehensive analysis"
-  },
-  "48": {
-    "name": "Diverse Political and Business Events",
-    "critique": "- Unrelated markets across different sectors\n- Temporal mismatch in event timelines\n- Lack of common thematic focus"
-  },
-  "49": {
-    "name": "Crypto Market Cap Predictions",
-    "critique": "- Unrelated market focus (ETH vs. Solana)\n- Temporal mismatch (different timeframes for predictions)\n- Varying market dynamics and factors influencing outcomes"
-  },
-  "50": {
-    "name": "Diverse Political and Market Predictions",
-    "critique": "- Unrelated markets across different sectors\n- Temporal mismatch in event timelines\n- Missing key markets in specific categories"
-  },
-  "52": {
-    "name": "Diverse Political and Sports Markets",
-    "critique": "- Unrelated markets across different domains\n- Temporal mismatch in event timelines\n- Missing key markets for comprehensive analysis"
-  },
-  "53": {
-    "name": "Diverse Future Events Basket",
-    "critique": "- Unrelated markets across different domains\n- Temporal mismatch between election and sports events\n- Missing key markets for comprehensive coverage"
-  },
-  "55": {
-    "name": "Diverse Political and Sports Markets",
-    "critique": "- Unrelated markets across different domains\n- Temporal mismatch in event timelines\n- Missing key markets in specific categories"
-  },
-  "57": {
-    "name": "Diverse Prediction Markets Basket",
-    "critique": "- Unrelated markets across different domains\n- Temporal mismatch in event timelines\n- Missing key markets in each category"
-  },
-  "58": {
-    "name": "Diverse Political and Sports Markets",
-    "critique": "- Unrelated markets across different domains\n- Missing key markets in each category\n- Temporal mismatch in event timelines"
-  },
-  "76": {
-    "name": "Diverse Future Events Predictions",
-    "critique": "- Unrelated markets across different domains\n- Temporal mismatch in event timelines\n- Overemphasis on specific entities (e.g., OpenAI)"
-  },
-  "60": {
-    "name": "Diverse Event Prediction Markets",
-    "critique": "- Unrelated markets with different themes\n- Temporal mismatch in event timelines\n- Varying levels of public interest and impact"
-  },
-  "61": {
-    "name": "Diverse Global Predictions Basket",
-    "critique": "- Unrelated markets across various domains\n- Temporal mismatch with different deadlines\n- Overrepresentation of Nobel Peace Prize markets"
-  },
-  "62": {
-    "name": "2028 Political and Miscellaneous Markets",
-    "critique": "- Unrelated markets (political vs. sports/finance)\n- Temporal mismatch (some events are immediate, others are long-term)\n- Missing key markets (no comprehensive coverage of all major candidates)"
-  },
-  "63": {
-    "name": "Iran and US Political Markets",
-    "critique": "- Unrelated markets (e.g., NBA Finals, EPL)\n- Temporal mismatch (varied deadlines for predictions)\n- Missing key markets (e.g., broader geopolitical implications)"
-  },
-  "64": {
-    "name": "Diverse Future Events Basket",
-    "critique": "- Unrelated markets across different domains\n- Temporal mismatch in event timelines\n- Missing key markets in specific categories"
-  },
-  "67": {
-    "name": "Political and Sports Predictions",
-    "critique": "- Unrelated markets (politics vs. sports)\n- Temporal mismatch (different election cycles and sports seasons)\n- Missing key markets (not all relevant candidates or events included)"
-  },
-  "68": {
-    "name": "Diverse Prediction Markets Basket",
-    "critique": "- Unrelated markets across different domains\n- Temporal mismatch between sports and political events\n- Missing key markets in each category"
-  },
-  "70": {
-    "name": "Diverse Political and Economic Markets",
-    "critique": "- Unrelated markets across different domains\n- Temporal mismatch in election dates\n- Missing key markets for comprehensive analysis"
-  },
-  "72": {
-    "name": "Diverse Prediction Markets Basket",
-    "critique": "- Unrelated markets across different domains\n- Temporal mismatch between sports and political events\n- Missing key markets in each category"
-  },
-  "73": {
-    "name": "Diverse Political Predictions Basket",
-    "critique": "- Unrelated markets across different countries\n- Temporal mismatch in election timelines\n- Missing key markets for comprehensive analysis"
-  },
-  "74": {
-    "name": "Diverse Future Events Markets",
-    "critique": "- Unrelated markets across different domains\n- Temporal mismatch in event timelines\n- Missing key markets for comprehensive analysis"
-  },
-  "75": {
-    "name": "Diverse Political and Market Predictions",
-    "critique": "- Unrelated markets across different domains\n- Temporal mismatch with varying deadlines\n- Lack of key markets in similar categories"
-  },
-  "77": {
-    "name": "Diverse Sports and Politics Markets",
-    "critique": "- Unrelated markets across different domains\n- Temporal mismatch in event timelines\n- Missing key markets in major sports or political events"
-  },
-  "78": {
-    "name": "Political and Competitive Predictions",
-    "critique": "- Unrelated markets (politics vs. sports vs. AI)\n- Temporal mismatch (varying election years and event timelines)\n- Missing key markets (not all relevant political candidates or events included)"
-  },
-  "79": {
-    "name": "Diverse Sports and Events Markets",
-    "critique": "- Unrelated markets across different sports\n- Temporal mismatch with event timelines\n- Missing key markets for comprehensive analysis"
-  },
-  "81": {
-    "name": "Diverse Prediction Markets Basket",
-    "critique": "- Unrelated topics and themes\n- Temporal mismatch in event timelines\n- Lack of common market dynamics"
-  },
-  "82": {
-    "name": "Diverse Future Predictions Basket",
-    "critique": "- Unrelated markets across different domains\n- Temporal mismatch with varying timelines\n- Missing key markets in each category"
-  },
-  "19": {
-    "name": "Diverse Prediction Markets Basket",
-    "critique": "- Unrelated markets (politics vs. commodities)\n- Temporal mismatch (political nomination vs. short-term commodity prices)\n- Lack of thematic coherence among markets"
-  },
-  "20": {
-    "name": "Diverse Prediction Markets Basket",
-    "critique": "- Unrelated markets across various domains\n- Temporal mismatch with different deadlines\n- Missing key markets in each category"
-  },
-  "69": {
-    "name": "Diverse Prediction Markets Basket",
-    "critique": "- Unrelated markets across different domains\n- Temporal mismatch in event timelines\n- Lack of common thematic focus"
-  },
-  "29": {
-    "name": "Diverse Prediction Markets Basket",
-    "critique": "- Unrelated markets across different domains\n- Temporal mismatch in event timelines\n- Overrepresentation of Polish presidential candidates"
-  },
-  "56": {
-    "name": "Diverse Sports and Political Markets",
-    "critique": "- Unrelated markets across different domains\n- Temporal mismatch between event timelines\n- Missing key markets in specific categories"
-  },
-  "59": {
-    "name": "Diverse Future Events Basket",
-    "critique": "- Unrelated markets across different domains\n- Temporal mismatch in event timelines\n- Missing key markets for comprehensive analysis"
+    "community_id": 0,
+    "name": "Mixed Prediction Markets Issues",
+    "problems": [
+      "Inclusion of sports-related markets dilutes focus on financial, political, and economic themes.",
+      "Overemphasis on Olympic outcomes may skew market relevance and participant interest.",
+      "Lack of coherence between natural disasters and economic/political events creates thematic disconnection."
+    ],
+    "market_count": 51,
+    "raw_response": "NAME: Mixed Prediction Markets Issues  \nPROBLEMS:  \n1. Inclusion of sports-related markets dilutes focus on financial, political, and economic themes.  \n2. Overemphasis on Olympic outcomes may skew market relevance and participant interest.  \n3. Lack of coherence between natural disasters and economic/political events creates thematic disconnection.",
+    "sample_titles": [
+      "10.0 or above earthquake before 2027?",
+      "9.0 or above earthquake before 2027?",
+      "Fed decreases interest rates by 25 bps after December 2025 meeting?",
+      "Fed decreases interest rates by 50+ bps after December 2025 meeting?",
+      "Foreign intervention in Gaza by March 31?"
+    ]
   },
   "1": {
-    "name": "NYC Mayoral Election Prediction",
-    "critique": "- Unrelated markets (only one market)\n- Missing key markets (other candidates)\n- Temporal mismatch (election date uncertainty)"
+    "community_id": 1,
+    "name": "Mixed Market Themes",
+    "problems": [
+      "Inclusion of sports markets dilutes focus on financial, political, and economic themes.",
+      "Lack of coherence among topics may confuse participants and hinder informed betting.",
+      "Diverse timelines and contexts create challenges in comparative analysis and trend identification."
+    ],
+    "market_count": 16,
+    "raw_response": "NAME: Mixed Market Themes  \nPROBLEMS:  \n1. Inclusion of sports markets dilutes focus on financial, political, and economic themes.  \n2. Lack of coherence among topics may confuse participants and hinder informed betting.  \n3. Diverse timelines and contexts create challenges in comparative analysis and trend identification.",
+    "sample_titles": [
+      "Insurrection Act invoked by March 31?",
+      "Israel x Syria security agreement by March 31?",
+      "Mavericks vs. Bucks",
+      "Nuggets vs. Grizzlies",
+      "OKX IPO in 2026?"
+    ]
   },
-  "65": {
-    "name": "AOC 2024 Election Market",
-    "critique": "- Unrelated markets (only one market present)\n- Missing key markets (other candidates not included)\n- Temporal mismatch (election date uncertainty)"
+  "2": {
+    "community_id": 2,
+    "name": "Mixed Market Predictions",
+    "problems": [
+      "Inclusion of non-political/financial events (e.g., poker championships) dilutes focus.",
+      "Overemphasis on AI model comparisons may skew market relevance.",
+      "Lack of clear thematic cohesion among diverse topics."
+    ],
+    "market_count": 20,
+    "raw_response": "NAME: Mixed Market Predictions  \nPROBLEMS:  \n1. Inclusion of non-political/financial events (e.g., poker championships) dilutes focus.  \n2. Overemphasis on AI model comparisons may skew market relevance.  \n3. Lack of clear thematic cohesion among diverse topics.",
+    "sample_titles": [
+      "No one announced as next James Bond?",
+      "Will 3 Coin win the 2025 National Heads-Up Poker Championship?",
+      "Will Alibaba have the best AI model at the end of March 2026?",
+      "Will Dwayne 'The Rock' Johnson win the 2028 Democratic presidential nomination?",
+      "Will Han Dong-hoon win the 2026 Seoul Mayoral Election"
+    ]
   },
-  "66": {
-    "name": "2026 Sports and Market Predictions",
-    "critique": "- Unrelated markets (F1, Olympics, tech)\n- Temporal mismatch (different event timelines)\n- Missing key markets (other major sports/events)"
+  "3": {
+    "community_id": 3,
+    "name": "2024 Election Dynamics",
+    "problems": [
+      "Overemphasis on partisan outcomes may lead to a lack of diversity in market perspectives.",
+      "Inclusion of non-political markets (e.g., crypto) dilutes focus and may confuse participants.",
+      "Potential for redundancy with multiple similar markets, complicating analysis and decision-making."
+    ],
+    "market_count": 126,
+    "raw_response": "NAME: 2024 Election Dynamics\n\nPROBLEMS:\n1. Overemphasis on partisan outcomes may lead to a lack of diversity in market perspectives.\n2. Inclusion of non-political markets (e.g., crypto) dilutes focus and may confuse participants.\n3. Potential for redundancy with multiple similar markets, complicating analysis and decision-making.",
+    "sample_titles": [
+      "2024 Balance of Power: D Prez, D Senate, R House",
+      "2024 Balance of Power: D Prez, R Senate, R House",
+      "2024 Balance of Power: Other",
+      "2024 Balance of Power: R Prez R Senate R House",
+      "2024 Balance of Power: R Prez, D Senate, R House"
+    ]
   },
-  "40": {
-    "name": "Sports and SpaceX Predictions",
-    "critique": "- Unrelated markets (sports vs. finance)\n- Temporal mismatch (different seasons and timelines)\n- Missing key markets (no comprehensive coverage of all leagues)"
+  "4": {
+    "community_id": 4,
+    "name": "Global Political and Economic Risks",
+    "problems": [
+      "Overemphasis on German elections may skew insights towards a single region.",
+      "Inclusion of speculative crypto markets may dilute focus on traditional economic indicators.",
+      "Lack of diversity in geopolitical issues could lead to narrow analysis of global trends."
+    ],
+    "market_count": 76,
+    "raw_response": "NAME: Global Political and Economic Risks  \nPROBLEMS:  \n1. Overemphasis on German elections may skew insights towards a single region.  \n2. Inclusion of speculative crypto markets may dilute focus on traditional economic indicators.  \n3. Lack of diversity in geopolitical issues could lead to narrow analysis of global trends.",
+    "sample_titles": [
+      "2025 January hottest on record?",
+      "Another Iran strike on Israel in 2024?",
+      "Bernie Sanders votes to confirm Tulsi Gabbard?",
+      "Will China unban Bitcoin in 2024?",
+      "Ethereum all time high in 2024?"
+    ]
+  },
+  "5": {
+    "community_id": 5,
+    "name": "Political and Financial Predictions",
+    "problems": [
+      "Lack of thematic coherence among markets.",
+      "Overemphasis on specific individuals (e.g., Mamdani, Obama) may skew insights.",
+      "Potential for market saturation with similar questions (e.g., Fed decisions)."
+    ],
+    "market_count": 22,
+    "raw_response": "NAME: Political and Financial Predictions  \nPROBLEMS:  \n1. Lack of thematic coherence among markets.  \n2. Overemphasis on specific individuals (e.g., Mamdani, Obama) may skew insights.  \n3. Potential for market saturation with similar questions (e.g., Fed decisions).",
+    "sample_titles": [
+      "2026 Balance of Power: D Senate, D House",
+      "2026 Balance of Power: R Senate, R House",
+      "Mamdani opens city-owned grocery store  by June 30?",
+      "Metamask FDV above $1B one day after launch?",
+      "Metamask FDV above $3B one day after launch?"
+    ]
+  },
+  "6": {
+    "community_id": 6,
+    "name": "Diverse Market Predictions",
+    "problems": [
+      "Lack of thematic cohesion across markets.",
+      "Potential for conflicting outcomes (e.g., political vs. corporate predictions).",
+      "Varied timelines may complicate comparative analysis."
+    ],
+    "market_count": 16,
+    "raw_response": "NAME: Diverse Market Predictions  \nPROBLEMS:  \n1. Lack of thematic cohesion across markets.  \n2. Potential for conflicting outcomes (e.g., political vs. corporate predictions).  \n3. Varied timelines may complicate comparative analysis.",
+    "sample_titles": [
+      "2026 Balance of Power: D Senate, R House",
+      "NATO x Russia military clash by March 31, 2026?",
+      "OpenAI browser by October 31?",
+      "Will Ahmed Aboutaleb become the next Prime Minister of the Netherlands?",
+      "Will Alberto Undurraga win the Chilean presidential election?"
+    ]
+  },
+  "7": {
+    "community_id": 7,
+    "name": "Diverse Political and Financial Markets",
+    "problems": [
+      "Lack of thematic cohesion among markets, mixing financial predictions with political events.",
+      "Overemphasis on specific geopolitical regions (e.g., Colombia, Hungary) may skew insights.",
+      "High volatility in cryptocurrency predictions could overshadow more stable political forecasts."
+    ],
+    "market_count": 31,
+    "raw_response": "NAME: Diverse Political and Financial Markets  \nPROBLEMS:  \n1. Lack of thematic cohesion among markets, mixing financial predictions with political events.  \n2. Overemphasis on specific geopolitical regions (e.g., Colombia, Hungary) may skew insights.  \n3. High volatility in cryptocurrency predictions could overshadow more stable political forecasts.",
+    "sample_titles": [
+      "2026 Balance of Power: Other",
+      "Will Bitcoin reach $130K in July?",
+      "Erdoğan out by end of 2026?",
+      "Israel x Hamas ceasefire before August?",
+      "Israel x Hamas ceasefire by August 15?"
+    ]
+  },
+  "8": {
+    "community_id": 8,
+    "name": "Diverse Prediction Market Basket",
+    "problems": [
+      "Lack of thematic coherence across markets.",
+      "Overemphasis on specific political figures and events may skew predictions.",
+      "Inclusion of both financial and political markets may confuse participants."
+    ],
+    "market_count": 55,
+    "raw_response": "NAME: Diverse Prediction Market Basket  \nPROBLEMS:  \n1. Lack of thematic coherence across markets.  \n2. Overemphasis on specific political figures and events may skew predictions.  \n3. Inclusion of both financial and political markets may confuse participants.",
+    "sample_titles": [
+      "Nothing Ever Happens: 2026",
+      "Russia x Ukraine ceasefire by March 31, 2026?",
+      "Will Silver (SI) hit (HIGH) $110 by end of January?",
+      "Tesla launches unsupervised full self driving (FSD) by June 30?",
+      "US forces in Venezuela again by June 30, 2026?"
+    ]
+  },
+  "9": {
+    "community_id": 9,
+    "name": "Diverse Prediction Market Basket",
+    "problems": [
+      "Lack of thematic cohesion across markets.",
+      "Overemphasis on specific geopolitical events may skew predictions.",
+      "High volatility in cryptocurrency markets could overshadow other predictions."
+    ],
+    "market_count": 35,
+    "raw_response": "NAME: Diverse Prediction Market Basket  \nPROBLEMS:  \n1. Lack of thematic cohesion across markets.  \n2. Overemphasis on specific geopolitical events may skew predictions.  \n3. High volatility in cryptocurrency markets could overshadow other predictions.",
+    "sample_titles": [
+      "2k+ container ship transits of Suez Canal in H1 2026?",
+      "Applied Intuition IPO before 2027?",
+      "Monad market cap (FDV) >$4B one day after launch?",
+      "Russia x Ukraine ceasefire by November 30?",
+      "Russia x Ukraine ceasefire in 2025?"
+    ]
   },
   "10": {
-    "name": "Revenue and Sports Predictions",
-    "critique": "- Unrelated markets (finance vs. sports)\n- Temporal mismatch (different timeframes for events)\n- Missing key markets (other significant sports or economic predictions)"
+    "community_id": 10,
+    "name": "Diverse Future Events Market",
+    "problems": [
+      "Lack of thematic coherence among markets.",
+      "Overemphasis on speculative and extreme events.",
+      "Potential for low liquidity in niche markets."
+    ],
+    "market_count": 13,
+    "raw_response": "NAME: Diverse Future Events Market  \nPROBLEMS:  \n1. Lack of thematic coherence among markets.  \n2. Overemphasis on speculative and extreme events.  \n3. Potential for low liquidity in niche markets.",
+    "sample_titles": [
+      "5kt meteor strike in 2026?",
+      "Extended FDV above $500M one day after launch?",
+      "Grok 5 released by March 31, 2026?",
+      "Major meteor strike (10kt+) in 2026?",
+      "US strikes Yemen by December 31?"
+    ]
+  },
+  "11": {
+    "community_id": 11,
+    "name": "Diverse Prediction Market Risks",
+    "problems": [
+      "Lack of thematic cohesion among markets.",
+      "Varied timelines may confuse participants.",
+      "Potential for overlapping geopolitical risks."
+    ],
+    "market_count": 22,
+    "raw_response": "NAME: Diverse Prediction Market Risks  \nPROBLEMS:  \n1. Lack of thematic cohesion among markets.  \n2. Varied timelines may confuse participants.  \n3. Potential for overlapping geopolitical risks.",
+    "sample_titles": [
+      "AI Industry Downturn by December 31, 2026?",
+      "AI Industry Downturn by March 31, 2026?",
+      "China x Japan military clash before 2027?",
+      "MicroStrategy sells any Bitcoin by June 30, 2026?",
+      "MicroStrategy sells any Bitcoin by March 31, 2026?"
+    ]
+  },
+  "12": {
+    "community_id": 12,
+    "name": "Mixed Financial and Political Markets",
+    "problems": [
+      "Lack of thematic coherence between financial and political predictions.",
+      "Inclusion of non-relevant entertainment market (Kings vs. Blue Jackets).",
+      "Potential for conflicting information due to diverse market types affecting overall analysis."
+    ],
+    "market_count": 27,
+    "raw_response": "NAME: Mixed Financial and Political Markets  \nPROBLEMS:  \n1. Lack of thematic coherence between financial and political predictions.  \n2. Inclusion of non-relevant entertainment market (Kings vs. Blue Jackets).  \n3. Potential for conflicting information due to diverse market types affecting overall analysis.",
+    "sample_titles": [
+      "Altcoin market cap dip to $150B before 2027?",
+      "Base FDV above $2B one day after launch?",
+      "Based FDV above $200M one day after launch?",
+      "Lighter market cap (FDV) >$2B one day after launch?",
+      "Maduro out by March 31, 2026?"
+    ]
+  },
+  "13": {
+    "community_id": 13,
+    "name": "Mixed Political and Economic Risks",
+    "problems": [
+      "Lack of thematic coherence among markets, mixing financial, political, and speculative events.",
+      "Inclusion of extreme geopolitical scenarios (e.g., US civil war, invasions) may skew risk perceptions.",
+      "Presence of irrelevant or low-impact markets (e.g., Eurovision) dilutes focus on significant economic and political predictions."
+    ],
+    "market_count": 50,
+    "raw_response": "NAME: Mixed Political and Economic Risks  \nPROBLEMS:  \n1. Lack of thematic coherence among markets, mixing financial, political, and speculative events.  \n2. Inclusion of extreme geopolitical scenarios (e.g., US civil war, invasions) may skew risk perceptions.  \n3. Presence of irrelevant or low-impact markets (e.g., Eurovision) dilutes focus on significant economic and political predictions.",
+    "sample_titles": [
+      "Anduril IPO before 2027?",
+      "Fed decreases interest rates by 25 bps after January 2026 meeting?",
+      "Fed increases interest rates by 25+ bps after January 2026 meeting?",
+      "ICE shooter charged by March 31?",
+      "Macron out by June 30, 2026?"
+    ]
+  },
+  "14": {
+    "community_id": 14,
+    "name": "Diverse Prediction Market Challenges",
+    "problems": [
+      "Lack of thematic coherence among markets.",
+      "Inclusion of unrelated topics (e.g., sports, entertainment).",
+      "Potential for conflicting predictions within political markets."
+    ],
+    "market_count": 31,
+    "raw_response": "NAME: Diverse Prediction Market Challenges  \nPROBLEMS:  \n1. Lack of thematic coherence among markets.  \n2. Inclusion of unrelated topics (e.g., sports, entertainment).  \n3. Potential for conflicting predictions within political markets.",
+    "sample_titles": [
+      "Another 7.0 or above earthquake by March 31, 2026?",
+      "Another US strike on Venezuela by December 31?",
+      "Fact Check: Maduro capture staged?",
+      "Flying Tulip FDV above $800M one day after launch?",
+      "Nicolás Maduro released from custody by December 31, 2026?"
+    ]
+  },
+  "15": {
+    "community_id": 15,
+    "name": "Venezuela and Political Uncertainty",
+    "problems": [
+      "Overemphasis on Venezuela-related markets may skew insights towards a single geopolitical context.",
+      "Lack of diversity in market themes could limit the breadth of analysis and prediction accuracy.",
+      "Potential for overlapping outcomes in leadership predictions may create confusion and redundancy."
+    ],
+    "market_count": 28,
+    "raw_response": "NAME: Venezuela and Political Uncertainty  \nPROBLEMS:  \n1. Overemphasis on Venezuela-related markets may skew insights towards a single geopolitical context.  \n2. Lack of diversity in market themes could limit the breadth of analysis and prediction accuracy.  \n3. Potential for overlapping outcomes in leadership predictions may create confusion and redundancy.",
+    "sample_titles": [
+      "Another US strike on Venezuela by March 31?",
+      "Based FDV above $3B one day after launch?",
+      "Jerome Powell out as Fed Chair by March 31, 2026?",
+      "Jerome Powell out as Fed Chair by May 14, 2026?",
+      "Natural Disaster in 2026?"
+    ]
+  },
+  "16": {
+    "community_id": 16,
+    "name": "Diverse Prediction Market Risks",
+    "problems": [
+      "Lack of thematic coherence among markets.",
+      "Overemphasis on Trump-related predictions may skew insights.",
+      "Inclusion of speculative and uncertain events can lead to volatility."
+    ],
+    "market_count": 22,
+    "raw_response": "NAME: Diverse Prediction Market Risks  \nPROBLEMS:  \n1. Lack of thematic coherence among markets.  \n2. Overemphasis on Trump-related predictions may skew insights.  \n3. Inclusion of speculative and uncertain events can lead to volatility.",
+    "sample_titles": [
+      "Backpack FDV above $1B one day after launch?",
+      "Backpack FDV above $2B one day after launch?",
+      "Odds Trump acquires Greenland before 2027 hit 30% by March 31?",
+      "Odds Trump acquires Greenland before 2027 hit 50% by March 31?",
+      "Tim Walz charged by March 31, 2026?"
+    ]
+  },
+  "17": {
+    "community_id": 17,
+    "name": "Mixed Market Themes",
+    "problems": [
+      "Inclusion of irrelevant entertainment figures (e.g., Timothy Chalamet, Chef Phillip).",
+      "Overemphasis on search trends rather than substantive political or economic events.",
+      "Lack of coherence between financial, political, and health-related predictions."
+    ],
+    "market_count": 28,
+    "raw_response": "NAME: Mixed Market Themes\n\nPROBLEMS:\n1. Inclusion of irrelevant entertainment figures (e.g., Timothy Chalamet, Chef Phillip).\n2. Overemphasis on search trends rather than substantive political or economic events.\n3. Lack of coherence between financial, political, and health-related predictions.",
+    "sample_titles": [
+      "Backpack FDV above $5B one day after launch?",
+      "New COVID variant of concern before 2027?",
+      "New pandemic in 2026?",
+      "Pete Hegseth out as Secretary of Defense by March 31?",
+      "Timothy Chalamet confirmed to be EsDeeKid by June 30?"
+    ]
+  },
+  "18": {
+    "community_id": 18,
+    "name": "Diverse Prediction Market Themes",
+    "problems": [
+      "Inconsistent focus on topics (sports, politics, finance).",
+      "Varying timeframes and relevance of events.",
+      "Potential for low liquidity in niche markets."
+    ],
+    "market_count": 12,
+    "raw_response": "NAME: Diverse Prediction Market Themes  \nPROBLEMS:  \n1. Inconsistent focus on topics (sports, politics, finance).  \n2. Varying timeframes and relevance of events.  \n3. Potential for low liquidity in niche markets.",
+    "sample_titles": [
+      "Backpack FDV above $700M one day after launch?",
+      "Will Bournemouth finish in the top 4 of the EPL 2025–26 standings?",
+      "Will Canada win the most gold medals in the 2026 Winter Olympics?",
+      "Will Cho Kuk win the 2026 Seoul Mayoral Election",
+      "Will Ethereum hit $7,000 by December 31?"
+    ]
+  },
+  "19": {
+    "community_id": 19,
+    "name": "Diverse Market Predictions",
+    "problems": [
+      "Lack of thematic cohesion among markets.",
+      "Varied timeframes leading to inconsistent analysis.",
+      "Mixing financial and geopolitical predictions may confuse participants."
+    ],
+    "market_count": 5,
+    "raw_response": "NAME: Diverse Market Predictions  \nPROBLEMS:  \n1. Lack of thematic cohesion among markets.  \n2. Varied timeframes leading to inconsistent analysis.  \n3. Mixing financial and geopolitical predictions may confuse participants.",
+    "sample_titles": [
+      "Bank of Japan decreases interest rates after March 2026 meeting?",
+      "SpaceX IPO closing market cap above $1.2T?",
+      "Will Amazon be the largest company in the world by market cap on December 31?",
+      "Will Israel strike 3 countries in 2026?",
+      "Will Rixi Ramona Moncada Godoy win the 2025 Honduras presidential election?"
+    ]
+  },
+  "20": {
+    "community_id": 20,
+    "name": "Diverse Prediction Market Themes",
+    "problems": [
+      "Lack of thematic cohesion across markets.",
+      "Mixing financial, political, and speculative topics may confuse participants.",
+      "Potential for low liquidity in niche markets, affecting prediction accuracy."
+    ],
+    "market_count": 29,
+    "raw_response": "NAME: Diverse Prediction Market Themes  \nPROBLEMS:  \n1. Lack of thematic cohesion across markets.  \n2. Mixing financial, political, and speculative topics may confuse participants.  \n3. Potential for low liquidity in niche markets, affecting prediction accuracy.",
+    "sample_titles": [
+      "Bank of Japan increases interest rates by 25 bps after March 2026 meeting?",
+      "Epstein client list released in 2025?",
+      "Will Gold (GC) hit (HIGH) $5,500 by end of June?",
+      "Jeffrey Epstein confirmed to be alive before 2027?",
+      "Israel and Saudi Arabia normalize relations in 2025?"
+    ]
+  },
+  "21": {
+    "community_id": 21,
+    "name": "Diverse Prediction Market Themes",
+    "problems": [
+      "Lack of thematic cohesion among markets.",
+      "Potential for conflicting outcomes (e.g., government shutdown vs. political elections).",
+      "Varied timeframes may complicate analysis and strategy."
+    ],
+    "market_count": 15,
+    "raw_response": "NAME: Diverse Prediction Market Themes  \nPROBLEMS:  \n1. Lack of thematic cohesion among markets.  \n2. Potential for conflicting outcomes (e.g., government shutdown vs. political elections).  \n3. Varied timeframes may complicate analysis and strategy.",
+    "sample_titles": [
+      "Based FDV above $1B one day after launch?",
+      "Based FDV above $4B one day after launch?",
+      "Based FDV above $500M one day after launch?",
+      "Based FDV above $800M one day after launch?",
+      "Israel and Indonesia normalize relations by December 31, 2026?"
+    ]
+  },
+  "22": {
+    "community_id": 22,
+    "name": "Financial and Political Predictions",
+    "problems": [
+      "Lack of thematic coherence across markets.",
+      "Overlap in speculative nature, leading to potential confusion.",
+      "Inclusion of unrelated topics (e.g., sports) dilutes focus."
+    ],
+    "market_count": 21,
+    "raw_response": "NAME: Financial and Political Predictions  \nPROBLEMS:  \n1. Lack of thematic coherence across markets.  \n2. Overlap in speculative nature, leading to potential confusion.  \n3. Inclusion of unrelated topics (e.g., sports) dilutes focus.",
+    "sample_titles": [
+      "Based FDV above $2B one day after launch?",
+      "EdgeX FDV above $10B one day after launch?",
+      "EdgeX FDV above $3B one day after launch?",
+      "Gensyn FDV above $600M one day after launch?",
+      "Lighter market cap (FDV) >$1B one day after launch?"
+    ]
+  },
+  "23": {
+    "community_id": 23,
+    "name": "Mixed Market Predictions",
+    "problems": [
+      "Inclusion of sports-related markets dilutes focus.",
+      "Varied timelines create inconsistent analysis frameworks.",
+      "Political and financial markets may have conflicting indicators."
+    ],
+    "market_count": 19,
+    "raw_response": "NAME: Mixed Market Predictions  \nPROBLEMS:  \n1. Inclusion of sports-related markets dilutes focus.  \n2. Varied timelines create inconsistent analysis frameworks.  \n3. Political and financial markets may have conflicting indicators.",
+    "sample_titles": [
+      "Based FDV above $300M one day after launch?",
+      "Cilia Flores released from custody by December 31, 2026?",
+      "MicroStrategy sells any Bitcoin in 2025?",
+      "Will Alexander Zverev win the 2026 Men's French Open?",
+      "Will Bitcoin dip to $40,000 in January?"
+    ]
+  },
+  "24": {
+    "community_id": 24,
+    "name": "Diverse Market Predictions",
+    "problems": [
+      "Inconsistent themes: The markets span vastly different categories (political, economic, and environmental), making it difficult to derive cohesive insights.",
+      "Overemphasis on tech companies: A significant focus on tech giants may skew predictions towards a narrow sector, neglecting broader economic factors.",
+      "Lack of temporal alignment: Some markets have varying deadlines, complicating comparative analysis and trend identification."
+    ],
+    "market_count": 22,
+    "raw_response": "NAME: Diverse Market Predictions\n\nPROBLEMS:\n1. Inconsistent themes: The markets span vastly different categories (political, economic, and environmental), making it difficult to derive cohesive insights.\n2. Overemphasis on tech companies: A significant focus on tech giants may skew predictions towards a narrow sector, neglecting broader economic factors.\n3. Lack of temporal alignment: Some markets have varying deadlines, complicating comparative analysis and trend identification.",
+    "sample_titles": [
+      "Battle of the Sexes: Aryna Sabalenka vs Nick Kyrgios",
+      "Israel and Indonesia normalize relations by June 30, 2026?",
+      "StandX FDV above $1B one day after launch?",
+      "StandX FDV above $800M one day after launch?",
+      "Ukraine joins NATO before 2027?"
+    ]
+  },
+  "25": {
+    "community_id": 25,
+    "name": "Diverse Political and Economic Markets",
+    "problems": [
+      "Inclusion of non-financial/political market (Katy Perry and Justin Trudeau relationship) dilutes focus.",
+      "Overlap in election markets may lead to redundancy and confusion among participants.",
+      "High volatility in cryptocurrency predictions can overshadow more stable political and economic forecasts."
+    ],
+    "market_count": 30,
+    "raw_response": "NAME: Diverse Political and Economic Markets  \nPROBLEMS:  \n1. Inclusion of non-financial/political market (Katy Perry and Justin Trudeau relationship) dilutes focus.  \n2. Overlap in election markets may lead to redundancy and confusion among participants.  \n3. High volatility in cryptocurrency predictions can overshadow more stable political and economic forecasts.",
+    "sample_titles": [
+      "Billionaire one-time wealth tax passes in California election 2026?",
+      "Will Bitcoin dip below $100k before 2026?",
+      "Katy Perry and Justin Trudeau confirmed relationship by October 31?",
+      "Will Andrew Cuomo win the 2025 NYC mayoral election?",
+      "Will Bitcoin reach $200,000 in November?"
+    ]
+  },
+  "26": {
+    "community_id": 26,
+    "name": "Mixed Prediction Market Themes",
+    "problems": [
+      "Lack of thematic coherence across markets.",
+      "Inclusion of entertainment-related markets dilutes focus.",
+      "Potential for conflicting predictions (e.g., political stability vs. nuclear events)."
+    ],
+    "market_count": 18,
+    "raw_response": "NAME: Mixed Prediction Market Themes  \nPROBLEMS:  \n1. Lack of thematic coherence across markets.  \n2. Inclusion of entertainment-related markets dilutes focus.  \n3. Potential for conflicting predictions (e.g., political stability vs. nuclear events).",
+    "sample_titles": [
+      "Bitcoin all time high by December 31, 2026?",
+      "Bitcoin all time high by June 30, 2026?",
+      "Andrew Tate vs. Chase Demoor",
+      "Who will win Jake Paul vs Anthony Joshua?",
+      "Nuclear weapon detonation by March 31?"
+    ]
+  },
+  "27": {
+    "community_id": 27,
+    "name": "Cryptocurrency and Geopolitical Events",
+    "problems": [
+      "Lack of thematic coherence between financial and political markets.",
+      "High volatility and unpredictability in cryptocurrency predictions may skew overall market reliability.",
+      "Potential for overlapping timelines causing confusion in event outcomes (e.g., multiple deadlines for similar predictions)."
+    ],
+    "market_count": 12,
+    "raw_response": "NAME: Cryptocurrency and Geopolitical Events  \nPROBLEMS:  \n1. Lack of thematic coherence between financial and political markets.  \n2. High volatility and unpredictability in cryptocurrency predictions may skew overall market reliability.  \n3. Potential for overlapping timelines causing confusion in event outcomes (e.g., multiple deadlines for similar predictions).",
+    "sample_titles": [
+      "Bitcoin all time high by March 31, 2026?",
+      "Bitcoin all time high by September 30, 2026?",
+      "Ethereum all time high by December 31, 2026?",
+      "Ethereum all time high by June 30, 2026?",
+      "Ethereum all time high by March 31, 2026?"
+    ]
+  },
+  "28": {
+    "community_id": 28,
+    "name": "Diverse Prediction Market Challenges",
+    "problems": [
+      "Lack of thematic coherence among markets.",
+      "Overemphasis on cryptocurrency volatility.",
+      "Political markets may introduce bias."
+    ],
+    "market_count": 26,
+    "raw_response": "NAME: Diverse Prediction Market Challenges  \nPROBLEMS:  \n1. Lack of thematic coherence among markets.  \n2. Overemphasis on cryptocurrency volatility.  \n3. Political markets may introduce bias.",
+    "sample_titles": [
+      "Opensea FDV above $5B one day after launch?",
+      "Ukraine election held by June 30, 2026?",
+      "Ukraine recognizes Russian sovereignty over its territory by June 30, 2026?",
+      "Will Bernadette Wilson win the 2026 Alaska governor election?",
+      "Will Bitcoin dip to $100k in October?"
+    ]
+  },
+  "29": {
+    "community_id": 29,
+    "name": "Diverse Political and Economic Risks",
+    "problems": [
+      "High volatility due to geopolitical events.",
+      "Mixed focus on leadership changes and market performance.",
+      "Potential for conflicting predictions across different markets."
+    ],
+    "market_count": 30,
+    "raw_response": "NAME: Diverse Political and Economic Risks  \nPROBLEMS:  \n1. High volatility due to geopolitical events.  \n2. Mixed focus on leadership changes and market performance.  \n3. Potential for conflicting predictions across different markets.",
+    "sample_titles": [
+      "Celonis IPO before 2027?",
+      "ICE Shooter fired/resigns by March 31?",
+      "Opinion FDV above $5B one day after launch?",
+      "US strike on Colombia by December 31?",
+      "US strike on Colombia by March 31?"
+    ]
+  },
+  "30": {
+    "community_id": 30,
+    "name": "Mixed Political and Economic Predictions",
+    "problems": [
+      "Inclusion of non-financial/entertainment markets (e.g., GTA 6, Eurovision) dilutes focus.",
+      "Overrepresentation of Russian political markets may skew analysis and relevance.",
+      "Lack of clear thematic cohesion among diverse topics (finance, politics, security)."
+    ],
+    "market_count": 29,
+    "raw_response": "NAME: Mixed Political and Economic Predictions  \nPROBLEMS:  \n1. Inclusion of non-financial/entertainment markets (e.g., GTA 6, Eurovision) dilutes focus.  \n2. Overrepresentation of Russian political markets may skew analysis and relevance.  \n3. Lack of clear thematic cohesion among diverse topics (finance, politics, security).",
+    "sample_titles": [
+      "Cerebras IPO before 2027?",
+      "Fed rate cut by March 2026 meeting?",
+      "Freddie Mac IPO before 2027?",
+      "GTA 6 launch postponed again?",
+      "Israel x Syria security agreement by June 30?"
+    ]
+  },
+  "31": {
+    "community_id": 31,
+    "name": "Silver and Crypto Speculations",
+    "problems": [
+      "Lack of thematic cohesion among markets, mixing commodities, cryptocurrencies, and political predictions.",
+      "Overemphasis on speculative assets, potentially leading to volatility and risk mismanagement.",
+      "Inclusion of a sports market (Grigor Dimitrov) disrupts the focus on financial and political themes."
+    ],
+    "market_count": 21,
+    "raw_response": "NAME: Silver and Crypto Speculations  \nPROBLEMS:  \n1. Lack of thematic cohesion among markets, mixing commodities, cryptocurrencies, and political predictions.  \n2. Overemphasis on speculative assets, potentially leading to volatility and risk mismanagement.  \n3. Inclusion of a sports market (Grigor Dimitrov) disrupts the focus on financial and political themes.",
+    "sample_titles": [
+      "Will Silver (SI) hit (HIGH) $150 by end of January?",
+      "Will Silver (SI) hit (HIGH) $150 by end of June?",
+      "Will Silver (SI) hit (HIGH) $200 by end of June?",
+      "Will Silver (SI) settle at >$115 in June?",
+      "Solana all time high before 2026?"
+    ]
+  },
+  "32": {
+    "community_id": 32,
+    "name": "Global Political and Climate Risks",
+    "problems": [
+      "Overemphasis on French elections may skew insights towards a single country's political landscape.",
+      "Lack of diversity in topics could limit the understanding of broader geopolitical and economic trends.",
+      "Potential for conflicting predictions (e.g., military clashes vs. climate events) may confuse market participants."
+    ],
+    "market_count": 58,
+    "raw_response": "NAME: Global Political and Climate Risks  \nPROBLEMS:  \n1. Overemphasis on French elections may skew insights towards a single country's political landscape.  \n2. Lack of diversity in topics could limit the understanding of broader geopolitical and economic trends.  \n3. Potential for conflicting predictions (e.g., military clashes vs. climate events) may confuse market participants.",
+    "sample_titles": [
+      "China x Philippines military clash before 2027?",
+      "China x Taiwan military clash before 2027?",
+      "House passes Epstein disclosure bill/resolution in 2025?",
+      "Will 2026 be the fifth-hottest year on record?",
+      "Will 2026 be the second-hottest year on record?"
+    ]
+  },
+  "33": {
+    "community_id": 33,
+    "name": "Mixed Prediction Market Themes",
+    "problems": [
+      "Inclusion of non-political/financial markets (e.g., Taylor Swift, Dwayne Johnson) dilutes focus.",
+      "Overemphasis on Portuguese presidential elections may skew relevance and diversity.",
+      "Lack of clear thematic cohesion among markets could confuse participants."
+    ],
+    "market_count": 16,
+    "raw_response": "NAME: Mixed Prediction Market Themes  \nPROBLEMS:  \n1. Inclusion of non-political/financial markets (e.g., Taylor Swift, Dwayne Johnson) dilutes focus.  \n2. Overemphasis on Portuguese presidential elections may skew relevance and diversity.  \n3. Lack of clear thematic cohesion among markets could confuse participants.",
+    "sample_titles": [
+      "Claudio Tapia out as AFA President by July 19, 2026?",
+      "Russia x Ukraine ceasefire before October?",
+      "Taylor Swift pregnant before marriage?",
+      "Will Catarina Martins win the 2026 Portugal presidential election?",
+      "Will Dwayne 'The Rock' Johnson win the 2028 US Presidential Election?"
+    ]
+  },
+  "34": {
+    "community_id": 34,
+    "name": "Diverse Prediction Market Risks",
+    "problems": [
+      "Lack of thematic coherence among markets.",
+      "Potential for conflicting predictions (e.g., political stability vs. economic forecasts).",
+      "Varied timelines may complicate analysis and decision-making."
+    ],
+    "market_count": 16,
+    "raw_response": "NAME: Diverse Prediction Market Risks  \nPROBLEMS:  \n1. Lack of thematic coherence among markets.  \n2. Potential for conflicting predictions (e.g., political stability vs. economic forecasts).  \n3. Varied timelines may complicate analysis and decision-making.",
+    "sample_titles": [
+      "Will Silver (SI) hit (LOW) $70 by end of June?",
+      "Trump out as President in 2025?",
+      "U.S. agrees to give Ukraine security guarantee by June 30? ",
+      "Will another country recognize Somaliland by March 31?",
+      "Will Base launch a token in 2025?"
+    ]
+  },
+  "35": {
+    "community_id": 35,
+    "name": "Mixed Market Predictions",
+    "problems": [
+      "Lack of thematic coherence among markets.",
+      "Inclusion of non-financial/entertainment topics.",
+      "Potential for speculative noise affecting serious predictions."
+    ],
+    "market_count": 19,
+    "raw_response": "NAME: Mixed Market Predictions  \nPROBLEMS:  \n1. Lack of thematic coherence among markets.  \n2. Inclusion of non-financial/entertainment topics.  \n3. Potential for speculative noise affecting serious predictions.",
+    "sample_titles": [
+      "Consensys IPO closing market cap above $1B?",
+      "EdgeX FDV above $2B one day after launch?",
+      "EdgeX FDV above $4B one day after launch?",
+      "EdgeX FDV above $5B one day after launch?",
+      "GTA VI released before June 2026?"
+    ]
+  },
+  "36": {
+    "community_id": 36,
+    "name": "Mixed Market Predictions",
+    "problems": [
+      "Inclusion of unrelated categories (Eurovision) dilutes focus.",
+      "Political and financial markets may have conflicting timelines.",
+      "Lack of coherence in themes may confuse participants."
+    ],
+    "market_count": 40,
+    "raw_response": "NAME: Mixed Market Predictions  \nPROBLEMS:  \n1. Inclusion of unrelated categories (Eurovision) dilutes focus.  \n2. Political and financial markets may have conflicting timelines.  \n3. Lack of coherence in themes may confuse participants.",
+    "sample_titles": [
+      "Databricks IPO before 2027?",
+      "Fed decreases interest rates by 50+ bps after June 2025 meeting?",
+      "Fed increases interest rates by 25+ bps after June 2025 meeting?",
+      "RFK Jr. confirmed as Health & Human Services Secretary?",
+      "Ripple Labs IPO before 2027?"
+    ]
+  },
+  "37": {
+    "community_id": 37,
+    "name": "Diverse Prediction Market Issues",
+    "problems": [
+      "Lack of thematic coherence across markets.",
+      "Mixing financial, political, and speculative events can confuse participants.",
+      "Potential for low liquidity in niche markets."
+    ],
+    "market_count": 11,
+    "raw_response": "NAME: Diverse Prediction Market Issues  \nPROBLEMS:  \n1. Lack of thematic coherence across markets.  \n2. Mixing financial, political, and speculative events can confuse participants.  \n3. Potential for low liquidity in niche markets.",
+    "sample_titles": [
+      "Discord IPO before 2027?",
+      "Ex-FaZe members form new organization by March 31?",
+      "Hyperliquid listed on Binance in 2026?",
+      "Israel x Hamas Ceasefire Phase II by June 30?",
+      "Israel x Hamas Ceasefire Phase II by March 31?"
+    ]
+  },
+  "38": {
+    "community_id": 38,
+    "name": "Diverse Prediction Market Risks",
+    "problems": [
+      "Lack of thematic cohesion among markets.",
+      "High volatility in cryptocurrency predictions.",
+      "Potential for conflicting outcomes in political and financial markets."
+    ],
+    "market_count": 24,
+    "raw_response": "NAME: Diverse Prediction Market Risks  \nPROBLEMS:  \n1. Lack of thematic cohesion among markets.  \n2. High volatility in cryptocurrency predictions.  \n3. Potential for conflicting outcomes in political and financial markets.",
+    "sample_titles": [
+      "EdgeX FDV above $1B one day after launch?",
+      "Ethereum flipped in 2026?",
+      "MegaETH market cap (FDV) >$1B one day after launch?",
+      "Opensea FDV above $2B one day after launch?",
+      "Will Silver (SI) hit (LOW) $60 by end of June?"
+    ]
+  },
+  "39": {
+    "community_id": 39,
+    "name": "Crypto Market Predictions",
+    "problems": [
+      "Limited focus on cryptocurrency only.",
+      "Lack of diversity in market types.",
+      "Potential for high volatility affecting predictions."
+    ],
+    "market_count": 2,
+    "raw_response": "NAME: Crypto Market Predictions  \nPROBLEMS:  \n1. Limited focus on cryptocurrency only.  \n2. Lack of diversity in market types.  \n3. Potential for high volatility affecting predictions.",
+    "sample_titles": [
+      "Solstice FDV above $50M one day after launch?",
+      "Will Ethereum dip to $1,000 by December 31?"
+    ]
+  },
+  "40": {
+    "community_id": 40,
+    "name": "Diverse Prediction Market Basket",
+    "problems": [
+      "Lack of thematic coherence among markets.",
+      "Mixing financial, political, and speculative events can confuse participants.",
+      "Inclusion of entertainment-related market (Zootopia 2) dilutes focus."
+    ],
+    "market_count": 25,
+    "raw_response": "NAME: Diverse Prediction Market Basket  \nPROBLEMS:  \n1. Lack of thematic coherence among markets.  \n2. Mixing financial, political, and speculative events can confuse participants.  \n3. Inclusion of entertainment-related market (Zootopia 2) dilutes focus.",
+    "sample_titles": [
+      "Elon Musk trillionaire before 2027?",
+      "Human moon landing in 2026?",
+      "Kristi Noem out by March 31?",
+      "MegaETH market cap (FDV) >$2B one day after launch?",
+      "Miguel Díaz-Canel out as leader of Cuba by June 30?"
+    ]
+  },
+  "41": {
+    "community_id": 41,
+    "name": "Mixed Speculative Predictions",
+    "problems": [
+      "Lack of thematic coherence among markets.",
+      "High volatility and uncertainty in financial predictions.",
+      "Potential for misinformation affecting political and economic forecasts."
+    ],
+    "market_count": 21,
+    "raw_response": "NAME: Mixed Speculative Predictions  \nPROBLEMS:  \n1. Lack of thematic coherence among markets.  \n2. High volatility and uncertainty in financial predictions.  \n3. Potential for misinformation affecting political and economic forecasts.",
+    "sample_titles": [
+      "Epstein blackmail evidence released in 2025? ",
+      "Epstein client list released by June 30?",
+      "Puffpaw FDV above $100M one day after launch?",
+      "Puffpaw FDV above $200M one day after launch?",
+      "Puffpaw FDV above $300M one day after launch?"
+    ]
+  },
+  "42": {
+    "community_id": 42,
+    "name": "Crypto and Political Predictions",
+    "problems": [
+      "Lack of thematic coherence between financial and political markets.",
+      "Overemphasis on Bitcoin and Ethereum predictions, leading to potential market saturation.",
+      "Inclusion of speculative and niche cryptocurrencies may dilute focus on more significant economic indicators."
+    ],
+    "market_count": 22,
+    "raw_response": "NAME: Crypto and Political Predictions  \nPROBLEMS:  \n1. Lack of thematic coherence between financial and political markets.  \n2. Overemphasis on Bitcoin and Ethereum predictions, leading to potential market saturation.  \n3. Inclusion of speculative and niche cryptocurrencies may dilute focus on more significant economic indicators.",
+    "sample_titles": [
+      "Ethereum all time high by June 30?",
+      "Will Hyperliquid hit $100 in 2025?",
+      "Lighter market cap (FDV) >$6B one day after launch?",
+      "MegaETH market cap (FDV) >$6B one day after launch?",
+      "US-Iran nuclear deal before July?"
+    ]
+  },
+  "43": {
+    "community_id": 43,
+    "name": "2024 Election and Climate Predictions",
+    "problems": [
+      "Lack of thematic cohesion between financial, political, and climate-related markets.",
+      "Overemphasis on specific candidates may skew predictions and limit broader market insights.",
+      "Potential for redundancy with multiple similar markets, particularly regarding interest rates and election outcomes."
+    ],
+    "market_count": 180,
+    "raw_response": "NAME: 2024 Election and Climate Predictions  \nPROBLEMS:  \n1. Lack of thematic cohesion between financial, political, and climate-related markets.  \n2. Overemphasis on specific candidates may skew predictions and limit broader market insights.  \n3. Potential for redundancy with multiple similar markets, particularly regarding interest rates and election outcomes.",
+    "sample_titles": [
+      "2 Trump vs. Harris debates before election?",
+      "2024 August hottest on record?",
+      "2024 July hottest on record?",
+      "4+ Trump vs. Harris debates before election?",
+      "Will Biden resign before the election?"
+    ]
+  },
+  "44": {
+    "community_id": 44,
+    "name": "Diverse Prediction Market Issues",
+    "problems": [
+      "Lack of thematic coherence across markets.",
+      "Inclusion of non-political/economic topics (e.g., Eurovision).",
+      "Varied timeframes and uncertainty levels complicate analysis."
+    ],
+    "market_count": 11,
+    "raw_response": "NAME: Diverse Prediction Market Issues  \nPROBLEMS:  \n1. Lack of thematic coherence across markets.  \n2. Inclusion of non-political/economic topics (e.g., Eurovision).  \n3. Varied timeframes and uncertainty levels complicate analysis.",
+    "sample_titles": [
+      "EU dissolves before 2027?",
+      "Will Beto O'Rourke be the Democratic nominee for Senate in Texas?",
+      "Will France win Eurovision 2026?",
+      "Will Israel strike 4 countries in 2026?",
+      "Will Netflix close Warner Bros. acquisition by end of 2026?  "
+    ]
   },
   "45": {
-    "name": "NYC Mayoral Election Prediction",
-    "critique": "- Unrelated markets\n- Missing key markets\n- Temporal mismatch"
+    "community_id": 45,
+    "name": "Diverse Prediction Market Themes",
+    "problems": [
+      "Lack of thematic cohesion among markets.",
+      "Inclusion of unrelated topics (e.g., Olympics, celebrity nominations).",
+      "Potential for conflicting predictions (e.g., political outcomes vs. economic forecasts)."
+    ],
+    "market_count": 14,
+    "raw_response": "NAME: Diverse Prediction Market Themes  \nPROBLEMS:  \n1. Lack of thematic cohesion among markets.  \n2. Inclusion of unrelated topics (e.g., Olympics, celebrity nominations).  \n3. Potential for conflicting predictions (e.g., political outcomes vs. economic forecasts).",
+    "sample_titles": [
+      "2026 Balance of Power: R Senate, D House",
+      "Extended FDV above $300M one day after launch?",
+      "Flying Tulip FDV above $1B one day after launch?",
+      "Ukraine election called by June 30, 2026?",
+      "Will Apple release a new product line before 2027?"
+    ]
   },
-  "80": {
-    "name": "Tim Walz Resignation Market",
-    "critique": "- Unrelated markets\n- Missing key markets\n- Temporal mismatch"
+  "46": {
+    "community_id": 46,
+    "name": "Diverse Prediction Market Themes",
+    "problems": [
+      "Inconsistent focus on topics (healthcare, tech, politics, etc.) may dilute market relevance.",
+      "Inclusion of non-political/economic market (Eurovision) undermines thematic coherence.",
+      "Varied timelines and certainty levels can complicate comparative analysis."
+    ],
+    "market_count": 8,
+    "raw_response": "NAME: Diverse Prediction Market Themes  \nPROBLEMS:  \n1. Inconsistent focus on topics (healthcare, tech, politics, etc.) may dilute market relevance.  \n2. Inclusion of non-political/economic market (Eurovision) undermines thematic coherence.  \n3. Varied timelines and certainty levels can complicate comparative analysis.",
+    "sample_titles": [
+      "FDA approves Retatrutide this year?",
+      "Will Alphabet be the largest company in the world by market cap on March 31?",
+      "Will Artemis II launch by February 28?",
+      "Will Benjamin Netanyahu be the next leader out before 2027?",
+      "Will Bulgaria win Eurovision 2026?"
+    ]
+  },
+  "47": {
+    "community_id": 47,
+    "name": "Diverse Political and Economic Risks",
+    "problems": [
+      "Lack of thematic cohesion among markets.",
+      "Overemphasis on U.S. Federal Reserve actions may skew predictions.",
+      "Inclusion of unrelated markets (e.g., Opensea) dilutes focus."
+    ],
+    "market_count": 30,
+    "raw_response": "NAME: Diverse Political and Economic Risks  \nPROBLEMS:  \n1. Lack of thematic cohesion among markets.  \n2. Overemphasis on U.S. Federal Reserve actions may skew predictions.  \n3. Inclusion of unrelated markets (e.g., Opensea) dilutes focus.",
+    "sample_titles": [
+      "Fed decreases interest rates by 25 bps after October 2025 meeting?",
+      "Israel x Hamas ceasefire by October 31?",
+      "No change in Fed interest rates after October 2025 meeting?",
+      "Opensea FDV above $1B one day after launch?",
+      "Opensea FDV above $3B one day after launch?"
+    ]
+  },
+  "48": {
+    "community_id": 48,
+    "name": "Mixed Focus Prediction Markets",
+    "problems": [
+      "Inclusion of unrelated sports markets dilutes thematic coherence.",
+      "Political and economic markets may not correlate with Olympic outcomes, leading to confusion.",
+      "Lack of clear temporal alignment among events (e.g., 2026 Olympics vs. 2028 elections)."
+    ],
+    "market_count": 18,
+    "raw_response": "NAME: Mixed Focus Prediction Markets  \nPROBLEMS:  \n1. Inclusion of unrelated sports markets dilutes thematic coherence.  \n2. Political and economic markets may not correlate with Olympic outcomes, leading to confusion.  \n3. Lack of clear temporal alignment among events (e.g., 2026 Olympics vs. 2028 elections).",
+    "sample_titles": [
+      "Fed decreases interest rates by 50+ bps after January 2026 meeting?",
+      "Will Austria win the most medals in the 2026 Winter Olympics?",
+      "Will Canada win the most medals in the 2026 Winter Olympics?",
+      "Will Connie Chan receive the most votes in the CA-11 primary?",
+      "Will Donald Trump be TIME's Person of the Year for 2025?"
+    ]
+  },
+  "49": {
+    "community_id": 49,
+    "name": "Mixed Prediction Market Themes",
+    "problems": [
+      "Inclusion of non-financial/entertainment markets (e.g., music albums, Eurovision) dilutes focus.",
+      "Overrepresentation of South Korean presidential elections creates redundancy and limits diversity.",
+      "Lack of clear thematic cohesion among financial, political, and cultural predictions may confuse participants."
+    ],
+    "market_count": 39,
+    "raw_response": "NAME: Mixed Prediction Market Themes  \nPROBLEMS:  \n1. Inclusion of non-financial/entertainment markets (e.g., music albums, Eurovision) dilutes focus.  \n2. Overrepresentation of South Korean presidential elections creates redundancy and limits diversity.  \n3. Lack of clear thematic cohesion among financial, political, and cultural predictions may confuse participants.",
+    "sample_titles": [
+      "Fed decreases interest rates by 50+ bps after May 2025 meeting?",
+      "Fed increases interest rates by 25+ bps after May 2025 meeting?",
+      "New Playboi Carti Album before GTA VI?",
+      "New Rihanna Album before GTA VI?",
+      "Russia-Ukraine Ceasefire before GTA VI?"
+    ]
+  },
+  "50": {
+    "community_id": 50,
+    "name": "Diverse Prediction Market Themes",
+    "problems": [
+      "Overlap of Nobel Peace Prize markets may dilute focus and create confusion.",
+      "Inclusion of unrelated markets (e.g., poker championships) undermines thematic coherence.",
+      "Political markets may be influenced by unpredictable events, leading to volatility in predictions."
+    ],
+    "market_count": 62,
+    "raw_response": "NAME: Diverse Prediction Market Themes  \nPROBLEMS:  \n1. Overlap of Nobel Peace Prize markets may dilute focus and create confusion.  \n2. Inclusion of unrelated markets (e.g., poker championships) undermines thematic coherence.  \n3. Political markets may be influenced by unpredictable events, leading to volatility in predictions.",
+    "sample_titles": [
+      "Fed decreases interest rates by 50+ bps after October 2025 meeting?",
+      "Ink FDV above $1B one day after launch?",
+      "Ink FDV above $500M one day after launch?",
+      "Russia x Ukraine ceasefire by October 31?",
+      "US x Venezuela military engagement by October 31?"
+    ]
+  },
+  "51": {
+    "community_id": 51,
+    "name": "NYC Mayoral Election Prediction",
+    "problems": [
+      "Limited scope with only one market.",
+      "High uncertainty due to long time frame.",
+      "Potential bias in local sentiment affecting predictions."
+    ],
+    "market_count": 1,
+    "raw_response": "NAME: NYC Mayoral Election Prediction  \nPROBLEMS:  \n1. Limited scope with only one market.  \n2. High uncertainty due to long time frame.  \n3. Potential bias in local sentiment affecting predictions.",
+    "sample_titles": [
+      "Will Adrienne Adams win the 2025 NYC mayoral election?"
+    ]
+  },
+  "52": {
+    "community_id": 52,
+    "name": "Diverse Political and Economic Markets",
+    "problems": [
+      "Inclusion of non-political/financial markets (e.g., water fast, drivers championship) dilutes focus.",
+      "Overemphasis on 2028 political nominations may skew predictions towards speculative trends rather than current events.",
+      "Lack of coherence in themes (e.g., mixing U.S. politics with international conflicts) complicates analysis."
+    ],
+    "market_count": 71,
+    "raw_response": "NAME: Diverse Political and Economic Markets  \nPROBLEMS:  \n1. Inclusion of non-political/financial markets (e.g., water fast, drivers championship) dilutes focus.  \n2. Overemphasis on 2028 political nominations may skew predictions towards speculative trends rather than current events.  \n3. Lack of coherence in themes (e.g., mixing U.S. politics with international conflicts) complicates analysis.",
+    "sample_titles": [
+      "Fed increases interest rates by 25+ bps after October 2025 meeting?",
+      "Israel x Hamas ceasefire by September 30?",
+      "Jerome Powell out as Fed Chair by August 31?",
+      "Lisa Cook out as Fed Governor by September 30?",
+      "Lord Miles completes 40-day water fast in the desert?"
+    ]
+  },
+  "53": {
+    "community_id": 53,
+    "name": "Political and Economic Uncertainty",
+    "problems": [
+      "Overrepresentation of political events, skewing focus away from economic and financial markets.",
+      "Inclusion of unrelated sports/entertainment markets dilutes thematic coherence.",
+      "High volatility and unpredictability of geopolitical events may lead to unreliable predictions."
+    ],
+    "market_count": 66,
+    "raw_response": "NAME: Political and Economic Uncertainty  \nPROBLEMS:  \n1. Overrepresentation of political events, skewing focus away from economic and financial markets.  \n2. Inclusion of unrelated sports/entertainment markets dilutes thematic coherence.  \n3. High volatility and unpredictability of geopolitical events may lead to unreliable predictions.",
+    "sample_titles": [
+      "Elon Musk out as Head of DOGE in 2025?",
+      "Fed rate cut by December 18?",
+      "Israel strike on Iranian nuclear facility in 2024?",
+      "Joe Biden impeached before 2024 election?",
+      "Kash Patel confirmed as Director of the FBI?"
+    ]
+  },
+  "54": {
+    "community_id": 54,
+    "name": "NYC Mayoral Election Prediction",
+    "problems": [
+      "Limited scope with only one market.",
+      "High uncertainty due to long time frame.",
+      "Potential bias towards a single candidate."
+    ],
+    "market_count": 1,
+    "raw_response": "NAME: NYC Mayoral Election Prediction  \nPROBLEMS:  \n1. Limited scope with only one market.  \n2. High uncertainty due to long time frame.  \n3. Potential bias towards a single candidate.",
+    "sample_titles": [
+      "Will Andrew Yang win the 2025 NYC mayoral election?"
+    ]
+  },
+  "55": {
+    "community_id": 55,
+    "name": "Diverse Prediction Market Issues",
+    "problems": [
+      "Mixing financial and political markets can dilute focus and expertise.",
+      "Inclusion of non-political markets (e.g., sports) undermines thematic coherence.",
+      "Varied timelines and contexts may confuse participants and hinder analysis."
+    ],
+    "market_count": 21,
+    "raw_response": "NAME: Diverse Prediction Market Issues  \nPROBLEMS:  \n1. Mixing financial and political markets can dilute focus and expertise.  \n2. Inclusion of non-political markets (e.g., sports) undermines thematic coherence.  \n3. Varied timelines and contexts may confuse participants and hinder analysis.",
+    "sample_titles": [
+      "Flying Tulip FDV above $1.5B one day after launch?",
+      "Flying Tulip FDV above $2.5B one day after launch?",
+      "Hezbollah strike on Israel by March 31?",
+      "Up Only podcast released by February 28, 2026?",
+      "Will Abelardo de la Espriella  win the 2026 Colombian presidential election?"
+    ]
+  },
+  "56": {
+    "community_id": 56,
+    "name": "Cryptocurrency and Space Ventures",
+    "problems": [
+      "Inclusion of non-financial markets (poker championship).",
+      "Overemphasis on Ethereum with multiple overlapping predictions.",
+      "Lack of diversity in market types (predominantly crypto-focused)."
+    ],
+    "market_count": 8,
+    "raw_response": "NAME: Cryptocurrency and Space Ventures  \nPROBLEMS:  \n1. Inclusion of non-financial markets (poker championship).  \n2. Overemphasis on Ethereum with multiple overlapping predictions.  \n3. Lack of diversity in market types (predominantly crypto-focused).",
+    "sample_titles": [
+      "Will Bitcoin hit $150k by March 31, 2026?",
+      "Will Ethereum reach $10,000 by December 31, 2026?",
+      "Will Ethereum reach $5,000 by December 31, 2026?",
+      "Will Ethereum reach $6,000 by December 31, 2026?",
+      "Will Ethereum reach $6,500 by December 31, 2026?"
+    ]
+  },
+  "57": {
+    "community_id": 57,
+    "name": "Geopolitical and Financial Predictions",
+    "problems": [
+      "Lack of thematic coherence between military and financial markets.",
+      "Different time horizons complicate comparative analysis.",
+      "Potential for high volatility in predictions due to external factors."
+    ],
+    "market_count": 3,
+    "raw_response": "NAME: Geopolitical and Financial Predictions  \nPROBLEMS:  \n1. Lack of thematic coherence between military and financial markets.  \n2. Different time horizons complicate comparative analysis.  \n3. Potential for high volatility in predictions due to external factors.",
+    "sample_titles": [
+      "Greece x Turkey military engagement by June 30?",
+      "Will Bitcoin reach $100,000 by December 31, 2025?",
+      "Will Gold have the best performance in 2026?"
+    ]
+  },
+  "58": {
+    "community_id": 58,
+    "name": "Political and Economic Predictions",
+    "problems": [
+      "Inclusion of non-political markets (e.g., sports and entertainment) dilutes focus.",
+      "Redundant questions about Donald Trump create confusion and redundancy.",
+      "Lack of diversity in geopolitical focus, primarily centered on the U.S. and Brazil."
+    ],
+    "market_count": 8,
+    "raw_response": "NAME: Political and Economic Predictions  \nPROBLEMS:  \n1. Inclusion of non-political markets (e.g., sports and entertainment) dilutes focus.  \n2. Redundant questions about Donald Trump create confusion and redundancy.  \n3. Lack of diversity in geopolitical focus, primarily centered on the U.S. and Brazil.",
+    "sample_titles": [
+      "Will Carlos Roberto Massa Júnior win the 2026 Brazilian presidential election?",
+      "Will Donald Trump win Nobel Peace Prize in 2025?",
+      "Will Donald Trump win the Nobel Peace Prize in 2025?",
+      "Will Lorenzo Musetti win the 2026 Men's French Open?",
+      "Will Marco Rubio win the 2028 US Presidential Election?"
+    ]
+  },
+  "59": {
+    "community_id": 59,
+    "name": "Iran-Israel Conflict Predictions",
+    "problems": [
+      "Overemphasis on military conflict scenarios may skew market sentiment and lead to irrational predictions.",
+      "Lack of diversity in topics, primarily focusing on Iran and Israel, limits broader geopolitical insights.",
+      "Potential for market fatigue due to repetitive questions about similar events and timelines."
+    ],
+    "market_count": 46,
+    "raw_response": "NAME: Iran-Israel Conflict Predictions  \nPROBLEMS:  \n1. Overemphasis on military conflict scenarios may skew market sentiment and lead to irrational predictions.  \n2. Lack of diversity in topics, primarily focusing on Iran and Israel, limits broader geopolitical insights.  \n3. Potential for market fatigue due to repetitive questions about similar events and timelines.",
+    "sample_titles": [
+      "Iran Strike on Israel by February 28?",
+      "Iran strike on US military by February 28?",
+      "Israel strikes Iran by February 28, 2026?",
+      "Israel strikes Iran by January 31, 2026?",
+      "Israel strikes Iran by June 30, 2026?"
+    ]
+  },
+  "60": {
+    "community_id": 60,
+    "name": "Diverse Political and Financial Markets",
+    "problems": [
+      "Lack of thematic coherence among markets.",
+      "Inclusion of non-political/financial events (e.g., poker championship).",
+      "Overrepresentation of Bucharest mayoral candidates may skew focus."
+    ],
+    "market_count": 15,
+    "raw_response": "NAME: Diverse Political and Financial Markets  \nPROBLEMS:  \n1. Lack of thematic coherence among markets.  \n2. Inclusion of non-political/financial events (e.g., poker championship).  \n3. Overrepresentation of Bucharest mayoral candidates may skew focus.",
+    "sample_titles": [
+      "Kraken IPO by December 31, 2026?",
+      "Will Călin Georgescu be the next Mayor of Bucharest?",
+      "Will Cătălin Cîrstoiu be the next Mayor of Bucharest?",
+      "Will David Williams win the 2025 National Heads-Up Poker Championship?",
+      "Will Genter Drummond win the 2026 Oklahoma Governor Republican primary election?"
+    ]
+  },
+  "61": {
+    "community_id": 61,
+    "name": "Diverse Prediction Market Themes",
+    "problems": [
+      "Lack of thematic cohesion across markets.",
+      "Inclusion of unrelated categories (e.g., Eurovision, UFO files).",
+      "Overemphasis on local political races diluting broader economic focus."
+    ],
+    "market_count": 32,
+    "raw_response": "NAME: Diverse Prediction Market Themes  \nPROBLEMS:  \n1. Lack of thematic cohesion across markets.  \n2. Inclusion of unrelated categories (e.g., Eurovision, UFO files).  \n3. Overemphasis on local political races diluting broader economic focus.",
+    "sample_titles": [
+      "Fed increases interest rates by 25+ bps after December 2025 meeting?",
+      "MicroStrategy sells any Bitcoin by December 31, 2026?",
+      "Named storm forms before hurricane season?",
+      "Russian strike on a NATO member by March 31?",
+      "Trump declassifies UFO files in 2025?"
+    ]
+  },
+  "62": {
+    "community_id": 62,
+    "name": "Mixed Prediction Market Themes",
+    "problems": [
+      "Inclusion of non-political markets (e.g., tennis and poker) dilutes focus on political and economic predictions.",
+      "Overrepresentation of Dutch political markets may limit broader geopolitical insights.",
+      "Lack of diversity in market types could lead to skewed risk assessments and predictions."
+    ],
+    "market_count": 17,
+    "raw_response": "NAME: Mixed Prediction Market Themes  \nPROBLEMS:  \n1. Inclusion of non-political markets (e.g., tennis and poker) dilutes focus on political and economic predictions.  \n2. Overrepresentation of Dutch political markets may limit broader geopolitical insights.  \n3. Lack of diversity in market types could lead to skewed risk assessments and predictions.",
+    "sample_titles": [
+      "Will a new Cabinet of the Netherlands be sworn in by June 30, 2026?",
+      "Will Carlos Alcaraz win Wimbledon 2025?",
+      "Will Dawn Buckingham win the 2026 Texas Republican Primary?",
+      "Will Dilan Yeşilgöz-Zegerius become the next Prime Minister of the Netherlands?",
+      "Will Frank Crivello win the 2025 National Heads-Up Poker Championship?"
+    ]
+  },
+  "63": {
+    "community_id": 63,
+    "name": "Political and Economic Speculations",
+    "problems": [
+      "Lack of thematic coherence among markets.",
+      "Overemphasis on individual personalities (e.g., Elon Musk, Trump).",
+      "Potential for speculative bubbles due to high-profile events."
+    ],
+    "market_count": 8,
+    "raw_response": "NAME: Political and Economic Speculations  \nPROBLEMS:  \n1. Lack of thematic coherence among markets.  \n2. Overemphasis on individual personalities (e.g., Elon Musk, Trump).  \n3. Potential for speculative bubbles due to high-profile events.",
+    "sample_titles": [
+      "Israel strike on Yemen by June 30, 2026?",
+      "Will Elon Musk buy Ryanair?",
+      "Will Elon Musk win the 2028 Republican presidential nomination?",
+      "Will J.B. Pritzker win the 2028 Democratic presidential nomination?",
+      "Will Marco Rubio win the 2028 Republican presidential nomination?"
+    ]
+  },
+  "64": {
+    "community_id": 64,
+    "name": "Geopolitical and Financial Uncertainty",
+    "problems": [
+      "High volatility and unpredictability in geopolitical events may skew predictions.",
+      "Overemphasis on Bitcoin-related markets could lead to a lack of diversification in insights.",
+      "Potential for conflicting narratives between markets (e.g., ceasefires vs. military actions)."
+    ],
+    "market_count": 13,
+    "raw_response": "NAME: Geopolitical and Financial Uncertainty  \nPROBLEMS:  \n1. High volatility and unpredictability in geopolitical events may skew predictions.  \n2. Overemphasis on Bitcoin-related markets could lead to a lack of diversification in insights.  \n3. Potential for conflicting narratives between markets (e.g., ceasefires vs. military actions).",
+    "sample_titles": [
+      "Israel x Hamas ceasefire cancelled by March 31, 2026?",
+      "Nothing Ever Happens: MicroStrategy",
+      "Ramp IPO before 2027?",
+      "Russia x Ukraine ceasefire by June 30, 2026?",
+      "Will Abstract launch a token by December 31, 2026"
+    ]
+  },
+  "65": {
+    "community_id": 65,
+    "name": "Diverse Prediction Market Issues",
+    "problems": [
+      "Inclusion of non-financial market (poker).",
+      "Lack of thematic coherence among markets.",
+      "Varied timeframes and contexts for predictions."
+    ],
+    "market_count": 6,
+    "raw_response": "NAME: Diverse Prediction Market Issues  \nPROBLEMS:  \n1. Inclusion of non-financial market (poker).  \n2. Lack of thematic coherence among markets.  \n3. Varied timeframes and contexts for predictions.",
+    "sample_titles": [
+      "Will Erik Seidel win the 2025 National Heads-Up Poker Championship?",
+      "Will SpaceX's public ticker be $SPC?",
+      "Will SpaceX's public ticker be $STAR?",
+      "Will SpaceX's public ticker be $X?",
+      "Will there be between 17 and 19 earthquakes of magnitude 7.0 or higher worldwide in 2026?"
+    ]
+  },
+  "66": {
+    "community_id": 66,
+    "name": "Political Leadership Predictions",
+    "problems": [
+      "Conflicting questions about meetings create ambiguity.",
+      "Focus on different geopolitical contexts may dilute relevance.",
+      "Limited diversity in political systems represented."
+    ],
+    "market_count": 4,
+    "raw_response": "NAME: Political Leadership Predictions  \nPROBLEMS:  \n1. Conflicting questions about meetings create ambiguity.  \n2. Focus on different geopolitical contexts may dilute relevance.  \n3. Limited diversity in political systems represented.",
+    "sample_titles": [
+      "Will Jasmine Crockett win the 2028 Democratic presidential nomination?",
+      "Will Putin meet with Zelenskyy in 2025?",
+      "Will Zelenskyy and Putin not meet?",
+      "Will Yodchanan Wongsawat be the next prime minister of Thailand?"
+    ]
+  },
+  "67": {
+    "community_id": 67,
+    "name": "Inconsistent Market Themes",
+    "problems": [
+      "Inclusion of sports-related predictions (Ballon d'Or) in a primarily political and economic context.",
+      "Lack of coherence between topics, making it difficult to analyze trends or insights.",
+      "Potential for confusion among participants regarding the focus of the community."
+    ],
+    "market_count": 4,
+    "raw_response": "NAME: Inconsistent Market Themes  \nPROBLEMS:  \n1. Inclusion of sports-related predictions (Ballon d'Or) in a primarily political and economic context.  \n2. Lack of coherence between topics, making it difficult to analyze trends or insights.  \n3. Potential for confusion among participants regarding the focus of the community.",
+    "sample_titles": [
+      "Israeli parliament dissolved by March 31?",
+      "Will Lamine Yamal win the 2025 Ballon d'Or?",
+      "Will Raphinha win the 2025 Ballon d'Or?",
+      "Will Tucker Carlson win the 2028 US Presidential Election?"
+    ]
+  },
+  "68": {
+    "community_id": 68,
+    "name": "Political and Climate Predictions",
+    "problems": [
+      "Overlap of unrelated themes (AI, climate, politics) may dilute focus.",
+      "Inclusion of fantasy sports markets disrupts the financial and political context.",
+      "High number of similar political contests (NYC Mayor Primaries) may lead to redundancy."
+    ],
+    "market_count": 28,
+    "raw_response": "NAME: Political and Climate Predictions  \nPROBLEMS:  \n1. Overlap of unrelated themes (AI, climate, politics) may dilute focus.  \n2. Inclusion of fantasy sports markets disrupts the financial and political context.  \n3. High number of similar political contests (NYC Mayor Primaries) may lead to redundancy.",
+    "sample_titles": [
+      "Global heat increase between 1.22°C and 1.24°C for 2024?",
+      "Will Google have the top AI model on December 31?",
+      "Will 2025 be the hottest year on record?",
+      "Will Andrew Cuomo win the Democratic Primary for Mayor of New York City?",
+      "Will Anthropic have the top AI model on December 31?"
+    ]
+  },
+  "69": {
+    "community_id": 69,
+    "name": "NYC Mayoral Election Market",
+    "problems": [
+      "Limited scope with only one market.",
+      "High uncertainty due to long time frame.",
+      "Potential bias from local sentiment."
+    ],
+    "market_count": 1,
+    "raw_response": "NAME: NYC Mayoral Election Market  \nPROBLEMS:  \n1. Limited scope with only one market.  \n2. High uncertainty due to long time frame.  \n3. Potential bias from local sentiment.",
+    "sample_titles": [
+      "Will Michael Bloomberg win the 2025 NYC mayoral election?"
+    ]
+  },
+  "70": {
+    "community_id": 70,
+    "name": "Diverse Future Predictions",
+    "problems": [
+      "Lack of thematic coherence across markets.",
+      "Varying timelines and contexts may confuse participants.",
+      "Potential for overlapping political implications in local elections."
+    ],
+    "market_count": 9,
+    "raw_response": "NAME: Diverse Future Predictions  \nPROBLEMS:  \n1. Lack of thematic coherence across markets.  \n2. Varying timelines and contexts may confuse participants.  \n3. Potential for overlapping political implications in local elections.",
+    "sample_titles": [
+      "Kraken IPO by March 31, 2026?",
+      "Ukraine election held by December 31, 2026?",
+      "Will 2026 be the fourth-hottest year on record?",
+      "Will Chong Won-oh win the 2026 Seoul Mayoral Election",
+      "Will Jeon Hyun-heui win the 2026 Seoul Mayoral Election"
+    ]
+  },
+  "71": {
+    "community_id": 71,
+    "name": "Economic and Political Predictions",
+    "problems": [
+      "Overlap in interest rate markets may lead to confusion and redundancy.",
+      "Inclusion of unrelated markets (e.g., Eurovision, sports) dilutes focus on core themes.",
+      "Lack of diversity in geopolitical events may skew predictions towards specific regions or issues."
+    ],
+    "market_count": 98,
+    "raw_response": "NAME: Economic and Political Predictions  \nPROBLEMS:  \n1. Overlap in interest rate markets may lead to confusion and redundancy.  \n2. Inclusion of unrelated markets (e.g., Eurovision, sports) dilutes focus on core themes.  \n3. Lack of diversity in geopolitical events may skew predictions towards specific regions or issues.",
+    "sample_titles": [
+      "Ethereum all time high by March 31?",
+      "Fed decreases interest rates by 25 bps after December 2024 meeting?",
+      "Fed decreases interest rates by 25 bps after July 2025 meeting?",
+      "Fed decreases interest rates by 25 bps after June 2025 meeting?",
+      "Fed decreases interest rates by 25 bps after May 2025 meeting?"
+    ]
+  },
+  "72": {
+    "community_id": 72,
+    "name": "Mixed Market Predictions",
+    "problems": [
+      "Lack of thematic coherence across markets.",
+      "Varying levels of market maturity and volatility.",
+      "Potential for conflicting political and financial implications."
+    ],
+    "market_count": 6,
+    "raw_response": "NAME: Mixed Market Predictions  \nPROBLEMS:  \n1. Lack of thematic coherence across markets.  \n2. Varying levels of market maturity and volatility.  \n3. Potential for conflicting political and financial implications.",
+    "sample_titles": [
+      "MegaETH market cap (FDV) >$3B one day after launch?",
+      "MegaETH market cap (FDV) >$4B one day after launch?",
+      "Will António Filipe win the 2026 Portugal presidential election?",
+      "Will Kim Kardashian win the 2028 Republican presidential nomination?",
+      "Will the next Dutch government be PVV + VVD + D66?"
+    ]
+  },
+  "73": {
+    "community_id": 73,
+    "name": "Minnesota Political Resignation Market",
+    "problems": [
+      "Limited scope with only one market.",
+      "High uncertainty due to individual politician's actions.",
+      "Potential bias based on local political sentiment."
+    ],
+    "market_count": 1,
+    "raw_response": "NAME: Minnesota Political Resignation Market  \nPROBLEMS:  \n1. Limited scope with only one market.  \n2. High uncertainty due to individual politician's actions.  \n3. Potential bias based on local political sentiment.",
+    "sample_titles": [
+      "Will Tim Walz resign by January 31?"
+    ]
   }
 }

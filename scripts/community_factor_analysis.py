@@ -243,7 +243,13 @@ def create_top_factors_chart(community_factor_corr, output_path='outputs/communi
     print("Creating top factors bar chart...")
     
     n_communities = len(community_factor_corr)
-    fig, axes = plt.subplots(n_communities, 1, figsize=(14, 4*n_communities))
+    
+    # Limit height to prevent matplotlib errors - max 50 inches
+    max_height = 50
+    height_per_community = min(4, max_height / n_communities)
+    fig_height = min(max_height, height_per_community * n_communities)
+    
+    fig, axes = plt.subplots(n_communities, 1, figsize=(14, fig_height))
     
     if n_communities == 1:
         axes = [axes]
