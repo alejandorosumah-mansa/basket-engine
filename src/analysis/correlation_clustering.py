@@ -33,6 +33,323 @@ from datetime import datetime
 warnings.filterwarnings("ignore")
 
 
+def compute_explainability_metrics(
+    corr_matrix: pd.DataFrame,
+    partition: Dict[str, int]
+) -> Dict[str, float]:
+    """Compute explainability metrics for a given community assignment.
+    
+    Args:
+        corr_matrix: Square correlation matrix
+        partition: Dict mapping market_id to community_id
+    
+    Returns:
+        Dict with explainability metrics
+    """
+    # Group markets by community
+    communities = {}
+    for market, comm_id in partition.items():
+        if comm_id not in communities:
+            communities[comm_id] = []
+        communities[comm_id].append(market)
+    
+    intra_coherences = []
+    inter_separations = []
+    
+    # Compute intra-community coherence (average correlation within communities)
+    for comm_id, markets in communities.items():
+        if len(markets) < 2:
+            continue
+        
+        # Get correlations within this community
+        comm_corr = corr_matrix.loc[markets, markets]
+        
+        # Get upper triangle (excluding diagonal)
+        upper_tri = np.triu(comm_corr.values, k=1)
+        valid_corrs = upper_tri[upper_tri != 0]
+        
+        if len(valid_corrs) > 0:
+            intra_coherences.extend(valid_corrs)
+    
+    # Compute inter-community separation (average correlation between communities)
+    community_ids = list(communities.keys())
+    for i, comm1 in enumerate(community_ids):
+        for j, comm2 in enumerate(community_ids):
+            if i < j:
+                markets1 = communities[comm1]
+                markets2 = communities[comm2]
+                
+                # Get correlations between communities
+                inter_corr = corr_matrix.loc[markets1, markets2]
+                valid_corrs = inter_corr.values.flatten()
+                valid_corrs = valid_corrs[~np.isnan(valid_corrs)]
+                
+                if len(valid_corrs) > 0:
+                    inter_separations.extend(valid_corrs)
+    
+    # Compute averages
+    avg_intra_coherence = np.mean(np.abs(intra_coherences)) if intra_coherences else 0.0
+    avg_inter_separation = np.mean(np.abs(inter_separations)) if inter_separations else 0.0
+    
+    # Explainability score (higher is better)
+    explainability_score = avg_intra_coherence - avg_inter_separation
+    
+    # Community size statistics
+    community_sizes = [len(markets) for markets in communities.values()]
+    
+    return {
+        "intra_coherence": avg_intra_coherence,
+        "inter_separation": avg_inter_separation,
+        "explainability_score": explainability_score,
+        "n_communities": len(communities),
+        "min_community_size": min(community_sizes) if community_sizes else 0,
+        "max_community_size": max(community_sizes) if community_sizes else 0,
+        "median_community_size": np.median(community_sizes) if community_sizes else 0,
+    }
+
+
+def explainability_sweep(
+    corr_matrix: pd.DataFrame,
+    resolution_range: Tuple[float, float, float] = (0.5, 5.0, 0.25)
+) -> pd.DataFrame:
+    """Sweep Louvain resolution parameter and compute explainability metrics.
+    
+    Args:
+        corr_matrix: Square correlation matrix
+        resolution_range: (min_res, max_res, step) for resolution sweep
+    
+    Returns:
+        DataFrame with resolution and metrics for each tested value
+    """
+    print("Running explainability sweep...")
+    
+    # Build graph from correlation matrix
+    threshold = 0.3  # Use same threshold as main clustering
+    G = build_correlation_graph(corr_matrix, threshold)
+    
+    if G.number_of_edges() == 0:
+        print("Warning: Graph has no edges, cannot perform resolution sweep")
+        return pd.DataFrame()
+    
+    min_res, max_res, step = resolution_range
+    resolutions = np.arange(min_res, max_res + step, step)
+    
+    results = []
+    
+    for resolution in resolutions:
+        print(f"  Testing resolution {resolution:.2f}")
+        
+        try:
+            # Run Louvain with specific resolution
+            partition = community_louvain.best_partition(
+                G, weight='weight', resolution=resolution, random_state=42
+            )
+            
+            # Compute modularity
+            modularity = community_louvain.modularity(partition, G, weight='weight')
+            
+            # Compute explainability metrics
+            explainability_metrics = compute_explainability_metrics(corr_matrix, partition)
+            
+            # Combine results
+            result = {
+                "resolution": resolution,
+                "modularity": modularity,
+                **explainability_metrics
+            }
+            results.append(result)
+            
+            print(f"    Communities: {result['n_communities']}, "
+                  f"Modularity: {modularity:.3f}, "
+                  f"Explainability: {result['explainability_score']:.3f}")
+            
+        except Exception as e:
+            print(f"    Error at resolution {resolution}: {e}")
+            continue
+    
+    return pd.DataFrame(results)
+
+
+def find_optimal_resolution(
+    sweep_results: pd.DataFrame,
+    min_communities: int = 20
+) -> float:
+    """Find optimal resolution that maximizes explainability with minimum communities.
+    
+    Args:
+        sweep_results: DataFrame from explainability_sweep
+        min_communities: Minimum number of communities required
+    
+    Returns:
+        Optimal resolution value
+    """
+    # Filter results with minimum communities
+    valid_results = sweep_results[sweep_results['n_communities'] >= min_communities]
+    
+    if len(valid_results) == 0:
+        print(f"Warning: No resolution found with {min_communities}+ communities")
+        print(f"Available community counts: {sweep_results['n_communities'].tolist()}")
+        # Fall back to maximum communities
+        optimal_idx = sweep_results['n_communities'].idxmax()
+        return sweep_results.loc[optimal_idx, 'resolution']
+    
+    # Find resolution with maximum explainability score
+    optimal_idx = valid_results['explainability_score'].idxmax()
+    optimal_resolution = valid_results.loc[optimal_idx, 'resolution']
+    
+    optimal_row = valid_results.loc[optimal_idx]
+    print(f"Optimal resolution: {optimal_resolution:.2f}")
+    print(f"  Communities: {optimal_row['n_communities']}")
+    print(f"  Modularity: {optimal_row['modularity']:.3f}")
+    print(f"  Explainability: {optimal_row['explainability_score']:.3f}")
+    print(f"  Intra-coherence: {optimal_row['intra_coherence']:.3f}")
+    print(f"  Inter-separation: {optimal_row['inter_separation']:.3f}")
+    
+    return optimal_resolution
+
+
+def run_clustering_at_resolution(
+    corr_matrix: pd.DataFrame,
+    resolution: float
+) -> Dict[str, int]:
+    """Run Louvain clustering at specific resolution."""
+    print(f"Running clustering at resolution {resolution:.2f}")
+    
+    # Build graph
+    G = build_correlation_graph(corr_matrix, threshold=0.3)
+    
+    if G.number_of_edges() == 0:
+        print("Warning: Graph has no edges, creating singleton communities")
+        return {node: i for i, node in enumerate(G.nodes())}
+    
+    # Run Louvain with specific resolution
+    partition = community_louvain.best_partition(
+        G, weight='weight', resolution=resolution, random_state=42
+    )
+    
+    # Get community sizes
+    community_sizes = {}
+    for node, comm in partition.items():
+        community_sizes[comm] = community_sizes.get(comm, 0) + 1
+    
+    print(f"Found {len(community_sizes)} communities:")
+    for comm, size in sorted(community_sizes.items(), key=lambda x: -x[1])[:10]:
+        print(f"  Community {comm}: {size} markets")
+    
+    if len(community_sizes) > 10:
+        print(f"  ... and {len(community_sizes) - 10} more")
+    
+    return partition
+
+
+def generate_llm_community_names_and_critiques(
+    partition: Dict[str, int],
+    markets_df: pd.DataFrame,
+    model: str = "gpt-4o-mini"
+) -> Dict[int, Dict[str, str]]:
+    """Generate LLM names and critiques for communities."""
+    print("Generating LLM community names and critiques...")
+    
+    # Get OpenAI API key
+    api_key = os.getenv("OPENAI_API_KEY")
+    if not api_key:
+        print("Warning: OPENAI_API_KEY not found, using placeholder names")
+        communities = {}
+        for market, comm_id in partition.items():
+            if comm_id not in communities:
+                communities[comm_id] = []
+            communities[comm_id].append(market)
+        
+        return {
+            comm_id: {
+                "name": f"Community_{comm_id}",
+                "critique": "LLM critique not available (missing API key)"
+            }
+            for comm_id in communities.keys()
+        }
+    
+    client = openai.OpenAI(api_key=api_key)
+    
+    # Group markets by community
+    communities = {}
+    for market, comm_id in partition.items():
+        if comm_id not in communities:
+            communities[comm_id] = []
+        communities[comm_id].append(market)
+    
+    community_info = {}
+    
+    for comm_id, market_ids in communities.items():
+        print(f"Processing community {comm_id} ({len(market_ids)} markets)...")
+        
+        # Get market titles
+        comm_markets = markets_df[markets_df["market_id"].isin(market_ids)]
+        
+        if len(comm_markets) == 0:
+            community_info[comm_id] = {
+                "name": f"Community_{comm_id}",
+                "critique": "No market data available"
+            }
+            continue
+        
+        # Get all titles for this community
+        market_titles = comm_markets["title"].tolist()
+        titles_text = "\n".join([f"- {title}" for title in market_titles])
+        
+        # Create prompt for naming and critique
+        prompt = f"""Here are the prediction markets in this basket. Give it a short descriptive name (max 5 words) and list 2-3 potential problems with grouping these markets together (e.g. unrelated markets, missing key markets, temporal mismatch, etc.)
+
+Markets:
+{titles_text}
+
+Respond in this exact format:
+NAME: [short descriptive name, max 5 words]
+PROBLEMS:
+- [problem 1]
+- [problem 2]
+- [problem 3 if applicable]"""
+        
+        try:
+            response = client.chat.completions.create(
+                model=model,
+                messages=[{"role": "user", "content": prompt}],
+                max_tokens=200,
+                temperature=0.1
+            )
+            
+            response_text = response.choices[0].message.content.strip()
+            
+            # Parse response
+            lines = response_text.split('\n')
+            name = "Community_" + str(comm_id)
+            problems = []
+            
+            for line in lines:
+                line = line.strip()
+                if line.startswith("NAME:"):
+                    name = line.replace("NAME:", "").strip()
+                elif line.startswith("-"):
+                    problems.append(line[1:].strip())
+            
+            critique = "\n".join([f"- {problem}" for problem in problems])
+            
+            community_info[comm_id] = {
+                "name": name,
+                "critique": critique
+            }
+            
+            print(f"  Community {comm_id}: '{name}'")
+            
+        except Exception as e:
+            print(f"  Error processing community {comm_id}: {e}")
+            community_info[comm_id] = {
+                "name": f"Community_{comm_id}",
+                "critique": f"Error generating critique: {str(e)}"
+            }
+    
+    return community_info
+
+
 def load_prices(path: str = "data/processed/prices.parquet") -> pd.DataFrame:
     """Load and clean price data."""
     df = pd.read_parquet(path)

@@ -144,10 +144,14 @@ def create_heatmap(community_factor_corr, output_path='outputs/community_factor_
     """Create heatmap of community × factor correlations."""
     print("Creating correlation heatmap...")
     
-    # Create figure
-    plt.figure(figsize=(16, 10))
+    # Create large figure for readability
+    n_communities = len(community_factor_corr)
+    n_factors = len(community_factor_corr.columns)
+    fig, ax = plt.subplots(figsize=(max(32, n_factors * 0.9), max(16, n_communities * 1.8)))
+    fig.patch.set_facecolor('#0d1117')
+    ax.set_facecolor('#0d1117')
     
-    # Create heatmap
+    # Create heatmap with large annotations
     mask = community_factor_corr.isna()
     sns.heatmap(
         community_factor_corr,
@@ -155,21 +159,32 @@ def create_heatmap(community_factor_corr, output_path='outputs/community_factor_
         cmap='RdBu_r',
         center=0,
         annot=True,
-        fmt='.2f',
-        cbar_kws={'label': 'Correlation'},
-        square=False
+        fmt='.3f',
+        annot_kws={'size': 11, 'weight': 'bold'},
+        cbar_kws={'label': 'Correlation', 'shrink': 0.8},
+        square=False,
+        linewidths=0.5,
+        linecolor='#1a1a2e',
+        ax=ax
     )
     
-    plt.title('Community Basket × Risk Factor Correlations', pad=20)
-    plt.xlabel('Risk Factors', labelpad=10)
-    plt.ylabel('Community Baskets', labelpad=10)
-    plt.xticks(rotation=45, ha='right')
-    plt.yticks(rotation=0)
+    ax.set_title('Community Basket × Risk Factor Correlations', pad=25, fontsize=22, fontweight='bold', color='white')
+    ax.set_xlabel('Risk Factors', labelpad=15, fontsize=16, color='white')
+    ax.set_ylabel('Community Baskets', labelpad=15, fontsize=16, color='white')
+    ax.tick_params(axis='x', rotation=45, labelsize=12, colors='white')
+    ax.tick_params(axis='y', rotation=0, labelsize=13, colors='white')
+    plt.setp(ax.get_xticklabels(), ha='right')
+    
+    # Style colorbar
+    cbar = ax.collections[0].colorbar
+    cbar.ax.tick_params(labelsize=11, colors='white')
+    cbar.set_label('Correlation', fontsize=13, color='white')
+    
     plt.tight_layout()
     
     # Ensure output directory exists
     Path(output_path).parent.mkdir(parents=True, exist_ok=True)
-    plt.savefig(output_path, dpi=300, bbox_inches='tight', facecolor='black')
+    plt.savefig(output_path, dpi=200, bbox_inches='tight', facecolor='#0d1117')
     plt.close()
     
     print(f"Saved heatmap to {output_path}")
