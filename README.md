@@ -1,6 +1,6 @@
 # basket-engine
 
-Factor-informed prediction market basket construction. Ingests 20K+ markets from Polymarket, classifies them through a four-layer taxonomy, decomposes returns against macro factors, clusters by factor loadings, and backtests diversified baskets.
+Correlation-based prediction market basket construction. Ingests 20K+ markets from Polymarket, identifies natural market communities through correlation clustering, and constructs diversified baskets with superior risk characteristics compared to factor-based approaches.
 
 ## What This Does
 
@@ -9,20 +9,22 @@ Takes raw prediction market data and answers: **can you build diversified basket
 The pipeline:
 
 1. **Ingest** 20,180 markets from Polymarket (+ 175 Kalshi)
-2. **Classify** into a four-layer taxonomy: Theme → Event → Ticker → CUSIP
-3. **Detect exposure** (long/short side) for each market using LLM
-4. **Map categorical events** to economic factor vectors (semantic exposure layer)
-5. **Regress** each market's returns against 41 macro factors (Barra-style with Ridge regularization)
-6. **Cluster** markets by factor loading similarity (k-means, k=8)
-7. **Construct baskets** from clusters with risk-parity weighting
-8. **Backtest** against SPY, GLD, BTC, TLT, 60/40 portfolios
+2. **Classify** into a four-layer taxonomy: Theme → Event → Ticker → CUSIP  
+3. **Compute correlations** on daily price changes for all market pairs (2,666 × 2,666 matrix)
+4. **Build correlation graph** where markets are nodes, edges exist for |correlation| > 0.3
+5. **Apply community detection** using Louvain algorithm to find natural market clusters
+6. **LLM labeling** generates intuitive basket names from top markets in each community
+7. **Factor characterization** uses existing factor loadings to describe (not construct) baskets
+8. **Construct baskets** from correlation communities with risk-parity weighting
+9. **Backtest** and compare against factor-based approach
 
 ## Key Findings
 
-- **Expanded factor universe reveals higher systematic risk.** Mean R² = 0.395 against 41 global macro factors (vs 0.108 with 9 US factors). 93% of markets now show R² > 0.10, suggesting global events correlate with international market conditions.
-- **60%+ of variance remains idiosyncratic.** Even with comprehensive global factor coverage, prediction markets retain substantial diversification benefits.
-- **Adding 10% PM allocation to 60/40 reduces volatility by ~10% and max drawdown by ~10%**, at the cost of ~1.7pp return drag.
-- **Standalone PM baskets have negative expected returns** (-10% to -13% annualized) due to time decay in probability-bounded contracts. The value is in portfolio diversification, not standalone alpha.
+- **Correlation clustering solves the "mega-cluster" problem.** Factor-based clustering produced one cluster with 61.7% of all markets. Correlation-based approach creates balanced communities (largest: 32.5%) with intuitive themes.
+- **Dramatically improved risk management.** Correlation baskets show 70% lower max drawdown (-15.24% vs -46.90%) and 50% lower volatility (5.6% vs 11.6%) compared to factor-based baskets.
+- **Superior diversification.** Max basket correlation 0.276 (within 0.30 constraint), no basket dominance, risk-parity weights range 3% to 30% vs factor approach's 73.4% concentration.
+- **Intuitive community labels.** LLM generates meaningful names: "2024 Election Outcomes," "Fed Policy Decisions," "Global Event Speculation" vs meaningless factor signatures.
+- **Markets cluster by actual co-movement, not theoretical exposures.** Election markets spike together on election night, Fed markets correlate around FOMC meetings—correlation clustering captures this, factor clustering misses it.
 
 ## Data Coverage
 

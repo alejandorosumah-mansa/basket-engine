@@ -38,3 +38,7 @@ yfinance>=0.2
 
 # Dome API
 dome-api-sdk>=0.1
+
+# Graph-based clustering
+python-louvain>=0.16
+networkx>=3.2
