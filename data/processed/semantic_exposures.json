@@ -1,0 +1,678 @@
+{
+  "fed-decision-in-january": {
+    "net_exposure": {
+      "rates": -0.4995,
+      "dollar": -0.4995,
+      "equity": 0.4995,
+      "gold": 0.4995,
+      "oil": 0.4995,
+      "crypto": 0.4995,
+      "volatility": 0.0,
+      "growth": 0.5
+    },
+    "n_outcomes": 4,
+    "market_ids": [
+      "poly_fed-decreases-interest-rates-by-50-bps-after-january-2026-meeting",
+      "poly_fed-increases-interest-rates-by-25-bps-after-january-2026-meeting",
+      "poly_no-change-in-fed-interest-rates-after-january-2026-meeting",
+      "poly_fed-decreases-interest-rates-by-25-bps-after-january-2026-meeting"
+    ],
+    "rationale": "The outcomes are directly related to monetary policy decisions by the Federal Reserve, which have significant implications for various economic factors. A decrease in interest rates typically stimulates growth and equity markets while negatively impacting the dollar. Conversely, an increase in rates tends to have the opposite effects."
+  },
+  "who-will-be-inaugurated-as-president": {
+    "net_exposure": {
+      "rates": 0.0,
+      "dollar": 0.0,
+      "equity": 0.9915000000000002,
+      "gold": -0.9915000000000002,
+      "oil": 0.9915000000000002,
+      "crypto": 0.0,
+      "volatility": -0.9915000000000002,
+      "growth": 0.9915000000000002
+    },
+    "n_outcomes": 3,
+    "market_ids": [
+      "poly_will-donald-trump-be-inaugurated",
+      "poly_will-kamala-harris-be-inaugurated",
+      "poly_will-someone-else-be-inaugurated"
+    ],
+    "rationale": "The outcomes of the presidential inauguration have significant implications for various economic factors. A Trump inauguration is generally perceived as favorable for equity markets and oil prices due to pro-business policies, while being negative for gold as it may lead to a stronger dollar. Conversely, a Harris inauguration could lead to increased volatility and a negative impact on equities and oil, while boosting gold prices as investors seek safe havens. The 'someone else' outcome reflects uncertainty, which typically increases volatility and negatively impacts growth and equity markets."
+  },
+  "new-york-city-mayoral-election": {
+    "net_exposure": {
+      "rates": 0.0,
+      "dollar": 0.0,
+      "equity": 0.0,
+      "gold": 0.0,
+      "oil": 0.0,
+      "crypto": 0.0,
+      "volatility": 0.0,
+      "growth": 0.0
+    },
+    "n_outcomes": 12,
+    "market_ids": [
+      "poly_will-zohran-mamdani-win-the-2025-nyc-mayoral-election",
+      "poly_will-curtis-sliwa-win-the-2025-nyc-mayoral-election",
+      "poly_will-jim-walden-win-the-2025-nyc-mayoral-election",
+      "poly_will-andrew-cuomo-win-the-2025-nyc-mayoral-election",
+      "poly_will-brad-lander-win-the-2025-nyc-mayoral-election",
+      "poly_will-eric-adams-win-the-2025-nyc-mayoral-election",
+      "poly_will-zellnor-myrie-win-the-2025-nyc-mayoral-election",
+      "poly_will-rudy-giuliani-win-the-2025-nyc-mayoral-election",
+      "poly_will-adrienne-adams-win-the-2025-nyc-mayoral-election",
+      "poly_will-andrew-yang-win-the-2025-nyc-mayoral-election",
+      "poly_will-scott-stringer-win-the-2025-nyc-mayoral-election",
+      "poly_will-michael-bloomberg-win-the-2025-nyc-mayoral-election"
+    ],
+    "rationale": ""
+  },
+  "fed-decision-in-december": {
+    "net_exposure": {
+      "rates": -1.9969999999999999,
+      "dollar": -0.999,
+      "equity": 1.9969999999999999,
+      "gold": 0.999,
+      "oil": 0.999,
+      "crypto": 0.999,
+      "volatility": -0.998,
+      "growth": 1.998
+    },
+    "n_outcomes": 4,
+    "market_ids": [
+      "poly_fed-decreases-interest-rates-by-50-bps-after-december-2025-meeting",
+      "poly_fed-increases-interest-rates-by-25-bps-after-december-2025-meeting",
+      "poly_fed-decreases-interest-rates-by-25-bps-after-december-2025-meeting",
+      "poly_no-change-in-fed-interest-rates-after-december-2025-meeting"
+    ],
+    "rationale": "The outcomes of the Fed's interest rate decisions have direct implications on various economic factors. A significant decrease in rates typically boosts equity markets, increases growth expectations, and supports commodities like gold and oil. Conversely, an increase in rates tends to dampen equity performance and growth while strengthening the dollar. The probabilities indicate a strong expectation of rate cuts, which aligns with the positive impacts on growth and equity."
+  },
+  "democratic-nominee-2024": {
+    "net_exposure": {
+      "rates": 0.0,
+      "dollar": 0.0,
+      "equity": 0.9999999999999998,
+      "gold": 0.0,
+      "oil": 0.0,
+      "crypto": 0.0,
+      "volatility": 0.9999999999999998,
+      "growth": 0.9999999999999998
+    },
+    "n_outcomes": 9,
+    "market_ids": [
+      "poly_will-joe-biden-win-the-2024-democratic-presidential-nomination",
+      "poly_will-kamala-harris-win-the-2024-democratic-presidential-nomination",
+      "poly_will-michelle-obama-win-the-2024-democratic-presidential-nomination",
+      "poly_will-gavin-newsom-win-the-2024-democratic-presidential-nomination",
+      "poly_will-hillary-clinton-win-the-2024-democratic-presidential-nomination",
+      "poly_will-robert-f-kennedy-jr-win-the-2024-democratic-presidential-nomination",
+      "poly_will-someone-else-win-the-2024-democratic-presidential-nomination",
+      "poly_will-dean-phillips-win-the-2024-democratic-presidential-nomination",
+      "poly_will-elizabeth-warren-win-the-2024-democratic-presidential-nomination"
+    ],
+    "rationale": "The outcomes primarily reflect political scenarios rather than direct economic policies. However, candidates with a higher probability of winning (like Kamala Harris, Michelle Obama, Gavin Newsom, Hillary Clinton, and Elizabeth Warren) may influence market sentiment, leading to potential impacts on equity markets and volatility. The other candidates have negligible probabilities and thus minimal impact on economic factors."
+  },
+  "fed-decision-in-october": {
+    "net_exposure": {
+      "rates": -0.9984999999999999,
+      "dollar": -0.4995,
+      "equity": 0.999,
+      "gold": 0.499,
+      "oil": 0.499,
+      "crypto": 0.499,
+      "volatility": -0.499,
+      "growth": 0.499
+    },
+    "n_outcomes": 4,
+    "market_ids": [
+      "poly_fed-increases-interest-rates-by-25-bps-after-october-2025-meeting",
+      "poly_fed-decreases-interest-rates-by-50-bps-after-october-2025-meeting",
+      "poly_fed-decreases-interest-rates-by-25-bps-after-october-2025-meeting",
+      "poly_no-change-in-fed-interest-rates-after-october-2025-meeting"
+    ],
+    "rationale": "The outcomes are directly related to monetary policy decisions by the Federal Reserve, which have significant implications for various economic factors. An increase in interest rates typically leads to a stronger dollar, lower equity prices, and reduced growth expectations, while a decrease in rates generally supports equity markets, commodities like gold and oil, and can lead to a weaker dollar."
+  },
+  "romania-presidential-election-winner": {
+    "net_exposure": {
+      "rates": 0.0,
+      "dollar": 0.0,
+      "equity": 0.9950000000000004,
+      "gold": 0.0,
+      "oil": 0.0,
+      "crypto": 0.0,
+      "volatility": -0.9950000000000004,
+      "growth": 0.9945000000000005
+    },
+    "n_outcomes": 10,
+    "market_ids": [
+      "poly_romania-presidential-election-winner-will-hunor-kelemen-win-the-romanian-presidential-election",
+      "poly_romania-presidential-election-winner-will-nicuor-dan-win-the-romanian-presidential-election",
+      "poly_romania-presidential-election-winner-will-george-simion-win-the-romanian-presidential-election",
+      "poly_romania-presidential-election-winner-will-any-other-candidate-win-the-romanian-presidential-election",
+      "poly_romania-presidential-election-winner-will-ana-birchall-win-the-romanian-presidential-election",
+      "poly_romania-presidential-election-winner-will-victor-ponta-win-the-romanian-presidential-election",
+      "poly_romania-presidential-election-winner-will-crin-antonescu-win-the-romanian-presidential-election",
+      "poly_romania-presidential-election-winner-will-clin-georgescu-win-the-romanian-presidential-election",
+      "poly_romania-presidential-election-winner-will-elena-lasconi-win-the-romanian-presidential-election",
+      "poly_will-person-a-win-the-romanian-presidential-election"
+    ],
+    "rationale": "The outcomes of the Romanian presidential election can have varying impacts on economic factors. A win by Nicu\u0219or Dan, who is perceived as a pro-business candidate, could positively influence equity markets and growth expectations, while other candidates may be viewed as less favorable, leading to negative impacts on equity and growth. The overall volatility may increase due to uncertainty surrounding the election results."
+  },
+  "fed-decision-in-september": {
+    "net_exposure": {
+      "rates": -0.25,
+      "dollar": -0.25,
+      "equity": 0.25,
+      "gold": 0.25,
+      "oil": 0.25,
+      "crypto": 0.25,
+      "volatility": -0.25,
+      "growth": 0.25
+    },
+    "n_outcomes": 4,
+    "market_ids": [
+      "poly_no-change-in-fed-interest-rates-after-september-2025-meeting",
+      "poly_fed-increases-interest-rates-by-25-bps-after-september-2025-meeting",
+      "poly_fed-decreases-interest-rates-by-50-bps-after-september-2025-meeting",
+      "poly_fed-decreases-interest-rates-by-25-bps-after-september-2025-meeting"
+    ],
+    "rationale": "The outcomes are directly related to the Federal Reserve's monetary policy decisions, which have significant implications for various economic factors. An increase in interest rates typically leads to higher rates, a stronger dollar, lower equity prices, and negative impacts on commodities like gold and oil. Conversely, a decrease in rates generally supports growth, equity markets, and commodities while weakening the dollar."
+  },
+  "fed-interest-rates-january-2025": {
+    "net_exposure": {
+      "rates": -0.012,
+      "dollar": -0.013000000000000001,
+      "equity": 0.013500000000000002,
+      "gold": 0.013000000000000001,
+      "oil": 0.013000000000000001,
+      "crypto": 0.013000000000000001,
+      "volatility": 0.001,
+      "growth": 0.013000000000000001
+    },
+    "n_outcomes": 5,
+    "market_ids": [
+      "poly_fed-increases-interest-rates-by-25-bps-after-january-2025-meeting",
+      "poly_fed-decreases-interest-rates-by-75-bps-after-january-2025-meeting",
+      "poly_fed-decreases-interest-rates-by-50-bps-after-january-2025-meeting",
+      "poly_fed-decreases-interest-rates-by-25-bps-after-january-2025-meeting",
+      "poly_no-change-in-fed-interest-rates-after-january-2025-meeting"
+    ],
+    "rationale": "The outcomes are directly related to monetary policy decisions by the Federal Reserve, which have significant implications for various economic factors. An increase in interest rates typically strengthens the dollar, dampens equity markets, and negatively impacts commodities like gold and oil. Conversely, a decrease in rates tends to support equity markets and commodities while weakening the dollar."
+  },
+  "fed-interest-rates-november-2024": {
+    "net_exposure": {
+      "rates": -0.9745,
+      "dollar": -0.9745,
+      "equity": 0.9745,
+      "gold": 0.9745,
+      "oil": 0.9775,
+      "crypto": 0.9745,
+      "volatility": 0.0,
+      "growth": 0.9745
+    },
+    "n_outcomes": 6,
+    "market_ids": [
+      "poly_fed-increases-interest-rates-by-25-bps-after-november-2024-meeting",
+      "poly_will-the-fed-change-rates-to-another-level-after-nov-meeting",
+      "poly_fed-decreases-interest-rates-by-75-bps-after-november-2024-meeting",
+      "poly_fed-decreases-interest-rates-by-50-bps-after-november-2024-meeting",
+      "poly_no-change-in-fed-interest-rates-after-2024-november-meeting",
+      "poly_fed-decreases-interest-rates-by-25-bps-after-november-2024-meeting"
+    ],
+    "rationale": "The outcomes of the prediction market event are directly related to monetary policy decisions by the Federal Reserve, which have significant implications for various economic factors. Each outcome's impact on rates, dollar, equity, gold, oil, crypto, volatility, and growth has been assessed based on typical market reactions to interest rate changes."
+  },
+  "pennsylvania-margin-of-victory": {
+    "net_exposure": {
+      "rates": 0.0,
+      "dollar": 0.0,
+      "equity": 1.0,
+      "gold": 0.0,
+      "oil": 0.0,
+      "crypto": 0.0,
+      "volatility": -1.0,
+      "growth": 1.0
+    },
+    "n_outcomes": 7,
+    "market_ids": [
+      "poly_will-the-democratic-candidate-win-pennsylvania-by-1pt5-2pt0",
+      "poly_will-the-democratic-candidate-win-pennsylvania-by-0pt5-1",
+      "poly_will-the-democratic-candidate-win-pennsylvania-by-1pt0-1pt5",
+      "poly_will-the-democratic-candidate-win-pennsylvania-by-0-0pt5",
+      "poly_will-the-democratic-candidate-win-pennsylvania-by-2pt5-or-more",
+      "poly_will-the-democratic-candidate-win-pennsylvania-by-2pt0-2pt5",
+      "poly_will-the-republican-candidate-win-pennsylvania-by-0-0pt5"
+    ],
+    "rationale": "The outcomes of this prediction market event are tied to the potential electoral victory margins of the Democratic and Republican candidates in Pennsylvania. A Democratic win is generally associated with positive sentiment in equity markets and growth expectations, while a Republican win could lead to increased volatility and negative sentiment in equities. The margins indicate varying levels of confidence in the Democratic candidate's performance, which can influence market reactions."
+  },
+  "speaker-of-the-house-for-the-119th-congress": {
+    "net_exposure": {
+      "rates": 0.0,
+      "dollar": 0.0,
+      "equity": 0.0,
+      "gold": 0.0,
+      "oil": 0.0,
+      "crypto": 0.0,
+      "volatility": 0.0,
+      "growth": 0.0
+    },
+    "n_outcomes": 4,
+    "market_ids": [
+      "poly_will-austin-scott-be-the-first-elected-speaker-of-the-house-for-the-119th-congress",
+      "poly_will-jack-bergman-be-the-first-elected-speaker-of-the-house-for-the-119th-congress",
+      "poly_will-elise-stefanik-be-the-first-elected-speaker-of-the-house-for-the-119th-congress",
+      "poly_will-donald-trump-be-the-first-elected-speaker-of-the-house-for-the-119th-congress"
+    ],
+    "rationale": "The outcomes of this prediction market event are primarily political in nature and do not have direct economic implications or exposures to the specified economic factors."
+  },
+  "fed-decision-in-march-885": {
+    "net_exposure": {
+      "rates": -0.9723061430010072,
+      "dollar": 0.4974823766364552,
+      "equity": -0.47482376636455187,
+      "gold": -0.47482376636455187,
+      "oil": -0.501007049345418,
+      "crypto": -0.47482376636455187,
+      "volatility": 0.4974823766364552,
+      "growth": -0.9723061430010072
+    },
+    "n_outcomes": 4,
+    "market_ids": [
+      "poly_will-the-fed-decrease-interest-rates-by-50-bps-after-the-march-2026-meeting",
+      "poly_will-the-fed-increase-interest-rates-by-25-bps-after-the-march-2026-meeting",
+      "poly_will-the-fed-decrease-interest-rates-by-25-bps-after-the-march-2026-meeting",
+      "poly_will-there-be-no-change-in-fed-interest-rates-after-the-march-2026-meeting"
+    ],
+    "rationale": "The outcomes are directly related to monetary policy decisions by the Federal Reserve, which have significant implications for various economic factors. Changes in interest rates affect borrowing costs, consumer spending, and investment, influencing growth and market volatility. Additionally, interest rate changes impact the value of the dollar and the performance of assets like equities, gold, oil, and cryptocurrencies."
+  },
+  "ireland-presidential-election": {
+    "net_exposure": {
+      "rates": 0.0,
+      "dollar": 0.0,
+      "equity": 0.0,
+      "gold": 0.0,
+      "oil": 0.0,
+      "crypto": 0.0,
+      "volatility": 0.0,
+      "growth": 0.0
+    },
+    "n_outcomes": 6,
+    "market_ids": [
+      "poly_will-frances-fitzgerald-win-the-irish-presidential-election",
+      "poly_will-peter-casey-win-the-irish-presidential-election",
+      "poly_will-emily-oreilly-win-the-irish-presidential-election",
+      "poly_will-catherine-connolly-win-the-irish-presidential-election",
+      "poly_will-conor-mcgregor-win-the-irish-presidential-election",
+      "poly_will-heather-humphreys-win-the-irish-presidential-election"
+    ],
+    "rationale": "The outcomes of the Irish Presidential Election are primarily political events and do not have direct economic implications or exposures to the specified economic factors."
+  },
+  "fed-decision-in-july": {
+    "net_exposure": {
+      "rates": -0.021500000000000002,
+      "dollar": -0.019500000000000003,
+      "equity": 0.019500000000000003,
+      "gold": 0.019500000000000003,
+      "oil": 0.019500000000000003,
+      "crypto": 0.019500000000000003,
+      "volatility": -0.002,
+      "growth": 0.019500000000000003
+    },
+    "n_outcomes": 4,
+    "market_ids": [
+      "poly_fed-increases-interest-rates-by-25-bps-after-july-2025-meeting",
+      "poly_fed-decreases-interest-rates-by-50-bps-after-july-2025-meeting",
+      "poly_no-change-in-fed-interest-rates-after-july-2025-meeting",
+      "poly_fed-decreases-interest-rates-by-25-bps-after-july-2025-meeting"
+    ],
+    "rationale": "The outcomes of the Fed's interest rate decisions have direct implications on various economic factors. An increase in rates typically strengthens the dollar, dampens equity markets, and negatively impacts commodities like gold and oil. Conversely, a decrease in rates tends to weaken the dollar, support equity markets, and boost commodities. The probabilities reflect market expectations of these outcomes, with the majority anticipating no change."
+  },
+  "germany-parliamentary-election": {
+    "net_exposure": {
+      "rates": 0.0,
+      "dollar": 0.0,
+      "equity": 0.9955,
+      "gold": 0.0,
+      "oil": 0.0,
+      "crypto": 0.0,
+      "volatility": -0.9955,
+      "growth": 0.9955
+    },
+    "n_outcomes": 7,
+    "market_ids": [
+      "poly_will-another-party-win-the-most-seats-in-the-next-german-election",
+      "poly_will-fdp-win-the-most-seats-in-the-next-german-election-hksa",
+      "poly_will-bsw-win-the-most-seats-in-the-next-german-election",
+      "poly_will-grunen-win-the-most-seats-in-the-next-german-election",
+      "poly_will-afd-win-the-most-seats-in-the-next-german-election",
+      "poly_will-spd-win-the-most-seats-in-the-next-german-election",
+      "poly_will-union-win-the-most-seats-in-the-next-german-election"
+    ],
+    "rationale": "The outcomes of the German parliamentary election can significantly impact economic factors. A win by a party other than the Union could lead to increased uncertainty, negatively affecting equity markets and growth expectations, while increasing volatility. Conversely, a Union victory is likely to stabilize markets, positively impacting equity and growth, while reducing volatility."
+  },
+  "poland-presidential-election": {
+    "net_exposure": {
+      "rates": 0.97,
+      "dollar": 0.0,
+      "equity": 1.9365000000000003,
+      "gold": 0.0,
+      "oil": 0.0,
+      "crypto": 0.0,
+      "volatility": -0.9665000000000004,
+      "growth": 1.9620000000000004
+    },
+    "n_outcomes": 9,
+    "market_ids": [
+      "poly_will-rafa-trzaskowski-be-the-next-president-of-poland",
+      "poly_will-karol-nawrocki-be-the-next-president-of-poland",
+      "poly_will-marek-jakubiak-be-the-next-president-of-poland",
+      "poly_will-waldemar-witkowski-be-the-next-president-of-poland",
+      "poly_will-romuald-starosielec-be-the-next-president-of-poland",
+      "poly_will-agnieszka-dziemianowicz-bk-be-the-next-president-of-poland",
+      "poly_will-szymon-hoownia-be-the-next-president-of-poland",
+      "poly_will-sawomir-mentzen-be-the-next-president-of-poland",
+      "poly_will-grzegorz-braun-be-the-next-president-of-poland"
+    ],
+    "rationale": "The outcomes of the Polish presidential election can have varying impacts on economic factors. A win by Karol Nawrocki, who is likely to have a pro-business agenda, could positively impact equity markets and growth expectations, while potentially leading to a tightening of rates. Conversely, the other candidates, who are less likely to win, may lead to uncertainty and negative sentiment in equity markets, impacting growth negatively."
+  },
+  "next-prime-minster-of-canada": {
+    "net_exposure": {
+      "rates": 0.9915,
+      "dollar": 0.9915,
+      "equity": 0.9885000000000003,
+      "gold": 0.0,
+      "oil": 0.0,
+      "crypto": 0.0,
+      "volatility": -0.9885000000000003,
+      "growth": 0.9915
+    },
+    "n_outcomes": 5,
+    "market_ids": [
+      "poly_will-pierre-poilievre-be-the-next-canadian-prime-minister",
+      "poly_will-mark-carney-be-the-next-canadian-prime-minister",
+      "poly_will-jagmeet-singh-be-the-next-canadian-prime-minister",
+      "poly_will-justin-trudeau-be-the-next-canadian-prime-minister",
+      "poly_will-chrystia-freeland-be-the-next-canadian-prime-minister"
+    ],
+    "rationale": "The outcomes of the next Prime Minister of Canada can have varying impacts on economic factors. Mark Carney, being a former central banker, is likely to have a positive impact on rates, the dollar, equity markets, and growth due to his economic policies. In contrast, Pierre Poilievre, Jagmeet Singh, Justin Trudeau, and Chrystia Freeland are perceived to have a more negative impact on equity markets, potentially increasing volatility due to political uncertainty."
+  },
+  "total-commitments-for-the-solomon-public-sale-on-metadao": {
+    "net_exposure": {
+      "rates": 0.0,
+      "dollar": 0.0,
+      "equity": 0.0,
+      "gold": 0.0,
+      "oil": 0.0,
+      "crypto": 0.0,
+      "volatility": 0.0,
+      "growth": 0.0
+    },
+    "n_outcomes": 11,
+    "market_ids": [
+      "poly_over-105m-committed-to-the-solomon-public-sale",
+      "poly_over-45m-committed-to-the-solomon-public-sale",
+      "poly_over-65m-committed-to-the-solomon-public-sale",
+      "poly_over-85m-committed-to-the-solomon-public-sale",
+      "poly_over-90m-committed-to-the-solomon-public-sale",
+      "poly_over-95m-committed-to-the-solomon-public-sale",
+      "poly_over-50m-committed-to-the-solomon-public-sale",
+      "poly_over-55m-committed-to-the-solomon-public-sale",
+      "poly_over-70m-committed-to-the-solomon-public-sale",
+      "poly_over-20m-committed-to-the-solomon-public-sale-134",
+      "poly_over-40m-committed-to-the-solomon-public-sale-193-937-539"
+    ],
+    "rationale": ""
+  },
+  "fed-decision-in-june": {
+    "net_exposure": {
+      "rates": -0.02,
+      "dollar": -0.017499999999999998,
+      "equity": 0.02,
+      "gold": 0.017499999999999998,
+      "oil": 0.017499999999999998,
+      "crypto": 0.017499999999999998,
+      "volatility": -0.0025,
+      "growth": 0.02
+    },
+    "n_outcomes": 4,
+    "market_ids": [
+      "poly_fed-decreases-interest-rates-by-50-bps-after-june-2025-meeting",
+      "poly_no-change-in-fed-interest-rates-after-june-2025-meeting",
+      "poly_fed-increases-interest-rates-by-25-bps-after-june-2025-meeting",
+      "poly_fed-decreases-interest-rates-by-25-bps-after-june-2025-meeting"
+    ],
+    "rationale": "The outcomes of the Fed's interest rate decisions have direct implications on various economic factors. A decrease in rates typically stimulates growth and equity markets while negatively impacting the dollar. Conversely, an increase in rates tends to dampen growth and equity performance, while strengthening the dollar."
+  },
+  "lighter-market-cap-fdv-one-day-after-launch": {
+    "net_exposure": {
+      "rates": 0.0,
+      "dollar": 0.0,
+      "equity": 1.0,
+      "gold": 0.0,
+      "oil": 0.0,
+      "crypto": 1.998001998001998,
+      "volatility": -1.0,
+      "growth": 1.0
+    },
+    "n_outcomes": 5,
+    "market_ids": [
+      "poly_lighter-market-cap-fdv-1b-one-day-after-launch",
+      "poly_lighter-market-cap-fdv-2b-one-day-after-launch-332",
+      "poly_lighter-market-cap-fdv-3b-one-day-after-launch-227",
+      "poly_lighter-market-cap-fdv-4b-one-day-after-launch-886-225",
+      "poly_lighter-market-cap-fdv-6b-one-day-after-launch-324-746-197"
+    ],
+    "rationale": "The outcomes of the prediction market event are closely tied to the performance of the cryptocurrency market and investor sentiment. A higher market cap (FDV) indicates strong demand and interest in the asset, which positively impacts equity markets and growth expectations. The crypto exposure is rated highly due to the direct correlation with the asset's performance. Volatility is expected to decrease as market confidence increases with higher valuations."
+  },
+  "will-trump-release-epstein-files-by": {
+    "net_exposure": {
+      "rates": 0.0,
+      "dollar": 0.0,
+      "equity": 0.0,
+      "gold": 0.0,
+      "oil": 0.0,
+      "crypto": 0.0,
+      "volatility": 0.0,
+      "growth": 0.0
+    },
+    "n_outcomes": 2,
+    "market_ids": [
+      "poly_will-trump-release-the-epstein-files-by-december-19-771",
+      "poly_will-trump-release-the-epstein-files-by-december-31-527-992-187"
+    ],
+    "rationale": "The event is primarily political and does not have direct economic or policy implications that would affect the specified economic factors."
+  },
+  "closest-state-in-the-presidential-election": {
+    "net_exposure": {
+      "rates": 0.0,
+      "dollar": 0.0,
+      "equity": 0.0,
+      "gold": 0.0,
+      "oil": 0.0,
+      "crypto": 0.0,
+      "volatility": 0.0,
+      "growth": 0.0
+    },
+    "n_outcomes": 4,
+    "market_ids": [
+      "poly_will-new-hampshire-be-the-closest-state",
+      "poly_will-nevada-be-the-closest-state",
+      "poly_will-florida-be-the-closest-state",
+      "poly_will-another-state-be-the-closest-state"
+    ],
+    "rationale": "The outcomes of this prediction market event are primarily political and do not have direct economic or policy implications that would affect the specified economic factors."
+  },
+  "fed-decision-in-may-2025": {
+    "net_exposure": {
+      "rates": -0.024,
+      "dollar": -0.022500000000000003,
+      "equity": 0.022500000000000003,
+      "gold": 0.022500000000000003,
+      "oil": 0.022500000000000003,
+      "crypto": 0.022500000000000003,
+      "volatility": -0.022500000000000003,
+      "growth": 0.022500000000000003
+    },
+    "n_outcomes": 4,
+    "market_ids": [
+      "poly_fed-increases-interest-rates-by-25-bps-after-may-2025-meeting",
+      "poly_fed-decreases-interest-rates-by-50-bps-after-may-2025-meeting",
+      "poly_fed-decreases-interest-rates-by-25-bps-after-may-2025-meeting",
+      "poly_no-change-in-fed-interest-rates-after-may-2025-meeting"
+    ],
+    "rationale": "The outcomes of the Fed's decision on interest rates have direct implications on various economic factors. An increase in rates typically strengthens the dollar, dampens equity markets, and negatively impacts commodities like gold and oil. Conversely, a decrease in rates tends to weaken the dollar, boost equity markets, and support commodities and cryptocurrencies. No change in rates generally results in a neutral impact across these factors."
+  },
+  "which-party-wins-presidency-popular-vote": {
+    "net_exposure": {
+      "rates": 0.0,
+      "dollar": 0.0,
+      "equity": -1.0,
+      "gold": 1.0,
+      "oil": 0.0,
+      "crypto": 0.0,
+      "volatility": 1.0,
+      "growth": -1.0
+    },
+    "n_outcomes": 5,
+    "market_ids": [
+      "poly_will-a-democrat-win-the-popular-vote-and-a-republican-win-the-presidency",
+      "poly_will-a-republican-win-the-popular-vote-and-a-democrat-win-the-presidency",
+      "poly_will-a-3rd-party-candidate-win-the-popular-vote-or-the-presidency",
+      "poly_will-a-republican-win-the-popular-vote-and-the-presidency",
+      "poly_will-a-democrat-win-the-popular-vote-and-the-presidency"
+    ],
+    "rationale": "The outcomes of the prediction market event are closely tied to economic factors. A Republican victory is generally associated with pro-business policies, which can lead to higher equity prices, a stronger dollar, and increased growth expectations. Conversely, a Democratic victory may lead to increased regulation and spending, impacting rates and growth negatively. The presence of a 3rd party candidate could introduce uncertainty, affecting volatility and market sentiment."
+  },
+  "balance-of-power-2024-election": {
+    "net_exposure": {
+      "rates": 0.9930000000000001,
+      "dollar": 0.9930000000000001,
+      "equity": 1.9885000000000002,
+      "gold": -0.9930000000000001,
+      "oil": 0.9930000000000001,
+      "crypto": 0.9930000000000001,
+      "volatility": -0.9930000000000001,
+      "growth": 1.9885000000000002
+    },
+    "n_outcomes": 9,
+    "market_ids": [
+      "poly_2024-balance-of-power-other",
+      "poly_2024-balance-of-power-r-prez-r-senate-r-house",
+      "poly_2024-balance-of-power-republican-presidency-and-senate-democratic-house",
+      "poly_2024-balance-of-power-republican-presidency-democratic-house-and-senate",
+      "poly_2024-balance-of-power-republican-presidency-and-house-democratic-senate",
+      "poly_2024-balance-of-power-democratic-presidency-and-senate-republican-house",
+      "poly_2024-balance-of-power-democratic-presidency-republican-house-and-senate",
+      "poly_2024-election-democratic-presidency-and-house-republican-senate",
+      "poly_democratic-sweep-in-2024-election"
+    ],
+    "rationale": "The outcomes of the 2024 election balance of power can significantly impact economic factors. A Republican sweep is generally seen as favorable for growth and equity markets, while a Democratic sweep tends to be viewed negatively for these factors but positively for gold. The mixed outcomes have varying impacts based on the combination of party control."
+  },
+  "what-price-will-bitcoin-hit-in-october-985": {
+    "net_exposure": {
+      "rates": 0.0,
+      "dollar": 0.0,
+      "equity": 0.0,
+      "gold": 0.0,
+      "oil": 0.0,
+      "crypto": 1.9970029970029968,
+      "volatility": 1.0,
+      "growth": 0.0
+    },
+    "n_outcomes": 6,
+    "market_ids": [
+      "poly_will-bitcoin-reach-116k-in-october",
+      "poly_will-bitcoin-reach-200k-in-october",
+      "poly_will-bitcoin-reach-130k-in-october",
+      "poly_will-bitcoin-reach-150k-in-october",
+      "poly_will-bitcoin-dip-to-100k-in-october",
+      "poly_will-bitcoin-reach-135k-in-october"
+    ],
+    "rationale": "The outcomes are primarily related to the price movements of Bitcoin, which directly impacts the cryptocurrency market (crypto exposure). A significant rise in Bitcoin prices could lead to increased volatility in financial markets, while a drop would negatively impact crypto sentiment. Other economic factors like rates, dollar, equity, gold, and oil are not directly influenced by these specific Bitcoin price outcomes."
+  },
+  "fed-decision-in-march": {
+    "net_exposure": {
+      "rates": -0.01,
+      "dollar": -0.002,
+      "equity": 0.0105,
+      "gold": 0.008,
+      "oil": 0.008,
+      "crypto": 0.008,
+      "volatility": -0.002,
+      "growth": 0.0105
+    },
+    "n_outcomes": 4,
+    "market_ids": [
+      "poly_fed-decreases-interest-rates-by-50-bps-after-march-2025-meeting",
+      "poly_fed-increases-interest-rates-by-25-bps-after-march-2025-meeting",
+      "poly_fed-decreases-interest-rates-by-25-bps-after-march-2025-meeting",
+      "poly_no-change-in-fed-interest-rates-after-march-2025-meeting"
+    ],
+    "rationale": "The outcomes of the Fed's interest rate decisions have direct implications on various economic factors. A decrease in rates generally supports growth, equity markets, and commodities like gold and oil, while a rate increase tends to have the opposite effect. The probabilities reflect the market's expectations of these outcomes and their associated impacts."
+  },
+  "us-x-venezuela-military-engagement-by": {
+    "net_exposure": {
+      "rates": 0.0,
+      "dollar": 0.0,
+      "equity": -1.0,
+      "gold": 1.0,
+      "oil": 2.0,
+      "crypto": 0.0,
+      "volatility": 2.0,
+      "growth": -1.0
+    },
+    "n_outcomes": 5,
+    "market_ids": [
+      "poly_us-x-venezuela-military-engagement-by-december-31-391-819-722-945-174-285-817-971-353-859-836-598-255-382-192-983",
+      "poly_us-x-venezuela-military-engagement-by-november-30-216-397-226-467-735-374-192-441-421-482-389",
+      "poly_us-x-venezuela-military-engagement-by-october-31-434-155-561",
+      "poly_us-x-venezuela-military-engagement-by-december-15-551-648-183-397-889",
+      "poly_us-x-venezuela-military-engagement-by-january-15-2026-392"
+    ],
+    "rationale": "Military engagement typically leads to increased geopolitical risk, which can negatively impact equity markets and economic growth. Conversely, it often drives up oil prices due to supply concerns, while gold may be seen as a safe haven. Increased volatility is expected in financial markets due to uncertainty surrounding military actions."
+  },
+  "what-price-will-ethereum-hit-in-2025": {
+    "net_exposure": {
+      "rates": 0.0,
+      "dollar": 0.0,
+      "equity": 0.0,
+      "gold": 0.0,
+      "oil": 0.0,
+      "crypto": 1.8089068825910926,
+      "volatility": 0.8099190283400808,
+      "growth": 0.8093117408906881
+    },
+    "n_outcomes": 9,
+    "market_ids": [
+      "poly_will-ethereum-hit-5000-by-december-31-796-376",
+      "poly_will-ethereum-hit-6000-by-december-31-843-315",
+      "poly_will-ethereum-hit-10000-by-december-31-218-525",
+      "poly_will-ethereum-hit-7000-by-december-31-733-852",
+      "poly_will-ethereum-hit-17000-by-december-31",
+      "poly_will-ethereum-hit-8000-by-december-31-124-489",
+      "poly_will-ethereum-hit-14000-by-december-31-239-295",
+      "poly_will-ethereum-hit-4000-by-december-31-731-987-617",
+      "poly_will-ethereum-dip-to-1000-by-december-31-498-391-185-526-541-347-589"
+    ],
+    "rationale": "The outcomes are primarily related to the price of Ethereum, which directly impacts the cryptocurrency market (crypto exposure). Higher prices indicate positive sentiment and growth potential in the crypto space, while a significant drop (like to $1,000) would indicate negative sentiment and increased volatility. Other economic factors like rates, dollar, equity, gold, and oil are not directly impacted by Ethereum's price movements."
+  },
+  "who-will-replace-marco-rubio-as-florida-senator": {
+    "net_exposure": {
+      "rates": 0.0,
+      "dollar": 0.0,
+      "equity": 0.0,
+      "gold": 0.0,
+      "oil": 0.0,
+      "crypto": 0.0,
+      "volatility": 0.0,
+      "growth": 0.0
+    },
+    "n_outcomes": 5,
+    "market_ids": [
+      "poly_will-keith-rabois-be-appointed-as-the-next-florida-senator",
+      "poly_will-james-fishback-be-appointed-as-the-next-florida-senator",
+      "poly_will-laura-trump-be-appointed-as-the-next-florida-senator",
+      "poly_will-casey-desantis-be-appointed-as-the-next-florida-senator",
+      "poly_will-jose-oliva-be-appointed-as-the-next-florida-senator"
+    ],
+    "rationale": "The outcomes of this prediction market event are primarily political in nature and do not have direct economic or policy implications that would affect the specified economic factors."
+  }
+}
