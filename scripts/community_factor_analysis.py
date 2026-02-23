@@ -144,16 +144,17 @@ def create_heatmap(community_factor_corr, output_path='outputs/community_factor_
     """Create heatmap of community × factor correlations."""
     print("Creating correlation heatmap...")
     
-    # Group factors by asset class for organized display
+    # Group factors by asset class — matched to actual data columns
     factor_groups = {
-        'US Equities': ['SPY', 'QQQ', 'IWM', 'DIA'],
-        'Global Equities': ['GDAXI', 'FTSE', 'N225', 'HSI', 'FCHI', 'STOXX50E', 'BSESN', 'GSPTSE', 'AS51', 'KS11'],
-        'Country ETFs': ['EWZ', 'EWJ', 'FXI', 'EWG', 'EWU', 'EWA', 'EWC', 'EWY', 'EWT', 'KSA'],
-        'Bonds': ['TLT', 'IEF', 'SHY', 'HYG', 'LQD', 'BWX', 'EMB'],
-        'US Yield Curve': [c for c in community_factor_corr.columns if c.startswith('US') or 'Y' in c and c not in ['EWY']],
-        'Commodities': ['GLD', 'USO', 'UNG', 'DBA'],
-        'Crypto & Vol': ['BTC_USD', 'ETH_USD', 'VIX'],
-        'Currency': ['DX_Y_NYB', 'UUP'],
+        'US Equities': ['SPY', 'QQQ'],
+        'Global Indices': ['GDAXI', 'FTSE', 'N225', 'HSI', 'FCHI', 'STOXX50E', 'BSESN', 'BVSP', 'KS11', '000001_SS'],
+        'Country ETFs': ['EWA', 'EWC', 'EWL', 'EWS', 'EWT', 'EWW', 'EIDO', 'EZA', 'TUR', 'KSA'],
+        'US Bonds': ['TLT', 'TLH', 'SHY'],
+        'Intl Bonds': ['BWX', 'EMB', 'BNDX', 'IGOV', 'IBGL_L', 'IGLT_L'],
+        'Yields': ['IRX', 'FVX', 'TNX', 'TYX'],
+        'Commodities': ['GLD', 'USO', 'NG_F'],
+        'Crypto & Vol': ['BTC_USD', 'VIX'],
+        'Currency': ['DX_Y_NYB'],
     }
     
     # Flatten and keep only factors that exist
@@ -182,8 +183,10 @@ def create_heatmap(community_factor_corr, output_path='outputs/community_factor_
     n_communities = len(plot_data.index)
     n_factors = len(plot_data.columns)
     
-    # Wide horizontal layout: communities as rows (few), factors as columns (many)
-    fig, ax = plt.subplots(figsize=(n_factors * 0.7 + 4, n_communities * 1.5 + 5))
+    # Large cells so numbers are readable
+    cell_w = 2.0
+    cell_h = 2.0
+    fig, ax = plt.subplots(figsize=(n_factors * cell_w + 6, n_communities * cell_h + 6))
     fig.patch.set_facecolor('#0d1117')
     ax.set_facecolor('#0d1117')
     
@@ -191,14 +194,16 @@ def create_heatmap(community_factor_corr, output_path='outputs/community_factor_
     vmax = max(abs(plot_data.min().min()), abs(plot_data.max().max()))
     vmax = min(vmax * 1.1, 0.30)
     
-    # NO annotations — just color. Clean and readable.
+    # Small numbers inside cells
     sns.heatmap(
         plot_data,
         cmap='RdBu_r',
         center=0,
         vmin=-vmax,
         vmax=vmax,
-        annot=False,
+        annot=True,
+        fmt='.2f',
+        annot_kws={'size': 14, 'weight': 'bold'},
         cbar_kws={'label': 'Correlation', 'shrink': 0.5, 'pad': 0.02},
         square=True,
         linewidths=0.5,
@@ -206,9 +211,9 @@ def create_heatmap(community_factor_corr, output_path='outputs/community_factor_
         ax=ax
     )
     
-    ax.set_title('Community Basket × Risk Factor Correlations', pad=30, fontsize=20, fontweight='bold', color='white')
-    ax.tick_params(axis='x', rotation=90, labelsize=11, colors='white')
-    ax.tick_params(axis='y', rotation=0, labelsize=12, colors='white')
+    ax.set_title('Community Basket × Risk Factor Correlations', pad=30, fontsize=28, fontweight='bold', color='white')
+    ax.tick_params(axis='x', rotation=45, labelsize=16, colors='white')
+    ax.tick_params(axis='y', rotation=0, labelsize=16, colors='white')
     ax.set_xlabel('')
     ax.set_ylabel('')
     
@@ -216,7 +221,7 @@ def create_heatmap(community_factor_corr, output_path='outputs/community_factor_
     for (start, end), label in zip(group_boundaries, group_labels):
         ax.axvline(x=start, color='white', linewidth=1.5, alpha=0.4)
         mid = (start + end) / 2
-        ax.text(mid, -0.8, label, ha='center', va='top', fontsize=9, color='#8b949e',
+        ax.text(mid, -0.6, label, ha='center', va='top', fontsize=13, color='#8b949e',
                 fontweight='bold', transform=ax.get_xaxis_transform())
     
     # Style colorbar

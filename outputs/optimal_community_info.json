@@ -1,0 +1,334 @@
+{
+  "0": {
+    "name": "2026 Sports and Political Predictions",
+    "critique": "- Unrelated markets (sports vs. politics)\n- Temporal mismatch (varied timelines for events)\n- Missing key markets (not all major events included)"
+  },
+  "37": {
+    "name": "Election and Sports Predictions",
+    "critique": "- Unrelated markets (politics vs. sports)\n- Temporal mismatch (different election years and sports seasons)\n- Missing key markets (not all major elections or sports events included)"
+  },
+  "4": {
+    "name": "2024 Election and Sports Markets",
+    "critique": "- Unrelated markets (politics vs. sports)\n- Temporal mismatch (election vs. Super Bowl timelines)\n- Missing key markets (other significant political events)"
+  },
+  "3": {
+    "name": "2024 Election and Sports Markets",
+    "critique": "- Unrelated markets (politics vs. sports)\n- Temporal mismatch (different election timelines)\n- Missing key markets (overemphasis on specific candidates/states)"
+  },
+  "5": {
+    "name": "Diverse Political and Economic Predictions",
+    "critique": "- Unrelated markets across different domains (politics, entertainment, economics)\n- Temporal mismatch with varying timelines for events\n- Overemphasis on German elections without broader political context"
+  },
+  "6": {
+    "name": "Political and Market Predictions",
+    "critique": "- Unrelated markets (politics vs. sports/crypto)\n- Temporal mismatch (different election cycles)\n- Missing key markets (not covering all major elections)"
+  },
+  "7": {
+    "name": "Political and Sports Predictions",
+    "critique": "- Unrelated markets (politics vs. sports)\n- Temporal mismatch (varying election and event dates)\n- Missing key markets (not all relevant elections included)"
+  },
+  "8": {
+    "name": "Diverse Prediction Markets Basket",
+    "critique": "- Unrelated markets across various domains\n- Temporal mismatch in event timelines\n- Missing key markets in each category"
+  },
+  "9": {
+    "name": "Diverse Future Predictions Basket",
+    "critique": "- Unrelated markets across various domains\n- Temporal mismatch with different deadlines\n- Overrepresentation of Bitcoin and Ethereum markets"
+  },
+  "2": {
+    "name": "Diverse Sports and Political Markets",
+    "critique": "- Unrelated markets across different domains\n- Missing key markets in each category\n- Temporal mismatch in event timelines"
+  },
+  "11": {
+    "name": "Diverse Global Predictions Basket",
+    "critique": "- Unrelated markets across various topics\n- Temporal mismatch in event timelines\n- Missing key markets in specific categories"
+  },
+  "12": {
+    "name": "Sports and Political Predictions",
+    "critique": "- Unrelated markets (sports vs. politics)\n- Temporal mismatch (different event timelines)\n- Missing key markets (not all leagues/candidates included)"
+  },
+  "13": {
+    "name": "Diverse Political and Market Predictions",
+    "critique": "- Unrelated markets leading to confusion\n- Temporal mismatch among deadlines and events\n- Missing key markets in specific sectors"
+  },
+  "14": {
+    "name": "Diverse Prediction Markets Basket",
+    "critique": "- Unrelated markets across different sectors\n- Temporal mismatch in event timelines\n- Missing key markets for comprehensive analysis"
+  },
+  "15": {
+    "name": "Diverse Prediction Markets Basket",
+    "critique": "- Unrelated markets across various domains\n- Temporal mismatch with different deadlines\n- Missing key markets in specific categories"
+  },
+  "16": {
+    "name": "Diverse Prediction Markets Basket",
+    "critique": "- Unrelated markets across various domains\n- Temporal mismatch with different event timelines\n- Missing key markets in specific categories"
+  },
+  "17": {
+    "name": "Diverse Political and Sports Markets",
+    "critique": "- Unrelated markets across different domains (politics, sports, economics)\n- Temporal mismatch with varying deadlines and events\n- Missing key markets that could provide context or relevance"
+  },
+  "18": {
+    "name": "Political and Global Events Basket",
+    "critique": "- Unrelated markets across different domains\n- Temporal mismatch with varying deadlines\n- Missing key markets in major categories"
+  },
+  "54": {
+    "name": "Diverse Prediction Markets Basket",
+    "critique": "- Unrelated markets across various domains\n- Temporal mismatch in event timelines\n- Overrepresentation of South Korean elections"
+  },
+  "21": {
+    "name": "Diverse Prediction Markets Basket",
+    "critique": "- Unrelated markets across various domains\n- Temporal mismatch in event timelines\n- Missing key markets in each category"
+  },
+  "22": {
+    "name": "Diverse Future Events Basket",
+    "critique": "- Unrelated markets across various domains\n- Temporal mismatch in event timelines\n- Missing key markets in specific categories"
+  },
+  "23": {
+    "name": "Diverse Future Events Markets",
+    "critique": "- Unrelated topics and themes\n- Temporal mismatch in event timelines\n- Varying levels of market significance"
+  },
+  "24": {
+    "name": "Diverse Future Events Predictions",
+    "critique": "- Unrelated markets across different domains\n- Temporal mismatch with varying event timelines\n- Missing key markets in specific categories"
+  },
+  "25": {
+    "name": "Diverse Political and Economic Events",
+    "critique": "- Unrelated markets across different domains\n- Temporal mismatch in event timelines\n- Missing key markets for comprehensive analysis"
+  },
+  "26": {
+    "name": "Diverse Prediction Markets Basket",
+    "critique": "- Unrelated markets across different sectors\n- Temporal mismatch in event timelines\n- Missing key markets for comprehensive analysis"
+  },
+  "27": {
+    "name": "Diverse Political and Economic Predictions",
+    "critique": "- Unrelated markets across different domains\n- Temporal mismatch in event timelines\n- Lack of coherence in subject matter"
+  },
+  "28": {
+    "name": "Diverse Future Predictions Basket",
+    "critique": "- Unrelated markets across different domains\n- Temporal mismatch in deadlines and events\n- Missing key markets in similar categories"
+  },
+  "30": {
+    "name": "Diverse Future Predictions Basket",
+    "critique": "- Unrelated markets across different sectors\n- Temporal mismatch in event timelines\n- Missing key markets in specific categories"
+  },
+  "31": {
+    "name": "Diverse Prediction Markets Basket",
+    "critique": "- Unrelated markets across different domains\n- Temporal mismatch in event timelines\n- Lack of thematic coherence among topics"
+  },
+  "32": {
+    "name": "Diverse Political and Market Predictions",
+    "critique": "- Unrelated markets across different domains\n- Temporal mismatch in deadlines and events\n- Missing key markets for comprehensive analysis"
+  },
+  "33": {
+    "name": "Diverse Future Events Predictions",
+    "critique": "- Unrelated markets across various domains\n- Temporal mismatch in event timelines\n- Missing key markets in specific categories"
+  },
+  "34": {
+    "name": "Diverse Prediction Markets Basket",
+    "critique": "- Unrelated markets across various domains\n- Temporal mismatch in event timelines\n- Missing key markets for comprehensive analysis"
+  },
+  "35": {
+    "name": "Diverse Political and Sports Markets",
+    "critique": "- Unrelated markets across different domains\n- Temporal mismatch in event timelines\n- Missing key markets in specific categories"
+  },
+  "36": {
+    "name": "Venezuela Political Predictions",
+    "critique": "- Unrelated events (release vs. invasion)\n- Temporal mismatch in deadlines\n- Lack of context on political climate"
+  },
+  "38": {
+    "name": "Diverse Prediction Markets Basket",
+    "critique": "- Unrelated markets leading to confusion\n- Temporal mismatch among event timelines\n- Missing key markets for comprehensive analysis"
+  },
+  "39": {
+    "name": "2028 Elections and Sports Predictions",
+    "critique": "- Unrelated markets (politics vs. sports)\n- Temporal mismatch (varying event timelines)\n- Missing key markets (not all candidates included)"
+  },
+  "71": {
+    "name": "Diverse Political and Sports Markets",
+    "critique": "- Unrelated markets across different domains\n- Temporal mismatch in event timelines\n- Missing key markets for comprehensive analysis"
+  },
+  "41": {
+    "name": "Diverse Political and Sports Markets",
+    "critique": "- Unrelated markets across different domains\n- Temporal mismatch in event timelines\n- Missing key markets in major categories"
+  },
+  "42": {
+    "name": "2026 Event Prediction Markets",
+    "critique": "- Unrelated markets (sports, politics, health)\n- Temporal mismatch (some events are not in 2026)\n- Missing key markets (not all major events represented)"
+  },
+  "43": {
+    "name": "Diverse Prediction Markets Basket",
+    "critique": "- Unrelated markets across different domains\n- Temporal mismatch in event timelines\n- Missing key markets in specific categories"
+  },
+  "44": {
+    "name": "Diverse Prediction Markets Basket",
+    "critique": "- Unrelated topics and themes\n- Temporal mismatch in deadlines\n- Missing key markets in specific categories"
+  },
+  "51": {
+    "name": "Diverse Future Event Predictions",
+    "critique": "- Unrelated markets across different domains\n- Temporal mismatch between sports and political events\n- Missing key markets for comprehensive coverage"
+  },
+  "46": {
+    "name": "2026 Sports and Political Predictions",
+    "critique": "- Unrelated markets (sports vs. politics)\n- Temporal mismatch (different event timelines)\n- Missing key markets (not all major leagues represented)"
+  },
+  "47": {
+    "name": "Diverse Prediction Markets Basket",
+    "critique": "- Unrelated markets across different domains\n- Temporal mismatch in event timelines\n- Missing key markets for comprehensive analysis"
+  },
+  "48": {
+    "name": "Diverse Political and Business Events",
+    "critique": "- Unrelated markets across different sectors\n- Temporal mismatch in event timelines\n- Lack of common thematic focus"
+  },
+  "49": {
+    "name": "Crypto Market Cap Predictions",
+    "critique": "- Unrelated market focus (ETH vs. Solana)\n- Temporal mismatch (different timeframes for predictions)\n- Varying market dynamics and factors influencing outcomes"
+  },
+  "50": {
+    "name": "Diverse Political and Market Predictions",
+    "critique": "- Unrelated markets across different sectors\n- Temporal mismatch in event timelines\n- Missing key markets in specific categories"
+  },
+  "52": {
+    "name": "Diverse Political and Sports Markets",
+    "critique": "- Unrelated markets across different domains\n- Temporal mismatch in event timelines\n- Missing key markets for comprehensive analysis"
+  },
+  "53": {
+    "name": "Diverse Future Events Basket",
+    "critique": "- Unrelated markets across different domains\n- Temporal mismatch between election and sports events\n- Missing key markets for comprehensive coverage"
+  },
+  "55": {
+    "name": "Diverse Political and Sports Markets",
+    "critique": "- Unrelated markets across different domains\n- Temporal mismatch in event timelines\n- Missing key markets in specific categories"
+  },
+  "57": {
+    "name": "Diverse Prediction Markets Basket",
+    "critique": "- Unrelated markets across different domains\n- Temporal mismatch in event timelines\n- Missing key markets in each category"
+  },
+  "58": {
+    "name": "Diverse Political and Sports Markets",
+    "critique": "- Unrelated markets across different domains\n- Missing key markets in each category\n- Temporal mismatch in event timelines"
+  },
+  "76": {
+    "name": "Diverse Future Events Predictions",
+    "critique": "- Unrelated markets across different domains\n- Temporal mismatch in event timelines\n- Overemphasis on specific entities (e.g., OpenAI)"
+  },
+  "60": {
+    "name": "Diverse Event Prediction Markets",
+    "critique": "- Unrelated markets with different themes\n- Temporal mismatch in event timelines\n- Varying levels of public interest and impact"
+  },
+  "61": {
+    "name": "Diverse Global Predictions Basket",
+    "critique": "- Unrelated markets across various domains\n- Temporal mismatch with different deadlines\n- Overrepresentation of Nobel Peace Prize markets"
+  },
+  "62": {
+    "name": "2028 Political and Miscellaneous Markets",
+    "critique": "- Unrelated markets (political vs. sports/finance)\n- Temporal mismatch (some events are immediate, others are long-term)\n- Missing key markets (no comprehensive coverage of all major candidates)"
+  },
+  "63": {
+    "name": "Iran and US Political Markets",
+    "critique": "- Unrelated markets (e.g., NBA Finals, EPL)\n- Temporal mismatch (varied deadlines for predictions)\n- Missing key markets (e.g., broader geopolitical implications)"
+  },
+  "64": {
+    "name": "Diverse Future Events Basket",
+    "critique": "- Unrelated markets across different domains\n- Temporal mismatch in event timelines\n- Missing key markets in specific categories"
+  },
+  "67": {
+    "name": "Political and Sports Predictions",
+    "critique": "- Unrelated markets (politics vs. sports)\n- Temporal mismatch (different election cycles and sports seasons)\n- Missing key markets (not all relevant candidates or events included)"
+  },
+  "68": {
+    "name": "Diverse Prediction Markets Basket",
+    "critique": "- Unrelated markets across different domains\n- Temporal mismatch between sports and political events\n- Missing key markets in each category"
+  },
+  "70": {
+    "name": "Diverse Political and Economic Markets",
+    "critique": "- Unrelated markets across different domains\n- Temporal mismatch in election dates\n- Missing key markets for comprehensive analysis"
+  },
+  "72": {
+    "name": "Diverse Prediction Markets Basket",
+    "critique": "- Unrelated markets across different domains\n- Temporal mismatch between sports and political events\n- Missing key markets in each category"
+  },
+  "73": {
+    "name": "Diverse Political Predictions Basket",
+    "critique": "- Unrelated markets across different countries\n- Temporal mismatch in election timelines\n- Missing key markets for comprehensive analysis"
+  },
+  "74": {
+    "name": "Diverse Future Events Markets",
+    "critique": "- Unrelated markets across different domains\n- Temporal mismatch in event timelines\n- Missing key markets for comprehensive analysis"
+  },
+  "75": {
+    "name": "Diverse Political and Market Predictions",
+    "critique": "- Unrelated markets across different domains\n- Temporal mismatch with varying deadlines\n- Lack of key markets in similar categories"
+  },
+  "77": {
+    "name": "Diverse Sports and Politics Markets",
+    "critique": "- Unrelated markets across different domains\n- Temporal mismatch in event timelines\n- Missing key markets in major sports or political events"
+  },
+  "78": {
+    "name": "Political and Competitive Predictions",
+    "critique": "- Unrelated markets (politics vs. sports vs. AI)\n- Temporal mismatch (varying election years and event timelines)\n- Missing key markets (not all relevant political candidates or events included)"
+  },
+  "79": {
+    "name": "Diverse Sports and Events Markets",
+    "critique": "- Unrelated markets across different sports\n- Temporal mismatch with event timelines\n- Missing key markets for comprehensive analysis"
+  },
+  "81": {
+    "name": "Diverse Prediction Markets Basket",
+    "critique": "- Unrelated topics and themes\n- Temporal mismatch in event timelines\n- Lack of common market dynamics"
+  },
+  "82": {
+    "name": "Diverse Future Predictions Basket",
+    "critique": "- Unrelated markets across different domains\n- Temporal mismatch with varying timelines\n- Missing key markets in each category"
+  },
+  "19": {
+    "name": "Diverse Prediction Markets Basket",
+    "critique": "- Unrelated markets (politics vs. commodities)\n- Temporal mismatch (political nomination vs. short-term commodity prices)\n- Lack of thematic coherence among markets"
+  },
+  "20": {
+    "name": "Diverse Prediction Markets Basket",
+    "critique": "- Unrelated markets across various domains\n- Temporal mismatch with different deadlines\n- Missing key markets in each category"
+  },
+  "69": {
+    "name": "Diverse Prediction Markets Basket",
+    "critique": "- Unrelated markets across different domains\n- Temporal mismatch in event timelines\n- Lack of common thematic focus"
+  },
+  "29": {
+    "name": "Diverse Prediction Markets Basket",
+    "critique": "- Unrelated markets across different domains\n- Temporal mismatch in event timelines\n- Overrepresentation of Polish presidential candidates"
+  },
+  "56": {
+    "name": "Diverse Sports and Political Markets",
+    "critique": "- Unrelated markets across different domains\n- Temporal mismatch between event timelines\n- Missing key markets in specific categories"
+  },
+  "59": {
+    "name": "Diverse Future Events Basket",
+    "critique": "- Unrelated markets across different domains\n- Temporal mismatch in event timelines\n- Missing key markets for comprehensive analysis"
+  },
+  "1": {
+    "name": "NYC Mayoral Election Prediction",
+    "critique": "- Unrelated markets (only one market)\n- Missing key markets (other candidates)\n- Temporal mismatch (election date uncertainty)"
+  },
+  "65": {
+    "name": "AOC 2024 Election Market",
+    "critique": "- Unrelated markets (only one market present)\n- Missing key markets (other candidates not included)\n- Temporal mismatch (election date uncertainty)"
+  },
+  "66": {
+    "name": "2026 Sports and Market Predictions",
+    "critique": "- Unrelated markets (F1, Olympics, tech)\n- Temporal mismatch (different event timelines)\n- Missing key markets (other major sports/events)"
+  },
+  "40": {
+    "name": "Sports and SpaceX Predictions",
+    "critique": "- Unrelated markets (sports vs. finance)\n- Temporal mismatch (different seasons and timelines)\n- Missing key markets (no comprehensive coverage of all leagues)"
+  },
+  "10": {
+    "name": "Revenue and Sports Predictions",
+    "critique": "- Unrelated markets (finance vs. sports)\n- Temporal mismatch (different timeframes for events)\n- Missing key markets (other significant sports or economic predictions)"
+  },
+  "45": {
+    "name": "NYC Mayoral Election Prediction",
+    "critique": "- Unrelated markets\n- Missing key markets\n- Temporal mismatch"
+  },
+  "80": {
+    "name": "Tim Walz Resignation Market",
+    "critique": "- Unrelated markets\n- Missing key markets\n- Temporal mismatch"
+  }
+}
