@@ -1,0 +1,246 @@
+{
+  "0": {
+    "name": "Political and Economic Predictions",
+    "critique": "- Unrelated markets across different domains (politics, economics, natural disasters).\n- Temporal mismatch with varying deadlines and timeframes for predictions.\n- Missing key markets that could provide a more comprehensive view of political and economic trends."
+  },
+  "1": {
+    "name": "2024 Presidential Election Predictions",
+    "critique": "- Temporal mismatch with various timelines for different markets.\n- Unrelated markets, such as those predicting vote counts and specific state outcomes, may dilute focus.\n- Missing key markets that address broader electoral dynamics, such as third-party candidates or voter turnout impacts."
+  },
+  "4": {
+    "name": "Diverse Prediction Markets Basket",
+    "critique": "- Unrelated markets (politics, finance, conspiracy)\n- Temporal mismatch (varied deadlines for predictions)\n- Missing key markets (no comprehensive coverage of major events)"
+  },
+  "3": {
+    "name": "Cryptocurrency and Alien Predictions",
+    "critique": "- Unrelated markets (cryptocurrency vs. aliens)\n- Temporal mismatch (varied deadlines and events)\n- Missing key markets (not all relevant cryptocurrencies included)"
+  },
+  "26": {
+    "name": "Political and Space Predictions",
+    "critique": "- Unrelated markets across different themes\n- Temporal mismatch in event timelines\n- Missing key markets on similar topics"
+  },
+  "5": {
+    "name": "2028 Elections and Market Predictions",
+    "critique": "- Unrelated markets (politics vs. companies)\n- Temporal mismatch (varied deadlines)\n- Missing key markets (other candidates or companies)"
+  },
+  "6": {
+    "name": "Global Political Predictions Basket",
+    "critique": "- Unrelated markets across different countries\n- Temporal mismatch with varying deadlines\n- Missing key markets for major elections"
+  },
+  "7": {
+    "name": "Fed Chair and Rate Predictions",
+    "critique": "- Unrelated markets (nominees vs. rate changes)\n- Temporal mismatch (different meeting dates)\n- Missing key markets (other potential nominees or economic indicators)"
+  },
+  "8": {
+    "name": "Diverse Prediction Markets Basket",
+    "critique": "- Unrelated markets across different sectors\n- Temporal mismatch in event timelines\n- Overemphasis on Silver market predictions"
+  },
+  "9": {
+    "name": "2028 Presidential Nomination Predictions",
+    "critique": "- Unrelated candidates across parties\n- Missing key candidates and incumbents\n- Temporal mismatch with other markets"
+  },
+  "10": {
+    "name": "2024 US Election Predictions",
+    "critique": "- Unrelated markets (e.g., S\u00e3o Paulo mayoral elections)\n- Missing key markets (e.g., independent candidates)\n- Temporal mismatch (e.g., VP nominations vs. presidential election)"
+  },
+  "12": {
+    "name": "Iran and Taiwan Conflict Markets",
+    "critique": "- Unrelated markets (Iran and Taiwan)\n- Temporal mismatch in deadlines\n- Missing key markets on broader geopolitical context"
+  },
+  "13": {
+    "name": "Global Political Predictions Basket",
+    "critique": "- Unrelated markets across different countries\n- Temporal mismatch with varying election dates\n- Missing key markets for major elections"
+  },
+  "15": {
+    "name": "Global Political Predictions Basket",
+    "critique": "- Unrelated markets across different countries\n- Temporal mismatch with varying election years\n- Overrepresentation of French presidential elections"
+  },
+  "17": {
+    "name": "Russia-Ukraine Conflict Predictions",
+    "critique": "- Temporal mismatch in deadlines across markets\n- Unrelated markets (e.g., Norwegian politics) included\n- Overlapping questions leading to redundancy"
+  },
+  "18": {
+    "name": "Community_18",
+    "critique": "No market data available"
+  },
+  "19": {
+    "name": "Political Predictions and Elections",
+    "critique": "- Unrelated markets (U.S. vs. Dutch elections)\n- Temporal mismatch (varied election years)\n- Missing key markets (no major global elections)"
+  },
+  "22": {
+    "name": "Economic and Political Predictions",
+    "critique": "- Unrelated markets (e.g., interest rates vs. political appointments)\n- Temporal mismatch (varied timelines for events)\n- Missing key markets (e.g., major economic indicators or elections)"
+  },
+  "24": {
+    "name": "2024 Republican VP Nomination",
+    "critique": "- Unrelated markets (only one market)\n- Missing key markets (other candidates)\n- Temporal mismatch (future events)"
+  },
+  "25": {
+    "name": "Geopolitical and Crypto Predictions",
+    "critique": "- Unrelated markets (crypto vs. geopolitics)\n- Temporal mismatch (different timelines for events)\n- Lack of context for geopolitical events"
+  },
+  "27": {
+    "name": "2028 Democratic Nomination Market",
+    "critique": "- Unrelated markets\n- Missing key markets\n- Temporal mismatch"
+  },
+  "28": {
+    "name": "Chinese Leadership Stability Markets",
+    "critique": "- Unrelated markets may exist\n- Missing key markets on succession\n- Temporal mismatch with political events"
+  },
+  "29": {
+    "name": "Political Sports Predictions",
+    "critique": "- Unrelated markets (sports vs. politics)\n- Lack of context for nomination process\n- Temporal mismatch (distant future event)"
+  },
+  "30": {
+    "name": "Interest Rate Prediction Market",
+    "critique": "- Unrelated markets (only one market present)\n- Temporal mismatch (focus on a specific future date)\n- Lack of context (no other economic indicators included)"
+  },
+  "33": {
+    "name": "Republican VP Nomination Market",
+    "critique": "- Unrelated markets\n- Missing key markets\n- Temporal mismatch"
+  },
+  "34": {
+    "name": "OpenSea Token Launch Predictions",
+    "critique": "- Unrelated market focus\n- Lack of broader crypto context\n- Temporal mismatch with market trends"
+  },
+  "35": {
+    "name": "2028 Presidential Nomination Market",
+    "critique": "- Unrelated to other political markets\n- Limited scope with only one candidate\n- Temporal mismatch with future events"
+  },
+  "36": {
+    "name": "2028 Presidential Election Market",
+    "critique": "- Unrelated markets (only one market present)\n- Missing key markets (no other candidates or events)\n- Temporal mismatch (far future prediction)"
+  },
+  "37": {
+    "name": "Community_37",
+    "critique": "No market data available"
+  },
+  "38": {
+    "name": "Community_38",
+    "critique": "No market data available"
+  },
+  "39": {
+    "name": "Community_39",
+    "critique": "No market data available"
+  },
+  "40": {
+    "name": "US-Iran Military Action Prediction",
+    "critique": "- Unrelated markets not included\n- Temporal mismatch with event timeline\n- Limited scope of geopolitical factors"
+  },
+  "41": {
+    "name": "2028 Democratic Nomination Market",
+    "critique": "- Unrelated markets\n- Missing key markets\n- Temporal mismatch"
+  },
+  "42": {
+    "name": "US Government Shutdown Prediction",
+    "critique": "- Unrelated to other political events\n- Limited scope with only one market\n- Temporal mismatch with future events"
+  },
+  "43": {
+    "name": "Celebrity Political Aspirations",
+    "critique": "- Unrelated markets (celebrity vs. politics)\n- Lack of diverse political candidates\n- Temporal mismatch (long-term prediction)"
+  },
+  "44": {
+    "name": "Community_44",
+    "critique": "No market data available"
+  },
+  "45": {
+    "name": "Ukraine Leadership Prediction Market",
+    "critique": "- Unrelated markets\n- Missing key markets\n- Temporal mismatch"
+  },
+  "46": {
+    "name": "SpaceX Public Ticker Prediction",
+    "critique": "- Unrelated markets\n- Missing key markets\n- Temporal mismatch"
+  },
+  "47": {
+    "name": "Political Vote Confirmation Market",
+    "critique": "- Unrelated markets (focus on different candidates)\n- Limited scope (only one market included)\n- Temporal mismatch (specific event vs. broader trends)"
+  },
+  "48": {
+    "name": "NYC Mayoral Election Prediction",
+    "critique": "- Unrelated markets (only one market)\n- Missing key markets (other candidates)\n- Temporal mismatch (election date uncertainty)"
+  },
+  "49": {
+    "name": "Israeli Political Future Prediction",
+    "critique": "- Unrelated markets not included\n- Temporal mismatch with election dates\n- Limited scope focusing on one candidate"
+  },
+  "50": {
+    "name": "2028 Republican Nomination Market",
+    "critique": "- Unrelated to other political markets\n- Limited scope with only one market\n- Temporal mismatch with current events"
+  },
+  "51": {
+    "name": "Israel-Hamas Ceasefire Prediction",
+    "critique": "- Unrelated markets\n- Missing key markets\n- Temporal mismatch"
+  },
+  "52": {
+    "name": "Bitcoin ETF Approval Market",
+    "critique": "- Unrelated markets\n- Missing key markets\n- Temporal mismatch"
+  },
+  "53": {
+    "name": "U.S. Government Funding Predictions",
+    "critique": "- Unrelated markets may dilute focus\n- Temporal mismatch with other events\n- Lack of diverse funding scenarios"
+  },
+  "54": {
+    "name": "AOC 2024 Election Market",
+    "critique": "- Unrelated markets (only one market present)\n- Missing key markets (other candidates not included)\n- Temporal mismatch (election date uncertainty)"
+  },
+  "55": {
+    "name": "Iranian Leadership Change Market",
+    "critique": "- Unrelated markets\n- Missing key markets\n- Temporal mismatch"
+  },
+  "56": {
+    "name": "Superconductor Reality Prediction Market",
+    "critique": "- Unrelated markets\n- Missing key markets\n- Temporal mismatch"
+  },
+  "57": {
+    "name": "Venezuela 2024 Election Market",
+    "critique": "- Unrelated markets (only one market present)\n- Missing key markets (no other relevant elections or political events)\n- Temporal mismatch (focus solely on a single event)"
+  },
+  "58": {
+    "name": "2024 Republican VP Nomination Market",
+    "critique": "- Unrelated markets not included\n- Limited scope with only one market\n- Temporal mismatch with other election events"
+  },
+  "59": {
+    "name": "Liz Cheney 2028 Nomination Market",
+    "critique": "- Unrelated market to other predictions\n- Limited scope with only one market\n- Temporal mismatch with distant election date"
+  },
+  "60": {
+    "name": "NYC Mayoral Election Prediction",
+    "critique": "- Unrelated markets (only one market)\n- Missing key markets (other candidates)\n- Temporal mismatch (election date uncertainty)"
+  },
+  "21": {
+    "name": "Russian Political Stability Forecast",
+    "critique": "- Unrelated markets may be missing\n- Temporal mismatch with other events\n- Limited scope focusing only on one individual"
+  },
+  "23": {
+    "name": "AI Market Launch Predictions",
+    "critique": "- Unrelated markets\n- Missing key markets\n- Temporal mismatch"
+  },
+  "31": {
+    "name": "Alien Existence Prediction Market",
+    "critique": "- Unrelated to other prediction markets\n- Lacks key markets on broader topics\n- Temporal mismatch with future events"
+  },
+  "32": {
+    "name": "Ethereum Price Prediction Market",
+    "critique": "- Unrelated markets not included\n- Missing key cryptocurrencies\n- Temporal mismatch with other predictions"
+  },
+  "2": {
+    "name": "China-Taiwan Conflict Predictions",
+    "critique": "- Unrelated markets not included\n- Temporal mismatch with other events\n- Limited scope of geopolitical factors"
+  },
+  "11": {
+    "name": "Community_11",
+    "critique": "No market data available"
+  },
+  "14": {
+    "name": "2028 Presidential Nomination Market",
+    "critique": "- Unrelated markets\n- Missing key markets\n- Temporal mismatch"
+  },
+  "16": {
+    "name": "Trump Coin Prediction Market",
+    "critique": "- Unrelated to election outcomes\n- Limited scope of prediction\n- Temporal mismatch with election date"
+  },
+  "20": {
+    "name": "2028 Presidential Election Market",
+    "critique": "- Unrelated to other political markets\n- Missing key candidates or issues\n- Temporal mismatch with current events"
+  }
+}

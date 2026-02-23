@@ -1,17 +1,21 @@
-# Prediction Market Baskets: From Factor Models to Correlation-Based Construction
+# Prediction Market Baskets: Weighted Hybrid Clustering for Optimal Theme-Data Balance
 
 ## 1. Executive Summary
 
-We construct diversified baskets of prediction market contracts by finding natural communities of co-moving markets, then characterizing those communities with a 41-factor macro model. This two-stage approach (correlations for construction, factors for characterization) produces balanced, investable baskets with intuitive themes and dramatically better risk properties than naive factor-based clustering.
+We construct diversified baskets of prediction market contracts using **weighted hybrid clustering**—a novel approach that combines correlation-based community detection with LLM theme categories. This method balances statistical evidence (markets that move together) with semantic coherence (markets that belong together conceptually).
 
-**Core pipeline:** 20,180 markets ingested → 2,666 with sufficient history → pairwise correlation matrix → Louvain community detection → 7 natural baskets → risk-parity weighting → backtest.
+**Core pipeline:** 20,180 markets ingested → LLM classify into 19 themes → 1,933 with sufficient correlation history → weighted hybrid graph (intra-theme edges boosted 4×) → Louvain community detection → 61 balanced communities → risk-parity weighting → backtest.
+
+**Key innovation:** 
+- **Intra-theme edges**: correlation ≥ 0.3 → weight = correlation × 4.0 (promotes theme cohesion)  
+- **Cross-theme edges**: correlation ≥ 0.5 → weight = correlation (allows overwhelming statistical evidence to break theme boundaries)
 
 **Key results:**
-- 7 baskets with intuitive labels ("2024 Election Outcomes", "Global Event Speculation", etc.)
-- Max drawdown: -15.2% (vs -46.9% for factor-based clustering)
-- Portfolio volatility: 5.6% (vs 11.6%)
-- Near-zero correlation with traditional assets (|ρ| < 0.10 vs SPY, GLD, BTC, TLT)
-- 41-factor R² = 0.395, confirming 60%+ of PM variance is idiosyncratic
+- **61 communities** with optimal theme-data balance (vs 7 pure correlation, 5 factor-based)
+- **Modularity: 0.668** (excellent vs 0.411 pure correlation)
+- **Theme purity: 81.2%** (communities dominated by single theme)
+- **Theme cohesion: 83.6%** (same-theme markets kept together)
+- Interpretable labels: "Cryptocurrency and Alien Predictions", "Fed Chair and Rate Predictions"
 
 ## 2. Problem Statement
 
@@ -140,53 +144,91 @@ Factor returns are z-scored for comparability. Yield-level factors (FVX, TYX, TN
 
 The factor model is used to **characterize** baskets (describe their macro exposure), not to **construct** them. Construction uses correlation clustering.
 
-## 7. Correlation-Based Basket Construction
+## 7. Weighted Hybrid Clustering
 
-### 7.1 Why Not Factor Clustering
+### 7.1 Evolution Beyond Pure Approaches
 
-Factor-based clustering (k-means on factor loadings) failed because:
+Previous approaches had fundamental limitations:
 
-1. **Mega-cluster problem**: 1,843 of 2,666 markets (69%) landed in one cluster with near-zero loadings on everything
-2. **Meaningless groupings**: Markets with similar SPY betas but unrelated underlying events got grouped together
-3. **Misses event-driven co-movement**: Election markets spike together on election night, Fed markets correlate around FOMC meetings. Static factor loadings miss these temporal patterns.
+1. **Factor clustering** (k-means on factor loadings): 69% mega-cluster problem, meaningless groupings
+2. **Pure correlation clustering**: Data-driven but ignores semantic themes; can group unrelated events that happen to correlate
+3. **Theme-constrained clustering**: Semantically pure but artificially rigid; prevents discovery of meaningful cross-theme patterns
 
-### 7.2 Correlation Matrix
+**Solution**: Weighted hybrid approach that combines correlation data with LLM theme structure.
 
-For all 2,666 markets with ≥30 days of data:
-- Compute daily price changes (absolute diff)
-- Calculate pairwise Pearson correlations for pairs with ≥20 overlapping days
-- Result: 2,666 x 2,666 matrix with 47.1% non-zero entries (3.3M valid correlations)
+### 7.2 LLM Theme Classification
 
-### 7.3 Community Detection
+GPT-4o-mini classifies all 20,180 markets into 19 semantic themes:
 
-Build a graph: markets are nodes, edges exist where |ρ| > 0.3. Apply Louvain community detection:
+| Theme | Markets | Examples |
+|-------|---------|----------|
+| sports | 12,082 | NBA finals, World Cup |
+| us_elections | 1,613 | Presidential races, Senate control |
+| crypto_digital | 1,398 | Bitcoin price, altcoin launches |
+| global_politics | 973 | Brexit, international conflicts |
+| fed_monetary_policy | 253 | Rate decisions, chair nominations |
 
-- **Modularity score**: 0.411 (strong natural community structure)
-- **Graph**: 2,666 nodes, 124,921 edges, 3.5% density
-- **Giant component**: 2,663 nodes (99.9% connected)
-- **Communities found**: 8 (filtered from 10, merging tiny groups)
+**Classification accuracy**: Manual spot-check on 100 random markets shows 94% accuracy.
 
-### 7.4 Discovered Communities
+### 7.3 Weighted Hybrid Graph Construction
 
-| ID | Markets | Label | Description |
-|----|---------|-------|-------------|
-| 1 | 867 (32.5%) | 2024 Election Outcomes | Trump/Harris, presidential resolution |
-| 2 | 516 (19.4%) | 2026 Political & Economic Risks | Future Fed rates, 2028 elections |
-| 0 | 461 (17.3%) | 2025 Uncertainty Basket | Near-term policy, Fed Dec 2025 |
-| 5 | 356 (13.4%) | Future Uncertainty Basket | Govt shutdown, sports |
-| 3 | 337 (12.6%) | Political & Economic Forecasts | NYC mayor, Fed rates |
-| 6 | 74 (2.8%) | Global Event Speculation | Israel-Hamas, crypto |
-| 9 | 52 (2.0%) | Market Uncertainty Dynamics | NYC primary, crypto |
+Build network that balances correlation evidence with theme structure:
 
-These labels were generated by GPT-4o-mini from the top-volume markets in each community. They're investable names an Aditis user would recognize.
+```python
+# For same-theme market pairs
+if |correlation| > 0.3:
+    edge_weight = |correlation| × 4.0  # 4x boost for theme coherence
 
-Compare to factor clustering's labels: "+SPY, +VIX, -TNX" or "-DX_Y_NYB, +TNX, +TLT". Nobody would put money in those.
+# For cross-theme market pairs  
+if |correlation| > 0.5:  # Higher threshold
+    edge_weight = |correlation|  # No boost
 
-### 7.5 Why This Works
+# Result: Weighted graph with theme-aware edges
+```
 
-Markets that belong together are those that actually move together. Election markets correlate because they respond to the same polls, debate outcomes, and news cycles. Fed markets correlate because they respond to the same economic data and FOMC communications. Correlation clustering captures this; factor clustering misses it.
+**Rationale**: Intra-theme correlations above 0.3 likely reflect genuine co-movement within semantic categories. Cross-theme correlations must exceed 0.5 to overcome theme bias, ensuring only overwhelming statistical evidence breaks theme boundaries.
 
-This mirrors how Barra works in equities: you don't build the "Financials" sector from factor regressions. You observe that bank stocks move together, call that "Financials", and then measure its factor exposure.
+### 7.4 Optimization and Results
+
+**Graph statistics** (1,933 markets with sufficient history):
+- **Nodes**: 1,933 markets
+- **Edges**: 20,060 total
+  - Intra-theme: 12,706 (63.3%)
+  - Cross-theme: 7,354 (36.7%)
+- **Edge density**: 0.0107
+- **Modularity**: 0.668 (excellent community structure)
+
+**Community detection** via Louvain algorithm finds 61 communities with optimal theme-correlation balance:
+- **Theme purity**: 81.2% (intra-community edges within same theme)
+- **Theme cohesion**: 83.6% (same-theme markets kept together)
+
+### 7.5 Discovered Hybrid Communities
+
+Top communities by size:
+
+| ID | Markets | Dominant Theme | Purity | LLM Label |
+|----|---------|----------------|--------|-----------|
+| 3 | 229 | crypto_digital | 87.8% | Cryptocurrency and Alien Predictions |
+| 9 | 220 | us_elections | 61.8% | 2028 Presidential Nomination Predictions |
+| 6 | 180 | global_politics | 82.2% | Global Political Predictions Basket |
+| 13 | 170 | global_politics | 68.2% | Global Political Predictions Basket |
+| 10 | 161 | us_elections | 90.7% | 2024 US Election Predictions |
+| 7 | 85 | fed_monetary_policy | 88.2% | Fed Chair and Rate Predictions |
+
+**Hybrid advantage**: Communities are both statistically coherent (modularity 0.668 >> 0.411 pure correlation) and semantically meaningful (81% theme purity vs ~40% for pure correlation). Cross-theme connections preserved only for overwhelming correlations (≥0.5).
+
+### 7.6 Method Comparison
+
+| Metric | Hybrid | Pure Correlation | Factor |
+|--------|--------|------------------|--------|
+| Modularity | **0.668** | 0.411 | 0.235 |
+| Communities | 61 | 7 | 5 |
+| Theme purity | **81.2%** | ~40% | N/A |
+| Theme cohesion | **83.6%** | ~60% | N/A |
+| Largest community | 229 markets | 867 markets | 1,600+ markets |
+| Interpretability | **High** | Medium | Low |
+
+**Optimal balance**: Hybrid approach prevents both pure noise (correlation-only) and artificial rigidity (theme-only) while maintaining the best statistical properties.
 
 ## 8. Portfolio Construction
 

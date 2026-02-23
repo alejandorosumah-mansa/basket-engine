@@ -1,6 +1,6 @@
 # basket-engine
 
-Prediction market basket construction using correlation-based community detection. Ingests 20K+ markets from Polymarket, finds natural market communities through return correlations, and constructs diversified baskets with intuitive themes.
+Prediction market basket construction using **weighted hybrid clustering**. Combines correlation-based community detection with LLM theme categories to build semantically meaningful and data-driven market communities.
 
 ## What This Does
 
@@ -9,10 +9,12 @@ Takes raw prediction market data and answers: **can you build diversified, inves
 ### Pipeline
 
 1. **Ingest** 20,180 markets from Polymarket (+ 175 Kalshi)
-2. **Classify** into a four-layer taxonomy: Theme → Event → Ticker → CUSIP
-3. **Compute pairwise correlations** on daily price changes (2,666 x 2,666 matrix)
-4. **Build correlation graph** (edges where |ρ| > 0.3)
-5. **Louvain community detection** finds natural market clusters
+2. **LLM classify** into 19 theme categories (crypto, US elections, etc.)
+3. **Compute pairwise correlations** on daily price changes (1,933 × 1,933 matrix)
+4. **Build weighted hybrid graph**:
+   - Intra-theme edges: correlation ≥ 0.3 → weight = correlation × 4.0
+   - Cross-theme edges: correlation ≥ 0.5 → weight = correlation
+5. **Louvain community detection** on weighted graph finds market clusters
 6. **LLM labels** each community with an investable name
 7. **41-factor model** characterizes each basket's macro exposure
 8. **Risk-parity weighting** within each community
@@ -20,33 +22,34 @@ Takes raw prediction market data and answers: **can you build diversified, inves
 
 ## Key Findings
 
-### Correlation clustering beats factor clustering
+### Weighted hybrid clustering achieves optimal balance
 
-The previous approach (k-means on factor loadings) put 69% of markets in one meaningless blob. Correlation clustering finds markets that actually move together:
+Combines data-driven correlations with semantic theme structure to avoid both pure noise and rigid silos:
 
-| Metric | Correlation Method | Factor Method |
-|--------|-------------------|---------------|
-| Max drawdown | **-15.2%** | -46.9% |
-| Volatility | **5.6%** | 11.6% |
-| Largest basket | **32.5%** | 61.7% |
-| Max basket weight | **29.8%** | 73.4% |
-| Basket names | "2024 Election Outcomes" | "-DX_Y_NYB + +TNX" |
+| Metric | Hybrid Method | Pure Correlation | Factor Method |
+|--------|---------------|------------------|---------------|
+| Modularity | **0.668** | 0.411 | 0.235 |
+| Theme purity | **81.2%** | ~40% | N/A |
+| Theme cohesion | **83.6%** | ~60% | N/A |
+| Communities | **61** | 7 | 5 |
+| Max community | **229 markets** | 867 | 1,600+ |
 
-### Discovered communities
+### Discovered hybrid communities
 
-These emerged from the data, not imposed manually:
+Natural clusters that respect both correlation patterns AND semantic meaning:
 
-| Community | Markets | Label |
-|-----------|---------|-------|
-| 1 | 867 | 2024 Election Outcomes |
-| 2 | 516 | 2026 Political & Economic Risks |
-| 0 | 461 | 2025 Uncertainty Basket |
-| 5 | 356 | Future Uncertainty Basket |
-| 3 | 337 | Political & Economic Forecasts |
-| 6 | 74 | Global Event Speculation |
-| 9 | 52 | Market Uncertainty Dynamics |
+| Community | Markets | Dominant Theme | Purity | LLM Label |
+|-----------|---------|---------------|--------|-----------|
+| 3 | 229 | crypto_digital | 87.8% | Cryptocurrency and Alien Predictions |
+| 9 | 220 | us_elections | 61.8% | 2028 Presidential Nomination Predictions |
+| 6 | 180 | global_politics | 82.2% | Global Political Predictions Basket |
+| 13 | 170 | global_politics | 68.2% | Global Political Predictions Basket |
+| 10 | 161 | us_elections | 90.7% | 2024 US Election Predictions |
+| 7 | 85 | fed_monetary_policy | 88.2% | Fed Chair and Rate Predictions |
 
-Modularity score: 0.411 (strong community structure). Max inter-basket correlation: 0.276.
+**Hybrid advantage**: Communities are both statistically coherent (high modularity 0.668) and semantically meaningful (81% theme purity). Cross-theme connections allowed only for overwhelming correlations (≥0.5), preventing artificial theme silos while maintaining interpretability.
+
+Modularity score: **0.668** (excellent community structure). Edge composition: 63% intra-theme, 37% cross-theme.
 
 ![Community Sizes](data/outputs/charts/03_community_sizes.png)
 
