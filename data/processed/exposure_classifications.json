@@ -1,0 +1,17 @@
+{
+  "test_btc_100k_exp": {
+    "exposure_direction": "long",
+    "exposure_description": "Long Bitcoin price exceeding $100K",
+    "confidence": 0.9
+  },
+  "test_recession_exp": {
+    "exposure_direction": "short",
+    "exposure_description": "Short on economic downturn with a recession in 2026",
+    "confidence": 0.85
+  },
+  "test_unemp_exp": {
+    "exposure_direction": "short",
+    "exposure_description": "Short on economic weakness with unemployment rising above 5%",
+    "confidence": 0.8
+  }
+}
