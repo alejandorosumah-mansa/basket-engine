@@ -15,8 +15,9 @@ import yfinance as yf
 
 
 BENCHMARKS = {
+    # Existing factors (keep all)
     "SPY": "S&P 500",
-    "QQQ": "Nasdaq 100",
+    "QQQ": "Nasdaq 100", 
     "GLD": "Gold",
     "TLT": "20+ Year Treasury",
     "^TNX": "10Y Treasury Yield",
@@ -25,6 +26,47 @@ BENCHMARKS = {
     "DX-Y.NYB": "US Dollar Index",
     "BTC-USD": "Bitcoin",
     "USO": "Oil",
+    
+    # US Rates (new duration ETFs and yields)
+    "SHY": "1-3Y Treasury ETF",
+    "^FVX": "5Y Treasury Yield",
+    "TLH": "10-20Y Treasury ETF", 
+    "^TYX": "30Y Treasury Yield",
+    
+    # Global Rates (bond ETFs)
+    "IGLT.L": "UK Gilts ETF",
+    "IBGL.L": "Germany Bund ETF", 
+    "BNDX": "Intl Bond ex-US",
+    "EMB": "Emerging Market Bonds",
+    "BWX": "Intl Treasury Bond",
+    "IGOV": "Intl Govt Bond ETF",
+    
+    # Global Equity Indices
+    "^FTSE": "UK FTSE 100",
+    "^GDAXI": "Germany DAX",
+    "^N225": "Japan Nikkei 225",
+    "000001.SS": "China Shanghai Composite",
+    "^FCHI": "France CAC 40",
+    "^STOXX50E": "Euro Stoxx 50",
+    "^HSI": "Hong Kong Hang Seng",
+    "^BSESN": "India BSE Sensex",
+    "^BVSP": "Brazil Bovespa",
+    "^KS11": "South Korea KOSPI",
+    
+    # Country ETFs
+    "EWC": "Canada ETF",
+    "EWA": "Australia ETF", 
+    "EWW": "Mexico ETF",
+    "EWT": "Taiwan ETF",
+    "EIDO": "Indonesia ETF",
+    "TUR": "Turkey ETF",
+    "EZA": "South Africa ETF",
+    "KSA": "Saudi Arabia ETF",
+    "EWL": "Switzerland ETF",
+    "EWS": "Singapore ETF",
+    
+    # Additional Commodities
+    "NG=F": "Natural Gas",
 }
 
 OUTPUT_PATH = Path("data/processed/benchmarks.parquet")
@@ -52,7 +94,7 @@ def fetch_benchmarks(period: str = "2y") -> pd.DataFrame:
         closes.columns = tickers
     
     # Clean column names for parquet compatibility
-    closes.columns = [c.replace("^", "").replace("-", "_").replace(".", "_") for c in closes.columns]
+    closes.columns = [c.replace("^", "").replace("-", "_").replace(".", "_").replace("=", "_") for c in closes.columns]
     
     # Forward-fill gaps (weekends/holidays already excluded by yfinance)
     closes = closes.ffill()
@@ -74,6 +116,7 @@ def save_benchmarks(df: pd.DataFrame) -> Path:
 
 # Mapping from clean column names back to descriptions
 CLEAN_NAMES = {
+    # Existing factors
     "SPY": "S&P 500",
     "QQQ": "Nasdaq 100",
     "GLD": "Gold",
@@ -84,6 +127,47 @@ CLEAN_NAMES = {
     "DX_Y_NYB": "US Dollar Index",
     "BTC_USD": "Bitcoin",
     "USO": "Oil",
+    
+    # US Rates (new)
+    "SHY": "1-3Y Treasury ETF",
+    "FVX": "5Y Treasury Yield",
+    "TLH": "10-20Y Treasury ETF", 
+    "TYX": "30Y Treasury Yield",
+    
+    # Global Rates
+    "IGLT_L": "UK Gilts ETF",
+    "IBGL_L": "Germany Bund ETF", 
+    "BNDX": "Intl Bond ex-US",
+    "EMB": "Emerging Market Bonds",
+    "BWX": "Intl Treasury Bond",
+    "IGOV": "Intl Govt Bond ETF",
+    
+    # Global Equity Indices
+    "FTSE": "UK FTSE 100",
+    "GDAXI": "Germany DAX",
+    "N225": "Japan Nikkei 225",
+    "000001_SS": "China Shanghai Composite",
+    "FCHI": "France CAC 40",
+    "STOXX50E": "Euro Stoxx 50",
+    "HSI": "Hong Kong Hang Seng",
+    "BSESN": "India BSE Sensex",
+    "BVSP": "Brazil Bovespa",
+    "KS11": "South Korea KOSPI",
+    
+    # Country ETFs
+    "EWC": "Canada ETF",
+    "EWA": "Australia ETF", 
+    "EWW": "Mexico ETF",
+    "EWT": "Taiwan ETF",
+    "EIDO": "Indonesia ETF",
+    "TUR": "Turkey ETF",
+    "EZA": "South Africa ETF",
+    "KSA": "Saudi Arabia ETF",
+    "EWL": "Switzerland ETF",
+    "EWS": "Singapore ETF",
+    
+    # Additional Commodities
+    "NG_F": "Natural Gas",
 }
 
 

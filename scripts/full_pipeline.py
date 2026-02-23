@@ -63,7 +63,7 @@ n_short = (markets['exposure_direction'] == 'short').sum()
 avg_conf = markets['exposure_confidence'].mean()
 logger.info(f"Exposure: {n_long:,} long, {n_short:,} short ({n_short/(n_long+n_short)*100:.1f}% short), avg confidence={avg_conf:.2f}")
 
-# ─── STEP 1: Four-Layer Taxonomy (CUSIP → Ticker → Event) ────────────────────
+# ─── STEP 1: Four-Layer Taxonomy (Theme ← Event ← Ticker ← CUSIP) ────────────────────
 
 logger.info("\n=== STEP 1: Four-Layer Taxonomy ===")
 
@@ -88,7 +88,7 @@ event_ticker_counts = markets.groupby('event')['ticker_extracted'].nunique()
 binary_events = (event_ticker_counts == 1).sum()
 categorical_events = (event_ticker_counts > 1).sum()
 
-logger.info(f"CUSIPs: {n_cusips:,} → Tickers: {n_tickers:,} → Events: {n_events:,}")
+logger.info(f"Aggregation: {n_cusips:,} CUSIPs → {n_tickers:,} Tickers → {n_events:,} Events")
 logger.info(f"Binary: {binary_events:,}, Categorical: {categorical_events:,}")
 
 # ─── STEP 2: Classification Pipeline ─────────────────────────────────────────
@@ -613,7 +613,7 @@ bars = ax.bar(compression.keys(), compression.values(), color=[COLORS[0], COLORS
 for bar, val in zip(bars, compression.values()):
     ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 200, f'{val:,}', ha='center', fontsize=12, fontweight='bold')
 ax.set_ylabel('Count')
-ax.set_title('Taxonomy Compression: CUSIP → Ticker → Event')
+ax.set_title('Taxonomy Aggregation: CUSIPs → Tickers → Events')
 plt.tight_layout()
 add_date_watermark(fig)
 fig.savefig(CHART_DIR / 'taxonomy_compression.png', dpi=150)
@@ -887,7 +887,7 @@ research_md = f"""# RESEARCH.md — Prediction Market Thematic Baskets
 
 This research implements thematic baskets for prediction markets — investable indices that track macro themes like US Elections, Fed Policy, Crypto, AI, and Geopolitics. We solve three key problems:
 
-1. **Taxonomy**: A four-layer CUSIP → Ticker → Event → Theme hierarchy that deduplicates categorical markets and compresses {n_cusips:,} individual markets into {n_events:,} events.
+1. **Taxonomy**: A four-layer Theme → Event → Ticker → CUSIP hierarchy that deduplicates categorical markets and aggregates {n_cusips:,} individual contracts into {n_events:,} events.
 2. **Classification**: LLM-based event classification (GPT-4o-mini) validated against statistical clustering (Spearman correlation + Ward linkage).
 3. **Returns**: Absolute probability change (not percentage change), which correctly measures prediction market performance.
 
@@ -895,7 +895,7 @@ This research implements thematic baskets for prediction markets — investable 
 
 4. **Exposure normalization**: LLM-based side detection (GPT-4o-mini) classifies all {len(markets):,} markets as long or short exposure, enabling direction-adjusted returns and conflict-free basket construction.
 
-## 2. The CUSIP → Ticker → Event → Theme Taxonomy
+## 2. The Four-Layer Taxonomy: Theme → Event → Ticker → CUSIP
 
 | Layer | Analogy | Count | Description |
 |-------|---------|-------|-------------|
@@ -904,7 +904,7 @@ This research implements thematic baskets for prediction markets — investable 
 | **Event** | Underlying asset | {n_events:,} | Parent question grouping related tickers |
 | **Theme** | Sector/Index | {(theme_event_counts > 0).sum()} | Macro classification for basket construction |
 
-**Compression**: {n_cusips:,} CUSIPs → {n_tickers:,} Tickers ({n_cusips/n_tickers:.1f}×) → {n_events:,} Events ({n_tickers/n_events:.1f}×)
+**Aggregation**: {n_cusips:,} CUSIPs → {n_tickers:,} Tickers ({n_cusips/n_tickers:.1f}×) → {n_events:,} Events ({n_tickers/n_events:.1f}×)
 
 - **Binary events** ({binary_events:,}): 1 ticker = 1 event (e.g., "Will the Fed cut rates in March?")
 - **Categorical events** ({categorical_events:,}): Multiple tickers per event (e.g., "Who wins the Hart Trophy?" with McDavid, MacKinnon, etc.)

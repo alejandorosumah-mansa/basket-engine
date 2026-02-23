@@ -1,10 +1,16 @@
-"""Four Layer Taxonomy: CUSIP → Ticker → Event → Theme
+"""Four Layer Taxonomy: Theme → Event → Ticker → CUSIP
 
-CORRECTED HIERARCHY (Bottom-Up):
-1. CUSIP: Individual market instance with specific time/date
-2. Ticker: Outcome level, stripped of time  
-3. Event: Parent question (can have multiple tickers for categorical events)
-4. Theme: Classification applied at EVENT level for basket construction
+CORRECTED HIERARCHY (Top-Down):
+1. Theme: Macro category (e.g., "Central Banks & Monetary Policy") 
+2. Event: Broader question (e.g., "Fed Rate Decision")
+3. Ticker: Recurring market concept without expiration (e.g., "Will Fed cut 50bps?")  
+4. CUSIP: Specific contract WITH expiration date (e.g., "Will Fed cut 50bps in March 2025?")
+
+BOTTOM-UP CONSTRUCTION:
+- CUSIP: Individual market instance with specific time/date (what Polymarket calls market/condition_id)
+- Ticker: Outcome level, stripped of time (recurring concept)
+- Event: Parent question (can have multiple tickers for categorical events)
+- Theme: Classification applied at EVENT level for basket construction
 
 KEY RULES:
 - Binary events: 1 ticker per event (ticker = event)
@@ -40,7 +46,7 @@ logger = logging.getLogger(__name__)
 
 
 class FourLayerTaxonomy:
-    """Implements the corrected CUSIP → Ticker → Event → Theme hierarchy."""
+    """Implements the corrected Theme → Event → Ticker → CUSIP hierarchy (bottom-up construction)."""
     
     def __init__(self):
         self.taxonomy = load_taxonomy()

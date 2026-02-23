@@ -2,7 +2,7 @@
 
 ## 1. Executive Summary
 
-We construct diversified baskets of prediction market contracts using a factor-informed approach that moves beyond naive thematic grouping. By decomposing 2,666 individual prediction markets against 9 external macro factors, clustering markets by their factor loading vectors, and applying risk-parity weighting, we produce 8 baskets with near-zero cross-correlation (mean pairwise ρ = -0.02) and near-zero correlation with traditional assets (|ρ| < 0.10 vs SPY, GLD, BTC, TLT).
+We construct diversified baskets of prediction market contracts using a factor-informed approach that moves beyond naive thematic grouping. By decomposing 2,666 individual prediction markets against 41 external macro factors spanning US rates, global equities, international bonds, and commodities, clustering markets by their factor loading vectors, and applying risk-parity weighting, we produce 8 baskets with near-zero cross-correlation (mean pairwise ρ = -0.02) and near-zero correlation with traditional assets (|ρ| < 0.10 vs SPY, GLD, BTC, TLT).
 
 The key insight: prediction markets, as a novel asset class, offer genuine diversification precisely because their returns are driven by idiosyncratic event resolution rather than systematic macro factors. A 10% allocation to our factor-informed prediction market baskets within a 60/40 portfolio reduces portfolio volatility by ~10% and maximum drawdown by ~10%, while marginally reducing expected return.
 
@@ -42,11 +42,13 @@ We ingest market data from Polymarket's CLOB API:
 
 ### 3.3 External Benchmarks
 
-We use 10 benchmark series as external factors:
+We use 41 benchmark series as external factors, expanding from the original 10 to capture global market dynamics:
 
+**Original US-Centric Factors (10):**
 | Ticker | Asset | Role |
 |--------|-------|------|
 | SPY | S&P 500 ETF | Equity market |
+| QQQ | Nasdaq-100 ETF | Growth/tech |
 | TLT | 20+ Year Treasury ETF | Long-duration bonds |
 | GLD | Gold ETF | Safe haven |
 | VIX | CBOE Volatility Index | Fear gauge |
@@ -55,22 +57,70 @@ We use 10 benchmark series as external factors:
 | DX_Y_NYB | US Dollar Index | Currency strength |
 | USO | United States Oil Fund | Energy/inflation |
 | BTC_USD | Bitcoin | Crypto sentiment |
-| QQQ | Nasdaq-100 ETF | Growth/tech |
+
+**Expanded US Rates (4 new):**
+| SHY | 1-3Y Treasury ETF | Short-duration bonds |
+| FVX | 5Y Treasury Yield | Medium-term rates |
+| TLH | 10-20Y Treasury ETF | Long-duration bonds |
+| TYX | 30Y Treasury Yield | Ultra-long rates |
+
+**Global Rates (6):**
+| IGLT.L | UK Gilts ETF | UK government bonds |
+| IBGL.L | Germany Bund ETF | German government bonds |
+| BNDX | International Bond ex-US | Global developed bonds |
+| EMB | Emerging Market Bonds | EM sovereign debt |
+| BWX | International Treasury Bond | Global treasuries |
+| IGOV | International Government Bond | Global government debt |
+
+**Global Equity Indices (10):**
+| ^FTSE | UK FTSE 100 | UK equity market |
+| ^GDAXI | Germany DAX | German equity market |
+| ^N225 | Japan Nikkei 225 | Japanese equity market |
+| 000001.SS | Shanghai Composite | Chinese equity market |
+| ^FCHI | France CAC 40 | French equity market |
+| ^STOXX50E | Euro Stoxx 50 | European equity market |
+| ^HSI | Hong Kong Hang Seng | Hong Kong equity market |
+| ^BSESN | India BSE Sensex | Indian equity market |
+| ^BVSP | Brazil Bovespa | Brazilian equity market |
+| ^KS11 | South Korea KOSPI | Korean equity market |
+
+**Country ETFs (10):**
+| EWC, EWA, EWW, EWT | Canada, Australia, Mexico, Taiwan | Regional exposure |
+| EIDO, TUR, EZA, KSA | Indonesia, Turkey, South Africa, Saudi Arabia | Emerging markets |
+| EWL, EWS | Switzerland, Singapore | Developed markets |
+
+**Additional Commodities (1):**
+| NG=F | Natural Gas | Energy markets |
 
 ## 4. Market Taxonomy
 
-### 4.1 Event Structure
+### 4.1 Hierarchical Structure
 
-Prediction markets follow a hierarchical structure:
+Prediction markets follow a four-layer hierarchical structure:
 ```
-Platform → Event Slug → Market (Ticker) → Daily Price
+Theme → Event → Ticker → CUSIP
 ```
 
-A single event (e.g., `fed-decision-in-march`) may have multiple tickers:
-- "Fed cuts by 50+ bps"
-- "Fed cuts by 25 bps"  
-- "No change in Fed rates"
-- "Fed raises rates"
+**Definitions:**
+- **CUSIP**: Specific contract WITH expiration date (e.g., "Will Fed cut 50bps in March 2025?"). This is what Polymarket calls a market/condition_id. It resolves on a specific date to 0 or 1.
+- **Ticker**: Recurring market concept WITHOUT expiration (e.g., "Will Fed cut 50bps?"). Multiple CUSIPs belong to the same Ticker over time as new expiration dates become available.
+- **Event**: Broader question grouping multiple related Tickers (e.g., "Fed rate decision" or "What will the Fed do with rates?").
+- **Theme**: Macro category (e.g., "Central Banks & Monetary Policy").
+
+**Example hierarchy:**
+```
+Central Banks & Monetary Policy (Theme)
+└─ Fed Rate Decision (Event)
+   ├─ Will Fed cut 25bps? (Ticker)
+   │  ├─ Will Fed cut 25bps in March 2025? (CUSIP)
+   │  ├─ Will Fed cut 25bps in June 2025? (CUSIP)
+   │  └─ Will Fed cut 25bps in September 2025? (CUSIP)
+   └─ Will Fed cut 50bps? (Ticker)
+      ├─ Will Fed cut 50bps in March 2025? (CUSIP)
+      └─ Will Fed cut 50bps in June 2025? (CUSIP)
+```
+
+A Ticker spawns new CUSIPs over time as new expiration dates become available. When one CUSIP resolves, the next one for that Ticker is typically already trading.
 
 ### 4.2 Categorical Events
 
@@ -123,25 +173,31 @@ For each market with ≥30 days of overlapping data with benchmarks, we estimate
 r_i,t = α_i + Σ β_i,k × f_k,t + ε_i,t
 ```
 
-Where `r_i,t` is the daily price change of market `i`, `f_k,t` are standardized daily returns of the 9 external factors, and `ε_i,t` is the idiosyncratic residual.
+Where `r_i,t` is the daily price change of market `i`, `f_k,t` are standardized daily returns of the 41 external factors, and `ε_i,t` is the idiosyncratic residual.
+
+**Regularization:** With 41 factors, we use Ridge regression (L2 regularization, α=1.0) instead of OLS to prevent overfitting. Ridge automatically down-weights correlated factors while preserving the factor loading structure needed for clustering.
 
 ### 6.2 Key Findings
 
 | Metric | Value |
 |--------|-------|
 | Markets with loadings | 2,666 |
-| Mean R² | 0.108 |
-| Median R² | 0.071 |
-| Markets with R² > 0.10 | 996 (37%) |
-| Mean idiosyncratic vol (annualized) | 35.3% |
+| Mean R² | 0.395 |
+| Median R² | 0.338 |
+| Markets with R² > 0.10 | 2,474 (93%) |
+| Mean idiosyncratic vol (annualized) | 26.5% |
 
-**Factor significance (markets with |t| > 1.96):**
+**Most significant factor loadings (Ridge regression, no t-stats):**
 
-| Factor | Significant Markets | Mean β |
-|--------|-------------------|---------|
-| IRX (short rates) | 212 (8.0%) | +0.0004 |
-| TNX (10Y yield) | 183 (6.9%) | -0.0008 |
-| TLT (long bonds) | 170 (6.4%) | -0.0007 |
+| Factor | Mean β | Factor Type |
+|--------|--------|-------------|
+| IRX (3M T-Bills) | +0.0006 | US short rates |
+| EWC (Canada ETF) | +0.0006 | Country exposure |
+| QQQ (Nasdaq-100) | +0.0004 | US tech/growth |
+| STOXX50E (Euro Stoxx) | +0.0004 | European equity |
+| KS11 (Korea KOSPI) | +0.0003 | Asian equity |
+| TLH (10-20Y Treasury) | -0.0006 | US duration |
+| TNX (10Y Yield) | -0.0006 | US rates |
 | SPY (equities) | 166 (6.2%) | +0.0003 |
 | VIX (volatility) | 166 (6.2%) | +0.0001 |
 | USO (oil) | 159 (6.0%) | -0.0000 |
@@ -244,7 +300,7 @@ The Sharpe ratio declines marginally (0.93 → 0.84) due to the negative expecte
 
 ### 9.2 Factor Orthogonality
 
-The low R² in our factor model (mean 0.108, median 0.071) demonstrates that prediction markets are structurally different from traditional assets. Only 37% of markets show R² > 0.10 against all 9 macro factors combined. This is by design: prediction market prices are driven by Bayesian updating on event-specific information, not by systematic risk premia.
+**Expanded Factor Analysis Results:** With 41 macro factors spanning global markets, the mean R² increased dramatically to 0.395 (median 0.338), with 93% of markets now showing R² > 0.10. This suggests that global equity indices, international bonds, and regional ETFs explain significantly more variance in prediction market returns than the original 9 US-centric factors. However, the majority of variance (60%+) remains idiosyncratic, confirming that prediction markets are driven primarily by event-specific information rather than systematic risk premia. The higher explained variance with global factors likely reflects that many prediction markets cover international events (elections, policy decisions, etc.) that correlate with local market conditions.
 
 ## 10. Portfolio Construction Implications
 
@@ -281,6 +337,31 @@ Monthly rebalancing with ~10bps transaction costs reduces annualized return by ~
 3. **Conditional correlations**: Stress-test whether PM diversification holds during market crises
 4. **Market-making alpha**: Explore providing liquidity as a return source rather than holding positions
 5. **Categorical market integration**: Full integration of semantic exposure layer into portfolio optimization
+
+## 11. Limitations and Next Steps
+
+### 11.1 Contract Rolling Limitation
+
+**Critical backtest limitation**: The current backtest treats CUSIPs as static holdings that simply disappear when they resolve. It does NOT roll into the next CUSIP for the same Ticker, which is what a real portfolio would do to maintain Event/Ticker exposure.
+
+**Example problem**: A basket holds "Will Fed cut 50bps in March 2025?" (CUSIP). When this resolves in March, the position vanishes. A real portfolio would immediately roll into "Will Fed cut 50bps in June 2025?" to maintain the same Ticker exposure.
+
+**Impact**: This causes baskets to shrink over time as CUSIPs resolve, creating an artificial negative drag that doesn't reflect reality. The true diversification benefit of prediction markets can only be captured with proper contract rolling.
+
+**Next step**: Implement contract rolling logic:
+1. Map each CUSIP to its parent Ticker
+2. When a CUSIP resolves, automatically roll the position into the next available CUSIP for the same Ticker
+3. If no next CUSIP exists, roll into the most similar Ticker within the same Event
+4. Weight by remaining time to expiration to avoid concentration in near-term contracts
+
+This is the most important enhancement needed for realistic portfolio performance assessment.
+
+### 11.2 Other Limitations
+
+- **Static factor loadings**: Factor exposures estimated on historical data may not persist forward
+- **Transaction costs**: 10bps assumption may be conservative for large trades or illiquid markets
+- **Capacity constraints**: No modeling of market depth or price impact from large allocations
+- **Resolution uncertainty**: Some markets resolve ambiguously or are canceled, not modeled in backtest
 
 ## 12. Appendix
 

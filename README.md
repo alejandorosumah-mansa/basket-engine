@@ -9,18 +9,18 @@ Takes raw prediction market data and answers: **can you build diversified basket
 The pipeline:
 
 1. **Ingest** 20,180 markets from Polymarket (+ 175 Kalshi)
-2. **Classify** into a four-layer taxonomy: CUSIP → Ticker → Event → Theme
+2. **Classify** into a four-layer taxonomy: Theme → Event → Ticker → CUSIP
 3. **Detect exposure** (long/short side) for each market using LLM
 4. **Map categorical events** to economic factor vectors (semantic exposure layer)
-5. **Regress** each market's returns against 9 macro factors (Barra-style)
+5. **Regress** each market's returns against 41 macro factors (Barra-style with Ridge regularization)
 6. **Cluster** markets by factor loading similarity (k-means, k=8)
 7. **Construct baskets** from clusters with risk-parity weighting
 8. **Backtest** against SPY, GLD, BTC, TLT, 60/40 portfolios
 
 ## Key Findings
 
-- **Prediction markets are genuinely uncorrelated with traditional assets.** Mean R² = 0.108 against 9 macro factors. Max |ρ| = 0.10 vs SPY/GLD/BTC/TLT.
-- **69% of markets are idiosyncratic.** They don't load on any macro factor, which is exactly what makes them valuable for diversification.
+- **Expanded factor universe reveals higher systematic risk.** Mean R² = 0.395 against 41 global macro factors (vs 0.108 with 9 US factors). 93% of markets now show R² > 0.10, suggesting global events correlate with international market conditions.
+- **60%+ of variance remains idiosyncratic.** Even with comprehensive global factor coverage, prediction markets retain substantial diversification benefits.
 - **Adding 10% PM allocation to 60/40 reduces volatility by ~10% and max drawdown by ~10%**, at the cost of ~1.7pp return drag.
 - **Standalone PM baskets have negative expected returns** (-10% to -13% annualized) due to time decay in probability-bounded contracts. The value is in portfolio diversification, not standalone alpha.
 
@@ -40,16 +40,22 @@ The pipeline:
 
 ## Taxonomy
 
-Bottom-up hierarchy, classification happens at the **Event** level:
+Four-layer hierarchy, classification happens at the **Event** level:
 
 ```
-CUSIP (unique contract ID)
-  └─ Ticker (tradeable market, e.g. "Will Fed cut 50bps in March?")
-       └─ Event (group of related tickers, e.g. "Fed March 2025 Decision")
-            └─ Theme (macro category, e.g. "Central Banks & Monetary Policy")
+Theme (macro category, e.g. "Central Banks & Monetary Policy")
+  └─ Event (broader question, e.g. "Fed Rate Decision")
+       └─ Ticker (recurring concept, e.g. "Will Fed cut 50bps?")
+            └─ CUSIP (specific contract with expiration, e.g. "Will Fed cut 50bps in March 2025?")
 ```
 
-- **Binary events:** 1 ticker per event
+**Key distinctions:**
+- **CUSIP**: Specific contract WITH expiration date. Resolves on a specific date. What Polymarket calls market/condition_id.
+- **Ticker**: Recurring market concept WITHOUT expiration. Multiple CUSIPs belong to the same Ticker over time.
+- **Event**: Groups multiple related Tickers (e.g., different rate cut sizes for the same meeting).
+- **Theme**: Macro category for portfolio allocation.
+
+- **Binary events:** 1 ticker per event  
 - **Categorical events:** Multiple tickers per event (e.g., "Who will be Fed Chair?" has one ticker per candidate)
 - **14 themes**, 6,769 events classified, 0.5% uncategorized
 
