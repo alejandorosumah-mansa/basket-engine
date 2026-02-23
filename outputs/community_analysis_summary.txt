@@ -1,0 +1,33 @@
+# Community Analysis Summary
+Total communities: 378
+Total markets: 1933
+
+## Community Size Distribution
+- Largest community: 365 markets
+- Median community size: 2.0 markets
+- Mean community size: 5.1 markets
+- Communities with 1 market: 109
+- Communities with >10 markets: 27
+- Communities with >50 markets: 2
+
+## Top 20 Largest Communities:
+ 1. Community 1: OpenAI IPO Market Cap Prediction (365 markets)
+ 2. Community 2: Mistral AI Model Performance Predictions (259 markets)
+ 3. Community 38: Future Digital Asset Valuations (32 markets)
+ 4. Community 81: Trump Resignation Prediction Market (29 markets)
+ 5. Community 184: Community 184 (24 markets)
+ 6. Community 33: Bitcoin and Ethereum Price Predictions (21 markets)
+ 7. Community 195: Community 195 (20 markets)
+ 8. Community 59: Fed Interest Rate Change Predictions (20 markets)
+ 9. Community 83: Iran Strike Predictions Timeline (20 markets)
+10. Community 151: 2024 US Election Nomination Predictions (18 markets)
+11. Community 185: Community 185 (16 markets)
+12. Community 15: China Military Clashes with Neighbors (16 markets)
+13. Community 60: Fed Chair Nominations and Rate Predictions (16 markets)
+14. Community 164: Venezuela Leadership and Intervention Predictions (14 markets)
+15. Community 10: AI Model Competition and Investment Predictions (14 markets)
+16. Community 100: Russia-Ukraine Territorial and Peace Predictions (13 markets)
+17. Community 4: AI Market Performance and Predictions (12 markets)
+18. Community 91: Israel-Iran Strike Timeline Predictions (12 markets)
+19. Community 20: China Cryptocurrency and Social Media Policies (12 markets)
+20. Community 16: Xi Jinping's Political Future Predictions (12 markets)
