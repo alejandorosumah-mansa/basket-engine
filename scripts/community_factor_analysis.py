@@ -144,52 +144,85 @@ def create_heatmap(community_factor_corr, output_path='outputs/community_factor_
     """Create heatmap of community × factor correlations."""
     print("Creating correlation heatmap...")
     
-    # TRANSPOSE: factors on y-axis (many rows), communities on x-axis (few columns)
-    # This gives each cell more space and makes labels readable
-    plot_data = community_factor_corr.T  # factors × communities
+    # Group factors by asset class for organized display
+    factor_groups = {
+        'US Equities': ['SPY', 'QQQ', 'IWM', 'DIA'],
+        'Global Equities': ['GDAXI', 'FTSE', 'N225', 'HSI', 'FCHI', 'STOXX50E', 'BSESN', 'GSPTSE', 'AS51', 'KS11'],
+        'Country ETFs': ['EWZ', 'EWJ', 'FXI', 'EWG', 'EWU', 'EWA', 'EWC', 'EWY', 'EWT', 'KSA'],
+        'Bonds': ['TLT', 'IEF', 'SHY', 'HYG', 'LQD', 'BWX', 'EMB'],
+        'US Yield Curve': [c for c in community_factor_corr.columns if c.startswith('US') or 'Y' in c and c not in ['EWY']],
+        'Commodities': ['GLD', 'USO', 'UNG', 'DBA'],
+        'Crypto & Vol': ['BTC_USD', 'ETH_USD', 'VIX'],
+        'Currency': ['DX_Y_NYB', 'UUP'],
+    }
     
-    n_communities = len(plot_data.columns)
-    n_factors = len(plot_data.index)
+    # Flatten and keep only factors that exist
+    all_factors = community_factor_corr.columns.tolist()
+    ordered_factors = []
+    group_boundaries = []
+    group_labels = []
+    for group_name, factors in factor_groups.items():
+        group_start = len(ordered_factors)
+        for f in factors:
+            if f in all_factors:
+                ordered_factors.append(f)
+        if len(ordered_factors) > group_start:
+            group_boundaries.append((group_start, len(ordered_factors)))
+            group_labels.append(group_name)
+    # Add any remaining factors
+    remaining = [f for f in all_factors if f not in ordered_factors]
+    if remaining:
+        group_boundaries.append((len(ordered_factors), len(ordered_factors) + len(remaining)))
+        group_labels.append('Other')
+        ordered_factors.extend(remaining)
     
-    # Size: wide enough for community columns, tall enough for factor rows
-    cell_size = 1.2
-    fig, ax = plt.subplots(figsize=(n_communities * cell_size + 6, n_factors * cell_size + 3))
+    # Reorder and keep communities on rows, factors on columns
+    plot_data = community_factor_corr[ordered_factors]
+    
+    n_communities = len(plot_data.index)
+    n_factors = len(plot_data.columns)
+    
+    # Wide horizontal layout: communities as rows (few), factors as columns (many)
+    fig, ax = plt.subplots(figsize=(n_factors * 0.7 + 4, n_communities * 1.5 + 5))
     fig.patch.set_facecolor('#0d1117')
     ax.set_facecolor('#0d1117')
     
-    # Tighten color scale to amplify small differences
+    # Tighten color scale
     vmax = max(abs(plot_data.min().min()), abs(plot_data.max().max()))
-    vmax = min(vmax * 1.1, 0.30)  # cap at 0.30 for contrast
+    vmax = min(vmax * 1.1, 0.30)
     
-    mask = plot_data.isna()
+    # NO annotations — just color. Clean and readable.
     sns.heatmap(
         plot_data,
-        mask=mask,
         cmap='RdBu_r',
         center=0,
         vmin=-vmax,
         vmax=vmax,
-        annot=True,
-        fmt='.3f',
-        annot_kws={'size': 13, 'weight': 'bold'},
-        cbar_kws={'label': 'Correlation', 'shrink': 0.6},
+        annot=False,
+        cbar_kws={'label': 'Correlation', 'shrink': 0.5, 'pad': 0.02},
         square=True,
-        linewidths=1,
+        linewidths=0.5,
         linecolor='#1a1a2e',
         ax=ax
     )
     
-    ax.set_title('Risk Factor × Community Basket Correlations', pad=25, fontsize=24, fontweight='bold', color='white')
-    ax.set_xlabel('Community Baskets', labelpad=15, fontsize=18, color='white')
-    ax.set_ylabel('Risk Factors', labelpad=15, fontsize=18, color='white')
-    ax.tick_params(axis='x', rotation=35, labelsize=13, colors='white')
-    ax.tick_params(axis='y', rotation=0, labelsize=14, colors='white')
-    plt.setp(ax.get_xticklabels(), ha='right')
+    ax.set_title('Community Basket × Risk Factor Correlations', pad=30, fontsize=20, fontweight='bold', color='white')
+    ax.tick_params(axis='x', rotation=90, labelsize=11, colors='white')
+    ax.tick_params(axis='y', rotation=0, labelsize=12, colors='white')
+    ax.set_xlabel('')
+    ax.set_ylabel('')
+    
+    # Add asset class group separators and labels
+    for (start, end), label in zip(group_boundaries, group_labels):
+        ax.axvline(x=start, color='white', linewidth=1.5, alpha=0.4)
+        mid = (start + end) / 2
+        ax.text(mid, -0.8, label, ha='center', va='top', fontsize=9, color='#8b949e',
+                fontweight='bold', transform=ax.get_xaxis_transform())
     
     # Style colorbar
     cbar = ax.collections[0].colorbar
-    cbar.ax.tick_params(labelsize=12, colors='white')
-    cbar.set_label('Correlation', fontsize=14, color='white')
+    cbar.ax.tick_params(labelsize=11, colors='white')
+    cbar.set_label('Correlation', fontsize=13, color='white')
     
     plt.tight_layout()
     
