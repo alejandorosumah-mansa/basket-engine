@@ -48,6 +48,8 @@ These emerged from the data, not imposed manually:
 
 Modularity score: 0.411 (strong community structure). Max inter-basket correlation: 0.276.
 
+![Community Sizes](data/outputs/charts/03_community_sizes.png)
+
 ### 41-factor model confirms diversification
 
 Expanded from 9 to 41 external factors (full US yield curve, global equities, global bonds, commodities). Uses Ridge regression to handle multicollinearity.
@@ -58,6 +60,9 @@ Expanded from 9 to 41 external factors (full US yield curve, global equities, gl
 | High R² markets (>0.10) | 37% | 93% |
 
 Even with 41 global factors, 60%+ of prediction market variance remains idiosyncratic. International markets explain more than US-only, but prediction markets are still fundamentally event-driven.
+
+![R² Distribution](data/outputs/charts/02_r2_distribution.png)
+![Method Comparison](data/outputs/charts/05_method_comparison.png)
 
 ### Portfolio value
 
@@ -173,6 +178,14 @@ data/
 pytest              # 239+ tests
 pytest tests/ -v    # Verbose
 ```
+
+![Backtest NAV](data/outputs/charts/06_backtest_nav.png)
+![Benchmark Correlation](data/outputs/charts/07_benchmark_correlation.png)
+![Risk Parity Weights](data/outputs/charts/08_risk_parity_weights.png)
+![Basket Correlations](data/outputs/charts/04_basket_correlations.png)
+![Semantic Exposures](data/outputs/charts/09_semantic_exposures.png)
+![Metrics Comparison](data/outputs/charts/10_metrics_comparison.png)
+![Coverage Funnel](data/outputs/charts/01_coverage_funnel.png)
 
 ## Known Limitations
 
