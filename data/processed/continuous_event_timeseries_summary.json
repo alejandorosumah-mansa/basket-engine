@@ -1,0 +1,46 @@
+{
+  "total_events": 4,
+  "total_data_points": 455,
+  "date_range": {
+    "start": "2025-08-25T07:00:00",
+    "end": "2026-02-21T08:00:00"
+  },
+  "events": {
+    "will-metamask-launch-a-token-in-2025": {
+      "data_points": 104,
+      "duration_days": 103,
+      "start_date": "2025-09-20T07:00:00",
+      "end_date": "2026-01-01T08:00:00",
+      "contracts_used": 1,
+      "avg_price": 0.12076538461538461,
+      "price_volatility": 0.14092482039631674
+    },
+    "us-x-venezuela-military-engagement-by": {
+      "data_points": 134,
+      "duration_days": 133,
+      "start_date": "2025-08-25T07:00:00",
+      "end_date": "2026-01-05T08:00:00",
+      "contracts_used": 3,
+      "avg_price": 0.6138626865671641,
+      "price_volatility": 0.2994059395575715
+    },
+    "maduro-out-in-2025": {
+      "data_points": 62,
+      "duration_days": 61,
+      "start_date": "2025-11-04T08:00:00",
+      "end_date": "2026-01-04T08:00:00",
+      "contracts_used": 3,
+      "avg_price": 0.5070516129032259,
+      "price_volatility": 0.4387532424771823
+    },
+    "megaeth-market-cap-fdv-one-day-after-launch": {
+      "data_points": 155,
+      "duration_days": 178,
+      "start_date": "2025-08-27T07:00:00",
+      "end_date": "2026-02-21T08:00:00",
+      "contracts_used": 1,
+      "avg_price": 0.3725677419354839,
+      "price_volatility": 0.24060716081566882
+    }
+  }
+}
