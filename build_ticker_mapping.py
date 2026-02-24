@@ -11,14 +11,15 @@ The hierarchy is: Theme → Event → Ticker → CUSIP
 - Same Ticker spawns multiple CUSIPs across time periods
 
 Methodology:
-1. Normalize titles to Ticker concepts using regex
-2. Fuzzy deduplication of normalized titles
+1. Normalize titles to Ticker concepts using aggressive regex
+2. Exact matching of normalized titles (no fuzzy matching)
 3. Assign Ticker IDs and map CUSIPs
 4. Build rollable chains sorted by end_date
 5. Output mapping files and statistics
 6. Validate results
 
-NO LLM for matching - Pure regex + fuzzy string matching.
+NO LLM for matching - Pure regex normalization + exact string matching.
+This prevents over-grouping different outcomes (e.g., "25 bps" vs "50+ bps").
 """
 
 import pandas as pd
@@ -28,7 +29,6 @@ import json
 import uuid
 from datetime import datetime
 from pathlib import Path
-from rapidfuzz import fuzz
 from collections import defaultdict
 import logging
 
@@ -60,112 +60,120 @@ class TickerMapper:
         """
         Normalize market title to recurring Ticker concept.
         
-        Strips time-specific parts:
+        Strips time-specific parts but preserves distinguishing features:
         - Month names with optional year
-        - Years (2024, 2025, 2026, etc.)
+        - Years (2024, 2025, 2026, etc.) 
         - Quarter references (Q1, Q2, etc.)
         - Relative time phrases
         - Meeting-specific references
+        
+        KEEPS distinguishing features like rate amounts (25 bps vs 50+ bps),
+        direction (increase vs decrease), price targets ($100K vs $50K), etc.
         """
         if pd.isna(title):
             return ""
             
         normalized = str(title)
         
-        # Month names with optional year patterns
-        month_patterns = [
-            r'\b(January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{4}\b',
-            r'\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+\d{4}\b',
-            r'\b(January|February|March|April|May|June|July|August|September|October|November|December)\b',
-            r'\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\b'
-        ]
+        # More comprehensive month patterns with year
+        # Handle "after the [Month] [Year] meeting" → "after the meeting"
+        normalized = re.sub(
+            r'\bafter\s+the\s+(January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{4}\s+meeting\b', 
+            'after the meeting', normalized, flags=re.IGNORECASE)
+        normalized = re.sub(
+            r'\bafter\s+the\s+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+\d{4}\s+meeting\b', 
+            'after the meeting', normalized, flags=re.IGNORECASE)
         
-        for pattern in month_patterns:
-            normalized = re.sub(pattern, 'MONTH', normalized, flags=re.IGNORECASE)
+        # Handle "by [Month] [Day]" → "by [timeframe]"  
+        normalized = re.sub(
+            r'\bby\s+(January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2}\b', 
+            'by [timeframe]', normalized, flags=re.IGNORECASE)
+        normalized = re.sub(
+            r'\bby\s+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+\d{1,2}\b', 
+            'by [timeframe]', normalized, flags=re.IGNORECASE)
             
-        # Year patterns (2024, 2025, 2026, etc.)
-        normalized = re.sub(r'\b20[2-9]\d\b', 'YEAR', normalized)
+        # Handle "after [Month] [Year] meeting" → "after meeting"
+        normalized = re.sub(
+            r'\bafter\s+(January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{4}\s+meeting\b', 
+            'after meeting', normalized, flags=re.IGNORECASE)
+        normalized = re.sub(
+            r'\bafter\s+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+\d{4}\s+meeting\b', 
+            'after meeting', normalized, flags=re.IGNORECASE)
+            
+        # Strip standalone month-year combinations
+        normalized = re.sub(
+            r'\b(January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{4}\b', 
+            '', normalized, flags=re.IGNORECASE)
+        normalized = re.sub(
+            r'\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+\d{4}\b', 
+            '', normalized, flags=re.IGNORECASE)
+            
+        # Strip standalone years (2024, 2025, 2026, etc.)
+        normalized = re.sub(r'\b20[2-9]\d\b', '', normalized)
         
+        # Strip "in [Year]" patterns
+        normalized = re.sub(r'\bin\s+20[2-9]\d\b', '', normalized)
+        
+        # Strip standalone months  
+        normalized = re.sub(
+            r'\b(January|February|March|April|May|June|July|August|September|October|November|December)\b', 
+            '', normalized, flags=re.IGNORECASE)
+        normalized = re.sub(
+            r'\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\b', 
+            '', normalized, flags=re.IGNORECASE)
+            
         # Quarter references
-        normalized = re.sub(r'\bQ[1-4]\b', 'QUARTER', normalized, flags=re.IGNORECASE)
+        normalized = re.sub(r'\bQ[1-4]\b', '', normalized, flags=re.IGNORECASE)
         
-        # Relative time phrases
-        time_phrases = [
-            r'\bafter\s+the\s+MONTH\s+meeting\b',
-            r'\bafter\s+the\s+MONTH\s+YEAR\s+meeting\b', 
-            r'\bby\s+MONTH\b',
-            r'\bby\s+MONTH\s+YEAR\b',
-            r'\bin\s+QUARTER\b',
-            r'\bin\s+YEAR\b',
-            r'\bfor\s+YEAR\b',
-            r'\bof\s+YEAR\b',
-            r'\bduring\s+YEAR\b',
-            r'\bbefore\s+YEAR\b',
-            r'\bafter\s+YEAR\b'
-        ]
+        # Handle specific meeting references but keep "meeting" if contextually important
+        normalized = re.sub(r'\bafter\s+(the\s+)?meeting\b', 'after meeting', normalized, flags=re.IGNORECASE)
         
-        for phrase_pattern in time_phrases:
-            normalized = re.sub(phrase_pattern, 'TIMEREF', normalized, flags=re.IGNORECASE)
-            
-        # Generic time references
-        normalized = re.sub(r'\bYEAR–YEAR\b', 'YEARRANGE', normalized)
-        normalized = re.sub(r'\bYEAR-YEAR\b', 'YEARRANGE', normalized)
+        # Strip "at the end of" time references but keep the core question
+        normalized = re.sub(r'\bat\s+the\s+end\s+of\s+20[2-9]\d\b', 'at the end', normalized, flags=re.IGNORECASE)
+        
+        # Strip "before [Year]" patterns  
+        normalized = re.sub(r'\bbefore\s+20[2-9]\d\b', 'before [year]', normalized, flags=re.IGNORECASE)
+        
+        # Strip "by [Year]" patterns
+        normalized = re.sub(r'\bby\s+20[2-9]\d\b', 'by [year]', normalized, flags=re.IGNORECASE)
+        
+        # Strip date ranges like "2024-2026", "2024–2026"
+        normalized = re.sub(r'\b20[2-9]\d[-–]20[2-9]\d\b', '[daterange]', normalized)
         
         # Clean up multiple spaces and trim
         normalized = re.sub(r'\s+', ' ', normalized).strip()
         
-        # Specific phrase normalizations for common patterns
-        normalized = re.sub(r'\bafter\s+meeting\b', 'after meeting', normalized, flags=re.IGNORECASE)
-        normalized = re.sub(r'\bMONTH\s+meeting\b', 'meeting', normalized, flags=re.IGNORECASE)
-        normalized = re.sub(r'\bthe\s+YEAR\s+', 'the ', normalized, flags=re.IGNORECASE)
-        normalized = re.sub(r'\bTIMEREF\s+', '', normalized)
-        
-        # Remove standalone time tokens
-        normalized = re.sub(r'\b(MONTH|YEAR|QUARTER|TIMEREF|YEARRANGE)\b', '', normalized)
-        normalized = re.sub(r'\s+', ' ', normalized).strip()
+        # Remove leading/trailing punctuation that might be left over
+        normalized = re.sub(r'^[^\w\$]+|[^\w\?\!]+$', '', normalized).strip()
         
         return normalized
         
-    def fuzzy_deduplicate(self, normalized_titles, threshold=90):
+    def exact_deduplicate(self, normalized_titles):
         """
-        Group near-identical normalized titles using fuzzy matching.
+        Group identical normalized titles using exact string matching.
+        
+        After aggressive regex normalization, only EXACTLY matching titles
+        should be considered the same Ticker. This prevents over-grouping
+        of different outcomes (e.g., "25 bps" vs "50+ bps", "increase" vs "decrease").
         
         Returns dict mapping original normalized title to canonical form.
         """
-        logger.info(f"Fuzzy deduplicating {len(normalized_titles)} normalized titles...")
+        logger.info(f"Exact deduplicating {len(normalized_titles)} normalized titles...")
         
         # Get unique normalized titles
         unique_titles = list(set(normalized_titles))
-        logger.info(f"Found {len(unique_titles)} unique normalized titles before fuzzy matching")
+        logger.info(f"Found {len(unique_titles)} unique normalized titles before exact matching")
         
-        # Group similar titles
-        title_groups = {}  # canonical -> [similar_titles]
-        title_to_canonical = {}  # title -> canonical
+        # For exact matching, each unique title is its own group
+        title_to_canonical = {}
         
         for title in unique_titles:
             if not title:  # Skip empty titles
                 continue
+            # Each title is its own canonical form
+            title_to_canonical[title] = title
                 
-            # Find best match among existing canonicals
-            best_match = None
-            best_score = 0
-            
-            for canonical in title_groups.keys():
-                score = fuzz.ratio(title, canonical)
-                if score > best_score:
-                    best_score = score
-                    best_match = canonical
-                    
-            # If good match found, add to that group
-            if best_score >= threshold and best_match:
-                title_groups[best_match].append(title)
-                title_to_canonical[title] = best_match
-            else:
-                # Create new group
-                title_groups[title] = [title]
-                title_to_canonical[title] = title
-                
-        logger.info(f"Fuzzy matching reduced {len(unique_titles)} titles to {len(title_groups)} groups")
+        logger.info(f"Exact matching kept all {len(unique_titles)} unique titles as separate tickers")
         
         # Return mapping for all original titles (including duplicates)
         result = {}
@@ -187,10 +195,10 @@ class TickerMapper:
         logger.info("Step 1: Normalizing titles...")
         self.markets['normalized_title'] = self.markets['title'].apply(self.normalize_title)
         
-        # Step 2: Fuzzy deduplicate
-        logger.info("Step 2: Fuzzy deduplication...")
+        # Step 2: Exact deduplicate (no fuzzy matching)
+        logger.info("Step 2: Exact deduplication...")
         normalized_titles = self.markets['normalized_title'].tolist()
-        title_to_canonical = self.fuzzy_deduplicate(normalized_titles, threshold=90)
+        title_to_canonical = self.exact_deduplicate(normalized_titles)
         
         # Apply canonical mapping
         self.markets['ticker_name'] = self.markets['normalized_title'].map(title_to_canonical)

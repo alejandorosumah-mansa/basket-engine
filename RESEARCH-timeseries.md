@@ -252,28 +252,30 @@ The comprehensive dataset enables researchers to study how collective intelligen
 
 ### Executive Summary
 
-Successfully implemented CUSIP → Ticker mapping using pure regex normalization and fuzzy string matching (no LLM). **Processed 20,180 markets into 9,483 unique tickers**, with **3,074 rollable tickers** (32.4%) having 2+ CUSIPs. This enables proper portfolio construction with contract rolling, addressing the critical limitation identified in Section 10 of RESEARCH.md.
+Successfully implemented CUSIP → Ticker mapping using aggressive regex normalization and **exact string matching** (no LLM, no fuzzy matching). **Processed 20,180 markets into 16,863 unique tickers**, with **2,018 rollable tickers** (12.0%) having 2+ CUSIPs. This **prevents over-grouping of different outcomes** (e.g., "25 bps" vs "50+ bps", "increase" vs "decrease") while enabling proper portfolio construction with contract rolling.
 
 ### Methodology
 
-**Step 1: Regex-Based Title Normalization**
-Stripped time-specific components from market titles:
+**Step 1: Aggressive Regex-Based Title Normalization**
+Stripped time-specific components while preserving distinguishing features:
 - Month names with optional years: `January 2026`, `March`, `Feb 2025`
 - Year patterns: `2024`, `2025`, `2026`, etc.
 - Quarter references: `Q1`, `Q2`, `Q3`, `Q4`
-- Relative time phrases: `after the March meeting`, `by June`, `in Q2`
-- Meeting-specific references and temporal anchors
+- Relative time phrases: `after the March 2026 meeting`, `by June`, `in Q2`
+- Meeting-specific references: `after the September meeting` → `after meeting`
+- **PRESERVES:** Rate amounts (`25 bps` vs `50+ bps`), directions (`increase` vs `decrease`), price targets (`$100K` vs `$50K`)
 
 **Example transformations:**
-- `Will Fed cut 25bps after March 2026 meeting?` → `Will Fed cut 25bps after meeting?`
-- `Will Fed cut 25bps after June 2026 meeting?` → `Will Fed cut 25bps after meeting?` (same Ticker)
-- `Will Bitcoin be above $90,000 on February 4?` → `Will Bitcoin be above $ on ?`
+- `Fed decreases rates by 25 bps after March 2026 meeting?` → `Fed decreases rates by 25 bps after meeting?`
+- `Fed decreases rates by 50+ bps after March 2026 meeting?` → `Fed decreases rates by 50+ bps after meeting?` (**different Ticker**)
+- `Fed increases rates by 25+ bps after March 2026 meeting?` → `Fed increases rates by 25+ bps after meeting?` (**different Ticker**)
 
-**Step 2: Fuzzy Deduplication**
-Applied fuzzy string matching with 90% similarity threshold using rapidfuzz:
-- Processed 17,094 unique normalized titles
-- Reduced to 9,483 groups through fuzzy matching
-- Grouped near-identical concepts like variations in phrasing, punctuation, spacing
+**Step 2: Exact String Matching (No Fuzzy Matching)**
+Applied exact string matching after normalization:
+- Each normalized title becomes its own Ticker unless EXACTLY identical
+- Prevents over-grouping of different outcomes
+- **Example:** "25 bps decrease" ≠ "50+ bps decrease" ≠ "25+ bps increase"
+- More Tickers with fewer CUSIPs each, but they're correctly separated
 
 **Step 3: Ticker ID Assignment**
 Each unique normalized concept received a sequential Ticker ID (`ticker_000001`, etc.) and canonical name.
@@ -289,10 +291,10 @@ For each Ticker:
 **Coverage Statistics:**
 - **Total markets processed:** 20,180
 - **Successfully mapped:** 20,180 (100% coverage)
-- **Unique tickers identified:** 9,483
-- **Rollable tickers (≥2 CUSIPs):** 3,074 (32.4%)
-- **Average CUSIPs per ticker:** 2.1
-- **Maximum CUSIPs per ticker:** 110
+- **Unique tickers identified:** 16,863 (78% increase from fuzzy matching)
+- **Rollable tickers (≥2 CUSIPs):** 2,018 (12.0%)
+- **Average CUSIPs per ticker:** 1.2 (fewer per ticker, but correctly separated)
+- **Maximum CUSIPs per ticker:** 54
 
 **Top Rollable Tickers by CUSIP Count:**
 
@@ -306,20 +308,24 @@ For each Ticker:
 
 **Category Examples:**
 
-*Federal Reserve (Monetary Policy):*
-- `Fed decreases interest rates by 50+ bps after meeting?` (39 CUSIPs)
-- `Will 8 Fed rate cuts happen?` (21 CUSIPs)  
-- `Will target federal funds rate be 2.25% at end?` (15 CUSIPs)
+*Federal Reserve (Monetary Policy) - Now Properly Separated:*
+- `Fed increases interest rates by 25+ bps after meeting?` (12 CUSIPs) 
+- `Fed decreases interest rates by 25 bps after meeting?` (12 CUSIPs)
+- `Fed decreases interest rates by 50+ bps after meeting?` (9 CUSIPs)
+- `Fed decreases interest rates by 75+ bps after meeting?` (3 CUSIPs)
+- **Note:** Different rate amounts and directions now correctly separated!
 
 *US Elections:*
 - `Will the Democratic Party win the CA-52 House seat?` (51 CUSIPs)
 - `Will the Republican Party win the CA-50 House seat?` (37 CUSIPs)
 - Various state/district-level election predictions
 
-*Cryptocurrency:*
-- `Will the price of Bitcoin be above $74,000?` (68 CUSIPs)
-- `Will the price of Ethereum be above $2,200?` (55 CUSIPs)
-- `Will Bitcoin reach $150,000?` (41 CUSIPs)
+*Cryptocurrency - Price Targets Now Properly Separated:*
+- `Will Bitcoin reach $120,000 in ?` (4 CUSIPs)
+- `Will Bitcoin reach $105,000 in ?` (4 CUSIPs) 
+- `Will Bitcoin reach $110,000 in ?` (4 CUSIPs)
+- `Will Bitcoin reach $150,000 in ?` (3 CUSIPs)
+- **Note:** Each price level is now a distinct Ticker!
 
 *Geopolitics:*
 - `US strikes Iran?` (54 CUSIPs)
@@ -335,9 +341,9 @@ For each Ticker:
 
 **Processing Performance:**
 - **Normalization:** 20,180 titles processed in ~0.5 seconds
-- **Fuzzy matching:** 17,094 unique titles reduced to 9,483 groups in ~16 seconds
-- **Chain building:** 9,483 ticker chains built in ~6 seconds
-- **Total runtime:** ~30 seconds for complete pipeline
+- **Exact matching:** 16,863 unique titles maintained as separate groups in ~1 second  
+- **Chain building:** 16,863 ticker chains built in ~8 seconds
+- **Total runtime:** ~15 seconds for complete pipeline (faster without fuzzy matching)
 
 ### Portfolio Construction Implications
 
@@ -356,15 +362,16 @@ For each Ticker:
 ### Validation Results
 
 **Quality Assessment:**
-- **Sports betting dominance:** Top tickers by CUSIP count are primarily sports O/U markets with many price variants
-- **Policy markets well-represented:** Fed decisions, elections, geopolitics show good rollable chains
-- **Crypto markets normalized correctly:** Price threshold variants properly grouped
-- **Cross-validation:** Manual spot-checks confirm accurate grouping of related contracts
+- **Over-grouping eliminated:** Different outcomes now properly separated (Fed "25 bps" ≠ "50+ bps", "increase" ≠ "decrease")
+- **Policy markets correctly separated:** Fed rate decisions by amount and direction are distinct Tickers
+- **Crypto markets precisely grouped:** Each price target ($105K, $110K, $120K) is separate
+- **Cross-validation:** Manual spot-checks confirm no incorrect merging of different questions
 
 **Distribution Analysis:**
-- **32.4% rollable rate** indicates substantial rolling opportunities
-- **Long tail distribution:** Many single-CUSIP tickers, but sufficient multi-CUSIP chains for portfolio construction
-- **Category concentration:** Sports/betting markets create highest CUSIP counts, while policy markets show more moderate but sustainable chains
+- **12.0% rollable rate** is lower but more accurate (no false groupings)
+- **Higher precision:** Each Ticker represents truly identical questions across time periods
+- **Quality over quantity:** Fewer but correctly defined rolling chains
+- **Portfolio construction benefits:** More precise risk attribution and exposure measurement
 
 ### Applications and Next Steps
 
@@ -387,7 +394,7 @@ For each Ticker:
 - **Chain data:** `data/processed/ticker_chains.json`  
 - **Statistics:** `data/processed/ticker_mapping_stats.json`
 
-This ticker mapping addresses the #1 limitation of the current backtest system and enables sophisticated portfolio construction with proper contract rolling for prediction market baskets.
+This **corrected** ticker mapping with exact string matching addresses the over-grouping issue and provides accurate CUSIP → Ticker relationships for sophisticated portfolio construction with proper contract rolling. Different outcomes are no longer incorrectly merged.
 
 ---
 

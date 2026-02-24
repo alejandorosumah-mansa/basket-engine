@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-02-23T19:59:52.601224",
+  "timestamp": "2026-02-23T20:09:43.407243",
   "total_markets": 20180,
   "mapped_markets": 20180,
-  "total_tickers": 9483,
-  "rollable_tickers": 3074,
+  "total_tickers": 16863,
+  "rollable_tickers": 2018,
   "cusip_distribution": {
     "min": 1,
-    "max": 110,
-    "mean": 2.128018559527576,
+    "max": 54,
+    "mean": 1.196702840538457,
     "median": 1.0,
-    "std": 3.7823661831935382
+    "std": 0.761499310661806
   },
   "rollable_distribution": {
-    "count": 3074,
-    "mean": 4.479830839297333,
-    "median": 3.0,
-    "max": 110
+    "count": 2018,
+    "mean": 2.643706640237859,
+    "median": 2.0,
+    "max": 54
   }
 }
