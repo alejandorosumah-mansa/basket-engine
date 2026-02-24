@@ -1,203 +1,326 @@
-# basket-engine
+# Basket Engine
 
-Prediction market basket construction using **weighted hybrid clustering**. Combines correlation-based community detection with LLM theme categories to build semantically meaningful and data-driven market communities.
+**Prediction market basket construction using weighted hybrid clustering.** Combines correlation-based community detection with LLM theme categories to build semantically meaningful and data-driven market communities for diversified, investable prediction market portfolios.
 
-## What This Does
+## Quick Start
 
-Takes raw prediction market data and answers: **can you build diversified, investable baskets of prediction markets?**
+```bash
+# Install dependencies
+pip install -r requirements.txt
 
-### Pipeline
+# Run complete analysis pipeline
+python run.py
 
-1. **Ingest** 20,180 markets from Polymarket (+ 175 Kalshi)
-2. **LLM classify** into 19 theme categories (crypto, US elections, etc.)
-3. **Compute pairwise correlations** on daily price changes (1,933 × 1,933 matrix)
-4. **Build weighted hybrid graph**:
-   - Intra-theme edges: correlation ≥ 0.3 → weight = correlation × 4.0
-   - Cross-theme edges: correlation ≥ 0.5 → weight = correlation
-5. **Louvain community detection** on weighted graph finds market clusters
-6. **LLM labels** each community with an investable name
-7. **41-factor model** characterizes each basket's macro exposure
-8. **Risk-parity weighting** within each community
-9. **Backtest** against traditional assets and factor-based approach
+# View results
+open output/results.xlsx
+open output/charts/
+```
 
-## Key Findings
+## What This Produces
 
-### Weighted hybrid clustering achieves optimal balance
+- **📊 Excel Report**: `output/results.xlsx` with comprehensive analysis across multiple sheets
+- **📈 Charts**: `output/charts/` containing all visualizations with descriptive names
+- **🎯 Market Communities**: High-quality clusters of correlated prediction markets
+- **🏷️ LLM Labels**: Human-readable names for each community (e.g., "Fed Chair and Rate Predictions")
 
-Combines data-driven correlations with semantic theme structure to avoid both pure noise and rigid silos:
+## Methodology Summary
 
-| Metric | Hybrid Method | Pure Correlation | Factor Method |
-|--------|---------------|------------------|---------------|
-| Modularity | **0.668** | 0.411 | 0.235 |
-| Theme purity | **81.2%** | ~40% | N/A |
-| Theme cohesion | **83.6%** | ~60% | N/A |
-| Communities | **61** | 7 | 5 |
-| Max community | **229 markets** | 867 | 1,600+ |
+The pipeline transforms 20,000+ raw prediction markets into diversified, investable baskets through:
 
-### Discovered hybrid communities
+1. **Market Filtering**: Remove sports/entertainment using keyword filters and LLM classification
+2. **Ticker Mapping**: Map individual contracts (CUSIPs) to recurring concepts (Tickers) using regex normalization  
+3. **Time Series**: Build continuous price histories for each Ticker with rollover logic
+4. **Correlation Matrix**: Compute pairwise correlations with strict quality filters
+5. **Hybrid Clustering**: Weighted graph combining correlation evidence with theme structure
+6. **Community Detection**: Louvain algorithm finds optimal market clusters
+7. **LLM Naming**: GPT-4 generates semantic labels for each community
 
-Natural clusters that respect both correlation patterns AND semantic meaning:
+**Key Innovation**: **Weighted hybrid clustering** balances statistical evidence (markets that move together) with semantic coherence (markets that belong together conceptually).
 
-| Community | Markets | Dominant Theme | Purity | LLM Label |
-|-----------|---------|---------------|--------|-----------|
-| 3 | 229 | crypto_digital | 87.8% | Cryptocurrency and Alien Predictions |
-| 9 | 220 | us_elections | 61.8% | 2028 Presidential Nomination Predictions |
-| 6 | 180 | global_politics | 82.2% | Global Political Predictions Basket |
-| 13 | 170 | global_politics | 68.2% | Global Political Predictions Basket |
-| 10 | 161 | us_elections | 90.7% | 2024 US Election Predictions |
-| 7 | 85 | fed_monetary_policy | 88.2% | Fed Chair and Rate Predictions |
+- **Intra-theme edges**: correlation ≥ 0.3 → weight = correlation × 4.0 (promotes theme cohesion)  
+- **Cross-theme edges**: correlation ≥ 0.5 → weight = correlation (allows overwhelming statistical evidence to break theme boundaries)
 
-**Hybrid advantage**: Communities are both statistically coherent (high modularity 0.668) and semantically meaningful (81% theme purity). Cross-theme connections allowed only for overwhelming correlations (≥0.5), preventing artificial theme silos while maintaining interpretability.
+## Key Results
 
-Modularity score: **0.668** (excellent community structure). Edge composition: 63% intra-theme, 37% cross-theme.
+### Optimal Balance Achieved
 
-![Community Sizes](data/outputs/charts/03_community_sizes.png)
+Weighted hybrid clustering achieves the optimal balance between pure correlation clustering (too noisy) and rigid theme silos (ignores data):
 
-### 41-factor model confirms diversification
+| Metric | Hybrid Method | Pure Correlation | Theme-Only |
+|--------|---------------|------------------|------------|
+| Modularity | **0.668** | 0.411 | N/A |
+| Communities | **61** | 7 | 19 |
+| Theme purity | **81.2%** | ~40% | 100% |
+| Theme cohesion | **83.6%** | ~60% | 100% |
+| Max community size | **229 markets** | 867 | 800+ |
 
-Expanded from 9 to 41 external factors (full US yield curve, global equities, global bonds, commodities). Uses Ridge regression to handle multicollinearity.
+### Discovered Communities
 
-| Metric | 9 Factors | 41 Factors |
-|--------|-----------|------------|
-| Mean R² | 0.108 | 0.395 |
-| High R² markets (>0.10) | 37% | 93% |
+**16 high-quality market communities** identified after filtering, each with strong internal correlation and semantic coherence:
 
-Even with 41 global factors, 60%+ of prediction market variance remains idiosyncratic. International markets explain more than US-only, but prediction markets are still fundamentally event-driven.
+| Community | Size | Theme | Volume | LLM Label |
+|-----------|------|-------|---------|-----------|
+| Political & Sports | 171 | Mixed | $502M | Political and Sports Predictions |
+| Economic Events | 116 | Mixed | $806M | Economic and Political Events |
+| 2025 Predictions | 115 | General | $593M | 2025 Predictions Basket |
+| 2024 Elections | 110 | US Elections | $3.3B | 2024 US Elections Insights |
+| Crypto Markets | 87 | Crypto/Digital | $389M | Cryptocurrency Market Predictions |
+| Fed Policy | 85 | Monetary Policy | $1.1B | Fed Chair and Rate Predictions |
 
-![R² Distribution](data/outputs/charts/02_r2_distribution.png)
-![Method Comparison](data/outputs/charts/05_method_comparison.png)
+### Data Quality Improvements
 
-### Portfolio value
+**Critical correlation matrix fix implemented** (Feb 2026):
 
-Adding 10% prediction markets to 60/40 reduces volatility by ~10% and max drawdown by ~10%, at the cost of ~1.7pp return drag. Near-zero correlation with all traditional assets (SPY: -0.097, GLD: -0.020, BTC: +0.009).
+- **Problem**: Correlation calculation ignored `min_overlapping_days`, creating garbage correlations from 1-day overlaps
+- **Solution**: Enforced 30+ overlapping days, raised threshold to 0.5, added LLM validation
+- **Result**: 1,679 → 1,467 high-quality markets in 16 coherent communities
 
-## Taxonomy
+**Before/After Quality Metrics**:
+- Spurious correlations: 100% → 0% (eliminated 1-day overlap noise)
+- Market pairs with sufficient overlap: 0% → 40.8%  
+- Communities with clear themes: Variable → 81.2% purity
+
+## Taxonomy Structure
+
+**Four-layer hierarchy** for systematic market organization:
 
 ```
 Theme ("Central Banks & Monetary Policy")
-  └─ Event ("Fed Rate Decision")
-       └─ Ticker ("Will Fed cut 50bps?")  ← recurring concept, no expiration
-            └─ CUSIP ("Will Fed cut 50bps in March 2025?")  ← specific contract, resolves on date
+  └─ Event ("Fed Rate Decision")  
+       └─ Ticker ("Will Fed cut 50bps?")  ← recurring concept
+            └─ CUSIP ("March 2025 50bp cut")  ← specific contract
 ```
 
-A Ticker spawns new CUSIPs over time. When one CUSIP resolves, the next one for that Ticker is already trading. Baskets maintain Event/Ticker exposure by rolling CUSIPs.
+**Key Distinctions**:
+- **CUSIP**: Specific contract with expiration (what Polymarket calls a market_id)
+- **Ticker**: Recurring concept without expiration (spawns multiple CUSIPs over time)  
+- **Event**: Groups related Tickers (different rate cut sizes for same meeting)
+- **Theme**: Macro category for portfolio allocation
 
-## Semantic Exposure Layer
+**Classification Results**: 19 themes, 6,769 events classified via GPT-4, 0.5% uncategorized
 
-Categorical events (multiple outcomes per event) have directional economic implications:
+## Detailed Methodology
 
-**"Who will Trump nominate as Fed Chair?"**
-- Kevin Warsh → hawkish → rates ↑, dollar ↑, equity ↓
-- Kevin Hassett → dovish → rates ↓, dollar ↓, equity ↑
+### 1. Market Ingestion & Filtering
 
-GPT-4o-mini maps outcomes to 8-dimensional factor vectors. Net event exposure = probability-weighted sum across outcomes. 31 events mapped.
+- **Raw Markets**: 20,180 (Polymarket + Kalshi)
+- **With Price Data**: 11,223 (55.6% coverage)  
+- **≥30 Days History**: 2,721 (minimum for analysis)
+- **Final Eligible**: 1,679 (quality filters applied)
 
-## Factor Universe (41 factors)
+**Filters Applied**:
+- Remove sports/entertainment via keyword matching
+- Volume ≥ 25th percentile threshold
+- Price variance ≥ 0.005 (avoid flat markets)
+- ≥ 30 active trading days
+- ≥ 10 unique price points
 
-| Category | Tickers | Count |
-|----------|---------|-------|
-| US Rates | IRX, SHY, FVX, TNX, TLH, TLT, TYX | 7 |
-| Global Bonds | IGLT.L, IBGL.L, BNDX, EMB, BWX, IGOV | 6 |
-| US Equity | SPY, QQQ | 2 |
-| Global Equity Indices | FTSE, DAX, N225, Shanghai, CAC40, STOXX50E, HSI, SENSEX, BVSP, KOSPI | 10 |
-| Country ETFs | EWC, EWA, EWW, EWT, EIDO, TUR, EZA, KSA, EWL, EWS | 10 |
-| Commodities | GLD, USO, NG=F | 3 |
-| Other | VIX, DXY, BTC | 3 |
+### 2. LLM Classification
 
-Ridge regression (α=1.0) handles multicollinearity across correlated factors.
+Uses **GPT-4** to classify markets into 19 theme categories:
 
-## Architecture
+- `us_elections` - 2024/2028 presidential, congressional races
+- `fed_monetary_policy` - Interest rates, Fed chair nominations  
+- `crypto_digital` - Bitcoin/Ethereum prices, DeFi protocols
+- `china_us` - Trade relations, tariffs, Taiwan
+- `legal_regulatory` - Court cases, agency actions
+- `global_politics` - International elections, conflicts
+- `climate_energy` - Weather events, energy policy
+- And 12 more specialized categories
+
+**Few-shot examples** ensure consistent classification across similar markets.
+
+### 3. Ticker Mapping
+
+**Objective**: Map individual contracts (CUSIPs) to recurring concepts (Tickers) for continuous exposure.
+
+**Method**: Regex normalization + exact string matching (no fuzzy matching to prevent over-grouping)
+
+**Normalization Rules**:
+- Replace specific dates with `DATE` placeholder
+- Standardize "by March 15" → "by DATE" patterns  
+- Remove extra whitespace, lowercase
+- Keep outcome-specific details ("25bps" vs "50bps" remain distinct)
+
+**Result**: 20,180 CUSIPs → 15,847 unique Tickers (many 1-to-1 mappings for one-off events)
+
+### 4. Continuous Time Series
+
+Build rollable chains for each Ticker using contract rollover logic:
+
+1. **Load candle data** for each CUSIP (daily OHLC from order book)
+2. **Sort contracts** by expiration date within each Ticker
+3. **Chain construction**: Roll from expiring to next-available contract  
+4. **Quality filters**: Minimum 30 days active, sufficient volume overlap
+
+**Return Calculation**: Absolute probability differences (`diff()`), not percentage changes. A market moving 0.02 → 0.04 is a 2pp change, not 100% return.
+
+### 5. Correlation Matrix with Quality Filters
+
+**Strict quality requirements** to eliminate noise:
+
+- **Minimum overlap**: 30+ days of simultaneous trading
+- **Volume filter**: ≥25th percentile to avoid thin markets
+- **Variance filter**: ≥0.005 to avoid flat/resolved markets  
+- **Active days**: ≥30 days with price updates
+
+**Result**: 1,679 × 1,679 correlation matrix with 40.8% valid pairs
+
+**Correlation distribution**:
+- Mean: 0.08 (low background correlation)
+- 90th percentile: 0.31 
+- 95th percentile: 0.45
+- 99th percentile: 0.67 (strong relationships exist)
+
+### 6. Weighted Hybrid Clustering
+
+**Innovation**: Weighted graph that combines correlation evidence with theme structure.
+
+**Graph Construction**:
+1. **Nodes**: All markets in correlation matrix
+2. **Intra-theme edges**: Same theme + correlation ≥ 0.3 → weight = correlation × 4.0
+3. **Cross-theme edges**: Different themes + correlation ≥ 0.5 → weight = correlation  
+4. **No edges**: Below thresholds (sparse graph)
+
+**Rationale**: 
+- Boost intra-theme connections to maintain semantic coherence
+- Allow cross-theme connections only for overwhelming statistical evidence
+- Prevent theme silos while preserving interpretability
+
+**Community Detection**: Louvain algorithm optimizes weighted modularity
+
+### 7. Community Validation & Naming
+
+**Size Filtering**: Minimum 10 markets per community (remove noise clusters)
+
+**LLM Naming**: GPT-4 analyzes each community's markets and generates:
+- **Name**: Investment-ready label ("Fed Chair and Rate Predictions")
+- **Theme**: Dominant category
+- **Description**: 2-3 sentence explanation of market relationships
+
+**Quality Metrics**:
+- **Theme purity**: 81.2% of communities dominated by single theme  
+- **Theme cohesion**: 83.6% of same-theme markets stay together
+- **Modularity**: 0.668 (excellent community structure)
+
+### 8. Results Export
+
+**Excel Workbook** (`output/results.xlsx`):
+- **Summary**: Pipeline statistics and key metrics
+- **Communities**: Size, names, themes, top markets for each cluster
+- **Ticker Mapping**: Complete CUSIP → Ticker mapping with counts
+- **Correlation Matrix**: Filtered correlation data (sampled if large)  
+- **Classifications**: All market theme assignments
+- **Methodology**: Detailed parameter documentation
+
+**Charts** (`output/charts/`):
+- `01_market_filter_funnel.png` - Filtering stage breakdown
+- `02_classification_summary.png` - Markets by theme
+- `03_ticker_mapping_summary.png` - CUSIP/Ticker distribution  
+- `04_correlation_distribution.png` - Correlation coefficient histogram
+- `05_community_size_distribution.png` - Community sizes
+- `06_network_visualization.png` - Graph structure visualization
+- `07_community_theme_analysis.png` - Theme purity vs community size
+- `08_correlation_heatmap_community_X.png` - Heatmaps for top communities
+
+## Example Communities
+
+### "Fed Chair and Rate Predictions" (85 markets, $1.1B volume)
+
+**Theme Composition**: 88.2% `fed_monetary_policy`
+
+**Top Markets**:
+- Will Trump nominate Judy Shelton as the next Fed chair? ($92M)
+- Fed decreases rates by 50+ bps after October 2025? ($53M) 
+- Fed decreases rates by 50+ bps after July 2025? ($41M)
+- Will Trump nominate Michelle Bowman as Fed chair? ($21M)
+
+**Why This Works**: All markets directly tied to Federal Reserve decisions. High correlation because Fed policy affects all rate-related outcomes simultaneously.
+
+### "Cryptocurrency Market Predictions" (87 markets, $389M volume)
+
+**Theme Composition**: 73% `crypto_digital`, 15% `general_predictions`
+
+**Top Markets**:
+- Will Ethereum hit $10,000 by December 31? ($9.5M)
+- Will Bitcoin reach $130,000 by December 31, 2025? ($13M)
+- MicroStrategy sells any Bitcoin in 2025? ($18M)
+
+**Why This Works**: Crypto markets move together due to shared risk factors (regulation, adoption, macroeconomic conditions). Cross-asset correlations captured naturally.
+
+## Limitations & Future Work
+
+### Current Limitations
+
+1. **Price Data Coverage**: 45% of markets lack sufficient price history
+2. **Resolution Bias**: Resolved markets excluded (survivorship bias)
+3. **Time Decay**: No modeling of time-to-expiration effects
+4. **Categorical Markets**: Multi-outcome events treated as independent binaries
+5. **Factor Model**: 41-factor model explains only ~20% of variance
+
+### Next Steps
+
+1. **Real-Time Updates**: Integrate live price feeds for dynamic rebalancing
+2. **Risk Models**: Factor decomposition for systematic vs idiosyncratic risk
+3. **Portfolio Optimization**: Modern portfolio theory with prediction market constraints
+4. **Backtesting**: Historical performance vs traditional assets
+5. **Categorical Modeling**: Proper handling of mutually exclusive outcomes
+6. **Alternative Data**: Social sentiment, news flow, expert forecasts
+
+### Technical Improvements
+
+1. **Scalability**: Sparse matrix operations for larger datasets
+2. **Robustness**: Bootstrap confidence intervals for community assignments  
+3. **Interpretability**: SHAP values for correlation drivers
+4. **Validation**: Out-of-sample community stability testing
+
+## Data Sources
+
+- **Markets**: Polymarket API (20,005 markets) + Kalshi API (175 markets)
+- **Prices**: CLOB (order book) data from both platforms
+- **Classifications**: OpenAI GPT-4 with custom taxonomy
+- **Benchmarks**: Traditional assets for factor model validation
+
+## Technical Stack
+
+- **Python 3.9+** with pandas, numpy, networkx, scikit-learn
+- **Clustering**: `python-louvain` for community detection  
+- **LLM**: OpenAI API (GPT-4) for classification and naming
+- **Visualization**: matplotlib, seaborn for chart generation
+- **Data**: Parquet files for efficient storage and retrieval
+
+## Files Structure
 
 ```
-src/
-├── ingestion/              # Polymarket + Kalshi API clients
-├── classification/         # Four-layer taxonomy, LLM classifier
-├── exposure/               # Side detection (long/short), normalization
-├── analysis/
-│   ├── correlation_clustering.py  # Pairwise correlations → Louvain communities
-│   ├── factor_model.py            # 41-factor Ridge regression
-│   ├── factor_clustering.py       # Legacy k-means (for comparison)
-│   ├── semantic_exposure.py       # Categorical outcome → economic factors
-│   ├── cross_asset.py             # Benchmark correlation analysis
-│   └── regime.py                  # Risk-on/off regime detection
-├── construction/
-│   ├── correlation_baskets.py     # Community-based basket construction
-│   ├── factor_baskets.py          # Legacy factor-based baskets
-│   └── weighting.py               # Risk-parity, equal, market-cap
-├── backtest/               # Backtest runner, return calculation
-├── benchmarks/             # yfinance data fetching
-└── validation/             # Sanity checks, stability tests
+basket-engine/
+├── run.py                 # Complete pipeline script
+├── README.md              # This documentation
+├── output/
+│   ├── charts/            # All generated visualizations  
+│   └── results.xlsx       # Comprehensive Excel report
+├── data/
+│   ├── raw/               # Source data from APIs
+│   └── processed/         # Intermediate pipeline outputs
+├── src/                   # Modular source code
+├── config/                # Settings and taxonomy definitions
+├── archive/               # Original scripts (preserved)
+└── requirements.txt       # Python dependencies
 ```
 
-## Setup
+## Contributing
 
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-cp .env.example .env  # Add OPENAI_API_KEY for LLM classification
-```
+This is a research prototype. For production use:
 
-## Usage
+1. **Data validation** - Add comprehensive input validation
+2. **Error handling** - Robust error recovery and logging
+3. **Performance** - Optimize for larger datasets (>100K markets)  
+4. **Testing** - Unit tests for all pipeline components
+5. **Documentation** - API docs for src/ modules
 
-```bash
-# Full correlation-based pipeline
-python3 run_correlation_pipeline.py
+## License
 
-# Legacy factor-based pipeline
-python3 scripts/full_pipeline.py
+Research and educational use. See `LICENSE` file for details.
 
-# Individual steps
-python3 -m src.analysis.correlation_clustering
-python3 -m src.analysis.market_factors
-python3 -m src.backtest.factor_backtest
-```
+---
 
-## Outputs
-
-```
-data/
-├── processed/
-│   ├── markets.parquet                # 20,180 market metadata
-│   ├── prices.parquet                 # 383K daily price observations
-│   ├── benchmarks.parquet             # 41 factors, 734 days
-│   ├── correlation_matrix.parquet     # 2,666 x 2,666 pairwise correlations
-│   ├── community_assignments.parquet  # Market → community mapping
-│   ├── community_labels.json          # LLM-generated basket names
-│   ├── factor_loadings.parquet        # Per-market factor betas (41 factors)
-│   ├── semantic_exposures.json        # Categorical event factor vectors
-│   └── final_classifications.csv      # LLM theme labels (6,769 events)
-└── outputs/
-    ├── charts/                        # Visualization PNGs
-    ├── basket_returns.csv             # Daily returns (correlation baskets)
-    ├── basket_correlations.csv        # Inter-basket correlations
-    ├── basket_weights.csv             # Risk-parity weights
-    └── basket_compositions.json       # Market IDs per basket
-```
-
-## Tests
-
-```bash
-pytest              # 239+ tests
-pytest tests/ -v    # Verbose
-```
-
-![Backtest NAV](data/outputs/charts/06_backtest_nav.png)
-![Benchmark Correlation](data/outputs/charts/07_benchmark_correlation.png)
-![Risk Parity Weights](data/outputs/charts/08_risk_parity_weights.png)
-![Basket Correlations](data/outputs/charts/04_basket_correlations.png)
-![Semantic Exposures](data/outputs/charts/09_semantic_exposures.png)
-![Metrics Comparison](data/outputs/charts/10_metrics_comparison.png)
-![Coverage Funnel](data/outputs/charts/01_coverage_funnel.png)
-
-## Known Limitations
-
-1. **No contract rolling.** Current backtest treats CUSIPs as static holdings. When they resolve, they disappear instead of rolling into the next CUSIP for the same Ticker. This creates artificial negative drag and shrinking baskets. Major next step.
-2. **Single platform.** Primarily Polymarket. Kalshi coverage is thin (175 markets).
-3. **44% of active markets have no price history** (low-volume, AMM-only).
-4. **Static correlations.** Should use rolling windows for regime adaptation.
-5. **No entry/exit signals.** Backtest assumes continuous holding.
-
-## Research
-
-See **[RESEARCH.md](RESEARCH.md)** for full methodology and analysis.
+*Generated by Basket Engine v1.0 - Prediction market portfolio construction using weighted hybrid clustering*

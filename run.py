@@ -43,10 +43,10 @@ sns.set_palette("husl")
 import sys
 sys.path.append('src')
 
-from classification.llm_classifier import classify_all_markets
+from classification.llm_classifier import classify_all
 from classification.taxonomy import load_taxonomy
-from ingestion.market_filter import MarketFilter
-from analysis.correlation_clustering import build_correlation_matrix, run_clustering
+from ingestion.market_filter import filter_markets
+from analysis.correlation_clustering import build_correlation_matrix, run_correlation_clustering
 import logging
 
 # Setup logging
@@ -143,8 +143,7 @@ class BasketEngine:
         logger.info(f"Loaded {len(self.markets_df):,} markets")
         
         # Apply market filters (remove sports/entertainment)
-        market_filter = MarketFilter()
-        self.filtered_markets = market_filter.filter_markets(self.markets_df)
+        self.filtered_markets = filter_markets(self.markets_df)
         
         logger.info(f"After filtering: {len(self.filtered_markets):,} markets")
         
@@ -161,7 +160,7 @@ class BasketEngine:
             self.classifications_df = pd.read_parquet(classifications_path)
         else:
             logger.info("Running LLM classification...")
-            self.classifications_df = classify_all_markets(self.filtered_markets)
+            self.classifications_df = classify_all(self.filtered_markets)
             
             # Save classifications
             self.classifications_df.to_parquet(classifications_path, index=False)
