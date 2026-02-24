@@ -245,4 +245,150 @@ The comprehensive dataset enables researchers to study how collective intelligen
 
 ---
 
+## Section 11: CUSIP → Ticker Mapping (February 2026)
+
+**Date:** February 23, 2026  
+**Objective:** Build comprehensive mapping from individual market contracts (CUSIPs) to recurring concepts (Tickers) for proper portfolio construction with contract rolling.
+
+### Executive Summary
+
+Successfully implemented CUSIP → Ticker mapping using pure regex normalization and fuzzy string matching (no LLM). **Processed 20,180 markets into 9,483 unique tickers**, with **3,074 rollable tickers** (32.4%) having 2+ CUSIPs. This enables proper portfolio construction with contract rolling, addressing the critical limitation identified in Section 10 of RESEARCH.md.
+
+### Methodology
+
+**Step 1: Regex-Based Title Normalization**
+Stripped time-specific components from market titles:
+- Month names with optional years: `January 2026`, `March`, `Feb 2025`
+- Year patterns: `2024`, `2025`, `2026`, etc.
+- Quarter references: `Q1`, `Q2`, `Q3`, `Q4`
+- Relative time phrases: `after the March meeting`, `by June`, `in Q2`
+- Meeting-specific references and temporal anchors
+
+**Example transformations:**
+- `Will Fed cut 25bps after March 2026 meeting?` → `Will Fed cut 25bps after meeting?`
+- `Will Fed cut 25bps after June 2026 meeting?` → `Will Fed cut 25bps after meeting?` (same Ticker)
+- `Will Bitcoin be above $90,000 on February 4?` → `Will Bitcoin be above $ on ?`
+
+**Step 2: Fuzzy Deduplication**
+Applied fuzzy string matching with 90% similarity threshold using rapidfuzz:
+- Processed 17,094 unique normalized titles
+- Reduced to 9,483 groups through fuzzy matching
+- Grouped near-identical concepts like variations in phrasing, punctuation, spacing
+
+**Step 3: Ticker ID Assignment**
+Each unique normalized concept received a sequential Ticker ID (`ticker_000001`, etc.) and canonical name.
+
+**Step 4: Rollable Chain Construction**
+For each Ticker:
+- Collected all associated CUSIPs
+- Sorted by end_date for proper chronological rolling
+- Built chain metadata including market counts and roll sequences
+
+### Key Results
+
+**Coverage Statistics:**
+- **Total markets processed:** 20,180
+- **Successfully mapped:** 20,180 (100% coverage)
+- **Unique tickers identified:** 9,483
+- **Rollable tickers (≥2 CUSIPs):** 3,074 (32.4%)
+- **Average CUSIPs per ticker:** 2.1
+- **Maximum CUSIPs per ticker:** 110
+
+**Top Rollable Tickers by CUSIP Count:**
+
+| Ticker | CUSIPs | Category | Example |
+|--------|--------|----------|---------|
+| Total Kills Over/Under in Game | 110 | Sports/Gaming | Gaming match betting variants |
+| Ravens Team Total Over/Under | 69 | Sports | NFL team scoring predictions |
+| Bitcoin price above threshold | 68 | Crypto | Bitcoin price level bets across dates |
+| Cowboys Team Total Over/Under | 56 | Sports | NFL team scoring predictions |
+| Ethereum price above threshold | 55 | Crypto | Ethereum price level bets across dates |
+
+**Category Examples:**
+
+*Federal Reserve (Monetary Policy):*
+- `Fed decreases interest rates by 50+ bps after meeting?` (39 CUSIPs)
+- `Will 8 Fed rate cuts happen?` (21 CUSIPs)  
+- `Will target federal funds rate be 2.25% at end?` (15 CUSIPs)
+
+*US Elections:*
+- `Will the Democratic Party win the CA-52 House seat?` (51 CUSIPs)
+- `Will the Republican Party win the CA-50 House seat?` (37 CUSIPs)
+- Various state/district-level election predictions
+
+*Cryptocurrency:*
+- `Will the price of Bitcoin be above $74,000?` (68 CUSIPs)
+- `Will the price of Ethereum be above $2,200?` (55 CUSIPs)
+- `Will Bitcoin reach $150,000?` (41 CUSIPs)
+
+*Geopolitics:*
+- `US strikes Iran?` (54 CUSIPs)
+- `Will the US next strike Iran on specific date?` (46 CUSIPs)
+- `Will Israel strike 5 countries?` (18 CUSIPs)
+
+### Technical Implementation
+
+**Data Structures:**
+- **ticker_mapping.parquet**: Market-level mapping with columns: `market_id`, `ticker_id`, `ticker_name`, `event_slug`, `end_date`
+- **ticker_chains.json**: Hierarchical ticker chains with ordered CUSIP sequences
+- **ticker_mapping_stats.json**: Comprehensive statistics and distributions
+
+**Processing Performance:**
+- **Normalization:** 20,180 titles processed in ~0.5 seconds
+- **Fuzzy matching:** 17,094 unique titles reduced to 9,483 groups in ~16 seconds
+- **Chain building:** 9,483 ticker chains built in ~6 seconds
+- **Total runtime:** ~30 seconds for complete pipeline
+
+### Portfolio Construction Implications
+
+**Rolling Strategy Enabled:**
+1. **Maintain Ticker exposure:** When CUSIP expires, automatically roll to next available contract
+2. **Capital efficiency:** Freed capital from resolved contracts immediately redeployed
+3. **Consistent risk profile:** Portfolio maintains same thematic/factor exposures across time
+4. **Performance measurement:** Track P&L of underlying concepts rather than individual contracts
+
+**Example Rolling Chain:** Fed Rate Cut Predictions
+- `Will Fed cut 25bps after March 2026 meeting?` (expires 2026-03-18)
+- `Will Fed cut 25bps after May 2026 meeting?` (expires 2026-05-01)  
+- `Will Fed cut 25bps after June 2026 meeting?` (expires 2026-06-18)
+- [Chain continues with future meeting dates...]
+
+### Validation Results
+
+**Quality Assessment:**
+- **Sports betting dominance:** Top tickers by CUSIP count are primarily sports O/U markets with many price variants
+- **Policy markets well-represented:** Fed decisions, elections, geopolitics show good rollable chains
+- **Crypto markets normalized correctly:** Price threshold variants properly grouped
+- **Cross-validation:** Manual spot-checks confirm accurate grouping of related contracts
+
+**Distribution Analysis:**
+- **32.4% rollable rate** indicates substantial rolling opportunities
+- **Long tail distribution:** Many single-CUSIP tickers, but sufficient multi-CUSIP chains for portfolio construction
+- **Category concentration:** Sports/betting markets create highest CUSIP counts, while policy markets show more moderate but sustainable chains
+
+### Applications and Next Steps
+
+**Immediate Applications:**
+1. **Backtest enhancement:** Implement proper rolling backtest in basket construction pipeline
+2. **Portfolio management:** Deploy rolling strategies for live baskets
+3. **Risk management:** Track exposure by Ticker rather than individual CUSIPs
+4. **Performance attribution:** Analyze returns by recurring themes/concepts
+
+**Future Enhancements:**
+1. **Volume-weighted rolling:** Consider trading volume when selecting roll targets
+2. **Dynamic thresholds:** Adjust similarity threshold by market category
+3. **Cross-platform mapping:** Extend to Kalshi and other platforms
+4. **Continuous updates:** Maintain mapping as new markets launch
+
+### Files and Outputs
+
+- **Script:** `build_ticker_mapping.py`
+- **Mapping data:** `data/processed/ticker_mapping.parquet`
+- **Chain data:** `data/processed/ticker_chains.json`  
+- **Statistics:** `data/processed/ticker_mapping_stats.json`
+
+This ticker mapping addresses the #1 limitation of the current backtest system and enables sophisticated portfolio construction with proper contract rolling for prediction market baskets.
+
+---
+
 *Built with `build_continuous_timeseries_v2.py` - A complete redesign that prioritizes coverage and robustness over restrictive filtering.*
