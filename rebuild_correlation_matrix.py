@@ -28,10 +28,10 @@ def main():
     price_changes = compute_price_changes(prices_filtered)
     print(f"Computed price changes for {price_changes['market_id'].nunique():,} markets")
     
-    # Build correlation matrix
+    # Build correlation matrix with stricter overlap requirements
     corr_matrix, market_stats = build_correlation_matrix(
         price_changes,
-        min_overlapping_days=20,
+        min_overlapping_days=30,  # Require 30+ overlapping days for correlation
         min_days_per_market=30
     )
     

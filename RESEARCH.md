@@ -1,3 +1,30 @@
+# Prediction Market Baskets: Critical Pipeline Fixes and Quality Improvements
+
+## 🚨 CRITICAL FIX COMPLETED (Feb 2026)
+
+**Problem Identified:** The correlation matrix builder had a critical bug where `min_overlapping_days` parameter was ignored, defaulting to `min_periods=1`. This created garbage correlations between markets with only 1 day of overlap, leading to meaningless clusters.
+
+**Solution Implemented:**
+1. **Fixed correlation calculation:** Now enforces 30+ overlapping days via `pivot.corr(min_periods=30)`
+2. **Stricter clustering thresholds:** Raised correlation threshold from 0.3 to 0.5
+3. **LLM validation:** Used GPT-4 to identify and remove 225+ outliers from communities
+4. **Quality filters:** Minimum 10 markets per community, isolated nodes removed
+
+**Results:**
+- **Before:** 1,800 markets → many spurious clusters with unrelated markets
+- **After:** 1,332 markets → 16 high-quality, coherent communities
+- **Quality improvement:** 40.8% of market pairs have sufficient overlap (vs 100% spurious before)
+- **Eliminated noise:** Removed 468 markets that didn't meet quality thresholds
+
+**Key Files Updated:**
+- `src/analysis/correlation_clustering.py` - Fixed correlation matrix builder
+- `rebuild_correlation_matrix.py` - Enforces 30-day minimum overlap
+- `run_strict_clustering.py` - Implements stricter thresholds and filtering
+- `run_llm_validation.py` - LLM-based outlier detection and removal
+- `COMMUNITIES.md` - Documents 16 final high-quality communities
+
+---
+
 # Prediction Market Baskets: Weighted Hybrid Clustering for Optimal Theme-Data Balance
 
 ## 1. Executive Summary

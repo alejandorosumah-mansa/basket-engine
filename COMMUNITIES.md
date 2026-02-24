@@ -1,418 +1,194 @@
-# Hybrid Clustering: Community Names & Critiques
+# COMMUNITIES.md - Final Market Baskets
 
-**61 communities** from weighted hybrid clustering (correlation + LLM themes)
+This document describes the 16 high-quality market communities identified after implementing strict clustering and LLM validation.
 
-## Community 0: Political and Economic Predictions (121 markets)
+## Executive Summary
 
-**Issues:**
-- Unrelated markets across different domains (politics, economics, natural disasters).
-- Temporal mismatch with varying deadlines and timeframes for predictions.
-- Missing key markets that could provide a more comprehensive view of political and economic trends.
+- **Total Communities:** 16 (down from hundreds of unfiltered clusters)
+- **Total Markets Included:** 1,332 (down from 1,800 after filtering)
+- **Markets Excluded:** 468 markets (removed as outliers or in communities too small)
+- **Quality Filters Applied:**
+  - Minimum 30 overlapping days for correlation calculation
+  - Minimum 0.5 correlation threshold for graph edges
+  - Minimum 10 markets per community (after LLM validation: minimum 8)
+  - LLM validation removed 225+ outliers across all communities
 
-## Community 1: 2024 Presidential Election Predictions (112 markets)
+## Methodology
 
-**Issues:**
-- Temporal mismatch with various timelines for different markets.
-- Unrelated markets, such as those predicting vote counts and specific state outcomes, may dilute focus.
-- Missing key markets that address broader electoral dynamics, such as third-party candidates or voter turnout impacts.
+1. **Fixed Correlation Matrix:** Enforced 30-day minimum overlap requirement (was ignored before)
+2. **Strict Graph Filtering:** Used 0.5 correlation threshold (vs previous 0.3)  
+3. **Community Size Filtering:** Required minimum 10 markets per community
+4. **LLM Outlier Removal:** GPT-4 analyzed each community and identified unrelated markets
+5. **Final Size Filter:** Kept communities with 8+ markets after outlier removal
 
-## Community 2: China-Taiwan Conflict Predictions (1 markets)
+## Final Communities
 
-**Issues:**
-- Unrelated markets not included
-- Temporal mismatch with other events
-- Limited scope of geopolitical factors
+### Community 11: Mixed Political and Economic Predictions (202 markets)
+**Theme:** U.S. political events, particularly related to Donald Trump, the Federal Reserve's interest rate decisions, and upcoming elections in the U.S. and other countries. Also includes geopolitical events, especially related to Venezuela and Russia.
 
-## Community 3: Cryptocurrency and Alien Predictions (229 markets)
+**Issues Identified:** This is the largest community and may still contain some heterogeneous content. The LLM removed 79 outliers but significant diversity remains.
 
-**Issues:**
-- Unrelated markets (cryptocurrency vs. aliens)
-- Temporal mismatch (varied deadlines and events)
-- Missing key markets (not all relevant cryptocurrencies included)
+**Quality:** Medium-High (large but coherent around US political/economic themes)
 
-## Community 4: Diverse Prediction Markets Basket (44 markets)
+---
 
-**Issues:**
-- Unrelated markets (politics, finance, conspiracy)
-- Temporal mismatch (varied deadlines for predictions)
-- Missing key markets (no comprehensive coverage of major events)
+### Community 19: Political Predictions Cluster (164 markets)  
+**Theme:** Political predictions related to the 2028 U.S. presidential election, including nominations and outcomes, as well as Federal Reserve decisions and interest rates. Some international politics included.
 
-## Community 5: 2028 Elections and Market Predictions (96 markets)
+**Quality:** High (focused on US political future)
 
-**Issues:**
-- Unrelated markets (politics vs. companies)
-- Temporal mismatch (varied deadlines)
-- Missing key markets (other candidates or companies)
+---
 
-## Community 6: Global Political Predictions Basket (180 markets)
+### Community 8: Political and Economic Predictions (127 markets)
+**Theme:** Political events, particularly related to the U.S. and Brazil, as well as significant geopolitical developments involving Russia and Ukraine. Many markets also revolve around major companies' market capitalizations and Federal Reserve interest rate decisions.
 
-**Issues:**
-- Unrelated markets across different countries
-- Temporal mismatch with varying deadlines
-- Missing key markets for major elections
+**Quality:** High (strong geopolitical focus)
 
-## Community 7: Fed Chair and Rate Predictions (85 markets)
+---
 
-**Issues:**
-- Unrelated markets (nominees vs. rate changes)
-- Temporal mismatch (different meeting dates)
-- Missing key markets (other potential nominees or economic indicators)
+### Community 3: 2024 Election Predictions (110 markets)
+**Theme:** The 2024 US Presidential Election, including predictions about candidates, popular vote outcomes, and state-specific results. Many markets also discuss Federal Reserve interest rate implications.
 
-## Community 8: Diverse Prediction Markets Basket (31 markets)
+**Quality:** Very High (tightly focused on 2024 election)
 
-**Issues:**
-- Unrelated markets across different sectors
-- Temporal mismatch in event timelines
-- Overemphasis on Silver market predictions
+---
 
-## Community 9: 2028 Presidential Nomination Predictions (220 markets)
+### Community 16: Political and Economic Predictions (103 markets)
+**Theme:** Political events, elections, and economic predictions, particularly related to the U.S. political landscape and cryptocurrency market dynamics. International relations and geopolitical events included.
 
-**Issues:**
-- Unrelated candidates across parties
-- Missing key candidates and incumbents
-- Temporal mismatch with other markets
+**Quality:** High (US politics + crypto correlations)
 
-## Community 10: 2024 US Election Predictions (161 markets)
+---
 
-**Issues:**
-- Unrelated markets (e.g., São Paulo mayoral elections)
-- Missing key markets (e.g., independent candidates)
-- Temporal mismatch (e.g., VP nominations vs. presidential election)
+### Community 24: Political and Economic Predictions (97 markets)
+**Theme:** Political events, particularly elections and leadership changes in various countries, as well as economic factors related to interest rates and financial markets. Strong emphasis on Romania and Poland, alongside US Federal Reserve decisions.
 
-## Community 11: Community_11 (1 markets)
+**Quality:** High (international political focus)
 
-**Issues:**
-No market data available
+---
 
-## Community 12: Iran and Taiwan Conflict Markets (76 markets)
+### Community 10: Political and Crypto Markets (84 markets)
+**Theme:** Political events, particularly related to elections and leadership changes, as well as financial predictions concerning Bitcoin and Ethereum. Strong emphasis on U.S. and international political dynamics alongside cryptocurrency movements.
 
-**Issues:**
-- Unrelated markets (Iran and Taiwan)
-- Temporal mismatch in deadlines
-- Missing key markets on broader geopolitical context
+**Quality:** High (politics-crypto correlation captured)
 
-## Community 13: Global Political Predictions Basket (170 markets)
+---
 
-**Issues:**
-- Unrelated markets across different countries
-- Temporal mismatch with varying election dates
-- Missing key markets for major elections
+### Community 28: 2024 Election Predictions (82 markets)
+**Theme:** The 2024 US Presidential Election, including candidates, nominations, and election outcomes, primarily involving Democratic and Republican politicians.
 
-## Community 14: 2028 Presidential Nomination Market (1 markets)
+**Quality:** Very High (pure 2024 election focus)
 
-**Issues:**
-- Unrelated markets
-- Missing key markets
-- Temporal mismatch
+---
 
-## Community 15: Global Political Predictions Basket (62 markets)
+### Community 13: U.S. Presidential Predictions (66 markets)
+**Theme:** The 2028 U.S. presidential election, including nominations for both Democratic and Republican parties, as well as various political events and figures related to this election cycle.
 
-**Issues:**
-- Unrelated markets across different countries
-- Temporal mismatch with varying election years
-- Overrepresentation of French presidential elections
+**Quality:** Very High (pure 2028 election focus)
 
-## Community 16: Trump Coin Prediction Market (1 markets)
+---
 
-**Issues:**
-- Unrelated to election outcomes
-- Limited scope of prediction
-- Temporal mismatch with election date
+### Community 18: Political Predictions Cluster (66 markets)
+**Theme:** Political events, leadership changes, and potential Nobel Peace Prize winners, particularly in relation to prominent global figures and upcoming elections. Some cryptocurrency markets included.
 
-## Community 17: Russia-Ukraine Conflict Predictions (46 markets)
+**Quality:** Medium-High (diverse but political-focused)
 
-**Issues:**
-- Temporal mismatch in deadlines across markets
-- Unrelated markets (e.g., Norwegian politics) included
-- Overlapping questions leading to redundancy
+---
 
-## Community 18: Community_18 (1 markets)
+### Community 25: U.S. Political Predictions (63 markets)
+**Theme:** U.S. political events, particularly the 2024 Presidential Election, Speaker of the House elections, and Federal Reserve interest rate decisions. Significant emphasis on German elections and political outcomes.
 
-**Issues:**
-No market data available
+**Quality:** High (US politics + German elections)
 
-## Community 19: Political Predictions and Elections (95 markets)
+---
 
-**Issues:**
-- Unrelated markets (U.S. vs. Dutch elections)
-- Temporal mismatch (varied election years)
-- Missing key markets (no major global elections)
+### Community 0: Iran Conflict and Politics (59 markets)
+**Theme:** Geopolitical tensions involving Iran, particularly regarding the leadership of Khamenei and potential military actions by the US and Israel. Some US presidential election markets included.
 
-## Community 20: 2028 Presidential Election Market (1 markets)
+**Quality:** High (Iran geopolitical risk basket)
 
-**Issues:**
-- Unrelated to other political markets
-- Missing key candidates or issues
-- Temporal mismatch with current events
+---
 
-## Community 21: Russian Political Stability Forecast (1 markets)
+### Community 12: Political Predictions Cluster (44 markets)
+**Theme:** Political events, particularly elections in France and Colombia, as well as U.S. political scenarios. Some economic factors and climate records included.
 
-**Issues:**
-- Unrelated markets may be missing
-- Temporal mismatch with other events
-- Limited scope focusing only on one individual
+**Quality:** High (France/Colombia political focus)
 
-## Community 22: Economic and Political Predictions (81 markets)
+---
 
-**Issues:**
-- Unrelated markets (e.g., interest rates vs. political appointments)
-- Temporal mismatch (varied timelines for events)
-- Missing key markets (e.g., major economic indicators or elections)
+### Community 29: Political Predictions and IPOs (32 markets)
+**Theme:** Political events, particularly related to leadership changes and elections in various countries, as well as specific nominations and geopolitical relations. Notable emphasis on OpenAI market performance.
 
-## Community 23: AI Market Launch Predictions (1 markets)
+**Quality:** Medium (mixed themes but small size)
 
-**Issues:**
-- Unrelated markets
-- Missing key markets
-- Temporal mismatch
+---
 
-## Community 24: 2024 Republican VP Nomination (1 markets)
+### Community 5: Political Elections and Predictions (19 markets)
+**Theme:** Political elections, particularly the upcoming presidential elections in South Korea and other countries, along with related political events.
 
-**Issues:**
-- Unrelated markets (only one market)
-- Missing key markets (other candidates)
-- Temporal mismatch (future events)
+**Quality:** High (South Korea political focus)
 
-## Community 25: Geopolitical and Crypto Predictions (5 markets)
+---
 
-**Issues:**
-- Unrelated markets (crypto vs. geopolitics)
-- Temporal mismatch (different timelines for events)
-- Lack of context for geopolitical events
+### Community 2: 2024 Political Predictions (14 markets)
+**Theme:** The 2024 Republican Vice Presidential nomination and related political outcomes, particularly within the context of upcoming presidential elections in Virginia and New Jersey.
 
-## Community 26: Political and Space Predictions (75 markets)
+**Quality:** Very High (2024 VP focus)
 
-**Issues:**
-- Unrelated markets across different themes
-- Temporal mismatch in event timelines
-- Missing key markets on similar topics
+---
 
-## Community 27: 2028 Democratic Nomination Market (1 markets)
+## Quality Assessment
 
-**Issues:**
-- Unrelated markets
-- Missing key markets
-- Temporal mismatch
+### Excellent Quality (Very High):
+- Community 3: 2024 Election Predictions (110 markets)
+- Community 28: 2024 Election Predictions (82 markets) 
+- Community 13: U.S. Presidential Predictions (66 markets)
+- Community 2: 2024 Political Predictions (14 markets)
 
-## Community 28: Chinese Leadership Stability Markets (1 markets)
+### Good Quality (High):
+- Community 19: Political Predictions Cluster (164 markets)
+- Community 8: Political and Economic Predictions (127 markets)
+- Community 16: Political and Economic Predictions (103 markets)
+- Community 24: Political and Economic Predictions (97 markets)
+- Community 10: Political and Crypto Markets (84 markets)
+- Community 25: U.S. Political Predictions (63 markets)
+- Community 0: Iran Conflict and Politics (59 markets)
+- Community 12: Political Predictions Cluster (44 markets)
+- Community 5: Political Elections and Predictions (19 markets)
 
-**Issues:**
-- Unrelated markets may exist
-- Missing key markets on succession
-- Temporal mismatch with political events
+### Adequate Quality (Medium-High):
+- Community 18: Political Predictions Cluster (66 markets)
 
-## Community 29: Political Sports Predictions (1 markets)
+### Needs Review (Medium):
+- Community 11: Mixed Political and Economic Predictions (202 markets) - largest, most diverse
+- Community 29: Political Predictions and IPOs (32 markets) - mixed themes
 
-**Issues:**
-- Unrelated markets (sports vs. politics)
-- Lack of context for nomination process
-- Temporal mismatch (distant future event)
+## Key Improvements Achieved
 
-## Community 30: Interest Rate Prediction Market (1 markets)
+1. **Eliminated Spurious Correlations:** Fixed the min_overlapping_days bug that created correlations from single-day overlaps
+2. **Stricter Thresholds:** Raised correlation threshold from 0.3 to 0.5
+3. **Size Requirements:** Enforced minimum community sizes
+4. **LLM Validation:** Removed 225+ outliers identified as unrelated
+5. **Quality Focus:** Reduced from 1,800 markets to 1,332 high-confidence clustered markets
 
-**Issues:**
-- Unrelated markets (only one market present)
-- Temporal mismatch (focus on a specific future date)
-- Lack of context (no other economic indicators included)
+## Remaining Challenges
 
-## Community 31: Alien Existence Prediction Market (1 markets)
+1. **Community 11** is still quite large (202 markets) and diverse - could potentially be split further
+2. **Cross-theme contamination** - some communities have both political and economic themes
+3. **Temporal misalignment** - some communities mix 2024 and 2028 election markets
+4. **International mixing** - some communities blend US and international politics
 
-**Issues:**
-- Unrelated to other prediction markets
-- Lacks key markets on broader topics
-- Temporal mismatch with future events
+## Next Steps
 
-## Community 32: Ethereum Price Prediction Market (1 markets)
+1. Consider splitting Community 11 if correlation sub-structure exists
+2. Validate temporal alignment within communities (2024 vs 2028 events)
+3. Analyze cross-correlations between communities to identify potential mergers
+4. Implement market-specific risk factor analysis for each basket
 
-**Issues:**
-- Unrelated markets not included
-- Missing key cryptocurrencies
-- Temporal mismatch with other predictions
+## Technical Notes
 
-## Community 33: Republican VP Nomination Market (1 markets)
-
-**Issues:**
-- Unrelated markets
-- Missing key markets
-- Temporal mismatch
-
-## Community 34: OpenSea Token Launch Predictions (1 markets)
-
-**Issues:**
-- Unrelated market focus
-- Lack of broader crypto context
-- Temporal mismatch with market trends
-
-## Community 35: 2028 Presidential Nomination Market (1 markets)
-
-**Issues:**
-- Unrelated to other political markets
-- Limited scope with only one candidate
-- Temporal mismatch with future events
-
-## Community 36: 2028 Presidential Election Market (1 markets)
-
-**Issues:**
-- Unrelated markets (only one market present)
-- Missing key markets (no other candidates or events)
-- Temporal mismatch (far future prediction)
-
-## Community 37: Community_37 (1 markets)
-
-**Issues:**
-No market data available
-
-## Community 38: Community_38 (1 markets)
-
-**Issues:**
-No market data available
-
-## Community 39: Community_39 (1 markets)
-
-**Issues:**
-No market data available
-
-## Community 40: US-Iran Military Action Prediction (1 markets)
-
-**Issues:**
-- Unrelated markets not included
-- Temporal mismatch with event timeline
-- Limited scope of geopolitical factors
-
-## Community 41: 2028 Democratic Nomination Market (1 markets)
-
-**Issues:**
-- Unrelated markets
-- Missing key markets
-- Temporal mismatch
-
-## Community 42: US Government Shutdown Prediction (1 markets)
-
-**Issues:**
-- Unrelated to other political events
-- Limited scope with only one market
-- Temporal mismatch with future events
-
-## Community 43: Celebrity Political Aspirations (1 markets)
-
-**Issues:**
-- Unrelated markets (celebrity vs. politics)
-- Lack of diverse political candidates
-- Temporal mismatch (long-term prediction)
-
-## Community 44: Community_44 (1 markets)
-
-**Issues:**
-No market data available
-
-## Community 45: Ukraine Leadership Prediction Market (1 markets)
-
-**Issues:**
-- Unrelated markets
-- Missing key markets
-- Temporal mismatch
-
-## Community 46: SpaceX Public Ticker Prediction (1 markets)
-
-**Issues:**
-- Unrelated markets
-- Missing key markets
-- Temporal mismatch
-
-## Community 47: Political Vote Confirmation Market (1 markets)
-
-**Issues:**
-- Unrelated markets (focus on different candidates)
-- Limited scope (only one market included)
-- Temporal mismatch (specific event vs. broader trends)
-
-## Community 48: NYC Mayoral Election Prediction (1 markets)
-
-**Issues:**
-- Unrelated markets (only one market)
-- Missing key markets (other candidates)
-- Temporal mismatch (election date uncertainty)
-
-## Community 49: Israeli Political Future Prediction (1 markets)
-
-**Issues:**
-- Unrelated markets not included
-- Temporal mismatch with election dates
-- Limited scope focusing on one candidate
-
-## Community 50: 2028 Republican Nomination Market (1 markets)
-
-**Issues:**
-- Unrelated to other political markets
-- Limited scope with only one market
-- Temporal mismatch with current events
-
-## Community 51: Israel-Hamas Ceasefire Prediction (1 markets)
-
-**Issues:**
-- Unrelated markets
-- Missing key markets
-- Temporal mismatch
-
-## Community 52: Bitcoin ETF Approval Market (1 markets)
-
-**Issues:**
-- Unrelated markets
-- Missing key markets
-- Temporal mismatch
-
-## Community 53: U.S. Government Funding Predictions (1 markets)
-
-**Issues:**
-- Unrelated markets may dilute focus
-- Temporal mismatch with other events
-- Lack of diverse funding scenarios
-
-## Community 54: AOC 2024 Election Market (1 markets)
-
-**Issues:**
-- Unrelated markets (only one market present)
-- Missing key markets (other candidates not included)
-- Temporal mismatch (election date uncertainty)
-
-## Community 55: Iranian Leadership Change Market (2 markets)
-
-**Issues:**
-- Unrelated markets
-- Missing key markets
-- Temporal mismatch
-
-## Community 56: Superconductor Reality Prediction Market (1 markets)
-
-**Issues:**
-- Unrelated markets
-- Missing key markets
-- Temporal mismatch
-
-## Community 57: Venezuela 2024 Election Market (1 markets)
-
-**Issues:**
-- Unrelated markets (only one market present)
-- Missing key markets (no other relevant elections or political events)
-- Temporal mismatch (focus solely on a single event)
-
-## Community 58: 2024 Republican VP Nomination Market (1 markets)
-
-**Issues:**
-- Unrelated markets not included
-- Limited scope with only one market
-- Temporal mismatch with other election events
-
-## Community 59: Liz Cheney 2028 Nomination Market (1 markets)
-
-**Issues:**
-- Unrelated market to other predictions
-- Limited scope with only one market
-- Temporal mismatch with distant election date
-
-## Community 60: NYC Mayoral Election Prediction (1 markets)
-
-**Issues:**
-- Unrelated markets (only one market)
-- Missing key markets (other candidates)
-- Temporal mismatch (election date uncertainty)
+- **Correlation Matrix:** 1,800 x 1,800 markets, 40.8% valid correlations (≥30 days overlap)
+- **Graph Density:** 0.0057 (sparse, high-quality connections only)
+- **Removed:** 188 isolated markets (no connections above 0.5 threshold)
+- **Clustering Algorithm:** Louvain community detection on weighted correlation graph
+- **Validation Model:** GPT-4o-mini with structured prompts for outlier identification

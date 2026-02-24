@@ -416,17 +416,17 @@ def build_correlation_matrix(
     print(f"Price change matrix: {pivot.shape[0]} days × {pivot.shape[1]} markets")
     
     # Compute correlation matrix using pandas (much faster than pairwise loops)
-    print("Computing correlation matrix...")
-    corr_matrix = pivot.corr()
+    print(f"Computing correlation matrix with min_periods={min_overlapping_days}...")
+    corr_matrix = pivot.corr(min_periods=min_overlapping_days)
     
-    # Fill NaNs with 0 (markets with no overlapping data)
-    corr_matrix = corr_matrix.fillna(0)
+    # Keep NaN values as NaN (no data = no relationship, no edge in graph)
+    # Do NOT fill with 0 - that would create spurious connections
     
-    # Count valid correlations
+    # Count valid correlations (those with sufficient overlap)
     valid_corrs = (~corr_matrix.isna()).sum().sum() - len(corr_matrix)  # Exclude diagonal
     total_possible = len(corr_matrix) * (len(corr_matrix) - 1)
     if total_possible > 0:
-        print(f"Valid correlations: {valid_corrs:,} / {total_possible:,} ({valid_corrs/total_possible:.1%})")
+        print(f"Valid correlations (≥{min_overlapping_days} days overlap): {valid_corrs:,} / {total_possible:,} ({valid_corrs/total_possible:.1%})")
     
     # Market statistics
     market_stats = {}
@@ -436,7 +436,7 @@ def build_correlation_matrix(
             "n_observations": len(market_data),
             "mean_change": float(market_data.mean()),
             "std_change": float(market_data.std()),
-            "valid_correlations": int((corr_matrix[market] != 0).sum() - 1)  # Exclude self
+            "valid_correlations": int((~corr_matrix[market].isna()).sum() - 1)  # Exclude self
         }
     
     return corr_matrix, market_stats
@@ -457,13 +457,13 @@ def build_correlation_graph(
     # Add all markets as nodes
     G.add_nodes_from(corr_matrix.index)
     
-    # Add edges for strong correlations
+    # Add edges for strong correlations (skip NaN correlations - insufficient overlap)
     added_edges = 0
     for i, market1 in enumerate(corr_matrix.index):
         for j, market2 in enumerate(corr_matrix.columns):
             if i < j:  # Only upper triangle
                 corr = corr_matrix.loc[market1, market2]
-                if abs(corr) > threshold:
+                if pd.notna(corr) and abs(corr) > threshold:
                     G.add_edge(market1, market2, weight=abs(corr), correlation=corr)
                     added_edges += 1
     
