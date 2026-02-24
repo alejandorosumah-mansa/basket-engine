@@ -140,6 +140,27 @@ class TickerMapper:
         # Strip date ranges like "2024-2026", "2024–2026"
         normalized = re.sub(r'\b20[2-9]\d[-–]20[2-9]\d\b', '[daterange]', normalized)
         
+        # Normalize question format: "Will the X decrease" → "X decrease"
+        # "Will X" → "X"  (Polymarket changed format between 2024 and 2026)
+        normalized = re.sub(r'^Will\s+the\s+', '', normalized, flags=re.IGNORECASE)
+        normalized = re.sub(r'^Will\s+', '', normalized, flags=re.IGNORECASE)
+        
+        # Normalize dollar amounts: $150K → $150,000, $200k → $200,000
+        def expand_k(match):
+            num = match.group(1)
+            return f'${num},000'
+        normalized = re.sub(r'\$(\d+)[kK]\b', expand_k, normalized)
+        
+        # Normalize verb forms: "decreases" → "decrease", "increases" → "increase"
+        normalized = re.sub(r'\bdecreases\b', 'decrease', normalized, flags=re.IGNORECASE)
+        normalized = re.sub(r'\bincreases\b', 'increase', normalized, flags=re.IGNORECASE)
+        normalized = re.sub(r'\breaches\b', 'reach', normalized, flags=re.IGNORECASE)
+        normalized = re.sub(r'\bwins\b', 'win', normalized, flags=re.IGNORECASE)
+        
+        # Strip trailing "in ?" artifact from month stripping
+        normalized = re.sub(r'\s+in\s*\?\s*$', '?', normalized)
+        normalized = re.sub(r'\s+in\s*$', '', normalized)
+        
         # Clean up multiple spaces and trim
         normalized = re.sub(r'\s+', ' ', normalized).strip()
         
