@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-02-23T19:59:52.601224",
+  "total_markets": 20180,
+  "mapped_markets": 20180,
+  "total_tickers": 9483,
+  "rollable_tickers": 3074,
+  "cusip_distribution": {
+    "min": 1,
+    "max": 110,
+    "mean": 2.128018559527576,
+    "median": 1.0,
+    "std": 3.7823661831935382
+  },
+  "rollable_distribution": {
+    "count": 3074,
+    "mean": 4.479830839297333,
+    "median": 3.0,
+    "max": 110
+  }
+}
