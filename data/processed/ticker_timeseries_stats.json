@@ -1,0 +1,17 @@
+{
+  "total_tickers": 16840,
+  "rollable_tickers": 2009,
+  "processed_successfully": 255,
+  "failed_no_data": 1429,
+  "failed_insufficient_duration": 310,
+  "failed_other": 15,
+  "unique_tickers_with_data": 255,
+  "total_data_points": 41539,
+  "avg_points_per_ticker": 162.89803921568628,
+  "median_points_per_ticker": 105.0,
+  "min_points_per_ticker": "30",
+  "max_points_per_ticker": "525",
+  "date_range_start": "2024-01-05",
+  "date_range_end": "2026-02-21",
+  "total_roll_points": "228"
+}
