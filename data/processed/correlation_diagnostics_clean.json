@@ -1,0 +1,175 @@
+{
+  "timestamp": "2026-02-23T19:45:00",
+  "filter_stats": {
+    "initial_markets": 20180,
+    "final_markets": 1679,
+    "filter_rate": 0.917
+  },
+  "correlation_stats": {
+    "n_markets": 1679,
+    "valid_correlations": 684634,
+    "mean_abs_correlation": 0.104041845910815
+  },
+  "top_correlated_pairs": [
+    {
+      "correlation": 0.9997822672997446,
+      "abs_correlation": 0.9997822672997446,
+      "market1": "poly_will-clmentine-autain-win-the-2027-french-presidential-election",
+      "market2": "poly_will-mathilde-panot-win-the-2027-french-presidential-election",
+      "title1": "Will Cl\u00e9mentine Autain win the 2027 French presidential election?",
+      "title2": "Will Mathilde Panot win the 2027 French presidential election?"
+    },
+    {
+      "correlation": 0.9995659502930189,
+      "abs_correlation": 0.9995659502930189,
+      "market1": "poly_will-a-candidate-from-another-party-win-georgia-presidential-election",
+      "market2": "poly_will-a-candidate-from-another-party-win-nevada-presidential-election",
+      "title1": "Will a candidate from another party win Georgia Presidential Election?",
+      "title2": "Will a candidate from another party win Nevada Presidential Election?"
+    },
+    {
+      "correlation": 0.9995322195774317,
+      "abs_correlation": 0.9995322195774317,
+      "market1": "poly_will-iran-win-the-2026-fifa-world-cup-788",
+      "market2": "poly_will-tunisia-win-the-2026-fifa-world-cup-165",
+      "title1": "Will Iran win the 2026 FIFA World Cup?",
+      "title2": "Will Tunisia win the 2026 FIFA World Cup?"
+    },
+    {
+      "correlation": 0.999476360324419,
+      "abs_correlation": 0.999476360324419,
+      "market1": "poly_will-manuel-bompard-win-the-2027-french-presidential-election",
+      "market2": "poly_will-mathilde-panot-win-the-2027-french-presidential-election",
+      "title1": "Will Manuel Bompard win the 2027 French presidential election?",
+      "title2": "Will Mathilde Panot win the 2027 French presidential election?"
+    },
+    {
+      "correlation": 0.9994243937817785,
+      "abs_correlation": 0.9994243937817785,
+      "market1": "poly_will-clmentine-autain-win-the-2027-french-presidential-election",
+      "market2": "poly_will-manuel-bompard-win-the-2027-french-presidential-election",
+      "title1": "Will Cl\u00e9mentine Autain win the 2027 French presidential election?",
+      "title2": "Will Manuel Bompard win the 2027 French presidential election?"
+    },
+    {
+      "correlation": 0.9991219224005061,
+      "abs_correlation": 0.9991219224005061,
+      "market1": "poly_will-australia-win-the-2026-fifa-world-cup-816",
+      "market2": "poly_will-south-korea-win-the-2026-fifa-world-cup-485",
+      "title1": "Will Australia win the 2026 FIFA World Cup?",
+      "title2": "Will South Korea win the 2026 FIFA World Cup?"
+    },
+    {
+      "correlation": 0.9989645133721969,
+      "abs_correlation": 0.9989645133721969,
+      "market1": "poly_will-manuel-bompard-win-the-2027-french-presidential-election",
+      "market2": "poly_will-yal-braun-pivet-win-the-2027-french-presidential-election",
+      "title1": "Will Manuel Bompard win the 2027 French presidential election?",
+      "title2": "Will Ya\u00ebl Braun-Pivet win the 2027 French presidential election?"
+    },
+    {
+      "correlation": 0.9989300602867239,
+      "abs_correlation": 0.9989300602867239,
+      "market1": "poly_will-mathilde-panot-win-the-2027-french-presidential-election",
+      "market2": "poly_will-yal-braun-pivet-win-the-2027-french-presidential-election",
+      "title1": "Will Mathilde Panot win the 2027 French presidential election?",
+      "title2": "Will Ya\u00ebl Braun-Pivet win the 2027 French presidential election?"
+    },
+    {
+      "correlation": 0.9987827442363739,
+      "abs_correlation": 0.9987827442363739,
+      "market1": "poly_will-mara-corina-machado-win-the-nobel-peace-prize-in-2025",
+      "market2": "poly_will-xander-schauffele-win-the-2026-masters-tournament",
+      "title1": "Will Mar\u00eda Corina Machado win the Nobel Peace Prize in 2025?",
+      "title2": "Will Xander Schauffele win the 2026 Masters tournament?"
+    },
+    {
+      "correlation": 0.9987630919541699,
+      "abs_correlation": 0.9987630919541699,
+      "market1": "poly_will-clmentine-autain-win-the-2027-french-presidential-election",
+      "market2": "poly_will-yal-braun-pivet-win-the-2027-french-presidential-election",
+      "title1": "Will Cl\u00e9mentine Autain win the 2027 French presidential election?",
+      "title2": "Will Ya\u00ebl Braun-Pivet win the 2027 French presidential election?"
+    },
+    {
+      "correlation": 0.9986962411029476,
+      "abs_correlation": 0.9986962411029476,
+      "market1": "poly_will-iran-win-the-2026-fifa-world-cup-788",
+      "market2": "poly_will-south-korea-win-the-2026-fifa-world-cup-485",
+      "title1": "Will Iran win the 2026 FIFA World Cup?",
+      "title2": "Will South Korea win the 2026 FIFA World Cup?"
+    },
+    {
+      "correlation": 0.9986080087762742,
+      "abs_correlation": 0.9986080087762742,
+      "market1": "poly_will-south-korea-win-the-2026-fifa-world-cup-485",
+      "market2": "poly_will-tunisia-win-the-2026-fifa-world-cup-165",
+      "title1": "Will South Korea win the 2026 FIFA World Cup?",
+      "title2": "Will Tunisia win the 2026 FIFA World Cup?"
+    },
+    {
+      "correlation": 0.9985669304940477,
+      "abs_correlation": 0.9985669304940477,
+      "market1": "poly_will-australia-win-the-2026-fifa-world-cup-816",
+      "market2": "poly_will-tunisia-win-the-2026-fifa-world-cup-165",
+      "title1": "Will Australia win the 2026 FIFA World Cup?",
+      "title2": "Will Tunisia win the 2026 FIFA World Cup?"
+    },
+    {
+      "correlation": 0.9983989774452913,
+      "abs_correlation": 0.9983989774452913,
+      "market1": "poly_will-australia-win-the-2026-fifa-world-cup-816",
+      "market2": "poly_will-iran-win-the-2026-fifa-world-cup-788",
+      "title1": "Will Australia win the 2026 FIFA World Cup?",
+      "title2": "Will Iran win the 2026 FIFA World Cup?"
+    },
+    {
+      "correlation": 0.9982845765700675,
+      "abs_correlation": 0.9982845765700675,
+      "market1": "poly_will-rfk-jr-win-the-popular-vote-in-the-2024-presidential-election",
+      "market2": "poly_will-ron-desantis-win-the-popular-vote-in-the-2024-presidential-election",
+      "title1": "Will RFK Jr. win the popular vote in the 2024 Presidential Election?",
+      "title2": "Will Ron DeSantis win the popular vote in the 2024 Presidential Election?"
+    },
+    {
+      "correlation": 0.9982765829467554,
+      "abs_correlation": 0.9982765829467554,
+      "market1": "poly_will-austin-scott-be-the-first-elected-speaker-of-the-house-for-the-119th-congress",
+      "market2": "poly_will-jack-bergman-be-the-first-elected-speaker-of-the-house-for-the-119th-congress",
+      "title1": "Will Austin Scott be the first elected Speaker of the House for the 119th congress?",
+      "title2": "Will Jack Bergman be the first elected Speaker of the House for the 119th congress?"
+    },
+    {
+      "correlation": 0.998262582730003,
+      "abs_correlation": 0.998262582730003,
+      "market1": "poly_will-paraguay-win-the-2026-fifa-world-cup-967",
+      "market2": "poly_will-tunisia-win-the-2026-fifa-world-cup-165",
+      "title1": "Will Paraguay win the 2026 FIFA World Cup?",
+      "title2": "Will Tunisia win the 2026 FIFA World Cup?"
+    },
+    {
+      "correlation": 0.9982194484080387,
+      "abs_correlation": 0.9982194484080387,
+      "market1": "poly_will-iran-win-the-2026-fifa-world-cup-788",
+      "market2": "poly_will-paraguay-win-the-2026-fifa-world-cup-967",
+      "title1": "Will Iran win the 2026 FIFA World Cup?",
+      "title2": "Will Paraguay win the 2026 FIFA World Cup?"
+    },
+    {
+      "correlation": 0.9979374107098684,
+      "abs_correlation": 0.9979374107098684,
+      "market1": "poly_will-nikki-haley-win-the-popular-vote-in-the-2024-presidential-election",
+      "market2": "poly_will-ron-desantis-win-the-popular-vote-in-the-2024-presidential-election",
+      "title1": "Will Nikki Haley win the popular vote in the 2024 Presidential Election?",
+      "title2": "Will Ron DeSantis win the popular vote in the 2024 Presidential Election?"
+    },
+    {
+      "correlation": 0.9979164687212292,
+      "abs_correlation": 0.9979164687212292,
+      "market1": "poly_will-manuel-bompard-win-the-2027-french-presidential-election",
+      "market2": "poly_will-olivier-faure-win-the-2027-french-presidential-election",
+      "title1": "Will Manuel Bompard win the 2027 French presidential election?",
+      "title2": "Will Olivier Faure win the 2027 French presidential election?"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-02-23T19:49:47.044497",
+  "filter_stats": {
+    "initial_markets": 20180,
+    "after_volume": 15135,
+    "final_markets": 1679,
+    "total_filtered": 18501,
+    "filter_rate": 0.916798810703667,
+    "min_volume_threshold": 11304.929690500001,
+    "min_price_variance": 0.005,
+    "min_unique_prices": 10,
+    "min_active_days": 30,
+    "final_stats": {
+      "variance": {
+        "min": 0.0050190295769936295,
+        "median": 0.028102854601092096,
+        "max": 0.17672375838355997
+      },
+      "unique_prices": {
+        "min": 10,
+        "median": 45.0,
+        "max": 307
+      },
+      "active_days": {
+        "min": 
