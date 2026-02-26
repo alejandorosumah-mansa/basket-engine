@@ -103,6 +103,14 @@ class TickerTimeseriesBuilder:
                     logger.warning(f"Empty candle data for {market_id}")
                     return None
                 
+                # Handle nested format: [candles_array, token_metadata]
+                if isinstance(candles, list) and len(candles) >= 1 and isinstance(candles[0], list):
+                    candles = candles[0]
+                
+                if not candles:
+                    logger.warning(f"Empty candle data for {market_id}")
+                    return None
+                
                 # Convert to DataFrame
                 rows = []
                 for candle in candles:
@@ -191,10 +199,6 @@ class TickerTimeseriesBuilder:
         """
         logger.info(f"Processing ticker {ticker_id}: {ticker_data['ticker_name']}")
         
-        if ticker_data['market_count'] < 2:
-            logger.warning(f"Ticker {ticker_id} has only {ticker_data['market_count']} markets, skipping")
-            return None, None
-        
         # Sort markets by end_date for proper rolling
         markets = sorted(ticker_data['markets'], key=lambda x: x['end_date'])
         
@@ -213,7 +217,7 @@ class TickerTimeseriesBuilder:
                 metadata['ticker']
             )
             
-            if candles is not None and len(candles) >= 5:  # At least 5 data points
+            if candles is not None and len(candles) >= 1:  # At least 1 data point
                 market_data.append({
                     'market_id': market['market_id'],
                     'end_date': pd.to_datetime(market['end_date']),
@@ -228,7 +232,7 @@ class TickerTimeseriesBuilder:
         
         # Build continuous time series using front-month rolling
         raw_series = self._build_raw_series(market_data, ticker_id)
-        if raw_series is None or len(raw_series) < 30:  # Less than 30 days
+        if raw_series is None or len(raw_series) < 10:  # Less than 10 days
             logger.warning(f"Insufficient data for ticker {ticker_id}: {len(raw_series) if raw_series is not None else 0} days")
             self.stats['failed_insufficient_duration'] += 1
             return None, None
@@ -352,16 +356,16 @@ class TickerTimeseriesBuilder:
         """Process all rollable tickers and build time series."""
         logger.info("Starting ticker timeseries processing...")
         
-        # Filter to rollable tickers only
+        # Process ALL tickers (including single-contract)
         rollable_tickers = {
             tid: data for tid, data in self.ticker_chains.items() 
-            if data['market_count'] >= 2
+            if data['market_count'] >= 1
         }
         
         self.stats['total_tickers'] = len(self.ticker_chains)
         self.stats['rollable_tickers'] = len(rollable_tickers)
         
-        logger.info(f"Processing {len(rollable_tickers)} rollable tickers out of {len(self.ticker_chains)} total")
+        logger.info(f"Processing {len(rollable_tickers)} tickers out of {len(self.ticker_chains)} total")
         
         raw_series_list = []
         adjusted_series_list = []
